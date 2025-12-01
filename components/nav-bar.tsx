@@ -22,7 +22,7 @@ const Navbar = () => {
 
   return (
     <nav className="w-full py-4 px-4 flex items-center justify-between relative">
-      <div className="flex items-center space-x-8">
+      <div className="flex items-center sm:space-x-8">
         <Link href="/">
           <Image
             src="/tuur-logo.png"

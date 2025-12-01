@@ -12,7 +12,7 @@ const SearchInput = () => {
   const [debouncedQuery, setDebouncedQuery] = useState("");
   const searchRef = useRef<HTMLDivElement>(null);
 
-  // Debounce del query
+  // Debounce the query
   useEffect(() => {
     const timer = setTimeout(() => {
       setDebouncedQuery(searchQuery);
@@ -21,7 +21,7 @@ const SearchInput = () => {
     return () => clearTimeout(timer);
   }, [searchQuery]);
 
-  // Cálculo de resultados con useMemo (más eficiente)
+  // Calculate results with useMemo (more efficient)
   const searchResults = useMemo(() => {
     if (debouncedQuery.trim() === "") {
       return excursions;
@@ -42,7 +42,7 @@ const SearchInput = () => {
     );
   }, [debouncedQuery]);
 
-  // Cerrar al hacer click fuera
+  // Close when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -101,19 +101,19 @@ const SearchInput = () => {
         )}
       </div>
 
-      {/* Resultados de búsqueda */}
+      {/* Search results */}
       {isSearchOpen && searchQuery && (
         <div className="absolute top-full mt-2 -right-15 w-92 md:w-96 bg-white rounded-lg shadow-xl border border-gray-200 max-h-96 overflow-y-auto z-50 animate-in fade-in-0 slide-in-from-top-2 duration-300">
           {searchResults.length > 0 ? (
             <div className="p-2">
               <p className="text-xs text-gray-500 px-3 py-2">
                 {searchResults.length}{" "}
-                {searchResults.length === 1 ? "resultado" : "resultados"}
+                {searchResults.length === 1 ? "result" : "results"}
               </p>
               {searchResults.slice(0, 8).map((excursion: any) => (
                 <Link
                   key={excursion.route}
-                  href={`/excursion/${excursion.route}`}
+                  href={`/${excursion.categoryPath}/${excursion.route}`}
                   onClick={() => {
                     setIsSearchOpen(false);
                     setSearchQuery("");
@@ -150,14 +150,14 @@ const SearchInput = () => {
                   }}
                   className="block text-center text-sm text-primary hover:underline py-2"
                 >
-                  Ver todos los resultados ({searchResults.length})
+                  View all results ({searchResults.length})
                 </Link>
               )}
             </div>
           ) : (
             <div className="p-6 text-center">
               <p className="text-gray-500 text-sm">
-                No se encontraron resultados para {searchQuery}
+                No results found for {searchQuery}
               </p>
             </div>
           )}

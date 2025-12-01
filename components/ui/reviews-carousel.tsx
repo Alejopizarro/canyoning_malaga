@@ -119,7 +119,7 @@ export default function ReviewsCarousel({
   }, [autoPlay, autoPlayInterval, reviews.length]);
 
   return (
-    <section className="py-16 px-4 bg-white">
+    <section className="py-16 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">

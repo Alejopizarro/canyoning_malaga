@@ -38,9 +38,9 @@ const ExcursionesPage = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-white to-slate-50">
+    <div>
       <CategoryBanner />
-      <div className="max-w-8xl py-4 px-4 mx-auto sm:py-16 sm:px-24">
+      <div className="max-w-8xl py-4 px-4 mx-auto sm:py-8 sm:px-24">
         <h1 className="pb-4 text-3xl font-light">All excursions</h1>
         <Separator />
 
