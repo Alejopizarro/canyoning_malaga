@@ -35,13 +35,13 @@ function AccordionTrigger({
       <AccordionPrimitive.Trigger
         data-slot="accordion-trigger"
         className={cn(
-          "focus-visible:border-ring focus-visible:ring-ring/50 flex flex-1 items-start justify-between gap-4 rounded-md py-4 text-left text-sm font-medium transition-all outline-none hover:underline focus-visible:ring-[3px] disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:rotate-180",
+          "focus-visible:border-ring focus-visible:ring-ring/50 flex flex-col flex-1 items-center justify-between gap-4 rounded-md py-4 text-left text-sm font-medium transition-all outline-none disabled:pointer-events-none disabled:opacity-50 [&[data-state=open]>svg]:opacity-0 [&[data-state=open]>svg]:scale-90",
           className
         )}
         {...props}
       >
         {children}
-        <ChevronDownIcon className="text-muted-foreground pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200" />
+        <ChevronDownIcon className="h-12 w-12 cursor-pointer hover:scale-110 text-muted-foreground shrink-0 mt-4 transition-all duration-300 ease-in-out" />
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
   );
@@ -58,7 +58,20 @@ function AccordionContent({
       className="data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm"
       {...props}
     >
-      <div className={cn("pt-0", className)}>{children}</div>
+      <div className={cn("pt-0 pb-4", className)}>{children}</div>
+
+      {/* Chevron para cerrar - con animación de entrada */}
+      <div className="flex justify-center pt-4 pb-2 animate-in fade-in-0 slide-in-from-top-2 duration-300">
+        <ChevronDownIcon
+          className="h-12 w-12 text-muted-foreground shrink-0 rotate-180 transition-all duration-300 hover:scale-110 cursor-pointer"
+          onClick={(e) => {
+            const trigger = e.currentTarget
+              .closest('[data-slot="accordion-item"]')
+              ?.querySelector('[data-slot="accordion-trigger"]') as HTMLElement;
+            trigger?.click();
+          }}
+        />
+      </div>
     </AccordionPrimitive.Content>
   );
 }
