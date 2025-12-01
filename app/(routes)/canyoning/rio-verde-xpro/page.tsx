@@ -6,7 +6,7 @@ import { excursions } from "@/app/data";
 import RioVerdeXproDescription from "./rio-verde-x-description";
 import Faqs, { Faq } from "../../activities/components/faqs";
 
-export const faqs: Faq[] = [
+const faqs: Faq[] = [
   {
     question: "What should I bring for the canyoning activity?",
     answer:

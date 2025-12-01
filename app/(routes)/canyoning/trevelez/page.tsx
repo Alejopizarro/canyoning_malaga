@@ -6,7 +6,7 @@ import Faqs, { Faq } from "../../activities/components/faqs";
 import { excursions } from "@/app/data";
 import TrevelezDescription from "./trevelez-description";
 
-export const faqs: Faq[] = [
+const faqs: Faq[] = [
   {
     question: "What should I bring for the canyoning activity?",
     answer:
@@ -48,6 +48,10 @@ export default function Page() {
     category: trevelez.category,
     price: trevelez.price,
     days: trevelez.days,
+    minimumAge: trevelez.minimumAge,
+    ubication: trevelez.ubication,
+    duration: trevelez.duration,
+    level: trevelez.level,
   };
 
   return (

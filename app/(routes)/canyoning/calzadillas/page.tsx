@@ -6,7 +6,7 @@ import Faqs, { Faq } from "../../activities/components/faqs";
 import { excursions } from "@/app/data";
 import CalzadillasDescription from "./calzadillas-description";
 
-export const faqs: Faq[] = [
+const faqs: Faq[] = [
   {
     question: "What should I bring for the canyoning activity?",
     answer:
