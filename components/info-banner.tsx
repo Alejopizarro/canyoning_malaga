@@ -1,50 +1,59 @@
-import { Star, Users, Calendar, MapPin, Clock } from "lucide-react";
+import { Users, Calendar, MapPin, Clock } from "lucide-react";
 
-export default function InfoBanner() {
+interface InfoBannerProps {
+  minimumAge?: number;
+  ubication?: string;
+  province?: string;
+  level: "easy" | "moderate" | "advanced";
+  duration: number;
+}
+
+export default function InfoBanner({
+  minimumAge,
+  ubication,
+  province,
+  level,
+  duration,
+}: InfoBannerProps) {
+  // Determinar el texto del nivel
+  const getLevelText = (level: string) => {
+    if (level === "easy") return "All levels";
+    return level.charAt(0).toUpperCase() + level.slice(1);
+  };
+
+  // Determinar la ubicación (prioridad a ubication, sino province)
+  const location = ubication || province;
+
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8">
-      <div className="flex flex-wrap items-center justify-between gap-6 text-xl ">
-        {/* Rating */}
-        <div className="flex items-center gap-2">
-          <div className="flex">
-            {[...Array(5)].map((_, i) => (
-              <Star
-                key={i}
-                className="w-8 h-8 fill-yellow-400 text-yellow-400"
-              />
-            ))}
-          </div>
-          <span className="font-semibold text-gray-700">2,487 reviews</span>
+    <div className="flex flex-wrap items-center gap-4">
+      {/* Level */}
+      <div className="bg-gray-300 flex items-center gap-2 px-3 py-1 text-md rounded-lg shadow-sm">
+        <Users size={15} />
+        <span className="font-semibold text-gray-700">
+          {getLevelText(level)}
+        </span>
+      </div>
+
+      {/* Age */}
+      <div className="flex items-center gap-2 bg-gray-300 text-md px-3 py-1 rounded-lg shadow-sm">
+        <Calendar size={15} />
+        <span className="font-semibold text-gray-700">
+          From {minimumAge} y.o.
+        </span>
+      </div>
+
+      {/* Location */}
+      {location && (
+        <div className="flex items-center gap-2 bg-gray-300 px-3 py-1 rounded-lg shadow-sm">
+          <MapPin size={15} />
+          <span className="font-semibold text-gray-700">{location}</span>
         </div>
+      )}
 
-        {/* Divider */}
-        <div className="hidden sm:block w-px h-6 bg-gray-300"></div>
-
-        {/* All levels */}
-        <div className="grid grid-cols-2 gap-6 md:flex md:items-center md:gap-8">
-          <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
-            <Users className="w-4 h-4 text-blue-600" />
-            <span className="font-medium text-gray-700">All levels</span>
-          </div>
-
-          {/* Age */}
-          <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
-            <Calendar className="w-4 h-4 text-blue-600" />
-            <span className="font-medium text-gray-700">From 6 y.o.</span>
-          </div>
-
-          {/* Location */}
-          <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
-            <MapPin className="w-4 h-4 text-blue-600" />
-            <span className="font-medium text-gray-700">Marbella</span>
-          </div>
-
-          {/* Duration */}
-          <div className="flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm">
-            <Clock className="w-4 h-4 text-blue-600" />
-            <span className="font-medium text-gray-700">3 hours</span>
-          </div>
-        </div>
+      {/* Duration */}
+      <div className="flex items-center gap-2 bg-gray-300 px-3 py-1 rounded-lg shadow-sm">
+        <Clock size={15} />
+        <span className="font-semibold text-gray-700">{duration} hours</span>
       </div>
     </div>
   );

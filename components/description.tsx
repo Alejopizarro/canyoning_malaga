@@ -8,11 +8,8 @@ import {
 const Description = () => {
   return (
     <>
-      <Accordion type="single" className="space-y-8" collapsible>
-        <AccordionItem
-          className="border-1 bg-gray-50/50 shadow-lg rounded-lg px-4"
-          value="item-1"
-        >
+      <Accordion type="single" collapsible>
+        <AccordionItem value="item-1">
           <AccordionTrigger>Description</AccordionTrigger>
           <AccordionContent className="flex flex-col text-gray-600 gap-y-4">
             <h3 className="text-lg font-semibold text-gray-950 my-2">
@@ -40,17 +37,14 @@ const Description = () => {
               As we progress, the gorge narrows and reveals a landscape we could
               never have imagined.
             </p>
-            <p>
+            <p className="mb-2">
               We run this canyon all year round in open groups (up to 12 people
               per guide) and at a special price. If you prefer a more personal
               experience, you can book a private tour just for you.
             </p>
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem
-          value="item-2"
-          className="border-1 bg-gray-50/50 shadow-lg rounded-lg px-4"
-        >
+        <AccordionItem value="item-2">
           <AccordionTrigger>What&apos;s Included</AccordionTrigger>
           <AccordionContent className="flex flex-col gap-y-4">
             <div>
@@ -123,10 +117,7 @@ const Description = () => {
             </div>
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem
-          value="item-3"
-          className="border-1 bg-gray-50/50 shadow-lg rounded-lg px-4"
-        >
+        <AccordionItem value="item-3">
           <AccordionTrigger>What to Bring</AccordionTrigger>
           <AccordionContent className="flex flex-col gap-y-4">
             <p className="mb-2">

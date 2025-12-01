@@ -1,28 +1,46 @@
 import GridHero from "./grid-hero";
-import InfoBanner from "./info-banner";
+import StarRating from "./ui/stars-rating";
+import { Image } from "@/app/data";
 
-const Hero = () => {
+interface Excursion {
+  mainImage: Image;
+  images: Image[];
+  title: string;
+  subtitle?: string;
+  categoryPath?: string;
+  categoryText: string;
+  rating: {
+    value: number;
+    totalReviews: number;
+  };
+}
+
+interface HeroProps {
+  excursion: Excursion;
+}
+
+const Hero = (props: HeroProps) => {
+  const { excursion } = props;
+
   return (
-    <div className="flex flex-col justify-center max-w-7xl mx-auto px-4 py-8">
+    <div className="flex flex-col justify-center max-w-8xl mx-auto space-y-4 px-4 sm:px-16 py-8">
       <div className="flex justify-between items-center">
         <div className="flex flex-col">
           <p className="text-sm inline-flex text-gray-500 mb-2">
             activities &gt; canyoning &gt; guadalmina
           </p>
           <h1 className="text-4xl font-semibold mb-2 tracking-tight">
-            Guadalmina Canyon
+            {!excursion.subtitle ? excursion.title : excursion.subtitle}
           </h1>
-          <h2 className="text-xl text-gray-500 mb-4">
-            The Best Canyoning Experience Near Marbella
-          </h2>
+          <div className="flex flex-wrap items-center justify-between gap-6 text-xl ">
+            <StarRating
+              value={excursion.rating.value}
+              totalReviews={excursion.rating.totalReviews}
+            />
+          </div>
         </div>
-        <p className="flex flex-col space-y-2 text-right text-cyan-700  italic text-lg">
-          Every day
-          <span className="text-5xl font-extrabold">45€ </span>{" "}
-        </p>
       </div>
-      <GridHero />
-      <InfoBanner />
+      <GridHero mainImage={excursion.mainImage} images={excursion.images} />
     </div>
   );
 };
