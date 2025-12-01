@@ -4,7 +4,7 @@ const SpringActivities: FlipCardData[] = [
   {
     name: "Puerto Banus",
     username: "Kayaking",
-    image: "/guadalmina-canyon.jpg",
+    image: "/kayak-banus-2.png",
     bio: "Experience the stunning coastline of Puerto Banus with our kayaking tours. Suitable for all skill levels, perfect for a spring adventure.",
     stats: { level: "All levels", duration: "2hs", ubication: "Marbella" },
     price: { days: "Tue | Thu | Sat", cost: "40€" },
@@ -12,7 +12,7 @@ const SpringActivities: FlipCardData[] = [
   {
     name: "Casares",
     username: "Via Ferrata",
-    image: "/guadalmina-canyon.jpg",
+    image: "/Casares-1.jpg",
     bio: "Explore the thrilling Via Ferrata routes in Casares this spring. Enjoy breathtaking views and an adrenaline-pumping experience suitable for all levels.",
     stats: { level: "Moderate", duration: "2.5hs", ubication: "Casares" },
     price: { days: "Every day", cost: "45€" },
@@ -20,7 +20,7 @@ const SpringActivities: FlipCardData[] = [
   {
     name: "Guadalmina",
     username: "Canyoning",
-    image: "/guadalmina-canyon.jpg",
+    image: "/Guadalmina-1.jpg",
     bio: "Enjoy the best spring canyoning experience near Marbella with Guadalmina canyon. Perfect for families and beginners, available all year round.",
     stats: { level: "All levels", duration: "3hs", ubication: "Marbella" },
     price: { days: "Fridays", cost: "45€" },

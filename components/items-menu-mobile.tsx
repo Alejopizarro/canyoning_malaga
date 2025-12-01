@@ -44,11 +44,11 @@ const ItemsMenuMobile = ({
           <Menu width={20} color="black" />
         </Button>
       </SheetTrigger>
-      <SheetContent className="z-1000">
-        <SheetHeader>
+      <SheetContent className="z-1000 flex flex-col">
+        <SheetHeader className="flex-shrink-0">
           <SheetTitle>Menu</SheetTitle>
         </SheetHeader>
-        <div className="px-4 flex flex-col gap-y-4">
+        <div className="px-4 flex flex-col gap-y-4 overflow-y-auto flex-1">
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="item-1">
               <button
@@ -178,7 +178,7 @@ const ItemsMenuMobile = ({
             </AccordionItem>
           </Accordion>
         </div>
-        <SheetFooter>
+        <SheetFooter className="flex-shrink-0">
           <SheetClose asChild>
             <PanelRightClose width={20} />
           </SheetClose>
