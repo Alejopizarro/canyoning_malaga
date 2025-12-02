@@ -68,7 +68,7 @@ const ItemsMenuMobile = ({
                   <h3 className="font-bold text-sm text-primary mb-2">
                     Canyoning
                   </h3>
-                  <div className="flex flex-col space-y-2 pl-2">
+                  <div className="flex flex-col space-y-2">
                     {canyoningExcursions.slice(0, 5).map((excursion) => (
                       <Link
                         key={excursion.route}
@@ -88,7 +88,7 @@ const ItemsMenuMobile = ({
                   <h3 className="font-bold text-sm text-primary mb-2">
                     Via Ferrata
                   </h3>
-                  <div className="flex flex-col space-y-2 pl-2">
+                  <div className="flex flex-col space-y-2">
                     {viaFerrataExcursions.slice(0, 5).map((excursion) => (
                       <Link
                         key={excursion.route}
@@ -108,7 +108,7 @@ const ItemsMenuMobile = ({
                   <h3 className="font-bold text-sm text-primary mb-2">
                     Hiking
                   </h3>
-                  <div className="flex flex-col space-y-2 pl-2">
+                  <div className="flex flex-col space-y-2">
                     {hikingExcursions.slice(0, 5).map((excursion) => (
                       <Link
                         key={excursion.route}
@@ -128,7 +128,7 @@ const ItemsMenuMobile = ({
                   <h3 className="font-bold text-sm text-primary mb-2">
                     More Activities
                   </h3>
-                  <div className="flex flex-col space-y-2 pl-2">
+                  <div className="flex flex-col space-y-2">
                     {moreActivitiesExcursions.slice(0, 5).map((excursion) => (
                       <Link
                         key={excursion.route}

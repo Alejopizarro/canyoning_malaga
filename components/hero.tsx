@@ -1,3 +1,4 @@
+import Link from "next/link";
 import GridHero from "./grid-hero";
 import StarRating from "./ui/stars-rating";
 import { Image } from "@/app/data";
@@ -27,7 +28,27 @@ const Hero = (props: HeroProps) => {
       <div className="flex justify-between items-center">
         <div className="flex flex-col">
           <p className="text-sm inline-flex text-gray-500 mb-2">
-            activities &gt; canyoning &gt; guadalmina
+            <Link
+              href="/activities"
+              className="pr-1 hover:text-gray-700 transition-colors"
+            >
+              activities
+            </Link>
+            {excursion.categoryPath && (
+              <>
+                {" > "}
+                <span className="px-1">{excursion.categoryPath}</span>
+              </>
+            )}
+            {" > "}
+            <Link
+              href={`/activities/${excursion.categoryPath?.toLowerCase()}/${excursion.title
+                .toLowerCase()
+                .replace(/\s+/g, "-")}`}
+              className="pl-1 hover:text-gray-700 transition-colors"
+            >
+              {excursion.title.toLowerCase()}
+            </Link>
           </p>
           <h1 className="text-4xl font-semibold mb-2 tracking-tight">
             {!excursion.subtitle ? excursion.title : excursion.subtitle}
