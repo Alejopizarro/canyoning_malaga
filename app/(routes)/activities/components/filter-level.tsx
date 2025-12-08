@@ -34,12 +34,14 @@ const FilterLevel = (props: FilterLevelProps) => {
       <RadioGroup onValueChange={(value) => setFilterLevel(value)}>
         <div className="flex items-center space-x-2">
           <RadioGroupItem value="" id="all-levels" />
-          <Label htmlFor="all-levels">All ({excursions.length})</Label>
+          <Label htmlFor="all-levels" className="cursor-pointer">
+            All ({excursions.length})
+          </Label>
         </div>
         {levels.map((level) => (
           <div key={level.value} className="flex items-center space-x-2">
             <RadioGroupItem value={level.value} id={level.value} />
-            <Label htmlFor={level.value}>
+            <Label htmlFor={level.value} className="cursor-pointer">
               {level.label} ({levelCounts[level.value] || 0})
             </Label>
           </div>

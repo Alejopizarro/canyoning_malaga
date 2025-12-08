@@ -30,12 +30,14 @@ const FilterCategory = (props: FilterCategoryProps) => {
       <RadioGroup onValueChange={(value) => setFilterCategory(value)}>
         <div className="flex items-center space-x-2">
           <RadioGroupItem value="" id="all-categories" />
-          <Label htmlFor="all-categories">All ({excursions.length})</Label>
+          <Label htmlFor="all-categories" className="cursor-pointer">
+            All ({excursions.length})
+          </Label>
         </div>
         {categories.map((category: string) => (
           <div key={category} className="flex items-center space-x-2">
             <RadioGroupItem value={category} id={category} />
-            <Label htmlFor={category}>
+            <Label htmlFor={category} className="cursor-pointer">
               {category} ({categoryCounts[category] || 0})
             </Label>
           </div>

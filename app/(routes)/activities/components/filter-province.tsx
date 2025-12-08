@@ -35,12 +35,14 @@ const FilterProvince = (props: FilterProvinceProps) => {
       <RadioGroup onValueChange={(value) => setFilterProvince(value)}>
         <div className="flex items-center space-x-2">
           <RadioGroupItem value="" id="all-provinces" />
-          <Label htmlFor="all-provinces">All ({excursions.length})</Label>
+          <Label htmlFor="all-provinces" className="cursor-pointer">
+            All ({excursions.length})
+          </Label>
         </div>
         {provinces.map((province: string) => (
           <div key={province} className="flex items-center space-x-2">
             <RadioGroupItem value={province} id={province} />
-            <Label htmlFor={province}>
+            <Label htmlFor={province} className="cursor-pointer">
               {province} ({provinceCounts[province] || 0})
             </Label>
           </div>

@@ -15,7 +15,7 @@ const FiltersControlsExcursions = (props: FiltersControlsExcursionsProps) => {
     props;
 
   return (
-    <div className="sm:w-[350px] sm:mt-5">
+    <div className="sm:w-[220px] sm:mt-5">
       <FilterCategory
         setFilterCategory={setFilterCategory}
         excursions={excursions}
