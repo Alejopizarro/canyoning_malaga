@@ -7,7 +7,9 @@
       "Bash(taskkill:*)",
       "Bash(if exist .next rmdir /s /q .next)",
       "Bash(git add:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(npx shadcn@latest add select:*)",
+      "Bash(npx shadcn@latest add:*)"
     ],
     "deny": [],
     "ask": []
