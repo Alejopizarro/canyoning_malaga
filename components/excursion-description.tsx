@@ -25,7 +25,7 @@ const ExcursionDescription = (props: ExcursionDescriptionProps) => {
         </h2>
         <div className="text-primary flex flex-col items-end justify-center gap-2">
           <p className="text-lg">{excursion.days}</p>
-          <p className="text-5xl font-extrabold">{excursion.price}</p>
+          <p className="text-5xl font-extrabold">{excursion.price}€</p>
         </div>
       </div>
       <InfoBanner
