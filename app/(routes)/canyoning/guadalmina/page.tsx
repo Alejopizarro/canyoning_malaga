@@ -5,7 +5,8 @@ import Itinerary from "@/components/itinerary";
 import ReviewsCarousel from "@/components/ui/reviews-carousel";
 import ExcursionDescription from "@/components/excursion-description";
 import Faqs, { Faq } from "../../activities/components/faqs";
-import { excursions } from "@/app/data";
+import { getExcursionByPath } from "@/lib/activities";
+import { notFound } from "next/navigation";
 
 const faqs: Faq[] = [
   {
@@ -30,8 +31,13 @@ const faqs: Faq[] = [
   },
 ];
 
-export default function Page() {
-  const guadalmina = excursions[0];
+export default async function Page() {
+  const guadalmina = await getExcursionByPath("canyoning", "guadalmina");
+
+  if (!guadalmina) {
+    notFound();
+  }
+
   const excursionHero = {
     mainImage: guadalmina.mainImage,
     images: guadalmina.images,
@@ -44,6 +50,7 @@ export default function Page() {
       totalReviews: guadalmina.rating.reviews,
     },
   };
+
   const excursionDescription = {
     title: guadalmina.title,
     category: guadalmina.category,

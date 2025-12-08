@@ -3,8 +3,9 @@ import Hero from "@/components/hero";
 import ReviewsCarousel from "@/components/ui/reviews-carousel";
 import ExcursionDescription from "@/components/excursion-description";
 import Faqs, { Faq } from "../../activities/components/faqs";
-import { excursions } from "@/app/data";
 import RioVerdeDescription from "./rio-verde-description";
+import { getExcursionByPath } from "@/lib/activities";
+import { notFound } from "next/navigation";
 
 const faqs: Faq[] = [
   {
@@ -29,8 +30,13 @@ const faqs: Faq[] = [
   },
 ];
 
-export default function Page() {
-  const rioVerde = excursions[1];
+export default async function Page() {
+  const rioVerde = await getExcursionByPath("canyoning", "rio-verde");
+
+  if (!rioVerde) {
+    notFound();
+  }
+
   const excursionHero = {
     mainImage: rioVerde.mainImage,
     images: rioVerde.images,
