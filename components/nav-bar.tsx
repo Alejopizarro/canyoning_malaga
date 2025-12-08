@@ -21,7 +21,7 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="w-full py-4 px-4 flex items-center justify-between relative">
+    <nav className="w-full py-2 px-4 flex items-center justify-between fixed top-0 left-0 right-0 z-[9999] bg-gray-300/30 backdrop-blur-lg shadow-sm">
       <div className="flex items-center sm:space-x-8">
         <Link href="/">
           <Image
@@ -56,9 +56,12 @@ const Navbar = () => {
       <div className="flex items-center space-x-4 mr-2">
         <SearchInput />
       </div>
-      <button className="bg-primary hidden md:flex text-white px-4 py-2 rounded-sm hover:bg-primary/90 transition-colors text-md">
+      <Link
+        href="/team-building"
+        className="bg-primary hidden md:flex text-white px-4 py-2 rounded-sm hover:bg-primary/90 transition-colors text-md"
+      >
         For Companies
-      </button>
+      </Link>
       <div className="md:hidden">
         <ItemsMenuMobile
           canyoningExcursions={canyoningExcursions}

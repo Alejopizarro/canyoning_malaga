@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
 import { Excursion } from "@/app/data";
+import Image from "next/image";
 
 interface MenuDesktopProps {
   canyoningExcursions: Excursion[];
@@ -27,7 +28,7 @@ const MenuDesktop = ({
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="text-lg font-medium hover:text-primary transition-colors">
+            <NavigationMenuTrigger className="text-lg font-medium hover:text-primary bg-transparent py-4 px-2 transition-colors">
               Activities
             </NavigationMenuTrigger>
             <NavigationMenuContent>
@@ -35,52 +36,71 @@ const MenuDesktop = ({
                 <div className="grid grid-cols-4 gap-3 max-h-[500px] overflow-y-auto">
                   {/* Canyoning */}
                   <div className="space-y-2">
+                    <Image
+                      src="/guadalmina-1.jpg"
+                      alt="Canyoning in Malaga"
+                      width={300}
+                      height={200}
+                      className="rounded-lg w-48 h-32 object-cover mb-2"
+                    />
                     <h3 className="font-bold px-2 text-sm text-primary mb-3">
                       Canyoning
                     </h3>
-                    {canyoningExcursions.slice(0, 8).map((excursion) => (
-                      <NavigationMenuLink key={excursion.route} asChild>
-                        <Link
-                          href={`/${excursion.categoryPath || "excursions"}/${
-                            excursion.route
-                          }`}
-                          className="block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                        >
-                          <div className="text-sm font-medium leading-tight">
-                            {excursion.title}
-                          </div>
-                        </Link>
-                      </NavigationMenuLink>
+                    {canyoningExcursions.slice(0, 3).map((excursion) => (
+                      <Link
+                        key={excursion.route}
+                        href={`/${excursion.categoryPath || "canyoning"}/${
+                          excursion.route
+                        }`}
+                        className="block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                      >
+                        <div className="text-sm font-medium leading-tight">
+                          {excursion.title}
+                        </div>
+                      </Link>
                     ))}
                   </div>
 
                   {/* Via Ferrata */}
                   <div className="space-y-2">
+                    <Image
+                      src="/VF-Ronda-1.jpg"
+                      alt="Via Ferrata in Malaga"
+                      width={300}
+                      height={200}
+                      className="rounded-lg w-48 h-32 object-cover mb-2"
+                    />
                     <h3 className="font-bold px-2 text-sm text-primary mb-3">
                       Via Ferrata
                     </h3>
-                    {viaFerrataExcursions.slice(0, 8).map((excursion) => (
-                      <NavigationMenuLink key={excursion.route} asChild>
-                        <Link
-                          href={`/${excursion.categoryPath || "excursions"}/${
-                            excursion.route
-                          }`}
-                          className="block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                        >
-                          <div className="text-sm font-medium leading-tight">
-                            {excursion.title}
-                          </div>
-                        </Link>
-                      </NavigationMenuLink>
+                    {viaFerrataExcursions.slice(0, 3).map((excursion) => (
+                      <Link
+                        key={excursion.route}
+                        href={`/${excursion.categoryPath || "via-ferrata"}/${
+                          excursion.route
+                        }`}
+                        className="block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                      >
+                        <div className="text-sm font-medium leading-tight">
+                          {excursion.title}
+                        </div>
+                      </Link>
                     ))}
                   </div>
 
                   {/* Hiking */}
                   <div className="space-y-2">
+                    <Image
+                      src="/la-concha-1.jpg"
+                      alt="Hiking in Malaga"
+                      width={300}
+                      height={200}
+                      className="rounded-lg w-48 h-32 object-cover mb-2"
+                    />
                     <h3 className="font-bold px-2 text-sm text-primary mb-3">
                       Hiking
                     </h3>
-                    {hikingExcursions.slice(0, 8).map((excursion) => (
+                    {hikingExcursions.slice(0, 3).map((excursion) => (
                       <Link
                         key={excursion.route}
                         href={`/${excursion.categoryPath || "hiking"}/${
@@ -97,10 +117,17 @@ const MenuDesktop = ({
 
                   {/* More Activities */}
                   <div className="space-y-2">
+                    <Image
+                      src="/kayak-banus-2.png"
+                      alt="More Activities in Malaga"
+                      width={300}
+                      height={200}
+                      className="rounded-lg w-48 h-32 object-cover mb-2"
+                    />
                     <h3 className="font-bold px-2 text-sm text-primary mb-3">
                       More Activities
                     </h3>
-                    {moreActivitiesExcursions.slice(0, 8).map((excursion) => (
+                    {moreActivitiesExcursions.slice(0, 3).map((excursion) => (
                       <Link
                         key={excursion.route}
                         href={`/${excursion.categoryPath || "activities"}/${
