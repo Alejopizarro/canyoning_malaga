@@ -41,7 +41,7 @@ const ExcursionesPage = () => {
     <div className="pt-20">
       <TopActivities />
       <div className="max-w-8xl py-4 px-2 mx-auto sm:py-8 sm:px-24">
-        <h1 className="pb-4 text-3xl font-light">All excursions</h1>
+        <h1 className="pb-4 text-2xl font-medium">Explore all excursions</h1>
         <Separator />
 
         <div className="sm:flex sm:justify-between">
