@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { easeOut, motion } from "motion/react";
+import { easeOut, motion } from "framer-motion";
 import * as React from "react";
 import Image from "next/image";
 import { ChartNoAxesColumnIncreasing, Clock, MapPin, Tag } from "lucide-react";
