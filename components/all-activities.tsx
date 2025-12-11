@@ -5,7 +5,7 @@ import { getExcursions } from "@/lib/activities";
 export default async function AllActivitiesCarousel() {
   const excursions = await getExcursions();
   return (
-    <section className="w-full bg-white py-12 px-4 md:px-8 lg:px-16">
+    <section className="relative z-10 w-full bg-white py-12 px-4 md:px-8 lg:px-16">
       {/* Header */}
       <div className="max-w-7xl mx-auto mb-8">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">

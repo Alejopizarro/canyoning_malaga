@@ -37,7 +37,7 @@ const ActivitiesCarousel = ({ excursions }: AllActivitiesCarouselProps) => {
   return (
     <>
       {/* Carousel Container */}
-      <div className="max-w-7xl mx-auto relative">
+      <div className="relative max-w-7xl mx-auto">
         {/* Cards Carousel */}
         <div
           ref={carouselRef}
@@ -64,7 +64,7 @@ const ActivitiesCarousel = ({ excursions }: AllActivitiesCarouselProps) => {
                 <div className="p-3">
                   {/* Title & Price Row */}
                   <div className="flex justify-between items-start mb-1">
-                    <h3 className="text-sm font-bold text-gray-900 leading-tight">
+                    <h3 className="text-sm line-clamp-1 font-bold text-gray-900 leading-tight">
                       {excursion.title}
                     </h3>
                     <span className="text-sm font-bold text-gray-900 whitespace-nowrap ml-2">
@@ -91,7 +91,7 @@ const ActivitiesCarousel = ({ excursions }: AllActivitiesCarouselProps) => {
         </div>
 
         {/* Navigation */}
-        <div className="flex items-center justify-between mt-6">
+        <div className="flex items-center justify-between mt-6 relative z-10">
           {/* Dots */}
           <div className="flex gap-1.5">
             {Array.from({ length: Math.min(6, excursions.length) }).map(
@@ -99,10 +99,11 @@ const ActivitiesCarousel = ({ excursions }: AllActivitiesCarouselProps) => {
                 <button
                   key={index}
                   onClick={() => scrollToIndex(index)}
-                  className={`w-2 h-2 rounded-full transition-colors duration-300 ${
+                  className={`w-2 h-2 rounded-full transition-colors duration-300 cursor-pointer ${
                     currentIndex === index ? "bg-gray-800" : "bg-gray-300"
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
+                  type="button"
                 />
               )
             )}
@@ -113,8 +114,9 @@ const ActivitiesCarousel = ({ excursions }: AllActivitiesCarouselProps) => {
             <button
               onClick={handlePrev}
               disabled={currentIndex === 0}
-              className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:border-gray-400 disabled:opacity-40 disabled:cursor-not-allowed transition-colors duration-300"
+              className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:border-gray-400 disabled:opacity-40 disabled:cursor-not-allowed transition-colors duration-300 cursor-pointer"
               aria-label="Previous"
+              type="button"
             >
               <svg
                 width="20"
@@ -123,7 +125,7 @@ const ActivitiesCarousel = ({ excursions }: AllActivitiesCarouselProps) => {
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
-                className="text-gray-600"
+                className="text-gray-600 pointer-events-none"
               >
                 <path d="M15 18l-6-6 6-6" />
               </svg>
@@ -132,8 +134,9 @@ const ActivitiesCarousel = ({ excursions }: AllActivitiesCarouselProps) => {
             <button
               onClick={handleNext}
               disabled={currentIndex >= excursions.length - 5}
-              className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:border-gray-400 disabled:opacity-40 disabled:cursor-not-allowed transition-colors duration-300"
+              className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:border-gray-400 disabled:opacity-40 disabled:cursor-not-allowed transition-colors duration-300 cursor-pointer"
               aria-label="Next"
+              type="button"
             >
               <svg
                 width="20"
@@ -142,7 +145,7 @@ const ActivitiesCarousel = ({ excursions }: AllActivitiesCarouselProps) => {
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
-                className="text-gray-600"
+                className="text-gray-600 pointer-events-none"
               >
                 <path d="M9 18l6-6-6-6" />
               </svg>

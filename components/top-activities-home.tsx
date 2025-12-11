@@ -72,7 +72,7 @@ const TopActivitiesHome = () => {
   return (
     <section className="relative z-10 w-full min-h-screen bg-[rgb(101,67,33)] flex flex-col items-center justify-start pt-[10vh] pb-16 px-4">
       {/* Header */}
-      <div className="relative text-center text-white z-11 mb-10">
+      <div className="relative text-center text-white mb-10">
         <span className="block text-sm md:text-base text-white/60 mb-2">
           Spring is here!
         </span>
@@ -84,7 +84,7 @@ const TopActivitiesHome = () => {
       </div>
 
       {/* Cards Grid */}
-      <div className="relative z-10 w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="relative w-full max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-6">
         {topActivities.map((activity) => (
           <Link
             key={activity.slug}

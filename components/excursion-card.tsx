@@ -18,9 +18,9 @@ const ExcursionCard = (props: ExcursionCardProps) => {
           height={400}
           src={excursion.mainImage.src}
           alt={excursion.mainImage.alt}
-          className="rounded-t-md object-cover h-[250px] sm:h-[280px] w-[280px]"
+          className="sm:rounded-t-md object-cover h-[250px] sm:h-[280px] w-[280px]"
         />
-        <div className="sm:px-4 sm:py-6 bg-white rounded-b-md">
+        <div className="sm:px-4 sm:py-6 py-2 sm:bg-white sm:rounded-b-md">
           <div className="flex items-center mb-1 text-gray-600 gap-1 text-sm">
             <MapPin className="w-3 h-3" />
             <span>{excursion.province}</span>

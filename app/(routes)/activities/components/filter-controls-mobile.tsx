@@ -21,11 +21,11 @@ const FilterControlsMobile = (props: FilterControlsMobileProps) => {
   return (
     <>
       <Accordion type="single" collapsible className="w-full">
-        <AccordionItem value="filters">
-          <AccordionTrigger>
+        <AccordionItem value="filters" className="border-0 px-0">
+          <AccordionTrigger className="px-0 [&[data-state=open]]:bg-background">
             <p className="font-bold text-xl">Filters</p>
           </AccordionTrigger>
-          <AccordionContent>
+          <AccordionContent className="px-0">
             <FiltersControlsExcursions
               setFilterCategory={setFilterCategory}
               setFilterLevel={setFilterLevel}

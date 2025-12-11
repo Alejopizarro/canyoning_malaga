@@ -10,13 +10,14 @@ import TopActivities from "@/components/top-activities";
 import FilterControlsMobile from "./components/filter-controls-mobile";
 import FiltersControlsExcursions from "./filters-controls";
 import BannerTeamBuilding from "@/components/banner-team-building";
+import FaqsHome from "@/components/faqs-home";
 
 const ExcursionesPage = () => {
   const [filterCategory, setFilterCategory] = useState("");
   const [filterLevel, setFilterLevel] = useState("");
   const [filterProvince, setFilterProvince] = useState("");
   const [visibleCount, setVisibleCount] = useState(9);
-  const [visibleCountMobile, setVisibleCountMobile] = useState(3);
+  const [visibleCountMobile, setVisibleCountMobile] = useState(6);
 
   const filteredExcursions = excursions.filter(
     (excursion: Excursion) =>
@@ -34,7 +35,7 @@ const ExcursionesPage = () => {
 
   const handleLoadMore = () => {
     setVisibleCount((prev) => prev + 9);
-    setVisibleCountMobile((prev) => prev + 3);
+    setVisibleCountMobile((prev) => prev + 6);
   };
 
   return (
@@ -113,6 +114,7 @@ const ExcursionesPage = () => {
         </div>
       </div>
       <BannerTeamBuilding />
+      <FaqsHome />
     </div>
   );
 };
