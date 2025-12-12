@@ -164,7 +164,7 @@ export default function ParallaxHero() {
         /* ===== HERO SECTION ===== */
         .parallax-hero {
           position: relative;
-          height: 150vh; /* Espacio reducido en mobile */
+          height: 125vh; /* Espacio reducido en mobile */
         }
 
         @media (min-width: 768px) {
@@ -203,7 +203,7 @@ export default function ParallaxHero() {
           left: 0;
           width: 100%;
           height: 70vh; /* Más pequeño en mobile */
-          z-index: 2;
+          z-index: 3;
 
           animation: jumpersAnimation linear;
           animation-timeline: scroll(root);
@@ -220,16 +220,16 @@ export default function ParallaxHero() {
 
         @keyframes jumpersAnimation {
           0% {
-            transform: scale(1.3) translateY(-30%);
+            transform: scale(1.3) translateY(-20%);
           }
           20% {
-            transform: scale(1) translateY(-10%);
+            transform: scale(1.1) translateY(-15%);
           }
           60% {
-            transform: scale(1) translateY(-10%);
+            transform: scale(1.1) translateY(-15%);
           }
           100% {
-            transform: scale(1) translateY(-10%);
+            transform: scale(1.1) translateY(-15%);
           }
         }
 
@@ -257,7 +257,7 @@ export default function ParallaxHero() {
           left: 0;
           width: 100%;
           height: 100vh;
-          z-index: 3;
+          z-index: 2;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -270,8 +270,8 @@ export default function ParallaxHero() {
 
         @keyframes textAnimation {
           0% {
-            opacity: 0;
-            transform: translateY(20%);
+            opacity: 1;
+            transform: translateY(10%);
           }
           20% {
             opacity: 1;
@@ -356,13 +356,13 @@ export default function ParallaxHero() {
 
         @keyframes mountainSectionAnimation {
           0% {
-            bottom: -50vh;
+            bottom: -40vh;
           }
           30% {
-            bottom: -10vh;
+            bottom: 20vh;
           }
           60% {
-            bottom: 30vh;
+            bottom: 80vh;
           }
           100% {
             bottom: 120vh; /* Sale completamente por arriba */
