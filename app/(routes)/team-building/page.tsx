@@ -85,7 +85,7 @@ export default function Page() {
             <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
               <div className="relative h-48">
                 <Image
-                  src="/guadalmina-1.jpg"
+                  src="/guadalmina-1.webp"
                   alt="Canyoning team building"
                   fill
                   className="object-cover"

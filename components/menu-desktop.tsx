@@ -37,7 +37,7 @@ const MenuDesktop = ({
                   {/* Canyoning */}
                   <div className="space-y-2">
                     <Image
-                      src="/guadalmina-1.jpg"
+                      src="/guadalmina-1.webp"
                       alt="Canyoning in Malaga"
                       width={300}
                       height={200}

@@ -42,24 +42,24 @@ export const excursions: Excursion[] = [
     price: "45€",
     days: "Every day!",
     mainImage: {
-      src: "/guadalmina-1.jpg",
+      src: "/guadalmina-1.webp",
       alt: "Guadalmina canyon - The Best Canyoning Experience Near Marbella",
     },
     images: [
       {
-        src: "/guadalmina-2.png",
+        src: "/guadalmina-2.webp",
         alt: "Guadalmina canyon - The narrowest canyon, guadalmina",
       },
       {
-        src: "/guadalmina-3.png",
+        src: "/guadalmina-3.webp",
         alt: "Guadalmina canyon - Jump into the guadalmina canyon",
       },
       {
-        src: "/guadalmina-4.png",
+        src: "/guadalmina-4.webp",
         alt: "Guadalmina canyon - Rapelling down a waterfall in guadalmina canyon",
       },
       {
-        src: "/guadalmina-5.png",
+        src: "/guadalmina-5.webp",
         alt: "Guadalmina canyon - Slide down natural water slides in guadalmina canyon",
       },
     ],

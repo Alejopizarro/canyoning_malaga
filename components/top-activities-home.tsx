@@ -40,7 +40,7 @@ const topActivities: Activity[] = [
     price: "45 €",
     description:
       "Enjoy the best canyoning experience near Marbella, all year round and for all levels.",
-    image: "/guadalmina-1.jpg",
+    image: "/guadalmina-1.webp",
     level: "easy",
     duration: "3 hr",
     location: "Marbella",

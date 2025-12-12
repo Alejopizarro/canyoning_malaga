@@ -16,7 +16,7 @@ const categoryConfigs: CategoryConfig[] = [
   {
     name: "Canyoning",
     categoryPath: "canyoning",
-    image: "/guadalmina-1.jpg",
+    image: "/guadalmina-1.webp",
   },
   {
     name: "Via Ferrata",

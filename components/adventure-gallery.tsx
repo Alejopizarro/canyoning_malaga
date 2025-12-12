@@ -22,7 +22,7 @@ const galleryImages = [
     alt: "Climbing through canyon rocks",
   },
   {
-    src: "/guadalmina-1.jpg",
+    src: "/guadalmina-1.webp",
     alt: "Swimming through narrow canyon",
   },
   {
