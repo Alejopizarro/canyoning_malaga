@@ -1,295 +1,188 @@
 "use client";
 
-import { useEffect, useRef, useCallback } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import TopActivitiesHome from "./top-activities-home";
+import BannerTeamBuilding from "./banner-team-building";
+import AllActivitiesCarousel from "./all-activities";
+import WhyChoose from "./why-choose";
+import BannerCertified from "./banner-certified";
+import BannerContact from "./banner-contact";
+import FaqsHome from "./faqs-home";
+import AdventureGallery from "./adventure-gallery";
 
 export default function ParallaxHero() {
-  const bgRef = useRef<HTMLDivElement>(null);
-  const jumpersRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
+  const jumpersRef = useRef<HTMLDivElement>(null);
   const mountainRef = useRef<HTMLDivElement>(null);
-
-  // CÓMO AJUSTAR endY DE LA MONTAÑA:
-  // - Si hay hueco entre montaña y TopActivitiesHome → hacer endY más negativo
-  // - Si la montaña tapa TopActivitiesHome → hacer endY menos negativo
-  //
-  const CONFIG = {
-    mobile: {
-      maxScroll: 1.4, // 130vh
-      breakpoint: 768,
-      jumpers: {
-        startY: -40,
-        endY: -10,
-        startScale: 1.3,
-        endScale: 1.1,
-      },
-      text: {
-        startY: 20,
-        endY: -15,
-      },
-      mountain: {
-        startY: 60,
-        endY: -60, // AJUSTAR: más negativo si hay hueco
-      },
-    },
-    desktop: {
-      maxScroll: 1.5, // 250vh
-      breakpoint: 768,
-      jumpers: {
-        startY: -5,
-        endY: 10,
-        startScale: 1.2,
-        endScale: 0.9,
-      },
-      text: {
-        startY: 20,
-        endY: -25,
-      },
-      mountain: {
-        startY: 180,
-        endY: -80, // AJUSTAR: más negativo si hay hueco
-      },
-    },
-  };
-
-  const easeOutCubic = (t: number): number => 1 - Math.pow(1 - t, 3);
-  const lerp = (start: number, end: number, progress: number): number =>
-    start + (end - start) * progress;
-
-  const handleScroll = useCallback(() => {
-    const scrollY = window.scrollY;
-    const windowHeight = window.innerHeight;
-    const isMobile = window.innerWidth < CONFIG.mobile.breakpoint;
-
-    const config = isMobile ? CONFIG.mobile : CONFIG.desktop;
-    const maxScroll = windowHeight * config.maxScroll;
-
-    const rawProgress = Math.min(scrollY / maxScroll, 1);
-    const progress = easeOutCubic(rawProgress);
-
-    // === FONDO ===
-    if (bgRef.current) {
-      const scale = lerp(1.1, 1, progress);
-      bgRef.current.style.transform = `scale(${scale})`;
-    }
-
-    // === PERSONAS ===
-    if (jumpersRef.current) {
-      const { startY, endY, startScale, endScale } = config.jumpers;
-      const jumpersProgress = Math.min(progress / 0.6, 1);
-      const translateY = lerp(startY, endY, jumpersProgress);
-      const scale = lerp(startScale, endScale, jumpersProgress);
-      jumpersRef.current.style.transform = `scale(${scale}) translateY(${translateY}%)`;
-    }
-
-    // === TEXTO ===
-    if (textRef.current) {
-      const { startY, endY } = config.text;
-      const textProgress = Math.min(progress / 0.6, 1);
-      const translateY = lerp(startY, endY, textProgress);
-      textRef.current.style.transform = `translateY(${translateY}%)`;
-      textRef.current.style.opacity = "1";
-    }
-
-    // === MONTAÑA ===
-    if (mountainRef.current) {
-      const { startY, endY } = config.mountain;
-      const mountainProgress = Math.min(Math.max((progress - 0.2) / 0.8, 0), 1);
-      const translateY = lerp(startY, endY, mountainProgress);
-      mountainRef.current.style.transform = `translateY(${translateY}%)`;
-    }
-  }, []);
+  const bgLayerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const isMobile = window.innerWidth < 768;
+
+      // 🎛️ CONFIGURACIÓN POR DISPOSITIVO
+      const config = {
+        mobile: {
+          textMovement: 150, // 🎛️ Píxeles que sube el texto en mobile
+          jumpersMovement: 150, // 🎛️ Píxeles que bajan las personas en mobile (ajusta aquí: 0-200)
+          mountainStartScroll: 5, // 🎛️ Cuándo aparece la montaña en mobile
+          mountainSpeed: 0.15, // 🎛️ Velocidad de subida de la montaña en mobile
+        },
+        desktop: {
+          textMovement: 250, // 🎛️ Píxeles que sube el texto en desktop
+          jumpersMovement: 5, // 🎛️ Píxeles que bajan las personas en desktop (ajusta aquí: 0-300)
+          mountainStartScroll: 5, // 🎛️ Cuándo aparece la montaña en desktop
+          mountainSpeed: 0.18, // 🎛️ Velocidad de subida de la montaña en desktop
+        },
+      };
+
+      const currentConfig = isMobile ? config.mobile : config.desktop;
+
+      // 🎛️ TEXTO: Sube y se detiene (sin fade, sin escala)
+      if (textRef.current) {
+        const textY = Math.min(scrollY, currentConfig.textMovement);
+        textRef.current.style.transform = `translateY(-${textY}px)`;
+        textRef.current.style.opacity = "1"; // Siempre visible, sin fade
+      }
+
+      // 🎛️ PERSONAS: Bajan y se detienen (sin fade, sin escala)
+      if (jumpersRef.current) {
+        const jumpersY = Math.min(scrollY, currentConfig.jumpersMovement);
+        jumpersRef.current.style.transform = `translateY(${jumpersY}px)`;
+      }
+
+      // 🎛️ MONTAÑA: Sube desde abajo después de que texto/jumpers se fijen
+      if (mountainRef.current) {
+        const mountainScroll = Math.max(
+          0,
+          scrollY - currentConfig.mountainStartScroll
+        );
+        mountainRef.current.style.transform = `translateY(${
+          100 - mountainScroll * currentConfig.mountainSpeed
+        }vh)`;
+      }
+
+      // 🎛️ OCULTAR FONDO: Esconde la capa fixed cuando el parallax termina
+      if (bgLayerRef.current) {
+        const hideBackgroundAt = 800; // 🎛️ Ajusta cuándo se oculta el fondo (px de scroll)
+        if (scrollY > hideBackgroundAt) {
+          bgLayerRef.current.style.display = "none";
+        } else {
+          bgLayerRef.current.style.display = "block";
+        }
+      }
+    };
+
     window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("resize", handleScroll, { passive: true });
-    handleScroll();
+    handleScroll(); // Ejecutar una vez al inicio
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleScroll);
     };
-  }, [handleScroll]);
+  }, []);
 
   return (
-    <>
-      <div className="parallax-wrapper">
-        {/* ===== SECCIÓN HERO CON PARALLAX ===== */}
-        <section className="parallax-hero">
-          {/* Capa 0: Fondo gris que tapa todo al final */}
-          <div className="layer layer-gray-bg" />
+    <div className="relative w-full bg-black">
+      {/* ============================================================
+          SECCIÓN 1: PARALLAX HERO (fixed mientras haces scroll)
+          ============================================================ */}
+      <div
+        ref={bgLayerRef}
+        className="fixed top-0 left-0 w-full h-screen"
+        style={{ zIndex: 1 }}
+      >
+        {/* Fondo */}
+        <div className="absolute inset-0">
+          <Image
+            src="/bg-home-mobile.png"
+            alt="Fondo"
+            fill
+            priority
+            className="object-cover"
+          />
+        </div>
 
-          {/* Capa 1: Fondo del cañón */}
-          <div className="layer layer-background" ref={bgRef}>
-            <Image
-              src="/bg-home-mobile.png"
-              alt="Fondo cañón"
-              fill
-              priority
-              className="object-cover"
-            />
-          </div>
+        {/* Texto - Empieza abajo del centro */}
+        <div
+          ref={textRef}
+          className="absolute inset-0 flex items-end justify-center pb-[15vh]"
+        >
+          <h1
+            className="text-center text-white font-extrabold leading-tight px-4"
+            style={{
+              fontSize: "clamp(4rem, 10vw, 5rem)",
+              textShadow: "2px 4px 20px rgba(0,0,0,0.5)",
+            }}
+          >
+            <span className="block">Your Adventure</span>
+            <span className="block relative z-10">Begins Here!</span>
+          </h1>
+        </div>
 
-          {/* Capa 2: Texto */}
-          <div className="layer layer-text" ref={textRef}>
-            <h1 className="hero-title">
-              <span className="title-line">Your Adventure</span>
-              <span className="title-line">Begins Here!</span>
-            </h1>
-          </div>
-
-          {/* Capa 3: Personas saltando */}
-          <div className="layer layer-jumpers" ref={jumpersRef}>
-            <Image
-              src="/users-jumping.png"
-              alt="Personas saltando"
-              fill
-              className="object-contain"
-              priority
-            />
-          </div>
-
-          {/* Capa 4: Montaña */}
-          <div className="layer layer-mountain" ref={mountainRef}>
-            <div className="mountain-image">
-              <Image
-                src="/mountain-bg.png"
-                alt="Montaña primer plano"
-                fill
-                className="object-cover object-top"
-                priority
-              />
-            </div>
-          </div>
-        </section>
-
-        {/* Contenido después del hero - en el flujo normal */}
-        <div className="content-after-hero">
-          <TopActivitiesHome />
+        {/* Personas - Empiezan en la mitad superior de la pantalla */}
+        <div
+          ref={jumpersRef}
+          className="absolute top-[15vh] md:top-[3vh] left-0 w-full h-[55vh] md:h-[85vh]"
+        >
+          {/* 🎛️ AJUSTA POSICIÓN INICIAL:
+              - top-[Xvh]: Posición inicial en mobile (10vh = más arriba, 30vh = más abajo)
+              - md:top-[Xvh]: Posición inicial en desktop
+              Esta posición + jumpersMovement = posición final
+          */}
+          <Image
+            src="/users-jumping.png"
+            alt="Personas"
+            fill
+            priority
+            className="object-contain z-9 object-bottom"
+          />
         </div>
       </div>
 
-      <style jsx>{`
-        .parallax-wrapper {
-          position: relative;
-        }
+      {/* ============================================================
+          ESPACIADOR - Dale espacio al parallax para que funcione
+          🎛️ AJUSTA: altura para controlar cuánto scroll necesitas
+          ============================================================ */}
+      <div className="relative h-[0vh] md:h-[40vh]" style={{ zIndex: 0 }} />
 
-        .parallax-hero {
-          position: relative;
-          height: 130vh;
-        }
+      {/* ============================================================
+          SECCIÓN 2: MONTAÑA + TOP ACTIVITIES + RESTO DE CONTENIDO
+          ============================================================ */}
+      <div
+        ref={mountainRef}
+        className="relative w-full"
+        style={{ transform: "translateY(50vh)", zIndex: 10 }}
+      >
+        {/* Montaña */}
+        <div className="relative w-full h-[80vh]">
+          {/* 🎛️ AJUSTA -mb-[10vh]: Compensa el pt-[10vh] de TopActivities para pegarlos */}
+          <Image
+            src="/mountain-bg.png"
+            alt="Montaña"
+            fill
+            priority
+            className="object-cover object-bottom"
+          />
+        </div>
 
-        @media (min-width: 768px) {
-          .parallax-hero {
-            height: 150vh;
-          }
-        }
+        {/* Top Activities pegado a la montaña */}
+        <TopActivitiesHome />
 
-        /* Base para capas fixed */
-        .layer {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          will-change: transform;
-        }
-
-        /* Capa 0: Fondo gris - siempre detrás de todo */
-        .layer-gray-bg {
-          height: 100vh;
-          background: #f9f9f9;
-          z-index: 0;
-        }
-
-        /* Capa 1: Fondo */
-        .layer-background {
-          height: 100vh;
-          z-index: 1;
-          transform: scale(1.1);
-        }
-
-        /* Capa 2: Texto */
-        .layer-text {
-          height: 100vh;
-          z-index: 2;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          pointer-events: none;
-          transform: translateY(20%);
-          opacity: 1;
-        }
-
-        .hero-title {
-          text-align: center;
-          color: white;
-          font-size: clamp(2.5rem, 10vw, 4rem);
-          font-weight: 800;
-          line-height: 1.1;
-          text-shadow: 2px 4px 20px rgba(0, 0, 0, 0.5);
-          padding: 0 1rem;
-        }
-
-        .title-line {
-          display: block;
-        }
-
-        /* Capa 3: Personas */
-        .layer-jumpers {
-          top: auto;
-          bottom: 0;
-          height: 60vh;
-          z-index: 3;
-          transform: scale(1.3) translateY(-40%);
-        }
-
-        @media (min-width: 768px) {
-          .layer-jumpers {
-            height: 70vh;
-            transform: scale(1.2) translateY(-5%);
-          }
-        }
-
-        /* Capa 4: Montaña */
-        .layer-mountain {
-          top: auto;
-          bottom: 0;
-          height: 100vh;
-          z-index: 4;
-          pointer-events: none;
-          transform: translateY(80%);
-        }
-
-        @media (min-width: 768px) {
-          .layer-mountain {
-            transform: translateY(110%);
-          }
-        }
-
-        .mountain-image {
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100%;
-          height: 80%;
-          filter: drop-shadow(0 -4px 12px rgba(0, 0, 0, 0.4));
-        }
-
-        @media (min-width: 768px) {
-          .mountain-image {
-            height: 85%;
-            filter: drop-shadow(0 -8px 16px rgba(0, 0, 0, 0.4));
-          }
-        }
-
-        /* Contenido después del hero */
-        .content-after-hero {
-          position: relative;
-          z-index: 5;
-          background: #f9f9f9;
-        }
-      `}</style>
-    </>
+        {/* ============================================================
+            RESTO DE SECCIONES - Ahora dentro del mismo contenedor
+            ============================================================ */}
+        <BannerTeamBuilding />
+        <AllActivitiesCarousel />
+        <WhyChoose />
+        <BannerCertified />
+        <BannerContact />
+        <FaqsHome />
+        <AdventureGallery />
+      </div>
+    </div>
   );
 }

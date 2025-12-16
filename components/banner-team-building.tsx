@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const BannerTeamBuilding = () => {
   return (
-    <section className="relative z-10 w-full h-[50vh] min-h-[400px] overflow-hidden">
+    <section className="relative w-full h-[50vh] min-h-[400px] overflow-hidden bg-gray-900">
       {/* Background Image */}
       <Image
         src="/team-building-bg.jpg"

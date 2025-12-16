@@ -1,9 +1,39 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import ActivitiesCarousel from "./ui/activities-carousel";
-import { getExcursions } from "@/lib/activities";
+import { Excursion } from "@/lib/activities";
 
-export default async function AllActivitiesCarousel() {
-  const excursions = await getExcursions();
+export default function AllActivitiesCarousel() {
+  const [excursions, setExcursions] = useState<Excursion[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function loadExcursions() {
+      try {
+        const response = await fetch("/api/excursions");
+        const data = await response.json();
+        setExcursions(data);
+      } catch (error) {
+        console.error("Error loading excursions:", error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    loadExcursions();
+  }, []);
+
+  if (loading) {
+    return (
+      <section className="relative z-10 w-full bg-white py-12 px-4 md:px-8 lg:px-16">
+        <div className="max-w-7xl mx-auto text-center">
+          <p className="text-gray-500">Loading activities...</p>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section className="relative z-10 w-full bg-white py-12 px-4 md:px-8 lg:px-16">
       {/* Header */}
