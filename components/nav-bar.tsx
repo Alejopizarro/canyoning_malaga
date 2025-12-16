@@ -21,29 +21,32 @@ const Navbar = () => {
   );
 
   return (
-    <nav className="w-full py-2 px-4 flex items-center justify-between fixed top-0 left-0 right-0 z-[9999] bg-gray-300/30 backdrop-blur-lg shadow-sm">
-      <div className="flex items-center sm:space-x-8">
-        <Link href="/">
+    <nav className="py-2 px-2 flex items-center justify-between fixed top-4 left-1/2 -translate-x-1/2 lg:top-8 z-[999] rounded-full bg-gray-900/50 backdrop-blur-md shadow-lg border border-white/10 gap-x-2 lg:gap-x-3 w-[calc(100%-2rem)] max-w-4xl mx-auto">
+      <div className="flex items-center lg:space-x-4 flex-1 lg:flex-none flex-shrink-0">
+        {/* Logo Desktop */}
+        <Link href="/" className="hidden lg:flex flex-shrink-0">
           <Image
             src="/tuur-logo.png"
-            width={100}
-            height={100}
-            alt="logo tuur canyoning horizontal black"
+            width={75}
+            height={75}
+            alt="logo tuur canyoning horizontal white"
             priority={true}
-            className="hidden md:flex cursor-pointer"
+            className="cursor-pointer"
           />
         </Link>
-        <Link href="/">
+        {/* Logo Mobile/Tablet */}
+        <Link href="/" className="lg:hidden flex-shrink-0">
           <Image
             src="/tuur-logo-vertical.png"
-            width={40}
-            height={40}
-            alt="logo tuur canyoning vertical black"
+            width={36}
+            height={36}
+            alt="logo tuur canyoning vertical white"
             priority={true}
-            className="md:hidden cursor-pointer"
+            className="cursor-pointer"
           />
         </Link>
-        <div className="hidden md:flex space-x-8 ml-10 text-lg font-medium">
+        {/* Menu Desktop */}
+        <div className="hidden lg:flex items-center ml-2 flex-shrink-0">
           <MenuDesktop
             canyoningExcursions={canyoningExcursions}
             viaFerrataExcursions={viaFerrataExcursions}
@@ -53,22 +56,26 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className="flex items-center space-x-4 mr-2">
+      <div className="flex items-center space-x-2 lg:space-x-3 flex-shrink-0">
         <SearchInput />
-      </div>
-      <Link
-        href="/team-building"
-        className="bg-primary hidden md:flex text-white px-4 py-2 rounded-sm hover:bg-primary/90 transition-colors text-md"
-      >
-        For Companies
-      </Link>
-      <div className="md:hidden">
-        <ItemsMenuMobile
-          canyoningExcursions={canyoningExcursions}
-          viaFerrataExcursions={viaFerrataExcursions}
-          hikingExcursions={hikingExcursions}
-          moreActivitiesExcursions={moreActivitiesExcursions}
-        />
+
+        {/* Botón For Companies - Solo Desktop */}
+        <Link
+          href="/team-building"
+          className="hidden lg:flex bg-primary text-white px-3 py-1.5 rounded-full hover:bg-primary/90 transition-colors text-xs font-medium whitespace-nowrap flex-shrink-0"
+        >
+          For Companies
+        </Link>
+
+        {/* Menu Mobile/Tablet */}
+        <div className="lg:hidden">
+          <ItemsMenuMobile
+            canyoningExcursions={canyoningExcursions}
+            viaFerrataExcursions={viaFerrataExcursions}
+            hikingExcursions={hikingExcursions}
+            moreActivitiesExcursions={moreActivitiesExcursions}
+          />
+        </div>
       </div>
     </nav>
   );
