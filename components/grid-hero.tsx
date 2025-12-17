@@ -33,20 +33,24 @@ const GridHero = (props: GridHeroProps) => {
   const openGallery = (startIndex: number = 0) => {
     setGalleryIndex(startIndex);
     setIsGalleryOpen(true);
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
   };
 
   const closeGallery = () => {
     setIsGalleryOpen(false);
-    document.body.style.overflow = 'unset';
+    document.body.style.overflow = "unset";
   };
 
   const nextImage = () => {
-    setGalleryIndex((prev) => (prev === galleryImages.length - 1 ? 0 : prev + 1));
+    setGalleryIndex((prev) =>
+      prev === galleryImages.length - 1 ? 0 : prev + 1
+    );
   };
 
   const prevImage = () => {
-    setGalleryIndex((prev) => (prev === 0 ? galleryImages.length - 1 : prev - 1));
+    setGalleryIndex((prev) =>
+      prev === 0 ? galleryImages.length - 1 : prev - 1
+    );
   };
 
   return (
@@ -150,20 +154,20 @@ const GridHero = (props: GridHeroProps) => {
       {/* Modal de Galería */}
       {isGalleryOpen && (
         <div
-          className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center"
+          className="fixed inset-0 z-[1000] bg-black/80 backdrop-blur-sm flex items-center justify-center"
           onClick={closeGallery}
         >
           {/* Botón cerrar */}
           <button
             onClick={closeGallery}
-            className="absolute top-4 right-4 z-50 w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
+            className="absolute top-4 right-4 z-[1000] w-10 h-10 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
             aria-label="Close gallery"
           >
             <X className="w-6 h-6 text-white" />
           </button>
 
           {/* Contador de imágenes */}
-          <div className="absolute top-4 left-1/2 -translate-x-1/2 z-50 bg-black/50 text-white px-4 py-2 rounded-full text-sm font-medium">
+          <div className="absolute top-4 left-1/2 -translate-x-1/2 z-[1000] bg-black/50 text-white px-4 py-2 rounded-full text-sm font-medium">
             {galleryIndex + 1} / {galleryImages.length}
           </div>
 
@@ -175,7 +179,7 @@ const GridHero = (props: GridHeroProps) => {
             {/* Botón anterior */}
             <button
               onClick={prevImage}
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-50 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-[1000] w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
               aria-label="Previous image"
             >
               <ChevronLeft className="w-6 h-6 text-white" />
@@ -196,7 +200,7 @@ const GridHero = (props: GridHeroProps) => {
             {/* Botón siguiente */}
             <button
               onClick={nextImage}
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-50 w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-[1000] w-12 h-12 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center transition-colors"
               aria-label="Next image"
             >
               <ChevronRight className="w-6 h-6 text-white" />
@@ -204,7 +208,7 @@ const GridHero = (props: GridHeroProps) => {
           </div>
 
           {/* Miniaturas en la parte inferior */}
-          <div className="absolute bottom-4 left-0 right-0 z-50">
+          <div className="absolute bottom-4 left-0 right-0 z-[1000]">
             <div className="flex gap-2 justify-center overflow-x-auto px-4 py-2 max-w-4xl mx-auto">
               {galleryImages.map((img, index) => (
                 <button

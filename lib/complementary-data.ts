@@ -873,7 +873,7 @@ export const defaultComplementaryData: ComplementaryData = {
   description: "",
   videoYoutube: "",
   days: "All year!",
-  mainImage: { src: "/barrancos.jpg", alt: "Excursion image" },
+  mainImage: { src: "/guadalmina-2.webp", alt: "Excursion image" },
   images: [],
   isOffer: false,
   rating: { value: 0, reviews: 0 },

@@ -105,7 +105,7 @@ const guides: Guide[] = [
     role: "Canyoning and Rescue Expert",
     description:
       "Although Adrian's physical appearance can be intimidating, he is one of our most responsible and fun guides... as long as you do what he tells you to do. He is a Sports Technician in Canyoning and a Higher Technician in Physical and Sports Activities. He is also a firefighter and could cosplay Kratos from God of War.",
-    image: "/adrian-gimenez.jpg",
+    image: "/adrian-gimenez.webp",
   },
   {
     name: "Sixto Serrano",
@@ -119,7 +119,7 @@ const guides: Guide[] = [
     role: "Expert in Maritime Activities",
     description:
       "Fran was one of our youngest canyoning apprentices, and today he is already a professional. In addition to being a canyoning guide, he is a Yachtmaster, Yacht Skipper and Jet Ski instructor.",
-    image: "/francisco-delgado.jpg",
+    image: "/francisco-delgado.webp",
   },
   {
     name: "Kevin Nemcansky",
