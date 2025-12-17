@@ -10,6 +10,7 @@ import BannerCertified from "./banner-certified";
 import BannerContact from "./banner-contact";
 import FaqsHome from "./faqs-home";
 import AdventureGallery from "./adventure-gallery";
+import ProfessionalGuides from "./professional-guides";
 
 export default function ParallaxHero() {
   const textRef = useRef<HTMLDivElement>(null);
@@ -25,59 +26,53 @@ export default function ParallaxHero() {
       // 🎛️ CONFIGURACIÓN POR DISPOSITIVO
       const config = {
         mobile: {
-          textMovement: 150, // 🎛️ Píxeles que sube el texto en mobile
-          jumpersMovement: 150, // 🎛️ Píxeles que bajan las personas en mobile (ajusta aquí: 0-200)
-          mountainStartScroll: 5, // 🎛️ Cuándo aparece la montaña en mobile
-          mountainSpeed: 0.15, // 🎛️ Velocidad de subida de la montaña en mobile
+          textMovement: 150,
+          jumpersMovement: 150,
+          parallaxDuration: 600, // 🎛️ Duración total del efecto parallax en px
         },
         desktop: {
-          textMovement: 250, // 🎛️ Píxeles que sube el texto en desktop
-          jumpersMovement: 5, // 🎛️ Píxeles que bajan las personas en desktop (ajusta aquí: 0-300)
-          mountainStartScroll: 5, // 🎛️ Cuándo aparece la montaña en desktop
-          mountainSpeed: 0.18, // 🎛️ Velocidad de subida de la montaña en desktop
+          textMovement: 150,
+          jumpersMovement: 150,
+          parallaxDuration: 800, // 🎛️ Duración total del efecto parallax en px
         },
       };
 
       const currentConfig = isMobile ? config.mobile : config.desktop;
 
-      // 🎛️ TEXTO: Sube y se detiene (sin fade, sin escala)
+      // Progreso del parallax (0 a 1)
+      const progress = Math.min(scrollY / currentConfig.parallaxDuration, 1);
+
+      // 🎛️ TEXTO: Sube
       if (textRef.current) {
         const textY = Math.min(scrollY, currentConfig.textMovement);
         textRef.current.style.transform = `translateY(-${textY}px)`;
-        textRef.current.style.opacity = "1"; // Siempre visible, sin fade
       }
 
-      // 🎛️ PERSONAS: Bajan y se detienen (sin fade, sin escala)
+      // 🎛️ PERSONAS: Bajan
       if (jumpersRef.current) {
         const jumpersY = Math.min(scrollY, currentConfig.jumpersMovement);
         jumpersRef.current.style.transform = `translateY(${jumpersY}px)`;
       }
 
-      // 🎛️ MONTAÑA: Sube desde abajo después de que texto/jumpers se fijen
+      // 🎛️ MONTAÑA: Sube usando margin-top negativo
       if (mountainRef.current) {
-        const mountainScroll = Math.max(
-          0,
-          scrollY - currentConfig.mountainStartScroll
-        );
-        mountainRef.current.style.transform = `translateY(${
-          100 - mountainScroll * currentConfig.mountainSpeed
-        }vh)`;
+        // Empieza en 100vh abajo, termina en 0
+        const mountainOffset = (1 - progress) * 100;
+        mountainRef.current.style.marginTop = `-${100 - mountainOffset}vh`;
+        mountainRef.current.style.transform = `translateY(${mountainOffset}vh)`;
       }
 
-      // 🎛️ OCULTAR FONDO: Esconde la capa fixed cuando el parallax termina
+      // 🎛️ OCULTAR FONDO cuando el parallax termina
       if (bgLayerRef.current) {
-        const hideBackgroundAt = 800; // 🎛️ Ajusta cuándo se oculta el fondo (px de scroll)
-        if (scrollY > hideBackgroundAt) {
-          bgLayerRef.current.style.display = "none";
-        } else {
-          bgLayerRef.current.style.display = "block";
-        }
+        bgLayerRef.current.style.opacity = progress >= 1 ? "0" : "1";
+        bgLayerRef.current.style.pointerEvents =
+          progress >= 1 ? "none" : "auto";
       }
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     window.addEventListener("resize", handleScroll, { passive: true });
-    handleScroll(); // Ejecutar una vez al inicio
+    handleScroll();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -86,13 +81,13 @@ export default function ParallaxHero() {
   }, []);
 
   return (
-    <div className="relative w-full bg-black">
+    <div className="relative w-full">
       {/* ============================================================
-          SECCIÓN 1: PARALLAX HERO (fixed mientras haces scroll)
+          SECCIÓN 1: PARALLAX HERO (fixed)
           ============================================================ */}
       <div
         ref={bgLayerRef}
-        className="fixed top-0 left-0 w-full h-screen"
+        className="fixed top-0 left-0 w-full h-screen transition-opacity duration-300"
         style={{ zIndex: 1 }}
       >
         {/* Fondo */}
@@ -106,7 +101,7 @@ export default function ParallaxHero() {
           />
         </div>
 
-        {/* Texto - Empieza abajo del centro */}
+        {/* Texto */}
         <div
           ref={textRef}
           className="absolute inset-0 flex items-end justify-center pb-[15vh]"
@@ -123,43 +118,36 @@ export default function ParallaxHero() {
           </h1>
         </div>
 
-        {/* Personas - Empiezan en la mitad superior de la pantalla */}
+        {/* Personas */}
         <div
           ref={jumpersRef}
           className="absolute top-[15vh] md:top-[3vh] left-0 w-full h-[55vh] md:h-[85vh]"
         >
-          {/* 🎛️ AJUSTA POSICIÓN INICIAL:
-              - top-[Xvh]: Posición inicial en mobile (10vh = más arriba, 30vh = más abajo)
-              - md:top-[Xvh]: Posición inicial en desktop
-              Esta posición + jumpersMovement = posición final
-          */}
           <Image
             src="/users-jumping.png"
             alt="Personas"
             fill
             priority
-            className="object-contain z-9 object-bottom"
+            className="object-contain object-bottom"
           />
         </div>
       </div>
 
       {/* ============================================================
-          ESPACIADOR - Dale espacio al parallax para que funcione
-          🎛️ AJUSTA: altura para controlar cuánto scroll necesitas
-          ============================================================ */}
-      <div className="relative h-[0vh] md:h-[40vh]" style={{ zIndex: 0 }} />
-
-      {/* ============================================================
-          SECCIÓN 2: MONTAÑA + TOP ACTIVITIES + RESTO DE CONTENIDO
+          ESPACIADOR - Espacio para el efecto parallax
           ============================================================ */}
       <div
-        ref={mountainRef}
-        className="relative w-full"
-        style={{ transform: "translateY(50vh)", zIndex: 10 }}
-      >
+        className="relative h-[600px] md:h-[800px]"
+        style={{ zIndex: 0 }}
+        aria-hidden="true"
+      />
+
+      {/* ============================================================
+          SECCIÓN 2: MONTAÑA + CONTENIDO
+          ============================================================ */}
+      <div ref={mountainRef} className="relative w-full" style={{ zIndex: 10 }}>
         {/* Montaña */}
         <div className="relative w-full h-[80vh]">
-          {/* 🎛️ AJUSTA -mb-[10vh]: Compensa el pt-[10vh] de TopActivities para pegarlos */}
           <Image
             src="/mountain-bg.png"
             alt="Montaña"
@@ -169,16 +157,13 @@ export default function ParallaxHero() {
           />
         </div>
 
-        {/* Top Activities pegado a la montaña */}
+        {/* Contenido */}
         <TopActivitiesHome />
-
-        {/* ============================================================
-            RESTO DE SECCIONES - Ahora dentro del mismo contenedor
-            ============================================================ */}
         <BannerTeamBuilding />
         <AllActivitiesCarousel />
         <WhyChoose />
         <BannerCertified />
+        <ProfessionalGuides />
         <BannerContact />
         <FaqsHome />
         <AdventureGallery />

@@ -10,39 +10,123 @@ interface Guide {
 
 const guides: Guide[] = [
   {
-    name: "Sixto Serrano",
-    role: "Safety and Rescue Expert",
+    name: "José Moreno",
+    role: "CEO & Lead Guide",
     description:
-      "Sixto is one of our most experienced and technical guides, an expert in speleology and high altitude rescue. He has a degree in Physical Activity and Sports Science and is a Sports Technician in Speleology and Canyoning. He is also a director at the Andalusian Speleology School and a member of the Andalusian Speleo-Rescue Team. He is also a World Champion in High Altitude Rescue.",
-    image: "/team/sixto-serrano.jpg",
+      "José has over 20 years experience in outdoor activities and is the founder of TUUR. He has professional qualifications and extensive experience in Medium Mountain Activities, Canyoning, Kayaking and is an expert and extremely passionate in Sport and Classical Climbing (he appears in more than one climbing magazine). An architect by profession and an entrepreneur at heart, he also plays the clarinet and is a native French speaker.",
+    image: "/jose-moreno.webp",
   },
   {
-    name: "Adrian Jimenez",
-    role: "Canyoning and Rescue Expert",
+    name: "José Cecilia",
+    role: "Activities Coordinator",
     description:
-      "Although Adrian's physical appearance can be intimidating, he is one of our most responsible and fun guides... as long as you do what he tells you to do. He is a Sports Technician in Canyoning and a Higher Technician in Physical and Sports Activities. He is also a firefighter and could cosplay Kratos from God of War.",
-    image: "/team/adrian-jimenez.jpg",
+      "'Ceci' is our Activities Coordinator, always paying attention to detail and ensuring that all protocols are followed for a safe and enjoyable experience. He is an expert in canyoning and MTB and a professional grade instructor of 'Technician in Conducting Physical-Sports Activities in the Natural Environment'. He has taken part in several MTB competitions and loves outdoor activities and camping in his van with his family and two dogs, Haki and Hoko.",
+    image: "/jose-cecilia.webp",
+  },
+  {
+    name: "Juan Antonio Salas",
+    role: "Canyoning and Hiking Expert",
+    description:
+      "Juan Antonio is one of our most experienced guides, but don't let the grey hair fool you, he is one of the fittest! He is a qualified sports technician in canyoning and in leading physical activities in the natural environment, as well as being an expert in mountain trekking, water activities and outdoor survival. His many years of experience guiding groups has given him great leadership skills, with a great mix of responsibility and fun.",
+    image: "/juan-antonio-salas.jpg",
+  },
+  {
+    name: "Jose Carlos Rodríguez",
+    role: "Technical Coordinator Canyoning",
+    description:
+      "'Txus' specialises in advanced canyoning techniques and loves to challenge himself and others. He is a Sport Technician in Canyoning, Medium Mountain and Caving, as well as a Superior Grade Technician in Physical and Sport Activities. He is also one of the Andalusian Champions of Canyoning.",
+    image: "/jose-carlos-rodriguez.jpg",
+  },
+  {
+    name: "Isra Navarro",
+    role: "Beach Activities Coordinator",
+    description:
+      "Isra loves outdoor activities and leading teams with professionalism and a lot of humour. He is a certified canyoning guide, Technician in Conducting Physical-Sport Activities in the Natural Environment, Ski instructor, and a Sport Climbing expert. He is also a dog trainer, has his own brand of steel jewellery and is a STAG and HEN party entertainer.",
+    image: "/israel-navarro.jpg",
+  },
+  {
+    name: "Krishna Salleras",
+    role: "Canyoning and MTB Guide",
+    description:
+      "Krishna brings sense and calm to the group, probably thanks to his psychologist side. He is a Technician in Conduction of Physical-Sport Activities in the Natural Environment, Expert in MTB, Canyoning, Mechanics and Construction of Mountain Refuges. He has an organic vegetable garden and speaks French and German.",
+    image: "/krishna-salleras.webp",
+  },
+  {
+    name: "Alejandro Pavón",
+    role: "Youth Camp Coordinator",
+    description:
+      "'Alex' is one of our youngest and friendliest guide, but no less professional. He is an expert in Physical Activities and Sports Programmes, a Certified Canyoning and Speleology Guide. He's also a Ski Instructor in Sierra Nevada. He also speaks French and could have been a magazine model... Quite a catch!",
+    image: "/alejandro-pavon.jpg",
   },
   {
     name: "Juan Carlos Higuera",
+    role: "Canyoning Guide",
+    description:
+      "'Juanka' is a highly professional young mountain guide. He is a certified Technician in Physical and Sports Activities in Natural Environments and a Senior Technician in Physical and Sports Activities Facilitation. He is also a Snowboard and Ski Technician. He is a ski instructor in Sierra Nevada, a mountain bike enthusiast, and a national-level paddle tennis player.",
+    image: "/juan-carlos-higuera.jpg",
+  },
+  {
+    name: "Juan Gil",
+    role: "Canyoning Guide",
+    description:
+      "Juan Gil is one of our dedicated canyoning guides, bringing enthusiasm and professionalism to every adventure.",
+    image: "/juan-gil.webp",
+  },
+  {
+    name: "Flor Hervas",
     role: "Canyoning and MTB Guide",
     description:
-      "Juanchi is our most recent acquisition. He is a young but very professional mountain guide. He is a Technician in Conduction of Physical-Sports Activities in the Natural Environment and a Higher Technician Animation of Physical and Sports Activities. He is also a Snowboard and Ski Sports Technician. He is a ski instructor in Sierra Nevada, passionate about MTB and a paddle tennis player at national level.",
-    image: "/team/juan-carlos-higuera.jpg",
+      "Don't let her size fool you, Flor is one of our most experienced and professional canyoning and mountain biking guides. She is a Technician in Leading Physical Sports Activities in the Natural Environment and Leisure, and an expert in mountain and MTB routes. She is also a mother, entrepreneur and cross-fitter. A true role model!",
+    image: "/flor-hervas.jpg",
   },
   {
-    name: "Kevin Niemcansky",
+    name: "Andrés Ortiz",
+    role: "Canyoning Guide",
+    description:
+      "'Andy' is a versatile and enthusiastic member of our team. He brings a unique blend of skills and experiences to ensure your canyoning experience is both thrilling and safe. He is a certified ICAN Canyoning Guide and also has a diverse work background, including working as a horseback riding guide in the Pyrenees. His personal interests include climbing and surfing, reflecting his love for the outdoors. He is currently completing his Mechanical Engineering degree.",
+    image: "/andres-ortiz.jpg",
+  },
+  {
+    name: "Tomás Loring",
+    role: "Canyoning Guide",
+    description:
+      "'Tomy' is one of our most recent acquisitions. With a passion for the outdoors and a dedication to safety, he ensures every trip is unforgettable. He holds a degree in Sports Science and a Master's in Education. His extensive background in sports includes competitive triathlon and tennis, alongside his specialization in climbing, where he's also an instructor. Before joining us, Tomy lived in Scotland for three years.",
+    image: "/tomas-loring.jpg",
+  },
+  {
+    name: "Benjamín",
+    role: "Canyoning Guide",
+    description:
+      "'Benja' is from Chile and is passionate about the environment. He studied ecotourism in South America and travelled in Brazil before moving to Spain. He is a certified ICAN Canyoning Guide and Climbing Instructor, has experience as a climbing monitor in Málaga, both in climbing gyms and in natural environments. When he's not leading groups through canyons, he likes to relax by playing football and exploring Spain on foot to find new climbing spots.",
+    image: "/benjamin.webp",
+  },
+  {
+    name: "Adrián Giménez",
+    role: "Canyoning and Rescue Expert",
+    description:
+      "Although Adrian's physical appearance can be intimidating, he is one of our most responsible and fun guides... as long as you do what he tells you to do. He is a Sports Technician in Canyoning and a Higher Technician in Physical and Sports Activities. He is also a firefighter and could cosplay Kratos from God of War.",
+    image: "/adrian-gimenez.jpg",
+  },
+  {
+    name: "Sixto Serrano",
+    role: "Safety and Rescue Expert",
+    description:
+      "Sixto is one of our most experienced and technical guides, an expert in speleology and high-altitude rescue. He has a degree in Physical Activity and Sports Science and is a Sports Technician in Speleology and Canyoning. He is also a teacher at the Andalusian Speleology School and a member of the Andalusian Speleo-Rescue Team. He is also a World Champion in High Altitude Rescue.",
+    image: "/sixto-serrano.webp",
+  },
+  {
+    name: "Francisco Delgado",
+    role: "Expert in Maritime Activities",
+    description:
+      "Fran was one of our youngest canyoning apprentices, and today he is already a professional. In addition to being a canyoning guide, he is a Yachtmaster, Yacht Skipper and Jet Ski instructor.",
+    image: "/francisco-delgado.jpg",
+  },
+  {
+    name: "Kevin Nemcansky",
     role: "Product Manager",
     description:
-      "Kevin is part of our office team and is responsible for the design and management of TUUR's activities. He is an Industrial Designer, specializing in UX/UI design and Digital Products. He is also a former university lecturer and a semi-outdoor enthusiast, which is why he sometimes helps us with large group activities. Don't let the name and his looks fool you. He's Argentinian.",
-    image: "/team/kevin-niemcansky.jpg",
-  },
-  {
-    name: "Jose Moreno",
-    role: "CEO & Lead Guide",
-    description:
-      "Jose is the founder and CEO of TUUR Adventure. With over 15 years of experience in outdoor activities, he leads our team with passion and expertise. He holds certifications in Medium Mountain, Canyoning, and Kayaking, and is an expert in sport and classic climbing.",
-    image: "/team/jose-moreno.jpg",
+      "Kevin is part of our office team and is responsible for the design and management of TUUR's activities. He is an Industrial Designer, specialising in UX/UI design and Digital Products. He is also a former university lecturer and a keen outdoor enthusiast, which is why he sometimes helps us with large group activities. Don't let his name and his looks fool you, he's Argentinian.",
+    image: "/kevin-nemcansky.jpg",
   },
 ];
 

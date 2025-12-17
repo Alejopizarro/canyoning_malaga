@@ -16,9 +16,13 @@ export default function AllActivitiesCarousel() {
         const data = await response.json();
         setExcursions(data);
       } catch (error) {
-        console.error("Error loading excursions:", error);
+        console.error(
+          "❌ AllActivitiesCarousel: Error loading excursions:",
+          error
+        );
       } finally {
         setLoading(false);
+        console.log("🏁 AllActivitiesCarousel: Loading finalizado");
       }
     }
     loadExcursions();

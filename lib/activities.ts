@@ -46,6 +46,10 @@ async function fetchSheetData(): Promise<string[][]> {
   const sheetId = process.env.GOOGLE_SHEETS_ID;
   const gid = process.env.GOOGLE_SHEETS_GID || "0";
 
+  console.log("🔍 Variables de entorno:");
+  console.log("  GOOGLE_SHEETS_ID:", sheetId ? `✅ ${sheetId}` : "❌ No definido");
+  console.log("  GOOGLE_SHEETS_GID:", gid);
+
   if (!sheetId) {
     throw new Error(
       "GOOGLE_SHEETS_ID no está configurado en las variables de entorno"
@@ -54,17 +58,24 @@ async function fetchSheetData(): Promise<string[][]> {
 
   // URL para obtener el CSV público
   const url = `https://docs.google.com/spreadsheets/d/${sheetId}/export?format=csv&gid=${gid}`;
+  console.log("📡 Fetching URL:", url);
 
   const response = await fetch(url, {
     next: { revalidate: 3600 }, // Revalidar cada hora
   });
 
+  console.log("📥 Response status:", response.status, response.statusText);
+
   if (!response.ok) {
     throw new Error(`Error al obtener datos del Sheet: ${response.statusText}`);
   }
   const csvText = await response.text();
+  console.log("📄 CSV length:", csvText.length, "caracteres");
   // Parsear CSV manualmente (para evitar dependencias externas)
   const rows = parseCSV(csvText);
+  console.log("📊 Rows parseadas:", rows.length);
+  console.log("📋 Primera fila (encabezados):", rows[0]);
+  console.log("📋 Segunda fila (primer dato):", rows[1]);
   return rows;
 }
 
@@ -118,7 +129,8 @@ function parseCSV(csvText: string): string[][] {
 
 // Convertir filas a objetos SheetExcursion
 function parseSheetExcursions(rows: string[][]): SheetExcursion[] {
-  const [...dataRows] = rows;
+  // Omitir la primera fila (encabezados) y comenzar desde la fila 2
+  const dataRows = rows.slice(1);
   return dataRows.map((row) => {
     const excursion: SheetExcursion = {
       id: row[0] || "",
@@ -146,8 +158,14 @@ import {
 // Función principal: obtener excursiones completas
 export async function getExcursions(): Promise<Excursion[]> {
   try {
+    console.log("🚀 Iniciando getExcursions()");
     const rows = await fetchSheetData();
+    console.log("✅ fetchSheetData completado, filas obtenidas:", rows.length);
+
     const sheetExcursions = parseSheetExcursions(rows);
+    console.log("✅ parseSheetExcursions completado, excursiones:", sheetExcursions.length);
+    console.log("📦 Primera excursión parseada:", sheetExcursions[0]);
+
     const excursions: Excursion[] = sheetExcursions.map((sheetData) => {
       // Buscar datos complementarios por slug
       const complementary =
@@ -160,6 +178,7 @@ export async function getExcursions(): Promise<Excursion[]> {
         route: sheetData.slug,
       } as Excursion;
     });
+    console.log("✅ getExcursions completado, total excursiones:", excursions.length);
     return excursions;
   } catch (error) {
     console.error("❌ Error al cargar excursiones desde Google Sheets:", error);
