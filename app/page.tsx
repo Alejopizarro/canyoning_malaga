@@ -1,9 +1,12 @@
 import ParallaxHero from "@/components/hero-home";
+import { getExcursions } from "@/lib/activities";
 
-export default function Home() {
+export default async function Home() {
+  const excursions = await getExcursions();
+
   return (
     <>
-      <ParallaxHero />
+      <ParallaxHero excursions={excursions} />
     </>
   );
 }

@@ -63,7 +63,7 @@ export default async function Page() {
   };
 
   return (
-    <div>
+    <div className="pt-20">
       <Hero excursion={excursionHero} />
       <div className="max-w-8xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-x-16 px-4 pt-20 sm:px-16 py-4 sm:py-8">
         <div className="flex flex-col gap-8">
