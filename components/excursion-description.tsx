@@ -4,7 +4,7 @@ interface ExcursionDescriptionProps {
   excursion: {
     title: string;
     category: string;
-    price: string;
+    price: number;
     days?: string;
     minimumAge?: number;
     ubication?: string;

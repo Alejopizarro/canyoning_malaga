@@ -15,7 +15,7 @@ export interface Excursion {
   description: string;
   videoYoutube: string;
   days?: string;
-  price: string;
+  price: number;
   mainImage: Image;
   images: Image[];
   isOffer: boolean;
@@ -39,7 +39,7 @@ export const excursions: Excursion[] = [
     description:
       "Perfect canyoning descent for beginners. Close to Marbella, ideal for families. Available all year round.",
     videoYoutube: "",
-    price: "45€",
+    price: 45,
     days: "Every day!",
     mainImage: {
       src: "/guadalmina-1.webp",
@@ -84,7 +84,7 @@ export const excursions: Excursion[] = [
     description:
       "One of the best canyons in Andalusia. Turquoise waters, optional jumps and rappelling. Fun guaranteed.",
     videoYoutube: "",
-    price: "75€",
+    price: 75,
     days: "Wednesday",
     mainImage: {
       src: "/rio-verde-1.jpg",
@@ -130,7 +130,7 @@ export const excursions: Excursion[] = [
     description:
       "Advanced version of Rio Verde. Pure adrenaline with higher jumps and technical rappelling. For experienced adventurers.",
     videoYoutube: "",
-    price: "79€",
+    price: 79,
     days: "All year",
     mainImage: {
       src: "/rio-verde-4.jpg",
@@ -176,7 +176,7 @@ export const excursions: Excursion[] = [
     description:
       "Technical canyon near the Smurf Village. Higher rappels than Guadalmina. Ideal for intermediate level.",
     videoYoutube: "",
-    price: "59€",
+    price: 59,
     mainImage: {
       src: "/sima-del-diablo.jpg",
       alt: "Sima del Diablo - Technical canyon near the Smurf Village",
@@ -220,7 +220,7 @@ export const excursions: Excursion[] = [
     description:
       "The Cathedral of Andalusian Canyons. Walls over 100 meters high. An unprecedented visual experience.",
     videoYoutube: "",
-    price: "69€",
+    price: 69,
     days: "15/6 to 30/11",
     mainImage: {
       src: "/buitreras-1.png",
@@ -288,7 +288,7 @@ export const excursions: Excursion[] = [
     description:
       "Cross through the ancient city of Ronda. Privileged views of the New Bridge and historical monuments.",
     videoYoutube: "",
-    price: "69€",
+    price: 69,
     mainImage: {
       src: "/Tajo-ronda-1.jpg",
       alt: "Tajo de Ronda - Cross through the ancient city of Ronda",
@@ -354,7 +354,7 @@ export const excursions: Excursion[] = [
     description:
       "The highest level technical canyon in Andalusia. 14 rappels in Sierra Nevada. Only August and September.",
     videoYoutube: "",
-    price: "120€",
+    price: 120,
     mainImage: {
       src: "/trevelez-1.jpg",
       alt: "Trevelez canyon - The highest level technical canyon in Andalusia",
@@ -404,7 +404,7 @@ export const excursions: Excursion[] = [
       "Granite canyon in Sierra Norte. Three spectacular rappels. Perfect for autumn, winter and spring.",
     videoYoutube: "",
     days: "Winter",
-    price: "69€",
+    price: 69,
     mainImage: {
       src: "/Calzadillas-1.jpg",
       alt: "Calzadillas canyon - Granite canyon in Sierra Norte",
@@ -460,7 +460,7 @@ export const excursions: Excursion[] = [
     description:
       "Family-friendly via ferrata at Tajo de Ronda. Spectacular views of the New Bridge. Ideal for beginners from 7 years old.",
     videoYoutube: "",
-    price: "44€",
+    price: 44,
     mainImage: {
       src: "/VF-Ronda-1.jpg",
       alt: "Via Ferrata Ronda - Family-friendly via ferrata at Tajo de Ronda",
@@ -526,7 +526,7 @@ export const excursions: Excursion[] = [
     description:
       "Intermediate level with views of Africa and Gibraltar. Two monkey bridges and aerial traverses. 35 min from Marbella.",
     videoYoutube: "",
-    price: "45€",
+    price: 45,
     mainImage: {
       src: "/Casares-1.jpg",
       alt: "Via Ferrata Casares - Intermediate level with views of Africa",
@@ -592,7 +592,7 @@ export const excursions: Excursion[] = [
     description:
       "The best via ferrata in Andalusia. Next to Caminito del Rey. 35-meter zipline and +180m elevation gain.",
     videoYoutube: "",
-    price: "69€",
+    price: 69,
     mainImage: {
       src: "/el-chorro-1.jpg",
       alt: "Via Ferrata El Chorro - The best via ferrata in Andalusia",
@@ -650,7 +650,7 @@ export const excursions: Excursion[] = [
     description:
       "Ascent to Marbella's most iconic peak (1,215m). Panoramic views of Costa del Sol, Gibraltar and Africa.",
     videoYoutube: "",
-    price: "49€",
+    price: 49,
     mainImage: {
       src: "/la-concha-1.jpg",
       alt: "Hiking La Concha - Ascent to Marbella's most iconic peak",
@@ -703,7 +703,7 @@ export const excursions: Excursion[] = [
     description:
       "Route through ancient Moorish irrigation channels to the white village of Istán. Cork oak forests and Andalusian culture.",
     videoYoutube: "",
-    price: "39€",
+    price: 39,
     days: "All year!",
     mainImage: {
       src: "/images/excursions/hiking-istan/main.jpg",
@@ -731,7 +731,7 @@ export const excursions: Excursion[] = [
     description:
       "Family hiking through Juanar forests. Pines, eucalyptus and centuries-old olive trees. Perfect for children.",
     videoYoutube: "",
-    price: "39€",
+    price: 39,
     days: "All year!",
     mainImage: {
       src: "/images/excursions/hiking-juanar/main.jpg",
@@ -761,7 +761,7 @@ export const excursions: Excursion[] = [
     description:
       "Sunrise kayak tour from Puerto Banús. Enjoy Marbella's coast with calm waters and beautiful views.",
     videoYoutube: "",
-    price: "40€",
+    price: 40,
     days: "Tue | Thu | Sat",
     mainImage: {
       src: "/kayak-banus-1.png",
@@ -794,7 +794,7 @@ export const excursions: Excursion[] = [
     description:
       "Kayaking at the mouth of the Guadiaro River. Where the river meets the Mediterranean. Spectacular landscapes.",
     videoYoutube: "",
-    price: "45€",
+    price: 45,
     days: "All year!",
     mainImage: {
       src: "/images/excursions/kayak-guadiaro/main.jpg",
@@ -822,7 +822,7 @@ export const excursions: Excursion[] = [
     description:
       "Electric bike route through Sierra Blanca to Istán. Incredible coastal views. Tapas included in the village.",
     videoYoutube: "",
-    price: "55€",
+    price: 55,
     days: "All year!",
     mainImage: {
       src: "/images/excursions/e-bike-marbella/main.jpg",
@@ -850,7 +850,7 @@ export const excursions: Excursion[] = [
     description:
       "Buggy tour with panoramic coastal views. Adrenaline and spectacular landscapes. Off-road experience.",
     videoYoutube: "",
-    price: "120€",
+    price: 120,
     days: "All year!",
     mainImage: {
       src: "/images/excursions/buggy-tour-marbella/main.jpg",
@@ -878,7 +878,7 @@ export const excursions: Excursion[] = [
     description:
       "Guided jet ski tours from the Marina. Search for dolphins and explore Marbella's coast with adrenaline.",
     videoYoutube: "",
-    price: "180€",
+    price: 180,
     days: "All year!",
     mainImage: {
       src: "/images/excursions/jet-ski-marbella/main.jpg",
@@ -906,7 +906,7 @@ export const excursions: Excursion[] = [
     description:
       "Fun scavenger hunt through Marbella's old town. 12 challenges, tapas included. Perfect for groups and families.",
     videoYoutube: "",
-    price: "35€",
+    price: 35,
     days: "All year!",
     mainImage: {
       src: "/images/excursions/gymkhana-marbella/main.jpg",
@@ -934,7 +934,7 @@ export const excursions: Excursion[] = [
     description:
       "Family caving adventure. Discover Málaga's incredible underground world. From 7 years old.",
     videoYoutube: "",
-    price: "50€",
+    price: 50,
     days: "All year!",
     mainImage: {
       src: "/images/excursions/caving-experience/main.jpg",
@@ -954,148 +954,6 @@ export const excursions: Excursion[] = [
     duration: 4,
     minimumAge: 7,
     ubication: "Málaga",
-  },
-
-  // COMBO PACKS
-  {
-    title: "Canyoning + Via Ferrata",
-    route: "pack-canyoning-via-ferrata",
-    subtitle: "Canyoning + Via Ferrata - Pure Adrenaline Combo Pack",
-    description:
-      "Pure Adrenaline Pack: combine canyoning and via ferrata in one day. The most complete adventure experience.",
-    videoYoutube: "",
-    price: "95€",
-    days: "All year!",
-    mainImage: {
-      src: "/images/excursions/pack-canyoning-via-ferrata/main.jpg",
-      alt: "Canyoning + Via Ferrata - Pure Adrenaline Pack",
-    },
-    images: [],
-    isOffer: false,
-    isMostPopular: false,
-    rating: {
-      value: 0,
-      reviews: 0,
-    },
-    level: "moderate",
-    province: "Málaga",
-    category: "More Activities",
-    categoryPath: "activities",
-    duration: 8,
-    minimumAge: 11,
-    ubication: "Marbella",
-  },
-  {
-    title: "Canyoning + E-Bike",
-    route: "pack-canyoning-ebike",
-    subtitle: "Canyoning + E-Bike - Discover Deep Andalusia",
-    description:
-      "Discover Deep Andalusia: canyoning in the morning and e-bike route in the afternoon. Nature and culture.",
-    videoYoutube: "",
-    price: "99€",
-    days: "All year!",
-    mainImage: {
-      src: "/images/excursions/pack-canyoning-ebike/main.jpg",
-      alt: "Canyoning + E-Bike - Discover Deep Andalusia",
-    },
-    images: [],
-    isOffer: false,
-    isMostPopular: false,
-    rating: {
-      value: 0,
-      reviews: 0,
-    },
-    level: "moderate",
-    province: "Málaga",
-    category: "More Activities",
-    categoryPath: "activities",
-    duration: 7,
-    minimumAge: 12,
-    ubication: "Marbella",
-  },
-  {
-    title: "Canyoning + Survival Workshop",
-    route: "pack-canyoning-survival",
-    subtitle: "Canyoning + Survival Workshop - Family Adventure Pack",
-    description:
-      "Family adventure pack: canyoning and survival workshop in the forest. Unforgettable vacation for everyone.",
-    videoYoutube: "",
-    price: "110€",
-    days: "All year!",
-    mainImage: {
-      src: "/images/excursions/pack-canyoning-survival/main.jpg",
-      alt: "Canyoning + Survival Workshop - Family adventure pack",
-    },
-    images: [],
-    isOffer: false,
-    isMostPopular: false,
-    rating: {
-      value: 0,
-      reviews: 0,
-    },
-    level: "moderate",
-    province: "Málaga",
-    category: "More Activities",
-    categoryPath: "activities",
-    duration: 6,
-    minimumAge: 10,
-    ubication: "Marbella",
-  },
-  {
-    title: "Canyoning + Boat Tour",
-    route: "pack-canyoning-boat",
-    subtitle: "Canyoning + Boat Tour - Complete Water Adventure",
-    description:
-      "Complete water adventure: canyoning and exclusive boat tour along Estepona's coast. Relaxation and adrenaline.",
-    videoYoutube: "",
-    price: "105€",
-    days: "All year!",
-    mainImage: {
-      src: "/images/excursions/pack-canyoning-boat/main.jpg",
-      alt: "Canyoning + Boat Tour - Complete water adventure",
-    },
-    images: [],
-    isOffer: false,
-    isMostPopular: false,
-    rating: {
-      value: 0,
-      reviews: 0,
-    },
-    level: "moderate",
-    province: "Málaga",
-    category: "More Activities",
-    categoryPath: "activities",
-    duration: 7,
-    minimumAge: 8,
-    ubication: "Estepona",
-  },
-  {
-    title: "Canyoning + Hiking",
-    route: "pack-canyoning-hiking",
-    subtitle: "Canyoning + Hiking - Adventure, Culture and Gastronomy",
-    description:
-      "Combine canyoning with hiking through white villages. Adventure, culture and Andalusian gastronomy in one day.",
-    videoYoutube: "",
-    price: "89€",
-    days: "All year!",
-    mainImage: {
-      src: "/images/excursions/pack-canyoning-hiking/main.jpg",
-      alt: "Canyoning + Hiking - Adventure, culture and gastronomy",
-    },
-    images: [],
-    isOffer: false,
-    isMostPopular: false,
-    rating: {
-      value: 0,
-      reviews: 0,
-    },
-    level: "moderate",
-    province: "Málaga",
-    category: "More Activities",
-    categoryPath: "activities",
-    duration: 6,
-    minimumAge: 10,
-    ubication: "Ronda",
   },
 ];
 
