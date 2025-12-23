@@ -78,7 +78,7 @@ const SearchInput = () => {
             onClick={handleClearSearch}
             className="rounded-full p-1 transition-colors"
           >
-            <X className="h-3 w-3 text-gray-600" />
+            <X className="h-3 w-3 text-background" />
           </button>
         )}
       </div>
@@ -87,43 +87,43 @@ const SearchInput = () => {
       <div className="md:hidden">
         <div
           className={cn(
-            "flex items-center backdrop-blur-sm rounded-full transition-all duration-300 ease-in-out shadow-sm border border-background",
+            "flex items-center  rounded-full transition-all duration-300 ease-in-out shadow-sm border border-background",
             isSearchOpen ? "w-60 sm:w-72" : "w-10 h-10 cursor-pointer"
           )}
           onClick={() => !isSearchOpen && setIsSearchOpen(true)}
         >
           {isSearchOpen ? (
             <>
-              <Search className="ml-3 h-5 w-5 text-gray-500 flex-shrink-0" />
+              <Search className="ml-3 h-5 w-5 text-background flex-shrink-0" />
               <input
                 type="text"
                 placeholder="Search Activities..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="flex-1 px-3 py-2 outline-none text-sm text-gray-700 placeholder:text-gray-400 animate-in fade-in-0 slide-in-from-right-2 duration-300"
+                className="flex-1 px-3 py-2 outline-none text-sm text-background placeholder:text-background animate-in fade-in-0 slide-in-from-right-2 duration-300"
                 autoFocus
               />
               {searchQuery && (
                 <button
                   onClick={handleClearSearch}
-                  className="mr-3 hover:bg-gray-100 rounded-full p-1 transition-colors animate-in fade-in-0 zoom-in-95 duration-200"
+                  className="mr-3 rounded-full pr-1 transition-colors animate-in fade-in-0 zoom-in-95 duration-200"
                 >
-                  <X className="h-4 w-4 text-gray-600" />
+                  <X className="h-4 w-4 text-background" />
                 </button>
               )}
             </>
           ) : (
-            <Search className="m-auto h-5 w-5 text-gray-600" />
+            <Search className="m-auto h-5 w-5 text-background" />
           )}
         </div>
       </div>
 
       {/* Search results */}
       {searchQuery && (
-        <div className="absolute top-full mt-2 right-0 w-screen max-w-[calc(100vw-2rem)] sm:max-w-md md:w-96 bg-white rounded-lg shadow-xl border border-gray-200 max-h-96 overflow-y-auto z-40 animate-in fade-in-0 slide-in-from-top-2 duration-300">
+        <div className="absolute top-12 mt-2 -right-13 md:right-0 w-screen max-w-[calc(100vw-2rem)] sm:max-w-md md:w-96 bg-neutral-600/80 backdrop-blur-md rounded-2xl shadow-xl border border-gray-200 max-h-96 overflow-y-auto z-40 animate-in fade-in-0 slide-in-from-top-2 duration-300">
           {searchResults.length > 0 ? (
             <div className="p-2">
-              <p className="text-xs text-gray-500 px-3 py-2">
+              <p className="text-xs text-background px-3 py-2">
                 {searchResults.length}{" "}
                 {searchResults.length === 1 ? "result" : "results"}
               </p>
@@ -135,25 +135,25 @@ const SearchInput = () => {
                     setIsSearchOpen(false);
                     setSearchQuery("");
                   }}
-                  className="flex items-start gap-3 p-3 hover:bg-gray-50 rounded-lg transition-colors group"
+                  className="flex items-start gap-3 p-3 hover:bg-neutral-600/90 rounded-lg transition-colors group"
                 >
                   <div className="flex-1">
-                    <h4 className="font-semibold text-sm group-hover:text-primary transition-colors">
+                    <h4 className="font-semibold text-sm text-background transition-colors">
                       {excursion.title}
                     </h4>
-                    <p className="text-xs text-gray-500 mt-1 line-clamp-1">
+                    <p className="text-xs text-gray-300 mt-1 line-clamp-1">
                       {excursion.description}
                     </p>
                     <div className="flex items-center gap-2 mt-2">
-                      <span className="text-xs bg-gray-100 px-2 py-1 rounded">
+                      <span className="text-xs bg-gray-300 px-2 py-1 rounded">
                         {excursion.category}
                       </span>
-                      <span className="text-xs text-gray-500">
+                      <span className="text-xs text-gray-300">
                         {excursion.province}
                       </span>
                     </div>
                   </div>
-                  <span className="text-sm font-bold text-primary">
+                  <span className="text-sm font-bold text-primary-light">
                     {excursion.price}€
                   </span>
                 </Link>

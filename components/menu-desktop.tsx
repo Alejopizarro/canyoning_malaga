@@ -31,7 +31,7 @@ const MenuDesktop = ({
             Activities
           </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <div className="w-[800px] p-4 bg-white rounded-xl shadow-xl">
+            <div className="w-[800px] shadow-xl">
               <div className="grid grid-cols-4 gap-3 max-h-[500px] overflow-y-auto">
                 {/* Canyoning */}
                 <div className="space-y-2">
@@ -40,9 +40,9 @@ const MenuDesktop = ({
                     alt="Canyoning in Malaga"
                     width={300}
                     height={200}
-                    className="rounded-lg w-48 h-32 object-cover mb-2"
+                    className="rounded-2xl w-48 h-32 object-cover mb-2"
                   />
-                  <h3 className="font-bold px-2 text-sm text-primary mb-3">
+                  <h3 className="font-bold px-2 text-sm text-primary-light mb-3">
                     Canyoning
                   </h3>
                   {canyoningExcursions.slice(0, 3).map((excursion) => (
@@ -53,7 +53,7 @@ const MenuDesktop = ({
                       }`}
                       className="block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-gray-100 hover:text-primary focus:bg-gray-100"
                     >
-                      <div className="text-sm font-medium leading-tight text-gray-700">
+                      <div className="text-sm font-medium leading-tight text-background">
                         {excursion.title}
                       </div>
                     </Link>
@@ -69,7 +69,7 @@ const MenuDesktop = ({
                     height={200}
                     className="rounded-lg w-48 h-32 object-cover mb-2"
                   />
-                  <h3 className="font-bold px-2 text-sm text-primary mb-3">
+                  <h3 className="font-bold px-2 text-sm text-primary-light mb-3">
                     Via Ferrata
                   </h3>
                   {viaFerrataExcursions.slice(0, 3).map((excursion) => (
@@ -80,7 +80,7 @@ const MenuDesktop = ({
                       }`}
                       className="block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-gray-100 hover:text-primary focus:bg-gray-100"
                     >
-                      <div className="text-sm font-medium leading-tight text-gray-700">
+                      <div className="text-sm font-medium leading-tight text-background">
                         {excursion.title}
                       </div>
                     </Link>
@@ -96,7 +96,7 @@ const MenuDesktop = ({
                     height={200}
                     className="rounded-lg w-48 h-32 object-cover mb-2"
                   />
-                  <h3 className="font-bold px-2 text-sm text-primary mb-3">
+                  <h3 className="font-bold px-2 text-sm text-primary-light mb-3">
                     Hiking
                   </h3>
                   {hikingExcursions.slice(0, 3).map((excursion) => (
@@ -107,7 +107,7 @@ const MenuDesktop = ({
                       }`}
                       className="block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-gray-100 hover:text-primary focus:bg-gray-100"
                     >
-                      <div className="text-sm font-medium leading-tight text-gray-700">
+                      <div className="text-sm font-medium leading-tight text-background">
                         {excursion.title}
                       </div>
                     </Link>
@@ -123,7 +123,7 @@ const MenuDesktop = ({
                     height={200}
                     className="rounded-lg w-48 h-32 object-cover mb-2"
                   />
-                  <h3 className="font-bold px-2 text-sm text-primary mb-3">
+                  <h3 className="font-bold px-2 text-sm text-primary-light mb-3">
                     More Activities
                   </h3>
                   {moreActivitiesExcursions.slice(0, 3).map((excursion) => (
@@ -134,7 +134,7 @@ const MenuDesktop = ({
                       }`}
                       className="block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-gray-100 hover:text-primary focus:bg-gray-100"
                     >
-                      <div className="text-sm font-medium leading-tight text-gray-700">
+                      <div className="text-sm font-medium leading-tight text-background">
                         {excursion.title}
                       </div>
                     </Link>
@@ -146,7 +146,7 @@ const MenuDesktop = ({
               <div className="mt-4 pt-3 border-t border-gray-200">
                 <Link
                   href="/activities"
-                  className="flex items-center justify-center rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-100 text-primary font-semibold"
+                  className="flex items-center justify-center rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-100 text-primary-light font-semibold"
                 >
                   <div className="text-sm leading-tight">
                     See all activities →

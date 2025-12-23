@@ -22,7 +22,7 @@ const certifications = [
 export default function BannerCertified() {
   return (
     <section className="py-12 sm:py-16 px-4 sm:px-8 lg:px-16 bg-gray-100">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-8">
           {/* Title */}
           <h3 className="font-bold text-gray-900 whitespace-nowrap">

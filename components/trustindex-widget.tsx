@@ -24,7 +24,7 @@ export default function TrustindexWidget() {
 
   return (
     <section className="py-12 sm:py-16 px-4 sm:px-8 lg:px-16 bg-gray-50">
-      <div className="max-w-6xl mx-auto" id="trustindex-container"></div>
+      <div className="max-w-7xl mx-auto" id="trustindex-container"></div>
     </section>
   );
 }

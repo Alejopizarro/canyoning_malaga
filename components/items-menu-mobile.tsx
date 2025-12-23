@@ -50,7 +50,7 @@ const ItemsMenuMobile = ({
             Menu
           </SheetTitle>
         </SheetHeader>
-        <div className="px-2 flex flex-col gap-y-2 overflow-y-auto flex-1 py-4">
+        <div className="px-2 flex flex-col gap-y-2 text-[1.25rem] overflow-y-auto flex-1 py-4">
           <Accordion type="single" collapsible className="w-full">
             {/* Home */}
             <AccordionItem value="item-1" className="border-none">
@@ -64,15 +64,15 @@ const ItemsMenuMobile = ({
 
             {/* Activities */}
             <AccordionItem value="item-2" className="border-none">
-              <AccordionTrigger className="font-semibold text-md py-3 px-2 hover:bg-gray-50 rounded-lg hover:no-underline text-gray-900">
+              <AccordionTrigger className="font-semibold py-3 px-2 text-[1.25rem] hover:bg-gray-50 rounded-lg hover:no-underline text-gray-900">
                 Activities
               </AccordionTrigger>
               <AccordionContent className="flex flex-col space-y-4 items-start px-2 pt-2">
                 {/* Canyoning */}
                 <div className="w-full">
-                  <h3 className="font-bold text-sm text-primary mb-2">
+                  <p className="font-bold text-sm text-primary mb-2">
                     Canyoning
-                  </h3>
+                  </p>
                   <div className="flex flex-col space-y-1">
                     {canyoningExcursions.slice(0, 5).map((excursion) => (
                       <Link
@@ -80,7 +80,7 @@ const ItemsMenuMobile = ({
                         href={`/${excursion.categoryPath || "excursions"}/${
                           excursion.route
                         }`}
-                        className="text-sm text-gray-600 hover:text-primary transition-colors py-1.5 px-2 hover:bg-gray-50 rounded"
+                        className="text-sm text-gray-600 hover:text-primary transition-colors py-1.5 hover:bg-gray-50 rounded"
                       >
                         {excursion.title}
                       </Link>
@@ -90,9 +90,9 @@ const ItemsMenuMobile = ({
 
                 {/* Via Ferrata */}
                 <div className="w-full">
-                  <h3 className="font-bold text-sm text-primary mb-2">
+                  <p className="font-bold text-sm text-primary mb-2">
                     Via Ferrata
-                  </h3>
+                  </p>
                   <div className="flex flex-col space-y-1">
                     {viaFerrataExcursions.slice(0, 5).map((excursion) => (
                       <Link
@@ -100,7 +100,7 @@ const ItemsMenuMobile = ({
                         href={`/${excursion.categoryPath || "excursions"}/${
                           excursion.route
                         }`}
-                        className="text-sm text-gray-600 hover:text-primary transition-colors py-1.5 px-2 hover:bg-gray-50 rounded"
+                        className="text-sm text-gray-600 hover:text-primary transition-colors py-1.5 hover:bg-gray-50 rounded"
                       >
                         {excursion.title}
                       </Link>
@@ -110,9 +110,7 @@ const ItemsMenuMobile = ({
 
                 {/* Hiking */}
                 <div className="w-full">
-                  <h3 className="font-bold text-sm text-primary mb-2">
-                    Hiking
-                  </h3>
+                  <p className="font-bold text-sm text-primary mb-2">Hiking</p>
                   <div className="flex flex-col space-y-1">
                     {hikingExcursions.slice(0, 5).map((excursion) => (
                       <Link
@@ -120,7 +118,7 @@ const ItemsMenuMobile = ({
                         href={`/${excursion.categoryPath || "hiking"}/${
                           excursion.route
                         }`}
-                        className="text-sm text-gray-600 hover:text-primary transition-colors py-1.5 px-2 hover:bg-gray-50 rounded"
+                        className="text-sm text-gray-600 hover:text-primary transition-colors py-1.5 hover:bg-gray-50 rounded"
                       >
                         {excursion.title}
                       </Link>
@@ -130,9 +128,9 @@ const ItemsMenuMobile = ({
 
                 {/* More Activities */}
                 <div className="w-full">
-                  <h3 className="font-bold text-sm text-primary mb-2">
+                  <p className="font-bold text-sm text-primary mb-2">
                     More Activities
-                  </h3>
+                  </p>
                   <div className="flex flex-col space-y-1">
                     {moreActivitiesExcursions.slice(0, 5).map((excursion) => (
                       <Link
@@ -140,7 +138,7 @@ const ItemsMenuMobile = ({
                         href={`/${excursion.categoryPath || "activities"}/${
                           excursion.route
                         }`}
-                        className="text-sm text-gray-600 hover:text-primary transition-colors py-1.5 px-2 hover:bg-gray-50 rounded"
+                        className="text-sm text-gray-600 hover:text-primary transition-colors py-1.5 hover:bg-gray-50 rounded"
                       >
                         {excursion.title}
                       </Link>

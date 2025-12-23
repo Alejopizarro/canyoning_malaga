@@ -60,7 +60,7 @@ export default function AdventureGallery({
   return (
     <>
       <section className="py-16 sm:py-24 px-4 sm:px-8 lg:px-16 bg-background">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           {/* Header */}
           <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">

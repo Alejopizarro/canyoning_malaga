@@ -131,7 +131,7 @@ const guides: Guide[] = [
 ];
 
 const GuideCard = ({ guide }: { guide: Guide }) => (
-  <article className="bg-white">
+  <article>
     {/* Image */}
     <div className="relative h-48 bg-gray-200 rounded-full w-48 mx-auto mb-4 overflow-hidden">
       <Image src={guide.image} alt={guide.name} fill className="object-cover" />

@@ -30,7 +30,7 @@ const SpringActivities: FlipCardData[] = [
 const TopActivities = () => {
   const activities = SpringActivities;
   return (
-    <div className="max-w-6xl py-4 sm:py-8 px-4 mx-auto flex flex-col items-center text-center">
+    <div className="max-w-7xl py-4 sm:py-8 px-4 mx-auto flex flex-col items-center text-center">
       <p className="text-gray-600 font-lg">Spring is here!</p>
       <h2 className="text-5xl font-semibold my-4">
         Top Outdoor Activities Of The Season
