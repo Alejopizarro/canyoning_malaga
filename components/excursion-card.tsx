@@ -1,4 +1,4 @@
-import { Excursion } from "@/app/data";
+import { Excursion } from "@/lib/activities";
 import { ArrowRight, MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -29,7 +29,7 @@ const ExcursionCard = (props: ExcursionCardProps) => {
             <h4 className="max-w-lg text-lg line-clamp-1">{excursion.title}</h4>
             <div className="hidden sm:flex items-center gap-1">
               <span className="text-2xl font-bold text-primary">
-                {excursion.price}
+                {excursion.price}€
               </span>
               <span className="text-sm text-gray-500">/person</span>
             </div>
@@ -43,7 +43,7 @@ const ExcursionCard = (props: ExcursionCardProps) => {
 
           <div className="flex sm:hidden items-center gap-1 mb-2">
             <span className="text-2xl font-bold text-primary">
-              {excursion.price}
+              {excursion.price}€
             </span>
             <span className="text-sm text-gray-500">/person</span>
           </div>

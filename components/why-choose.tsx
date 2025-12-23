@@ -90,7 +90,7 @@ export default function WhyChoose() {
                     {benefit.icon}
                   </div>
                   <div>
-                    <h4 className="font-bold text-gray-900 mb-1">
+                    <h4 className="font-bold text-2xl text-gray-900 mb-1">
                       {benefit.title}
                     </h4>
                     <p className="text-gray-600 text-sm leading-relaxed">

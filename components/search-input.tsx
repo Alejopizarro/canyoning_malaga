@@ -64,14 +64,14 @@ const SearchInput = () => {
   return (
     <div ref={searchRef} className="relative">
       {/* Desktop: Always open */}
-      <div className="hidden md:flex items-center rounded-full px-2 py-1 shadow-sm border border-gray-200/50 w-[188px] 2xl:w-[227px]">
-        <Search className="text-gray-500 h-3 w-3 flex-shrink-0" />
+      <div className="hidden md:flex items-center rounded-full px-2 py-1 border border-background w-[188px] 2xl:w-[227px]">
+        <Search className="text-background h-3 w-3 flex-shrink-0" />
         <input
           type="text"
           placeholder="Search Activities..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="bg-transparent flex-1 px-2 outline-none text-sm text-gray-300 placeholder:text-gray-400"
+          className="bg-transparent flex-1 px-2 outline-none text-sm text-background placeholder:text-background"
         />
         {searchQuery && (
           <button
@@ -87,10 +87,8 @@ const SearchInput = () => {
       <div className="md:hidden">
         <div
           className={cn(
-            "flex items-center bg-white/90 backdrop-blur-sm rounded-full transition-all duration-300 ease-in-out shadow-sm border border-gray-200/50",
-            isSearchOpen
-              ? "w-60 sm:w-72"
-              : "w-10 h-10 cursor-pointer hover:bg-gray-100"
+            "flex items-center backdrop-blur-sm rounded-full transition-all duration-300 ease-in-out shadow-sm border border-background",
+            isSearchOpen ? "w-60 sm:w-72" : "w-10 h-10 cursor-pointer"
           )}
           onClick={() => !isSearchOpen && setIsSearchOpen(true)}
         >
@@ -102,7 +100,7 @@ const SearchInput = () => {
                 placeholder="Search Activities..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="bg-transparent flex-1 px-3 py-2 outline-none text-sm text-gray-700 placeholder:text-gray-400 animate-in fade-in-0 slide-in-from-right-2 duration-300"
+                className="flex-1 px-3 py-2 outline-none text-sm text-gray-700 placeholder:text-gray-400 animate-in fade-in-0 slide-in-from-right-2 duration-300"
                 autoFocus
               />
               {searchQuery && (
@@ -156,7 +154,7 @@ const SearchInput = () => {
                     </div>
                   </div>
                   <span className="text-sm font-bold text-primary">
-                    {excursion.price}
+                    {excursion.price}€
                   </span>
                 </Link>
               ))}

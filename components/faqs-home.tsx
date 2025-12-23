@@ -53,12 +53,6 @@ export default function FaqsHome() {
               Find answers to your questions about our activities, safety and
               booking process.
             </p>
-            <Link
-              href="/faqs"
-              className="inline-flex items-center px-5 py-2.5 border-2 border-primary-dark text-primary-dark font-medium rounded-lg hover:bg-gray-900 hover:text-white transition-colors"
-            >
-              View all FAQs
-            </Link>
           </div>
 
           {/* Right Column - Accordion */}

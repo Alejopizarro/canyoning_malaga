@@ -122,4 +122,78 @@
   body {
     @apply bg-background text-foreground;
   }
+
+  /* Headings - Desktop */
+  h1 {
+    font-size: 56px;
+    line-height: 120%;
+  }
+
+  h2 {
+    font-size: 48px;
+    line-height: 120%;
+  }
+
+  h3 {
+    font-size: 40px;
+    line-height: 120%;
+  }
+
+  h4 {
+    font-size: 32px;
+    line-height: 130%;
+  }
+
+  h5 {
+    font-size: 24px;
+    line-height: 140%;
+  }
+
+  h6 {
+    font-size: 20px;
+    line-height: 150%;
+  }
+
+  /* Headings - Mobile (responsive) */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 40px;
+      line-height: 120%;
+    }
+
+    h2 {
+      font-size: 36px;
+      line-height: 120%;
+    }
+
+    h3 {
+      font-size: 32px;
+      line-height: 120%;
+    }
+
+    h4 {
+      font-size: 24px;
+      line-height: 140%;
+    }
+
+    h5 {
+      font-size: 20px;
+      line-height: 140%;
+    }
+
+    h6 {
+      font-size: 18px;
+      line-height: 140%;
+    }
+  }
+
+  /* Hide scrollbar */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }

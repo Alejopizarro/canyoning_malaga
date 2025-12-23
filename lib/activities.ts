@@ -6,7 +6,7 @@ export interface SheetExcursion {
   category: string;
   title: string;
   subtitle: string;
-  price: string;
+  price: number;
   isMostPopular: boolean;
   isTop3: boolean;
   linkBokun: string;
@@ -39,6 +39,7 @@ export interface Excursion extends SheetExcursion {
   province: string;
   category: string;
   categoryPath: string;
+  route?: string;
 }
 
 // Función para obtener los datos crudos del Sheet
@@ -47,7 +48,10 @@ async function fetchSheetData(): Promise<string[][]> {
   const gid = process.env.GOOGLE_SHEETS_GID || "0";
 
   console.log("🔍 Variables de entorno:");
-  console.log("  GOOGLE_SHEETS_ID:", sheetId ? `✅ ${sheetId}` : "❌ No definido");
+  console.log(
+    "  GOOGLE_SHEETS_ID:",
+    sheetId ? `✅ ${sheetId}` : "❌ No definido"
+  );
   console.log("  GOOGLE_SHEETS_GID:", gid);
 
   if (!sheetId) {
@@ -138,7 +142,7 @@ function parseSheetExcursions(rows: string[][]): SheetExcursion[] {
       category: row[2] || "",
       title: row[3] || "",
       subtitle: row[4] || "",
-      price: row[5] || "",
+      price: parseFloat(row[5]) || 0,
       isMostPopular: row[6]?.toUpperCase() === "TRUE",
       isTop3: row[7]?.toUpperCase() === "TRUE",
       linkBokun: row[8] || "",
@@ -163,7 +167,10 @@ export async function getExcursions(): Promise<Excursion[]> {
     console.log("✅ fetchSheetData completado, filas obtenidas:", rows.length);
 
     const sheetExcursions = parseSheetExcursions(rows);
-    console.log("✅ parseSheetExcursions completado, excursiones:", sheetExcursions.length);
+    console.log(
+      "✅ parseSheetExcursions completado, excursiones:",
+      sheetExcursions.length
+    );
     console.log("📦 Primera excursión parseada:", sheetExcursions[0]);
 
     const excursions: Excursion[] = sheetExcursions.map((sheetData) => {
@@ -171,14 +178,29 @@ export async function getExcursions(): Promise<Excursion[]> {
       const complementary =
         complementaryData[sheetData.slug] || defaultComplementaryData;
 
+      // Combinar datos: complementarios primero, luego sobrescribir con campos específicos del Sheet
       return {
         ...defaultComplementaryData,
         ...complementary,
-        ...sheetData,
+        // Solo tomar campos específicos del Sheet que queremos sobrescribir
+        id: sheetData.id,
+        slug: sheetData.slug,
+        title: sheetData.title,
+        subtitle: sheetData.subtitle,
+        price: sheetData.price,
+        isMostPopular: sheetData.isMostPopular,
+        isTop3: sheetData.isTop3,
+        linkBokun: sheetData.linkBokun,
+        linkFotos: sheetData.linkFotos,
+        linkDescripcion: sheetData.linkDescripcion,
+        // category viene de complementary-data, NO del Sheet
         route: sheetData.slug,
       } as Excursion;
     });
-    console.log("✅ getExcursions completado, total excursiones:", excursions.length);
+    console.log(
+      "✅ getExcursions completado, total excursiones:",
+      excursions.length
+    );
     return excursions;
   } catch (error) {
     console.error("❌ Error al cargar excursiones desde Google Sheets:", error);

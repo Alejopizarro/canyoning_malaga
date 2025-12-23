@@ -15,7 +15,7 @@ const certifications = [
   },
   {
     name: "AEGM - Asociación Española de Guías de Montaña",
-    logo: "/barrancos.jpg",
+    logo: "/aegm.png",
   },
 ];
 
@@ -25,7 +25,7 @@ export default function BannerCertified() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-8">
           {/* Title */}
-          <h3 className="text-xl sm:text-2xl font-bold text-gray-900 whitespace-nowrap">
+          <h3 className="font-bold text-gray-900 whitespace-nowrap">
             We Are Certified By
           </h3>
 

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useRef } from "react";
 import { Excursion } from "@/lib/activities";
+import { ArrowRight } from "lucide-react";
 
 interface AllActivitiesCarouselProps {
   excursions: Excursion[];
@@ -47,11 +48,11 @@ const ActivitiesCarousel = ({ excursions }: AllActivitiesCarouselProps) => {
           {excursions.map((excursion) => (
             <div
               key={excursion.id}
-              className="flex-shrink-0 w-[250px] md:w-[220px]"
+              className="flex-shrink-0 h-[484px] w-[308px]"
             >
-              <article className="bg-white rounded-xl overflow-hidden border border-gray-100 hover:shadow-lg transition-shadow duration-300">
+              <article className="overflow-hidden">
                 {/* Image */}
-                <div className="relative h-40 bg-gray-200 overflow-hidden">
+                <div className="relative h-[364px] bg-gray-200 overflow-hidden">
                   <Image
                     src={excursion.mainImage.src}
                     alt={excursion.mainImage.alt}
@@ -61,7 +62,7 @@ const ActivitiesCarousel = ({ excursions }: AllActivitiesCarouselProps) => {
                 </div>
 
                 {/* Content */}
-                <div className="p-3">
+                <div className="py-4 px-2 flex flex-col space-y-4">
                   {/* Title & Price Row */}
                   <div className="flex justify-between items-start mb-1">
                     <h3 className="text-sm line-clamp-1 font-bold text-gray-900 leading-tight">
@@ -80,9 +81,9 @@ const ActivitiesCarousel = ({ excursions }: AllActivitiesCarouselProps) => {
                   {/* Button */}
                   <Link
                     href={`/${excursion.categoryPath}/${excursion.slug}`}
-                    className="mt-3 w-full inline-flex items-center justify-center px-4 py-2 border-2 border-teal-500 text-teal-500 hover:bg-teal-500 hover:text-white text-sm font-semibold rounded-lg transition-all duration-300"
+                    className="mt-1 flex items-center text-primary hover:underline hover:text-primary-dark text-sm font-semibold"
                   >
-                    More Info
+                    More Information <ArrowRight className="ml-1" size={15} />
                   </Link>
                 </div>
               </article>

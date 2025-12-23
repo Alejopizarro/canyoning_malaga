@@ -2,52 +2,25 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import Link from "next/link";
+import { X, ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
+import { Excursion } from "@/lib/activities";
 
-const galleryImages = [
-  {
-    src: "/buitreras-1.png",
-    alt: "Canyoning in crystal clear waters",
-  },
-  {
-    src: "/calzadillas-2.jpg",
-    alt: "Group rappelling down waterfall",
-  },
-  {
-    src: "/Casares-1.jpg",
-    alt: "Jumping into natural pool",
-  },
-  {
-    src: "/El-chorro-2.jpg",
-    alt: "Climbing through canyon rocks",
-  },
-  {
-    src: "/guadalmina-1.webp",
-    alt: "Swimming through narrow canyon",
-  },
-  {
-    src: "/VF-Ronda-1",
-    alt: "Via ferrata climbing",
-  },
-  {
-    src: "/rio-verde-3.jpg",
-    alt: "Group photo at canyon entrance",
-  },
-  {
-    src: "/rio-verde-1.jpg",
-    alt: "Sliding down natural water slide",
-  },
-  {
-    src: "/tajo-ronda-1",
-    alt: "Exploring hidden caves",
-  },
-  {
-    src: "/la-concha-2.jpg",
-    alt: "Sunset at the canyon",
-  },
-];
+interface AdventureGalleryProps {
+  excursions: Excursion[];
+}
 
-export default function AdventureGallery() {
+export default function AdventureGallery({
+  excursions,
+}: AdventureGalleryProps) {
+  // Extraer todas las mainImage de las excursiones
+  const galleryImages = excursions.map((excursion) => ({
+    src: excursion.mainImage.src,
+    alt: excursion.mainImage.alt,
+    title: excursion.title,
+    categoryPath: excursion.categoryPath,
+    slug: excursion.slug,
+  }));
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -86,7 +59,7 @@ export default function AdventureGallery() {
 
   return (
     <>
-      <section className="py-16 sm:py-24 px-4 sm:px-8 lg:px-16 bg-white">
+      <section className="py-16 sm:py-24 px-4 sm:px-8 lg:px-16 bg-background">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="text-center mb-10">
@@ -215,7 +188,7 @@ export default function AdventureGallery() {
 
           {/* Main Image */}
           <div
-            className="relative w-full h-full max-w-5xl max-h-[80vh] mx-4"
+            className="relative w-full h-full max-w-5xl max-h-[70vh] mx-4"
             onClick={(e) => e.stopPropagation()}
           >
             <Image
@@ -227,13 +200,25 @@ export default function AdventureGallery() {
             />
           </div>
 
+          {/* Excursion Link */}
+          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-50">
+            <Link
+              href={`/${galleryImages[currentIndex].categoryPath}/${galleryImages[currentIndex].slug}`}
+              className="flex items-center gap-2 text-white hover:underline"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <span>{galleryImages[currentIndex].title}</span>
+              <ExternalLink className="w-4 h-4" />
+            </Link>
+          </div>
+
           {/* Image Counter */}
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white text-sm bg-black/50 px-4 py-2 ">
             {currentIndex + 1} / {galleryImages.length}
           </div>
 
           {/* Thumbnails */}
-          <div className="absolute bottom-16 left-1/2 -translate-x-1/2 flex gap-2 overflow-x-auto max-w-[90vw] pb-2">
+          <div className="absolute bottom-16 left-1/2 -translate-x-1/2 flex gap-2 overflow-x-auto max-w-[90vw] pb-2 scrollbar-hide">
             {galleryImages.map((image, index) => (
               <button
                 key={index}

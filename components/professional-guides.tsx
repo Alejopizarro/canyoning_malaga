@@ -150,7 +150,7 @@ const GuideCard = ({ guide }: { guide: Guide }) => (
 
 export default function ProfessionalGuides() {
   return (
-    <section className="py-16 sm:py-24 px-4 sm:px-8 lg:px-16 bg-white">
+    <section className="py-16 sm:py-24 px-4 sm:px-8 lg:px-16 bg-background">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="mb-10">
@@ -180,10 +180,10 @@ export default function ProfessionalGuides() {
             Explore exciting career opportunities with us.
           </p>
           <a
-            href="/careers"
+            href="mailto:tuurcanyoning@gmail.com"
             className="inline-flex items-center px-5 py-2.5 border-2 border-gray-900 text-gray-900 font-medium rounded-lg hover:bg-gray-900 hover:text-white transition-colors"
           >
-            Open positions
+            Send Us Your CV
           </a>
         </div>
       </div>

@@ -5,18 +5,42 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import FiltersControlsExcursions from "../filters-controls";
-import { Excursion } from "../../../data";
+import { Excursion } from "@/lib/activities";
 
 interface FilterControlsMobileProps {
   setFilterCategory: (category: string) => void;
   setFilterLevel: (level: string) => void;
   setFilterProvince: (province: string) => void;
+  setFilterTop3: (isTop3: string) => void;
+  setFilterMostPopular: (isMostPopular: string) => void;
+  setSortByPrice: (sort: string) => void;
+  filterCategory: string;
+  filterLevel: string;
+  filterProvince: string;
+  filterTop3: string;
+  filterMostPopular: string;
+  sortByPrice: string;
+  onClearAll: () => void;
   excursions: Excursion[];
 }
 
 const FilterControlsMobile = (props: FilterControlsMobileProps) => {
-  const { setFilterCategory, setFilterLevel, setFilterProvince, excursions } =
-    props;
+  const {
+    setFilterCategory,
+    setFilterLevel,
+    setFilterProvince,
+    setFilterTop3,
+    setFilterMostPopular,
+    setSortByPrice,
+    filterCategory,
+    filterLevel,
+    filterProvince,
+    filterTop3,
+    filterMostPopular,
+    sortByPrice,
+    onClearAll,
+    excursions,
+  } = props;
 
   return (
     <>
@@ -30,6 +54,16 @@ const FilterControlsMobile = (props: FilterControlsMobileProps) => {
               setFilterCategory={setFilterCategory}
               setFilterLevel={setFilterLevel}
               setFilterProvince={setFilterProvince}
+              setFilterTop3={setFilterTop3}
+              setFilterMostPopular={setFilterMostPopular}
+              setSortByPrice={setSortByPrice}
+              filterCategory={filterCategory}
+              filterLevel={filterLevel}
+              filterProvince={filterProvince}
+              filterTop3={filterTop3}
+              filterMostPopular={filterMostPopular}
+              sortByPrice={sortByPrice}
+              onClearAll={onClearAll}
               excursions={excursions}
             />
           </AccordionContent>
