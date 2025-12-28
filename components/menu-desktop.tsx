@@ -27,11 +27,11 @@ const MenuDesktop = ({
     <NavigationMenu>
       <NavigationMenuList className="space-x-0">
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="text-xs font-medium text-white/90 hover:text-white bg-transparent hover:bg-white/10 data-[state=open]:bg-white/10 py-1.5 px-2.5 rounded-full transition-all whitespace-nowrap">
+          <NavigationMenuTrigger className="text-xs font-medium text-white/90 hover:text-white bg-transparent hover:bg-white/10 data-[state=open]:bg-white/10 px-2.5 rounded-full transition-all whitespace-nowrap">
             Activities
           </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <div className="w-[800px] shadow-xl">
+            <div className="bg-neutral-600/30 backdrop-blur-md p-2 w-[800px] shadow-xl">
               <div className="grid grid-cols-4 gap-3 max-h-[500px] overflow-y-auto">
                 {/* Canyoning */}
                 <div className="space-y-2">
@@ -51,7 +51,7 @@ const MenuDesktop = ({
                       href={`/${excursion.categoryPath || "canyoning"}/${
                         excursion.route
                       }`}
-                      className="block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-gray-100 hover:text-primary focus:bg-gray-100"
+                      className="block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-neutral-600/80 hover:text-primary focus:bg-gray-100"
                     >
                       <div className="text-sm font-medium leading-tight text-background">
                         {excursion.title}
@@ -78,7 +78,7 @@ const MenuDesktop = ({
                       href={`/${excursion.categoryPath || "via-ferrata"}/${
                         excursion.route
                       }`}
-                      className="block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-gray-100 hover:text-primary focus:bg-gray-100"
+                      className="block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-neutral-600/80 hover:text-primary focus:bg-gray-100"
                     >
                       <div className="text-sm font-medium leading-tight text-background">
                         {excursion.title}
@@ -105,7 +105,7 @@ const MenuDesktop = ({
                       href={`/${excursion.categoryPath || "hiking"}/${
                         excursion.route
                       }`}
-                      className="block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-gray-100 hover:text-primary focus:bg-gray-100"
+                      className="block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-neutral-600/80 hover:text-primary focus:bg-gray-100"
                     >
                       <div className="text-sm font-medium leading-tight text-background">
                         {excursion.title}
@@ -132,7 +132,7 @@ const MenuDesktop = ({
                       href={`/${excursion.categoryPath || "activities"}/${
                         excursion.route
                       }`}
-                      className="block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-gray-100 hover:text-primary focus:bg-gray-100"
+                      className="block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-neutral-600/80 hover:text-primary focus:bg-gray-100"
                     >
                       <div className="text-sm font-medium leading-tight text-background">
                         {excursion.title}
@@ -146,7 +146,7 @@ const MenuDesktop = ({
               <div className="mt-4 pt-3 border-t border-gray-200">
                 <Link
                   href="/activities"
-                  className="flex items-center justify-center rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-gray-100 text-primary-light font-semibold"
+                  className="flex items-center justify-center rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-neutral-600/80 text-primary-light font-semibold"
                 >
                   <div className="text-sm leading-tight">
                     See all activities →

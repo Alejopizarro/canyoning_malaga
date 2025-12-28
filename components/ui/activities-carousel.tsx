@@ -38,7 +38,7 @@ const ActivitiesCarousel = ({ excursions }: AllActivitiesCarouselProps) => {
   return (
     <>
       {/* Carousel Container */}
-      <div className="relative max-w-7xl mx-auto">
+      <div className="relative max-w-[1440px] mx-auto">
         {/* Cards Carousel */}
         <div
           ref={carouselRef}
@@ -48,33 +48,33 @@ const ActivitiesCarousel = ({ excursions }: AllActivitiesCarouselProps) => {
           {excursions.map((excursion) => (
             <div
               key={excursion.id}
-              className="flex-shrink-0 h-[484px] w-[308px]"
+              className="flex-shrink-0 h-[484px] w-[280px] md:w-[calc((100%-3rem)/4.25)]"
             >
               <article className="overflow-hidden">
                 {/* Image */}
-                <div className="relative h-[364px] bg-gray-200 overflow-hidden">
+                <div className="relative h-[364px] overflow-hidden">
                   <Image
                     src={excursion.mainImage.src}
                     alt={excursion.mainImage.alt}
                     fill
-                    className="object-cover hover:scale-105 transition-transform duration-500"
+                    className="object-cover rounded-2xl"
                   />
                 </div>
 
                 {/* Content */}
-                <div className="py-4 px-2 flex flex-col space-y-4">
+                <div className="py-4 px-2 md:px-0 flex flex-col space-y-2">
                   {/* Title & Price Row */}
-                  <div className="flex justify-between items-start mb-1">
-                    <h3 className="text-sm line-clamp-1 font-bold text-gray-900 leading-tight">
+                  <div className="flex justify-between items-baseline mb-1">
+                    <h3 className="text-xl line-clamp-1 mt-0.5 font-semibold text-gray-900">
                       {excursion.title}
                     </h3>
-                    <span className="text-sm font-bold text-gray-900 whitespace-nowrap ml-2">
-                      {excursion.price} €
+                    <span className="text-xl font-extrabold text-primary-dark flex items-start">
+                      {excursion.price} <span className="ml-0.5 mt-0.5">€</span>
                     </span>
                   </div>
 
                   {/* Category */}
-                  <span className="text-xs text-gray-400">
+                  <span className="text-md  text-gray-400">
                     {excursion.category}
                   </span>
 

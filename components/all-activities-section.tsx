@@ -12,9 +12,9 @@ export default function AllActivitiesSection({
   excursions,
 }: AllActivitiesSectionProps) {
   return (
-    <section className="relative z-10 w-full bg-background py-12 px-4 md:px-8 lg:px-16">
+    <section className="relative z-10 w-full bg-background py-12 px-4 md:px-8 max-w-[1440px] mx-auto">
       {/* Header */}
-      <div className="max-w-7xl mx-auto mb-8">
+      <div className="mb-8">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <div>
             <span className="text-sm text-gray-500 uppercase tracking-wide">

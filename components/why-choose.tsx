@@ -1,10 +1,13 @@
+"use client";
 import Image from "next/image";
+import { Button } from "./ui/button";
+import { useRouter } from "next/navigation";
 
 const benefits = [
   {
     icon: (
       <svg
-        className="w-6 h-6 text-emerald-500"
+        className="w-6 h-6 text-primary"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -24,7 +27,7 @@ const benefits = [
   {
     icon: (
       <svg
-        className="w-6 h-6 text-emerald-500"
+        className="w-6 h-6 text-primary"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -44,7 +47,7 @@ const benefits = [
   {
     icon: (
       <svg
-        className="w-6 h-6 text-emerald-500"
+        className="w-6 h-6 text-primary"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -64,13 +67,15 @@ const benefits = [
 ];
 
 export default function WhyChoose() {
+  const router = useRouter();
+
   return (
-    <section className="py-16 sm:py-24 px-4 sm:px-8 lg:px-16 bg-white">
-      <div className="max-w-7xl mx-auto">
+    <section className="max-w-[1440px] py-16 sm:py-24 px-4 sm:px-8 mx-auto bg-background">
+      <div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Right - Content */}
           <div className="order-1 lg:order-2">
-            <p className="text-emerald-600 font-medium mb-2">Our Company</p>
+            <p className="text-primary font-medium mb-2">Our Company</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
               Why Choose Us?
             </h2>
@@ -102,27 +107,21 @@ export default function WhyChoose() {
             </div>
 
             {/* CTA Button */}
-            <a
-              href="/about-us"
-              className="inline-block mt-8 px-6 py-3 bg-emerald-500 text-white font-medium rounded-lg hover:bg-emerald-600 transition-colors"
+            <Button
+              className="mt-8"
+              size="lg"
+              onClick={() => router.push("/about-us")}
             >
               About Us
-            </a>
+            </Button>
           </div>
-          <div className="relative w-full max-w-[544px] h-[544px] mx-auto lg:mx-0 order-2 lg:order-1">
+          <div className="relative w-full max-w-[544px] h-[400px] sm:h-[500px] lg:h-[600px] mx-auto lg:mx-0 order-2 lg:order-1">
             {/* Background Image */}
             <Image
-              src="/men-looking-up.jpg"
+              src="/trip-advisor.png"
               alt="TripAdvisor Travellers Choice Awards 2024"
               fill
-              className="object-cover sm:w-[544px] sm:h-[544px]"
-            />
-            {/* TripAdvisor Overlay */}
-            <Image
-              src="/tripadvisor-overlay.png"
-              alt="TripAdvisor Award Overlay"
-              fill
-              className="object-contain sm:w-[544px] sm:h-[544px]"
+              className="w-full rounded-2xl"
             />
           </div>
         </div>

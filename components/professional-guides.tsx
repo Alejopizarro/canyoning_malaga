@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Carousel from "./ui/carousel";
+import { useState } from "react";
 
 interface Guide {
   name: string;
@@ -130,28 +133,51 @@ const guides: Guide[] = [
   },
 ];
 
-const GuideCard = ({ guide }: { guide: Guide }) => (
-  <article>
-    {/* Image */}
-    <div className="relative h-48 bg-gray-200 rounded-full w-48 mx-auto mb-4 overflow-hidden">
-      <Image src={guide.image} alt={guide.name} fill className="object-cover" />
-    </div>
+const GuideCard = ({ guide }: { guide: Guide }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
 
-    {/* Content */}
-    <div className="text-left">
-      <h3 className="text-base font-bold text-gray-900">{guide.name}</h3>
-      <p className="text-sm text-emerald-600 font-medium mb-3">{guide.role}</p>
-      <p className="text-xs text-gray-500 leading-relaxed line-clamp-6">
-        {guide.description}
-      </p>
-    </div>
-  </article>
-);
+  return (
+    <article className="flex flex-col h-full">
+      {/* Image */}
+      <div className="relative h-48 bg-gray-200 rounded-full w-48 mx-auto mb-4 overflow-hidden flex-shrink-0">
+        <Image
+          src={guide.image}
+          alt={guide.name}
+          fill
+          className="object-cover"
+        />
+      </div>
+
+      {/* Content */}
+      <div className="text-left flex-1 flex flex-col">
+        <h3 className="text-base font-bold text-gray-900">{guide.name}</h3>
+        <p className="text-sm text-primary font-medium mb-3">{guide.role}</p>
+        <div className="flex-1">
+          <p
+            className={`text-xs text-gray-500 leading-relaxed ${
+              isExpanded ? "" : "line-clamp-6"
+            }`}
+          >
+            {guide.description}
+          </p>
+          {guide.description.length > 200 && (
+            <button
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="mt-2 text-xs text-primary hover:text-primary-dark font-semibold transition-colors"
+            >
+              {isExpanded ? "See less" : "See more"}
+            </button>
+          )}
+        </div>
+      </div>
+    </article>
+  );
+};
 
 export default function ProfessionalGuides() {
   return (
-    <section className="py-16 sm:py-24 px-4 sm:px-8 lg:px-16 bg-background">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-16 sm:py-24 px-4 sm:px-8 max-w-[1440px] mx-auto bg-background">
+      <div>
         {/* Header */}
         <div className="mb-10">
           <p className="text-gray-500 text-sm mb-2">Our Team</p>

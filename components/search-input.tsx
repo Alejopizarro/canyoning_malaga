@@ -120,7 +120,7 @@ const SearchInput = () => {
 
       {/* Search results */}
       {searchQuery && (
-        <div className="absolute top-12 mt-2 -right-13 md:right-0 w-screen max-w-[calc(100vw-2rem)] sm:max-w-md md:w-96 bg-neutral-600/80 backdrop-blur-md rounded-2xl shadow-xl border border-gray-200 max-h-96 overflow-y-auto z-40 animate-in fade-in-0 slide-in-from-top-2 duration-300">
+        <div className="absolute top-12 mt-2 -right-13 md:right-0 w-screen backdrop-blur-md max-w-[calc(100vw-2rem)] sm:max-w-md md:w-96 bg-neutral-600/30 backdrop-blur-md rounded-2xl shadow-xl border border-white/10 max-h-96 overflow-y-auto z-40 animate-in fade-in-0 slide-in-from-top-2 duration-300">
           {searchResults.length > 0 ? (
             <div className="p-2">
               <p className="text-xs text-background px-3 py-2">
@@ -135,7 +135,7 @@ const SearchInput = () => {
                     setIsSearchOpen(false);
                     setSearchQuery("");
                   }}
-                  className="flex items-start gap-3 p-3 hover:bg-neutral-600/90 rounded-lg transition-colors group"
+                  className="flex items-start gap-3 p-3 hover:bg-neutral-600/80 rounded-lg transition-colors group"
                 >
                   <div className="flex-1">
                     <h4 className="font-semibold text-sm text-background transition-colors">
@@ -173,7 +173,7 @@ const SearchInput = () => {
             </div>
           ) : (
             <div className="p-6 text-center">
-              <p className="text-gray-500 text-sm">
+              <p className="text-background text-sm">
                 No results found for {searchQuery}
               </p>
             </div>

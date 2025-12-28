@@ -18,11 +18,11 @@ export default async function Home() {
     <>
       <HeroHome />
       <TopActivitiesHome />
+      <TrustindexWidget />
       <BannerTeamBuilding />
       <AllActivitiesSection excursions={excursions} />
       <WhyChoose />
       <BannerCertified />
-      <TrustindexWidget />
       <ProfessionalGuides />
       <BannerContact />
       <FaqsHome />

@@ -71,10 +71,12 @@ const levelConfig = {
 
 const TopActivitiesHome = () => {
   return (
-    <section className="relative w-full bg-background py-12 px-4 md:px-8 lg:px-16 flex flex-col items-center justify-start">
+    <section className="relative w-full bg-background py-12 max-w-[1440px] mx-auto px-4 md:px-8 flex flex-col items-center justify-start">
       {/* Header */}
       <div className="relative text-center mb-10">
-        <span className="block text-sm mb-2">{getSeasonLabel()}</span>
+        <span className="block text-md md:text-xl mb-2">
+          {getSeasonLabel()}
+        </span>
         <h2 className="text-3xl md:text-5xl font-bold leading-tight">
           Top Outdoor Activities Of
           <br />
@@ -83,16 +85,22 @@ const TopActivitiesHome = () => {
       </div>
 
       {/* Cards Grid */}
-      <div className="relative w-full max-w-[1440px] grid grid-cols-1 md:grid-cols-3 gap-6 pb-16">
-        {topActivities.map((activity) => (
+      <div className="relative w-full grid grid-cols-1 md:grid-cols-3 gap-6">
+        {topActivities.map((activity, index) => (
           <Link
             key={activity.slug}
             href={`/${activity.categoryPath}/${activity.slug}`}
-            className="group"
+            className={`group ${
+              index === 0
+                ? "order-2 md:order-1"
+                : index === 1
+                ? "order-1 md:order-2"
+                : "order-3"
+            }`}
           >
             <article className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
               {/* Image Container */}
-              <div className="relative h-44 sm:h-52 overflow-hidden">
+              <div className="relative h-56 sm:h-64 md:h-72 overflow-hidden">
                 <Image
                   src={activity.image}
                   alt={`${activity.title} - ${activity.category}`}

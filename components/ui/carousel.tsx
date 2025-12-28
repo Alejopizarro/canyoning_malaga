@@ -55,11 +55,11 @@ const Carousel = ({
       {/* Cards Container */}
       <div
         ref={carouselRef}
-        className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth pb-4"
+        className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth pb-4 items-stretch"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
         {children.map((child, index) => (
-          <div key={index} className={`flex-shrink-0 ${itemWidth}`}>
+          <div key={index} className={`flex-shrink-0 ${itemWidth} flex`}>
             {child}
           </div>
         ))}

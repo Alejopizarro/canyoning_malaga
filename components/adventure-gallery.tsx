@@ -59,8 +59,8 @@ export default function AdventureGallery({
 
   return (
     <>
-      <section className="py-16 sm:py-24 px-4 sm:px-8 lg:px-16 bg-background">
-        <div className="max-w-7xl mx-auto">
+      <section className="py-16 sm:py-24 px-4 sm:px-8 max-w-[1440px] mx-auto bg-background">
+        <div>
           {/* Header */}
           <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
@@ -84,7 +84,7 @@ export default function AdventureGallery({
                   src={visibleImages[0].src}
                   alt={visibleImages[0].alt}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover rounded-2xl transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
               </div>
@@ -98,7 +98,7 @@ export default function AdventureGallery({
                   src={visibleImages[1].src}
                   alt={visibleImages[1].alt}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover rounded-2xl transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
               </div>
@@ -115,7 +115,7 @@ export default function AdventureGallery({
                   src={visibleImages[2].src}
                   alt={visibleImages[2].alt}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover rounded-2xl transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
               </div>
@@ -129,7 +129,7 @@ export default function AdventureGallery({
                   src={visibleImages[3].src}
                   alt={visibleImages[3].alt}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover rounded-2xl transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
 
