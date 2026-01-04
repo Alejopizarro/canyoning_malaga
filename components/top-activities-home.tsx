@@ -1,67 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getSeasonLabel } from "@/lib/season";
-
-interface Activity {
-  category: string;
-  categoryPath: string;
-  title: string;
-  slug: string;
-  days: string;
-  price: string;
-  description: string;
-  image: string;
-  level: "easy" | "moderate" | "advanced";
-  duration: string;
-  location: string;
-  isMostPopular?: boolean;
-}
-
-const topActivities: Activity[] = [
-  {
-    category: "Kayaking",
-    categoryPath: "more-activities",
-    title: "Puerto Banús",
-    slug: "kayak-puerto-banus",
-    days: "Tue | Thu | Sat",
-    price: "40 €",
-    description: "Enjoy a beautiful sunrise over the Mediterranean waters.",
-    image: "/kayak-banus-2.png",
-    level: "easy",
-    duration: "2 hr",
-    location: "Marbella",
-    isMostPopular: false,
-  },
-  {
-    category: "Canyoning",
-    categoryPath: "canyoning",
-    title: "Guadalmina",
-    slug: "guadalmina",
-    days: "Every Day!",
-    price: "45 €",
-    description:
-      "Enjoy the best canyoning experience near Marbella, all year round and for all levels.",
-    image: "/guadalmina-1.webp",
-    level: "easy",
-    duration: "3 hr",
-    location: "Marbella",
-    isMostPopular: true,
-  },
-  {
-    category: "Via Ferrata",
-    categoryPath: "via-ferrata",
-    title: "Casares",
-    slug: "casares",
-    days: "Fridays",
-    price: "45 €",
-    description: "Explore Málaga White Villages from another angle.",
-    image: "/casares-1.webp",
-    level: "moderate",
-    duration: "2.5 hr",
-    location: "Casares",
-    isMostPopular: false,
-  },
-];
+import { getTop3Excursions } from "@/lib/activities";
 
 const levelConfig = {
   easy: "All Levels",
@@ -69,7 +9,16 @@ const levelConfig = {
   advanced: "Advanced",
 };
 
-const TopActivitiesHome = () => {
+const TopActivitiesHome = async () => {
+  const topActivities = await getTop3Excursions();
+
+  // Reordenar para que "Most Popular" esté en el medio (desktop) y primero (mobile)
+  const sortedActivities = [...topActivities.slice(0, 3)].sort((a, b) => {
+    if (a.isMostPopular) return -1;
+    if (b.isMostPopular) return 1;
+    return 0;
+  });
+
   return (
     <section className="relative overflow-hidden z-10 w-full bg-background py-12 max-w-[1440px] mx-auto px-4 md:px-8 flex flex-col items-center justify-start">
       {/* Header */}
@@ -86,15 +35,15 @@ const TopActivitiesHome = () => {
 
       {/* Cards Grid */}
       <div className="relative w-full grid grid-cols-1 md:grid-cols-3 gap-6">
-        {topActivities.map((activity, index) => (
+        {sortedActivities.map((activity, index) => (
           <Link
             key={activity.slug}
             href={`/${activity.categoryPath}/${activity.slug}`}
             className={`group ${
               index === 0
-                ? "order-2 md:order-1"
-                : index === 1
                 ? "order-1 md:order-2"
+                : index === 1
+                ? "order-2 md:order-1"
                 : "order-3"
             }`}
           >
@@ -102,8 +51,8 @@ const TopActivitiesHome = () => {
               {/* Image Container */}
               <div className="relative h-56 sm:h-64 md:h-72 overflow-hidden">
                 <Image
-                  src={activity.image}
-                  alt={`${activity.title} - ${activity.category}`}
+                  src={activity.mainImage.src}
+                  alt={activity.mainImage.alt}
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -145,7 +94,7 @@ const TopActivitiesHome = () => {
                     {activity.title}
                   </h3>
                   <span className="text-lg font-bold text-gray-900">
-                    {activity.price}
+                    {activity.price} €
                   </span>
                 </div>
 
@@ -187,7 +136,7 @@ const TopActivitiesHome = () => {
                       <circle cx="12" cy="12" r="10" />
                       <path d="M12 6v6l4 2" />
                     </svg>
-                    {activity.duration}
+                    {activity.duration} hr
                   </span>
 
                   {/* Location */}
@@ -204,7 +153,7 @@ const TopActivitiesHome = () => {
                       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
                       <circle cx="12" cy="10" r="3" />
                     </svg>
-                    {activity.location}
+                    {activity.ubication}
                   </span>
                 </div>
               </div>

@@ -3,15 +3,15 @@ import Image from "next/image";
 const certifications = [
   {
     name: "Federación Española de Deportes de Montaña",
-    logo: "/uimla.png",
+    logo: "/uimla.webp",
   },
   {
     name: "Ministerio de Educación y Formación Profesional",
-    logo: "/ministerio.png",
+    logo: "/ministerio.webp",
   },
   {
     name: "ICAN - International Canyoning Association",
-    logo: "/guias.png",
+    logo: "/guias.webp",
   },
   {
     name: "AEGM - Asociación Española de Guías de Montaña",

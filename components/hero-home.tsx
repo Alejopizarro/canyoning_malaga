@@ -17,7 +17,7 @@ const HeroHome = () => {
       <div className="absolute inset-0 bg-black/20 z-1" />
 
       {/* Contenedor: Jumpers, Texto y Botón */}
-      <div className="absolute top-[40vh] sm:top-[12vh] xl:top-[25vh] left-0 w-full">
+      <div className="absolute top-[20vh] sm:top-[12vh] xl:top-[25vh] left-0 w-full">
         {/* Jumpers */}
         <div className="relative w-full z-3 h-[348px] sm:h-[420px]">
           <Image
@@ -40,7 +40,7 @@ const HeroHome = () => {
             <span className="block text-[4rem] relative z-2 sm:text-[6rem] md:text-[7rem]">
               Your Next Adventure
             </span>
-            <span className="block text-[4rem] -mt-2 sm:-mt-4  relative sm:z-3 sm:text-[6rem] md:text-[7rem]">
+            <span className="block text-[4rem] -mt-2 sm:-mt-4 z-2 relative sm:z-3 sm:text-[6rem] md:text-[7rem]">
               Begins Here!
             </span>
           </h1>

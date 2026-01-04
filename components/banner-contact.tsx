@@ -6,7 +6,7 @@ export default function BannerContact() {
     <section className="relative h-[300px] sm:h-[350px] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <Image
-        src="/banner-contact-bg.jpg"
+        src="/banner-contact-bg.webp"
         alt="Adventure background"
         fill
         className="object-cover"
