@@ -7,7 +7,6 @@ type ComplementaryData = Omit<
   | "id"
   | "slug"
   | "title"
-  | "subtitle"
   | "price"
   | "isMostPopular"
   | "isTop3"
@@ -19,6 +18,7 @@ type ComplementaryData = Omit<
 export const complementaryData: Record<string, ComplementaryData> = {
   // ==================== CANYONING ====================
   guadalmina: {
+    subtitle: "The Best Canyoning Experience Near Marbella",
     description:
       "Perfect canyoning descent for beginners. Close to Marbella, ideal for families. Available all year round.",
     videoYoutube: "",
@@ -33,7 +33,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
         alt: "Guadalmina canyon - The narrowest canyon, guadalmina",
       },
       {
-        src: "/guadalmina-3.web",
+        src: "/guadalmina-3.webp",
         alt: "Guadalmina canyon - Jump into the guadalmina canyon",
       },
       {
@@ -57,30 +57,52 @@ export const complementaryData: Record<string, ComplementaryData> = {
   },
 
   "rio-verde": {
+    subtitle:
+      "Rio Verde Canyoning: Turquoise Water Jumps Near Granada & Málaga",
     description:
       "One of the best canyons in Andalusia. Turquoise waters, optional jumps and rappelling. Fun guaranteed.",
     videoYoutube: "",
-    days: "Wednesday",
+    days: "From March 1st to November 30th",
     mainImage: {
-      src: "/rio-verde-1.jpg",
+      src: "/rio-verde-1.webp",
       alt: "Rio Verde canyon - One of the best canyons in Andalusia",
     },
     images: [
       {
-        src: "/rio-verde-2.jpg",
+        src: "/rio-verde-2.webp",
         alt: "Rio Verde canyon - Turquoise waters in rio verde canyon",
       },
       {
-        src: "/rio-verde-3.jpg",
+        src: "/rio-verde-3.webp",
         alt: "Rio Verde canyon - Rappelling down a waterfall in rio verde canyon",
       },
       {
-        src: "/rio-verde-4.jpg",
+        src: "/rio-verde-4.webp",
         alt: "Rio Verde canyon - Jumping into a natural pool in rio verde canyon",
       },
       {
-        src: "/rio-verde-5.jpg",
+        src: "/rio-verde-5.webp",
         alt: "Rio Verde canyon - Sliding down a natural water slide in rio verde canyon",
+      },
+      {
+        src: "/rio-verde-6.webp",
+        alt: "Rio Verde canyon - Beautiful landscapes in rio verde canyon",
+      },
+      {
+        src: "/rio-verde-7.webp",
+        alt: "Rio Verde canyon - Adventurers in rio verde canyon",
+      },
+      {
+        src: "/rio-verde-8.webp",
+        alt: "Rio Verde canyon - Crystal clear waters in rio verde canyon",
+      },
+      {
+        src: "/rio-verde-9.webp",
+        alt: "Rio Verde canyon - Nature in rio verde canyon",
+      },
+      {
+        src: "/rio-verde-10.webp",
+        alt: "Rio Verde canyon - Canyon walls in rio verde canyon",
       },
     ],
     isOffer: false,
@@ -88,13 +110,84 @@ export const complementaryData: Record<string, ComplementaryData> = {
     level: "moderate",
     province: "Granada",
     duration: 4.5,
-    ubication: "Otivar",
+    ubication: "Otivar, Granada",
     minimumAge: 9,
     category: "Canyoning",
     categoryPath: "canyoning",
   },
 
+  zarzalones: {
+    subtitle:
+      "Conquer Zarzalones: The 21m Waterfall Canyoning Near Marbella & Málaga",
+    description:
+      "Experience the thrill of Zarzalones canyon with its impressive 21m waterfall. Perfect for adventure seekers near Marbella & Málaga.",
+    videoYoutube: "",
+    days: "Thursday",
+    mainImage: {
+      src: "/zarzalones-1.webp",
+      alt: "Zarzalones canyon - The 21m Waterfall Canyoning Near Marbella & Málaga",
+    },
+    images: [
+      {
+        src: "/zarzalones-2.webp",
+        alt: "Zarzalones canyon - The 21m Waterfall Canyoning Near Marbella & Málaga",
+      },
+      {
+        src: "/zarzalones-4.webp",
+        alt: "Zarzalones canyon - Jumping into a natural pool in zarzalones canyon",
+      },
+      {
+        src: "/zarzalones-5.webp",
+        alt: "Zarzalones canyon - Sliding down a natural water slide in zarzalones canyon",
+      },
+      {
+        src: "/zarzalones-6.webp",
+        alt: "Zarzalones canyon - Beautiful landscapes in zarzalones canyon",
+      },
+      {
+        src: "/zarzalones-7.webp",
+        alt: "Zarzalones canyon - Adventurers in zarzalones canyon",
+      },
+      {
+        src: "/zarzalones-8.webp",
+        alt: "Zarzalones canyon - Crystal clear waters in zarzalones canyon",
+      },
+      {
+        src: "/zarzalones-9.webp",
+        alt: "Zarzalones canyon - Nature in zarzalones canyon",
+      },
+      {
+        src: "/zarzalones-10.webp",
+        alt: "Zarzalones canyon - Canyon walls in zarzalones canyon",
+      },
+      {
+        src: "/zarzalones-11.webp",
+        alt: "Zarzalones canyon - Canyon walls in zarzalones canyon",
+      },
+      {
+        src: "/zarzalones-12.webp",
+        alt: "Zarzalones canyon - Canyon walls in zarzalones canyon",
+      },
+      {
+        src: "/zarzalones-13.webp",
+
+        alt: "Zarzalones canyon - Canyon walls in zarzalones canyon",
+      },
+    ],
+    isOffer: false,
+    rating: { value: 4.9, reviews: 100 },
+    level: "moderate",
+    province: "Málaga",
+    duration: 4,
+    minimumAge: 9,
+    ubication: "Yunquera, Málaga (Sierra de las Nieves Natural Park)",
+    category: "Canyoning",
+    categoryPath: "canyoning",
+  },
+
   "rio-verde-xpro": {
+    subtitle:
+      "Advanced Canyoning in Rio Verde - Higher Jumps and Technical Rappelling",
     description:
       "Advanced version of Rio Verde. Pure adrenaline with higher jumps and technical rappelling. For experienced adventurers.",
     videoYoutube: "",
@@ -133,6 +226,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
   },
 
   "sima-del-diablo": {
+    subtitle: "Sima del Diablo in Málaga: a canyon for all ages",
     description:
       "Technical canyon near the Smurf Village. Higher rappels than Guadalmina. Ideal for intermediate level.",
     videoYoutube: "",
@@ -171,6 +265,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
   },
 
   buitreras: {
+    subtitle: "Buitreras Canyon in Malaga: an astonishing environment",
     description:
       "The Cathedral of Andalusian Canyons. Walls over 100 meters high. An unprecedented visual experience.",
     videoYoutube: "",
@@ -230,6 +325,8 @@ export const complementaryData: Record<string, ComplementaryData> = {
 
   // Slug actualizado según Sheet: "tajo-ronda" en vez de "tajo-de-ronda"
   "tajo-ronda": {
+    subtitle:
+      "Tajo River Canyon in Ronda: adventures in a thousand-year-old city",
     description:
       "Cross through the ancient city of Ronda. Privileged views of the New Bridge and historical monuments.",
     videoYoutube: "",
@@ -288,6 +385,8 @@ export const complementaryData: Record<string, ComplementaryData> = {
   },
 
   trevelez: {
+    subtitle:
+      "Trevelez Canyon in Granada: An intense canyon in the foothills of Sierra Nevada",
     description:
       "The highest level technical canyon in Andalusia. 14 rappels in Sierra Nevada. Only August and September.",
     videoYoutube: "",
@@ -330,6 +429,8 @@ export const complementaryData: Record<string, ComplementaryData> = {
   },
 
   calzadillas: {
+    subtitle:
+      "Calzadillas Canyon in Seville: The Best Place to Learn Canyoning",
     description:
       "Granite canyon in Sierra Norte. Three spectacular rappels. Perfect for autumn, winter and spring.",
     videoYoutube: "",
@@ -377,6 +478,8 @@ export const complementaryData: Record<string, ComplementaryData> = {
 
   // ==================== VIA FERRATA ====================
   ronda: {
+    subtitle:
+      "Via Ferrata in Ronda (Malaga) - This is the ideal via ferrata for families",
     description:
       "Family-friendly via ferrata at Tajo de Ronda. Spectacular views of the New Bridge. Ideal for beginners from 7 years old.",
     videoYoutube: "",
@@ -435,50 +538,40 @@ export const complementaryData: Record<string, ComplementaryData> = {
   },
 
   casares: {
+    subtitle:
+      "Via Ferrata in Casares with Stunning Views of Africa and Gibraltar",
     description:
       "Intermediate level with views of Africa and Gibraltar. Two monkey bridges and aerial traverses. 35 min from Marbella.",
     videoYoutube: "",
     days: "Mon | Fri",
     mainImage: {
-      src: "/Casares-1.jpg",
+      src: "/casares-1.webp",
       alt: "Via Ferrata Casares - Intermediate level with views of Africa",
     },
     images: [
       {
-        src: "/Casares-2.jpg",
+        src: "/casares-2.webp",
         alt: "Via Ferrata Casares - Spectacular views in via ferrata casares",
       },
       {
-        src: "/Casares-3.jpg",
+        src: "/casares-3.webp",
         alt: "Via Ferrata Casares - Crossing a monkey bridge in via ferrata casares",
       },
       {
-        src: "/Casares-4.jpg",
+        src: "/casares-4.webp",
         alt: "Via Ferrata Casares - Rappelling down a waterfall in via ferrata casares",
       },
       {
-        src: "/Casares-5.jpg",
+        src: "/casares-5.webp",
         alt: "Via Ferrata Casares - Adventurers in via ferrata casares",
       },
       {
-        src: "/Casares-6.jpg",
+        src: "/casares-6.webp",
         alt: "Via Ferrata Casares - Nature in via ferrata casares",
       },
       {
-        src: "/Casares-7.jpg",
+        src: "/casares-7.webp",
         alt: "Via Ferrata Casares - Canyon walls in via ferrata casares",
-      },
-      {
-        src: "/Casares-8.jpg",
-        alt: "Via Ferrata Casares - Spectacular landscapes in via ferrata casares",
-      },
-      {
-        src: "/Casares-9.jpg",
-        alt: "Via Ferrata Casares - Aerial views in via ferrata casares",
-      },
-      {
-        src: "/Casares-10.jpg",
-        alt: "Via Ferrata Casares - Excitement in via ferrata casares",
       },
     ],
     isOffer: false,
@@ -493,42 +586,36 @@ export const complementaryData: Record<string, ComplementaryData> = {
   },
 
   "el-chorro": {
+    subtitle:
+      "Via Ferrata el Chorro (Malaga): One of the most complete and aerial Vias Ferratas in Southern Andalusia",
     description:
       "The best via ferrata in Andalusia. Next to Caminito del Rey. 35-meter zipline and +180m elevation gain.",
     videoYoutube: "",
     days: "All year",
     mainImage: {
-      src: "/el-chorro-1.jpg",
+      src: "/el-chorro-1.webp",
       alt: "Via Ferrata El Chorro - The best via ferrata in Andalusia",
     },
     images: [
       {
-        src: "/el-chorro-2.jpg",
+        src: "/el-chorro-7.webp",
         alt: "Via Ferrata El Chorro - Spectacular views in el chorro via ferrata",
       },
       {
-        src: "/el-chorro-3.jpg",
+        src: "/el-chorro-8.webp",
         alt: "Via Ferrata El Chorro - Rappelling down a waterfall in el chorro via ferrata",
       },
       {
-        src: "/el-chorro-4.jpg",
+        src: "/el-chorro-9.webp",
         alt: "Via Ferrata El Chorro - Crossing a monkey bridge in el chorro via ferrata",
       },
       {
-        src: "/el-chorro-5.jpg",
+        src: "/el-chorro-10.webp",
         alt: "Via Ferrata El Chorro - Ziplining in el chorro via ferrata",
       },
       {
-        src: "/el-chorro-6.jpg",
+        src: "/el-chorro-11.webp",
         alt: "Via Ferrata El Chorro - Adventurers in el chorro via ferrata",
-      },
-      {
-        src: "/el-chorro-7.jpg",
-        alt: "Via Ferrata El Chorro - Nature in el chorro via ferrata",
-      },
-      {
-        src: "/el-chorro-8.jpg",
-        alt: "Via Ferrata El Chorro - Canyon walls in el chorro via ferrata",
       },
     ],
     isOffer: false,
@@ -544,38 +631,79 @@ export const complementaryData: Record<string, ComplementaryData> = {
 
   // ==================== HIKING ====================
   "la-concha": {
+    subtitle: "Hiking La Concha - Ascent to Marbella's most iconic peak",
     description:
       "Ascent to Marbella's most iconic peak (1,215m). Panoramic views of Costa del Sol, Gibraltar and Africa.",
     videoYoutube: "",
     days: "All year!",
     mainImage: {
-      src: "/la-concha-1.jpg",
+      src: "/la-concha-1.webp",
       alt: "Hiking La Concha - Ascent to Marbella's most iconic peak",
     },
     images: [
       {
-        src: "/la-concha-2.jpg",
+        src: "/la-concha-2.webp",
         alt: "Hiking La Concha - Panoramic views from la concha peak",
       },
       {
-        src: "/la-concha-3.jpg",
+        src: "/la-concha-3.webp",
         alt: "Hiking La Concha - Trail leading to la concha peak",
       },
       {
-        src: "/la-concha-4.jpg",
+        src: "/la-concha-4.webp",
         alt: "Hiking La Concha - Hikers enjoying the ascent to la concha peak",
       },
       {
-        src: "/la-concha-5.jpg",
+        src: "/la-concha-5.webp",
         alt: "Hiking La Concha - Scenic landscapes on the way to la concha peak",
       },
       {
-        src: "/la-concha-6.jpg",
+        src: "/la-concha-6.webp",
         alt: "Hiking La Concha - Summit of la concha peak with stunning views",
       },
       {
-        src: "/la-concha-7.jpg",
+        src: "/la-concha-7.webp",
         alt: "Hiking La Concha - Natural beauty surrounding la concha peak",
+      },
+      {
+        src: "/la-concha-8.webp",
+        alt: "Hiking La Concha - Adventurers at la concha peak",
+      },
+      {
+        src: "/la-concha-9.webp",
+        alt: "Hiking La Concha - Flora and fauna near la concha peak",
+      },
+      {
+        src: "/la-concha-10.webp",
+        alt: "Hiking La Concha - Breathtaking views from la concha peak",
+      },
+      {
+        src: "/la-concha-11.webp",
+        alt: "Hiking La Concha - Hiking trail to la concha peak",
+      },
+      {
+        src: "/la-concha-12.webp",
+        alt: "Hiking La Concha - Nature surrounding la concha peak",
+      },
+      {
+        src: "/la-concha-13.webp",
+        alt: "Hiking La Concha - Hikers enjoying the journey to la concha peak",
+      },
+      {
+        src: "/la-concha-14.webp",
+        alt: "Hiking La Concha - Majestic views from la concha peak",
+      },
+      {
+        src: "/la-concha-15.webp",
+        alt: "Hiking La Concha - Adventure awaits at la concha peak",
+      },
+      {
+        src: "/la-concha-16.webp",
+        alt: "Hiking La Concha - Exploring the trails to la concha peak",
+      },
+      {
+        src: "/la-concha-17.webp",
+        alt: "Hiking La Concha - Serene landscapes near la concha peak",
       },
     ],
     isOffer: false,
@@ -591,6 +719,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
 
   // Slug actualizado según Sheet: "istan" en vez de "hiking-istan"
   istan: {
+    subtitle: "Hiking Istán - Ancient Moorish Irrigation Channels",
     description:
       "Route through ancient Moorish irrigation channels to the white village of Istán. Cork oak forests and Andalusian culture.",
     videoYoutube: "",
@@ -613,6 +742,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
 
   // Slug actualizado según Sheet: "juanar-forest" en vez de "hiking-juanar"
   "juanar-forest": {
+    subtitle: "Hiking Juanar Forest - Family Adventure in Nature",
     description:
       "Family hiking through Juanar forests. Pines, eucalyptus and centuries-old olive trees. Perfect for children.",
     videoYoutube: "",
@@ -635,6 +765,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
 
   // ==================== MORE ACTIVITIES ====================
   "kayak-puerto-banus": {
+    subtitle: "Guided Kayak Sunrise Tour in Puerto Banús, Marbella",
     description:
       "Sunrise kayak tour from Puerto Banús. Enjoy Marbella's coast with calm waters and beautiful views.",
     videoYoutube: "",
@@ -654,6 +785,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     level: "easy",
     province: "Málaga",
     category: "More Activities",
+    subcategory: "Kayak",
     categoryPath: "more-activities",
     duration: 2,
     ubication: "Marbella",
@@ -661,6 +793,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
   },
 
   "kayak-guadiaro": {
+    subtitle: "Kayak Guadiaro River - Where River Meets the Sea",
     description:
       "Kayaking at the mouth of the Guadiaro River. Where the river meets the Mediterranean. Spectacular landscapes.",
     videoYoutube: "",
@@ -676,12 +809,14 @@ export const complementaryData: Record<string, ComplementaryData> = {
     province: "Cádiz",
     category: "More Activities",
     categoryPath: "more-activities",
+    subcategory: "Kayak",
     duration: 2,
     minimumAge: 6,
     ubication: "Guadiaro",
   },
 
   "e-bike-marbella": {
+    subtitle: "E-Bike Marbella - Explore Sierra Blanca on Electric Wheels",
     description:
       "Electric bike route through Sierra Blanca to Istán. Incredible coastal views. Tapas included in the village.",
     videoYoutube: "",
@@ -696,6 +831,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     level: "moderate",
     province: "Málaga",
     category: "More Activities",
+    subcategory: "E-Bike",
     categoryPath: "more-activities",
     duration: 4,
     minimumAge: 12,
@@ -703,6 +839,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
   },
 
   "buggy-tour-marbella": {
+    subtitle: "Buggy Tour Marbella - Off-Road Adventure with Coastal Views",
     description:
       "Buggy tour with panoramic coastal views. Adrenaline and spectacular landscapes. Off-road experience.",
     videoYoutube: "",
@@ -717,6 +854,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     level: "moderate",
     province: "Málaga",
     category: "More Activities",
+    subcategory: "Buggy",
     categoryPath: "more-activities",
     duration: 3,
     minimumAge: 18,
@@ -724,6 +862,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
   },
 
   "jet-ski-marbella": {
+    subtitle: "Jet Ski Marbella - High-Speed Coastal Adventure",
     description:
       "Guided jet ski tours from the Marina. Search for dolphins and explore Marbella's coast with adrenaline.",
     videoYoutube: "",
@@ -738,6 +877,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     level: "moderate",
     province: "Málaga",
     category: "More Activities",
+    subcategory: "Jet Ski",
     categoryPath: "more-activities",
     duration: 2,
     minimumAge: 16,
@@ -745,6 +885,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
   },
 
   "gymkhana-marbella": {
+    subtitle: "Gymkhana Marbella - Interactive Scavenger Hunt Adventure",
     description:
       "Fun scavenger hunt through Marbella's old town. 12 challenges, tapas included. Perfect for groups and families.",
     videoYoutube: "",
@@ -760,12 +901,14 @@ export const complementaryData: Record<string, ComplementaryData> = {
     province: "Málaga",
     category: "More Activities",
     categoryPath: "more-activities",
+    subcategory: "Gymkhana",
     duration: 3,
     minimumAge: 8,
     ubication: "Marbella",
   },
 
   "caving-experience": {
+    subtitle: "Caving Experience - Explore Málaga's Underground Wonders",
     description:
       "Family caving adventure. Discover Málaga's incredible underground world. From 7 years old.",
     videoYoutube: "",
@@ -780,15 +923,39 @@ export const complementaryData: Record<string, ComplementaryData> = {
     level: "moderate",
     province: "Málaga",
     category: "More Activities",
+    subcategory: "Caving",
     categoryPath: "more-activities",
     duration: 4,
     minimumAge: 7,
     ubication: "Málaga",
   },
+  "caving-igualeja": {
+    subtitle: "Caving Experience - Explore Málaga's Underground Wonders",
+    description:
+      "Family caving adventure. Discover Málaga's incredible underground world. From 7 years old.",
+    videoYoutube: "",
+    days: "All year!",
+    mainImage: {
+      src: "/images/excursions/caving-igualeja/main.jpg",
+      alt: "Caving Igualeja - Family caving adventure",
+    },
+    images: [],
+    isOffer: false,
+    rating: { value: 0, reviews: 0 },
+    level: "moderate",
+    province: "Málaga",
+    category: "More Activities",
+    subcategory: "Caving",
+    categoryPath: "more-activities",
+    duration: 4,
+    minimumAge: 7,
+    ubication: "Igualeja",
+  },
 };
 
 // Datos por defecto para excursiones que no tengan datos complementarios
 export const defaultComplementaryData: ComplementaryData = {
+  subtitle: "",
   description: "",
   videoYoutube: "",
   days: "All year!",

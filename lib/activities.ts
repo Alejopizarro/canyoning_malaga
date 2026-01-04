@@ -38,6 +38,7 @@ export interface Excursion extends SheetExcursion {
   level: "easy" | "moderate" | "advanced";
   province: string;
   category: string;
+  subcategory?: string;
   categoryPath: string;
   route?: string;
 }
@@ -186,14 +187,13 @@ export async function getExcursions(): Promise<Excursion[]> {
         id: sheetData.id,
         slug: sheetData.slug,
         title: sheetData.title,
-        subtitle: sheetData.subtitle,
         price: sheetData.price,
         isMostPopular: sheetData.isMostPopular,
         isTop3: sheetData.isTop3,
         linkBokun: sheetData.linkBokun,
         linkFotos: sheetData.linkFotos,
         linkDescripcion: sheetData.linkDescripcion,
-        // category viene de complementary-data, NO del Sheet
+        // subtitle, category, categoryPath, etc. vienen de complementary-data
         route: sheetData.slug,
       } as Excursion;
     });
@@ -217,7 +217,9 @@ export async function getExcursionByPath(
 ): Promise<Excursion | undefined> {
   const excursions = await getExcursions();
   const found = excursions.find(
-    (exc) => exc.category === category && exc.slug === slug
+    (exc) =>
+      exc.categoryPath.toLowerCase() === category.toLowerCase() &&
+      exc.slug === slug
   );
   return found;
 }
