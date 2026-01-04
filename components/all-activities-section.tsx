@@ -3,6 +3,8 @@
 import Link from "next/link";
 import ActivitiesCarousel from "./ui/activities-carousel";
 import { Excursion } from "@/lib/activities";
+import { Button } from "./ui/button";
+import { useRouter } from "next/navigation";
 
 interface AllActivitiesSectionProps {
   excursions: Excursion[];
@@ -11,6 +13,7 @@ interface AllActivitiesSectionProps {
 export default function AllActivitiesSection({
   excursions,
 }: AllActivitiesSectionProps) {
+  const router = useRouter();
   return (
     <section className="relative z-10 w-full bg-background py-12 px-4 md:px-8 max-w-[1440px] mx-auto">
       {/* Header */}
@@ -29,12 +32,9 @@ export default function AllActivitiesSection({
             </p>
           </div>
 
-          <Link
-            href="/activities"
-            className="inline-flex items-center justify-center px-6 py-3 bg-teal-500 hover:bg-teal-600 text-white font-semibold rounded-lg transition-colors duration-300 whitespace-nowrap"
-          >
+          <Button size="lg" onClick={() => router.push("/activities")}>
             Explore All Activities
-          </Link>
+          </Button>
         </div>
       </div>
       <ActivitiesCarousel excursions={excursions} />

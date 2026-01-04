@@ -14,7 +14,7 @@ const HeroHome = () => {
       />
 
       {/* Overlay negro sutil */}
-      <div className="absolute inset-0 bg-black/20 z-1" />
+      <div className="absolute inset-0 bg-black/30 z-1" />
 
       {/* Contenedor: Jumpers, Texto y Botón */}
       <div className="absolute top-[20vh] sm:top-[12vh] xl:top-[25vh] left-0 w-full">
