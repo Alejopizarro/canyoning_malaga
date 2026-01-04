@@ -6,11 +6,18 @@ const HeroHome = () => {
     <div className="relative h-screen">
       {/* Capa 1: Fondo - z-0 */}
       <Image
+        src="/bg-home-desktop.png"
+        alt="Fondo"
+        fill
+        priority
+        className="hidden sm:flex object-cover z-0"
+      />
+      <Image
         src="/bg-home-mobile.png"
         alt="Fondo"
         fill
         priority
-        className="object-cover z-0"
+        className="flex sm:hidden object-cover z-0"
       />
 
       {/* Overlay negro sutil */}
