@@ -57,12 +57,12 @@ const ActivitiesCarousel = ({ excursions }: AllActivitiesCarouselProps) => {
                     src={excursion.mainImage.src}
                     alt={excursion.mainImage.alt}
                     fill
-                    className="object-cover rounded-2xl"
+                    className="object-cover rounded-t-2xl"
                   />
                 </div>
 
                 {/* Content */}
-                <div className="py-4 px-2 md:px-0 flex flex-col space-y-2">
+                <div className="py-4 px-2 flex flex-col space-y-2">
                   {/* Title & Price Row */}
                   <div className="flex justify-between items-baseline mb-1">
                     <h3 className="text-xl line-clamp-1 mt-0.5 font-semibold text-gray-900">
@@ -75,7 +75,9 @@ const ActivitiesCarousel = ({ excursions }: AllActivitiesCarouselProps) => {
 
                   {/* Category */}
                   <span className="text-md  text-gray-400">
-                    {excursion.category}
+                    {!excursion.subcategory
+                      ? excursion.category
+                      : `${excursion.subcategory}`}
                   </span>
 
                   {/* Button */}

@@ -31,7 +31,7 @@ const guides: Guide[] = [
     role: "Canyoning and Hiking Expert",
     description:
       "Juan Antonio is one of our most experienced guides, but don't let the grey hair fool you, he is one of the fittest! He is a qualified sports technician in canyoning and in leading physical activities in the natural environment, as well as being an expert in mountain trekking, water activities and outdoor survival. His many years of experience guiding groups has given him great leadership skills, with a great mix of responsibility and fun.",
-    image: "/juan-antonio-salas.jpg",
+    image: "/juan-antonio-salas.webp",
   },
   {
     name: "Jose Carlos Rodríguez",
@@ -59,14 +59,14 @@ const guides: Guide[] = [
     role: "Youth Camp Coordinator",
     description:
       "'Alex' is one of our youngest and friendliest guide, but no less professional. He is an expert in Physical Activities and Sports Programmes, a Certified Canyoning and Speleology Guide. He's also a Ski Instructor in Sierra Nevada. He also speaks French and could have been a magazine model... Quite a catch!",
-    image: "/alejandro-pavon.jpg",
+    image: "/alejandro-pavon.webp",
   },
   {
     name: "Juan Carlos Higuera",
     role: "Canyoning Guide",
     description:
       "'Juanka' is a highly professional young mountain guide. He is a certified Technician in Physical and Sports Activities in Natural Environments and a Senior Technician in Physical and Sports Activities Facilitation. He is also a Snowboard and Ski Technician. He is a ski instructor in Sierra Nevada, a mountain bike enthusiast, and a national-level paddle tennis player.",
-    image: "/juan-carlos-higuera.jpg",
+    image: "/juan-carlos-higuera.webp",
   },
   {
     name: "Juan Gil",
@@ -80,21 +80,21 @@ const guides: Guide[] = [
     role: "Canyoning and MTB Guide",
     description:
       "Don't let her size fool you, Flor is one of our most experienced and professional canyoning and mountain biking guides. She is a Technician in Leading Physical Sports Activities in the Natural Environment and Leisure, and an expert in mountain and MTB routes. She is also a mother, entrepreneur and cross-fitter. A true role model!",
-    image: "/flor-hervas.jpg",
+    image: "/flor-hervas.webp",
   },
   {
     name: "Andrés Ortiz",
     role: "Canyoning Guide",
     description:
       "'Andy' is a versatile and enthusiastic member of our team. He brings a unique blend of skills and experiences to ensure your canyoning experience is both thrilling and safe. He is a certified ICAN Canyoning Guide and also has a diverse work background, including working as a horseback riding guide in the Pyrenees. His personal interests include climbing and surfing, reflecting his love for the outdoors. He is currently completing his Mechanical Engineering degree.",
-    image: "/andres-ortiz.jpg",
+    image: "/andres-ortiz.webp",
   },
   {
     name: "Tomás Loring",
     role: "Canyoning Guide",
     description:
       "'Tomy' is one of our most recent acquisitions. With a passion for the outdoors and a dedication to safety, he ensures every trip is unforgettable. He holds a degree in Sports Science and a Master's in Education. His extensive background in sports includes competitive triathlon and tennis, alongside his specialization in climbing, where he's also an instructor. Before joining us, Tomy lived in Scotland for three years.",
-    image: "/tomas-loring.jpg",
+    image: "/tomas-loring.webp",
   },
   {
     name: "Benjamín",
@@ -129,7 +129,7 @@ const guides: Guide[] = [
     role: "Product Manager",
     description:
       "Kevin is part of our office team and is responsible for the design and management of TUUR's activities. He is an Industrial Designer, specialising in UX/UI design and Digital Products. He is also a former university lecturer and a keen outdoor enthusiast, which is why he sometimes helps us with large group activities. Don't let his name and his looks fool you, he's Argentinian.",
-    image: "/kevin-nemcansky.jpg",
+    image: "/kevin-nemcansky.webp",
   },
 ];
 

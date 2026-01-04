@@ -118,7 +118,7 @@ export default function WhyChoose() {
           <div className="relative w-full max-w-[544px] h-[400px] sm:h-[500px] lg:h-[600px] mx-auto lg:mx-0 order-2 lg:order-1">
             {/* Background Image */}
             <Image
-              src="/trip-advisor.png"
+              src="/trip-advisor.webp"
               alt="TripAdvisor Travellers Choice Awards 2024"
               fill
               className="w-full rounded-2xl"

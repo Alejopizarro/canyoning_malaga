@@ -87,27 +87,43 @@ export const excursions: Excursion[] = [
     price: 75,
     days: "Wednesday",
     mainImage: {
-      src: "/rio-verde-1.jpg",
+      src: "/rio-verde-1.webp",
       alt: "Rio Verde canyon - One of the best canyons in Andalusia",
     },
     categoryPath: "canyoning",
     category: "Canyoning",
     images: [
       {
-        src: "/rio-verde-2.jpg",
+        src: "/rio-verde-2.webp",
         alt: "Rio Verde canyon - Turquoise waters in rio verde canyon",
       },
       {
-        src: "/rio-verde-3.jpg",
+        src: "/rio-verde-3.webp",
         alt: "Rio Verde canyon - Rappelling down a waterfall in rio verde canyon",
       },
       {
-        src: "/rio-verde-4.jpg",
+        src: "/rio-verde-4.webp",
         alt: "Rio Verde canyon - Jumping into a natural pool in rio verde canyon",
       },
       {
-        src: "/rio-verde-5.jpg",
+        src: "/rio-verde-5.webp",
         alt: "Rio Verde canyon - Sliding down a natural water slide in rio verde canyon",
+      },
+      {
+        src: "/rio-verde-6.webp",
+        alt: "Rio Verde canyon - Beautiful landscapes in rio verde canyon",
+      },
+      {
+        src: "/rio-verde-7.webp",
+        alt: "Rio Verde canyon - Adventurers in rio verde canyon",
+      },
+      {
+        src: "/rio-verde-8.webp",
+        alt: "Rio Verde canyon - Crystal clear waters in rio verde canyon",
+      },
+      {
+        src: "/rio-verde-9.webp",
+        alt: "Rio Verde canyon - Nature in rio verde canyon",
       },
     ],
     isOffer: false,
@@ -528,45 +544,33 @@ export const excursions: Excursion[] = [
     videoYoutube: "",
     price: 45,
     mainImage: {
-      src: "/Casares-1.jpg",
+      src: "/casares-1.webp",
       alt: "Via Ferrata Casares - Intermediate level with views of Africa",
     },
     images: [
       {
-        src: "/Casares-2.jpg",
+        src: "/casares-2.webp",
         alt: "Via Ferrata Casares - Spectacular views in via ferrata casares",
       },
       {
-        src: "/Casares-3.jpg",
+        src: "/casares-3.webp",
         alt: "Via Ferrata Casares - Crossing a monkey bridge in via ferrata casares",
       },
       {
-        src: "/Casares-4.jpg",
+        src: "/casares-4.webp",
         alt: "Via Ferrata Casares - Rappelling down a waterfall in via ferrata casares",
       },
       {
-        src: "/Casares-5.jpg",
+        src: "/casares-5.webp",
         alt: "Via Ferrata Casares - Adventurers in via ferrata casares",
       },
       {
-        src: "/Casares-6.jpg",
+        src: "/casares-6.webp",
         alt: "Via Ferrata Casares - Nature in via ferrata casares",
       },
       {
-        src: "/Casares-7.jpg",
+        src: "/casares-7.webp",
         alt: "Via Ferrata Casares - Canyon walls in via ferrata casares",
-      },
-      {
-        src: "/Casares-8.jpg",
-        alt: "Via Ferrata Casares - Spectacular landscapes in via ferrata casares",
-      },
-      {
-        src: "/Casares-9.jpg",
-        alt: "Via Ferrata Casares - Aerial views in via ferrata casares",
-      },
-      {
-        src: "/Casares-10.jpg",
-        alt: "Via Ferrata Casares - Excitement in via ferrata casares",
       },
     ],
     isOffer: false,
@@ -652,34 +656,73 @@ export const excursions: Excursion[] = [
     videoYoutube: "",
     price: 49,
     mainImage: {
-      src: "/la-concha-1.jpg",
+      src: "/la-concha-1.webp",
       alt: "Hiking La Concha - Ascent to Marbella's most iconic peak",
-    },
-    images: [
+    },images: [
       {
-        src: "/la-concha-2.jpg",
+        src: "/la-concha-2.webp",
         alt: "Hiking La Concha - Panoramic views from la concha peak",
       },
       {
-        src: "/la-concha-3.jpg",
+        src: "/la-concha-3.webp",
         alt: "Hiking La Concha - Trail leading to la concha peak",
       },
       {
-        src: "/la-concha-4.jpg",
+        src: "/la-concha-4.webp",
         alt: "Hiking La Concha - Hikers enjoying the ascent to la concha peak",
       },
       {
-        src: "/la-concha-5.jpg",
+        src: "/la-concha-5.webp",
         alt: "Hiking La Concha - Scenic landscapes on the way to la concha peak",
       },
       {
-        src: "/la-concha-6.jpg",
+        src: "/la-concha-6.webp",
         alt: "Hiking La Concha - Summit of la concha peak with stunning views",
       },
       {
-        src: "/la-concha-7.jpg",
+        src: "/la-concha-7.webp",
         alt: "Hiking La Concha - Natural beauty surrounding la concha peak",
       },
+      {
+        src: "/la-concha-8.webp",
+        alt: "Hiking La Concha - Adventurers at la concha peak",
+      },
+      {
+        src: "/la-concha-9.webp",
+        alt: "Hiking La Concha - Flora and fauna near la concha peak",
+      },
+      {
+        src: "/la-concha-10.webp",
+        alt: "Hiking La Concha - Breathtaking views from la concha peak",
+      },
+      {
+        src: "/la-concha-11.webp",
+        alt: "Hiking La Concha - Hiking trail to la concha peak",
+      },
+      {
+        src: "/la-concha-12.webp",
+        alt: "Hiking La Concha - Nature surrounding la concha peak",
+      },
+      {
+        src: "/la-concha-13.webp",
+        alt: "Hiking La Concha - Hikers enjoying the journey to la concha peak",
+      },
+      {
+        src: "/la-concha-14.webp",
+        alt: "Hiking La Concha - Majestic views from la concha peak",
+      },
+      {
+        src: "/la-concha-15.webp",
+        alt: "Hiking La Concha - Adventure awaits at la concha peak",
+      },
+      {
+        src: "/la-concha-16.webp",
+        alt: "Hiking La Concha - Exploring the trails to la concha peak",
+      },
+      {
+        src: "/la-concha-17.webp",
+        alt: "Hiking La Concha - Serene landscapes near la concha peak",
+      }
     ],
     isOffer: false,
     isMostPopular: false,

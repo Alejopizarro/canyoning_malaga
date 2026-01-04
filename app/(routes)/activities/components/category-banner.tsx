@@ -26,7 +26,7 @@ const categoryConfigs: CategoryConfig[] = [
   {
     name: "Hiking",
     categoryPath: "hiking",
-    image: "/la-concha-1.jpg",
+    image: "/la-concha-1.webp",
   },
   {
     name: "More Activities",

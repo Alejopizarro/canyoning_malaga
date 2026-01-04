@@ -15,7 +15,7 @@ const certifications = [
   },
   {
     name: "AEGM - Asociación Española de Guías de Montaña",
-    logo: "/aegm.png",
+    logo: "/aegm.webp",
   },
 ];
 

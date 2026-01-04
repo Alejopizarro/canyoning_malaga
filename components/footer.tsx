@@ -33,7 +33,7 @@ const Footer = () => {
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-4">
               <Image
-                src="/logo-tuur.png"
+                src="/logo-tuur.webp"
                 width={120}
                 height={120}
                 alt="Tuur Canyoning Malaga"

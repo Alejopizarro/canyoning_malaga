@@ -24,7 +24,7 @@ const Hero = (props: HeroProps) => {
   const { excursion } = props;
 
   return (
-    <div className="flex flex-col justify-center max-w-8xl mx-auto space-y-4 px-4 sm:px-16 py-8">
+    <div className="flex flex-col justify-center max-w-[1440px] mx-auto space-y-4 px-4 sm:px-16 py-8">
       <div className="flex justify-between items-center">
         <div className="flex flex-col">
           <p className="text-sm inline-flex text-gray-500 mb-2">

@@ -120,7 +120,7 @@ const SearchInput = () => {
 
       {/* Search results */}
       {searchQuery && (
-        <div className="absolute top-12 mt-2 -right-13 md:right-0 w-screen backdrop-blur-md max-w-[calc(100vw-2rem)] sm:max-w-md md:w-96 bg-neutral-600/30 backdrop-blur-md rounded-2xl shadow-xl border border-white/10 max-h-96 overflow-y-auto z-40 animate-in fade-in-0 slide-in-from-top-2 duration-300">
+        <div className="absolute top-12 mt-2 -right-13 md:right-0 w-screen backdrop-blur-md max-w-[calc(100vw-2rem)] sm:max-w-md md:w-96 bg-neutral-600/50 backdrop-blur-md rounded-2xl shadow-xl border border-white/10 max-h-96 overflow-y-auto z-40 animate-in fade-in-0 slide-in-from-top-2 duration-300">
           {searchResults.length > 0 ? (
             <div className="p-2">
               <p className="text-xs text-background px-3 py-2">

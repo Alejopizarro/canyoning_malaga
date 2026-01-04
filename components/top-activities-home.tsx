@@ -55,7 +55,7 @@ const topActivities: Activity[] = [
     days: "Fridays",
     price: "45 €",
     description: "Explore Málaga White Villages from another angle.",
-    image: "/Casares-1.jpg",
+    image: "/casares-1.webp",
     level: "moderate",
     duration: "2.5 hr",
     location: "Casares",
@@ -71,7 +71,7 @@ const levelConfig = {
 
 const TopActivitiesHome = () => {
   return (
-    <section className="relative w-full bg-background py-12 max-w-[1440px] mx-auto px-4 md:px-8 flex flex-col items-center justify-start">
+    <section className="relative overflow-hidden z-10 w-full bg-background py-12 max-w-[1440px] mx-auto px-4 md:px-8 flex flex-col items-center justify-start">
       {/* Header */}
       <div className="relative text-center mb-10">
         <span className="block text-md md:text-xl mb-2">
