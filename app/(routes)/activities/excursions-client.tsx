@@ -73,7 +73,7 @@ const ExcursionsClient = ({ excursions }: ExcursionsClientProps) => {
   };
 
   return (
-    <div className="sm:flex sm:justify-between">
+    <div className="sm:flex max-w-[1440px] mx-auto sm:justify-between">
       <div className="hidden sm:block">
         <FiltersControlsExcursions
           setFilterCategory={setFilterCategory}

@@ -193,7 +193,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "All year",
     mainImage: {
-      src: "/rio-verde-4.jpg",
+      src: "/rio-verde-4.webp",
       alt: "Rio Verde canyon - One of the best canyons in Andalusia",
     },
     images: [
@@ -232,7 +232,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "All year",
     mainImage: {
-      src: "/sima-del-diablo.jpg",
+      src: "/casares-4.webp",
       alt: "Sima del Diablo - Technical canyon near the Smurf Village",
     },
     images: [
@@ -271,7 +271,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "15/6 to 30/11",
     mainImage: {
-      src: "/buitreras-1.png",
+      src: "/zarzalones-5.webp",
       alt: "Buitreras canyon - The Cathedral of Andalusian Canyons",
     },
     images: [
@@ -332,7 +332,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "Mar to Jun & Sep to Nov",
     mainImage: {
-      src: "/Tajo-ronda-1.jpg",
+      src: "/la-concha-14.webp",
       alt: "Tajo de Ronda - Cross through the ancient city of Ronda",
     },
     images: [
@@ -392,7 +392,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "September",
     mainImage: {
-      src: "/trevelez-1.jpg",
+      src: "/zarzalones-11.webp",
       alt: "Trevelez canyon - The highest level technical canyon in Andalusia",
     },
     images: [
@@ -436,7 +436,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "Winter",
     mainImage: {
-      src: "/Calzadillas-1.jpg",
+      src: "/guadalmina-4.webp",
       alt: "Calzadillas canyon - Granite canyon in Sierra Norte",
     },
     images: [
@@ -485,7 +485,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "All year",
     mainImage: {
-      src: "/VF-Ronda-1.jpg",
+      src: "/zarzalones-9.webp",
       alt: "Via Ferrata Ronda - Family-friendly via ferrata at Tajo de Ronda",
     },
     images: [
@@ -725,7 +725,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "All year!",
     mainImage: {
-      src: "/images/excursions/hiking-istan/main.jpg",
+      src: "/la-concha-10.webp",
       alt: "Hiking Istán - Route through ancient Moorish irrigation channels",
     },
     images: [],
@@ -748,7 +748,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "All year!",
     mainImage: {
-      src: "/images/excursions/hiking-juanar/main.jpg",
+      src: "/zarzalones-2.webp",
       alt: "Hiking Juanar Forest - Family hiking through Juanar forests",
     },
     images: [],
@@ -771,7 +771,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "Tue | Thu | Sat",
     mainImage: {
-      src: "/kayak-banus-1.png",
+      src: "/rio-verde-4.webp",
       alt: "Kayak Puerto Banús - Sunrise kayak tour from Puerto Banús",
     },
     images: [
@@ -799,7 +799,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "All year!",
     mainImage: {
-      src: "/images/excursions/kayak-guadiaro/main.jpg",
+      src: "/zarzalones-3.webp",
       alt: "Kayak Guadiaro River - Kayaking at the mouth of the Guadiaro River",
     },
     images: [],
@@ -822,7 +822,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "All year!",
     mainImage: {
-      src: "/images/excursions/e-bike-marbella/main.jpg",
+      src: "/la-concha-12.webp",
       alt: "E-Bike Marbella - Electric bike route through Sierra Blanca",
     },
     images: [],
@@ -845,7 +845,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "All year!",
     mainImage: {
-      src: "/images/excursions/buggy-tour-marbella/main.jpg",
+      src: "/la-concha-13.webp",
       alt: "Buggy Tour Marbella - Buggy tour with panoramic coastal views",
     },
     images: [],
@@ -868,7 +868,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "All year!",
     mainImage: {
-      src: "/images/excursions/jet-ski-marbella/main.jpg",
+      src: "/zarzalones-11.webp",
       alt: "Jet Ski Marbella - Guided jet ski tours from the Marina",
     },
     images: [],
@@ -891,7 +891,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "All year!",
     mainImage: {
-      src: "/images/excursions/gymkhana-marbella/main.jpg",
+      src: "/zarzalones-12.webp",
       alt: "Gymkhana Marbella - Fun scavenger hunt through Marbella's old town",
     },
     images: [],
@@ -914,7 +914,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "All year!",
     mainImage: {
-      src: "/images/excursions/caving-experience/main.jpg",
+      src: "/la-concha-14.webp",
       alt: "Caving Experience - Family caving adventure",
     },
     images: [],
@@ -936,7 +936,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "All year!",
     mainImage: {
-      src: "/images/excursions/caving-igualeja/main.jpg",
+      src: "/rio-verde-3.webp",
       alt: "Caving Igualeja - Family caving adventure",
     },
     images: [],
