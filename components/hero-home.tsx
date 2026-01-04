@@ -17,7 +17,7 @@ const HeroHome = () => {
       <div className="absolute inset-0 bg-black/30 z-1" />
 
       {/* Contenedor: Jumpers, Texto y Botón */}
-      <div className="absolute pt-20 sm:pt-0 sm:top-[12vh] xl:top-[25vh] left-0 w-full">
+      <div className="absolute top-[30vh] sm:top-[12vh] xl:top-[25vh] left-0 w-full">
         {/* Jumpers */}
         <div className="relative w-full z-3 h-[348px] sm:h-[420px]">
           <Image
@@ -29,7 +29,7 @@ const HeroHome = () => {
           />
         </div>
 
-        <div className="absolute w-full -top-[17vh] sm:top-[4vh] flex flex-col items-center px-2 sm:px-0">
+        <div className="absolute w-full -top-[15vh] sm:top-[4vh] flex flex-col items-center px-2 sm:px-0">
           {/* Texto */}
           <h1
             className="text-center text-white font-extrabold tracking-tight leading-none px-4 mb-6 sm:mb-8"

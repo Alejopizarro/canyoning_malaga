@@ -3,7 +3,7 @@ import Image from "next/image";
 const certifications = [
   {
     name: "Federación Española de Deportes de Montaña",
-    logo: "/uimla.webp",
+    logo: "/uimla-2.webp",
   },
   {
     name: "Ministerio de Educación y Formación Profesional",
