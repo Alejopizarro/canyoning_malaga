@@ -7,7 +7,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
-import { Excursion } from "@/app/data";
+import { Excursion } from "@/lib/activities";
 import Image from "next/image";
 
 interface MenuDesktopProps {
@@ -31,8 +31,8 @@ const MenuDesktop = ({
             Activities
           </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <div className="bg-neutral-600/30 backdrop-blur-md p-2 w-[800px] shadow-xl">
-              <div className="grid grid-cols-4 gap-3 max-h-[500px] overflow-y-auto">
+            <div className="bg-neutral-600/50 backdrop-blur-md p-2 w-[800px] shadow-xl">
+              <div className="grid grid-cols-4 gap-3 max-h-[500px] pr-1 overflow-y-auto">
                 {/* Canyoning */}
                 <div className="space-y-2">
                   <Image
@@ -47,9 +47,9 @@ const MenuDesktop = ({
                   </h3>
                   {canyoningExcursions.slice(0, 3).map((excursion) => (
                     <Link
-                      key={excursion.route}
+                      key={excursion.slug}
                       href={`/${excursion.categoryPath || "canyoning"}/${
-                        excursion.route
+                        excursion.slug
                       }`}
                       className="block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-neutral-600/80 hover:text-primary focus:bg-gray-100"
                     >
@@ -74,9 +74,9 @@ const MenuDesktop = ({
                   </h3>
                   {viaFerrataExcursions.slice(0, 3).map((excursion) => (
                     <Link
-                      key={excursion.route}
+                      key={excursion.slug}
                       href={`/${excursion.categoryPath || "via-ferrata"}/${
-                        excursion.route
+                        excursion.slug
                       }`}
                       className="block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-neutral-600/80 hover:text-primary focus:bg-gray-100"
                     >
@@ -90,7 +90,7 @@ const MenuDesktop = ({
                 {/* Hiking */}
                 <div className="space-y-2">
                   <Image
-                    src="/la-concha-1.jpg"
+                    src="/la-concha-1.webp"
                     alt="Hiking in Malaga"
                     width={300}
                     height={200}
@@ -101,9 +101,9 @@ const MenuDesktop = ({
                   </h3>
                   {hikingExcursions.slice(0, 3).map((excursion) => (
                     <Link
-                      key={excursion.route}
+                      key={excursion.slug}
                       href={`/${excursion.categoryPath || "hiking"}/${
-                        excursion.route
+                        excursion.slug
                       }`}
                       className="block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-neutral-600/80 hover:text-primary focus:bg-gray-100"
                     >
@@ -128,9 +128,9 @@ const MenuDesktop = ({
                   </h3>
                   {moreActivitiesExcursions.slice(0, 3).map((excursion) => (
                     <Link
-                      key={excursion.route}
+                      key={excursion.slug}
                       href={`/${excursion.categoryPath || "activities"}/${
-                        excursion.route
+                        excursion.slug
                       }`}
                       className="block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-neutral-600/80 hover:text-primary focus:bg-gray-100"
                     >

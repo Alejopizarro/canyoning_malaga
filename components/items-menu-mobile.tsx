@@ -16,7 +16,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "./ui/accordion";
-import { Excursion } from "@/app/data";
+import { Excursion } from "@/lib/activities";
 import Link from "next/link";
 
 interface ItemsMenuMobileProps {
@@ -76,9 +76,9 @@ const ItemsMenuMobile = ({
                   <div className="flex flex-col space-y-1">
                     {canyoningExcursions.slice(0, 5).map((excursion) => (
                       <Link
-                        key={excursion.route}
+                        key={excursion.slug}
                         href={`/${excursion.categoryPath || "excursions"}/${
-                          excursion.route
+                          excursion.slug
                         }`}
                         className="text-sm text-gray-600 hover:text-primary transition-colors py-1.5 hover:bg-gray-50 rounded"
                       >
@@ -96,9 +96,9 @@ const ItemsMenuMobile = ({
                   <div className="flex flex-col space-y-1">
                     {viaFerrataExcursions.slice(0, 5).map((excursion) => (
                       <Link
-                        key={excursion.route}
+                        key={excursion.slug}
                         href={`/${excursion.categoryPath || "excursions"}/${
-                          excursion.route
+                          excursion.slug
                         }`}
                         className="text-sm text-gray-600 hover:text-primary transition-colors py-1.5 hover:bg-gray-50 rounded"
                       >
@@ -114,9 +114,9 @@ const ItemsMenuMobile = ({
                   <div className="flex flex-col space-y-1">
                     {hikingExcursions.slice(0, 5).map((excursion) => (
                       <Link
-                        key={excursion.route}
+                        key={excursion.slug}
                         href={`/${excursion.categoryPath || "hiking"}/${
-                          excursion.route
+                          excursion.slug
                         }`}
                         className="text-sm text-gray-600 hover:text-primary transition-colors py-1.5 hover:bg-gray-50 rounded"
                       >
@@ -134,9 +134,9 @@ const ItemsMenuMobile = ({
                   <div className="flex flex-col space-y-1">
                     {moreActivitiesExcursions.slice(0, 5).map((excursion) => (
                       <Link
-                        key={excursion.route}
+                        key={excursion.slug}
                         href={`/${excursion.categoryPath || "activities"}/${
-                          excursion.route
+                          excursion.slug
                         }`}
                         className="text-sm text-gray-600 hover:text-primary transition-colors py-1.5 hover:bg-gray-50 rounded"
                       >
