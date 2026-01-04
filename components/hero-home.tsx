@@ -17,7 +17,7 @@ const HeroHome = () => {
       <div className="absolute inset-0 bg-black/30 z-1" />
 
       {/* Contenedor: Jumpers, Texto y Botón */}
-      <div className="absolute top-[20vh] sm:top-[12vh] xl:top-[25vh] left-0 w-full">
+      <div className="absolute pt-20 sm:pt-0 sm:top-[12vh] xl:top-[25vh] left-0 w-full">
         {/* Jumpers */}
         <div className="relative w-full z-3 h-[348px] sm:h-[420px]">
           <Image
@@ -46,7 +46,7 @@ const HeroHome = () => {
           </h1>
           <Button
             size="lg"
-            className="mt-80 sm:mt-20 z-5 bg-primary-light font-semibold text-black text-lg hover:bg-primary-light/80 hover:text-white shadow-lg"
+            className="mt-60 sm:mt-20 z-5 bg-primary-light font-semibold text-black text-lg hover:bg-primary-light/80 hover:text-white shadow-lg"
           >
             Explore activities
           </Button>
