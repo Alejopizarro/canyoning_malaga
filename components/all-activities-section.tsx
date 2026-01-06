@@ -20,7 +20,7 @@ export default function AllActivitiesSection({
       <div className="mb-8">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <div>
-            <span className="text-sm text-gray-500 uppercase tracking-wide">
+            <span className="text-md text-primary tracking-wide">
               Explore More
             </span>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-1">

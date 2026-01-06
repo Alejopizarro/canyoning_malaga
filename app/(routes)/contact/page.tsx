@@ -7,7 +7,7 @@ export default function Page() {
       {/* Hero Banner Section */}
       <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <Image
-          src="/contact-hero.jpg"
+          src="/banner-contact-bg.webp"
           alt="Contact TUUR Adventure"
           fill
           className="object-cover"

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState, useRef } from "react";
 import { Excursion } from "@/lib/activities";
 import { ArrowRight } from "lucide-react";
+import ExcursionCard from "../excursion-card";
 
 interface AllActivitiesCarouselProps {
   excursions: Excursion[];
@@ -14,9 +15,13 @@ const ActivitiesCarousel = ({ excursions }: AllActivitiesCarouselProps) => {
   const carouselRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
+  // Limitar a los primeros 12 resultados
+  const limitedExcursions = excursions.slice(0, 12);
+
   const scrollToIndex = (index: number) => {
     if (carouselRef.current) {
-      const cardWidth = carouselRef.current.scrollWidth / excursions.length;
+      const cardWidth =
+        carouselRef.current.scrollWidth / limitedExcursions.length;
       carouselRef.current.scrollTo({
         left: cardWidth * index,
         behavior: "smooth",
@@ -31,7 +36,7 @@ const ActivitiesCarousel = ({ excursions }: AllActivitiesCarouselProps) => {
   };
 
   const handleNext = () => {
-    const newIndex = Math.min(excursions.length - 5, currentIndex + 1);
+    const newIndex = Math.min(limitedExcursions.length - 5, currentIndex + 1);
     scrollToIndex(newIndex);
   };
 
@@ -45,50 +50,12 @@ const ActivitiesCarousel = ({ excursions }: AllActivitiesCarouselProps) => {
           className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth pb-4"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
-          {excursions.map((excursion) => (
+          {limitedExcursions.map((excursion) => (
             <div
-              key={excursion.id}
               className="flex-shrink-0 h-[484px] w-[280px] md:w-[calc((100%-3rem)/4.25)]"
+              key={excursion.id}
             >
-              <article className="overflow-hidden">
-                {/* Image */}
-                <div className="relative h-[364px] overflow-hidden">
-                  <Image
-                    src={excursion.mainImage.src}
-                    alt={excursion.mainImage.alt}
-                    fill
-                    className="object-cover rounded-t-2xl"
-                  />
-                </div>
-
-                {/* Content */}
-                <div className="py-4 px-2 flex flex-col space-y-2">
-                  {/* Title & Price Row */}
-                  <div className="flex justify-between items-baseline mb-1">
-                    <h3 className="text-xl line-clamp-1 mt-0.5 font-semibold text-gray-900">
-                      {excursion.title}
-                    </h3>
-                    <span className="text-xl font-extrabold text-primary-dark flex items-start">
-                      {excursion.price} <span className="ml-0.5 mt-0.5">€</span>
-                    </span>
-                  </div>
-
-                  {/* Category */}
-                  <span className="text-md  text-gray-400">
-                    {!excursion.subcategory
-                      ? excursion.category
-                      : `${excursion.subcategory}`}
-                  </span>
-
-                  {/* Button */}
-                  <Link
-                    href={`/${excursion.categoryPath}/${excursion.slug}`}
-                    className="mt-1 flex items-center text-primary hover:underline hover:text-primary-dark text-sm font-semibold"
-                  >
-                    More Information <ArrowRight className="ml-1" size={15} />
-                  </Link>
-                </div>
-              </article>
+              <ExcursionCard showDescription={false} excursion={excursion} />
             </div>
           ))}
         </div>
@@ -97,7 +64,7 @@ const ActivitiesCarousel = ({ excursions }: AllActivitiesCarouselProps) => {
         <div className="flex items-center justify-between mt-6 relative z-10">
           {/* Dots */}
           <div className="flex gap-1.5">
-            {Array.from({ length: Math.min(6, excursions.length) }).map(
+            {Array.from({ length: Math.min(6, limitedExcursions.length) }).map(
               (_, index) => (
                 <button
                   key={index}
@@ -136,7 +103,7 @@ const ActivitiesCarousel = ({ excursions }: AllActivitiesCarouselProps) => {
 
             <button
               onClick={handleNext}
-              disabled={currentIndex >= excursions.length - 5}
+              disabled={currentIndex >= limitedExcursions.length - 5}
               className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:border-gray-400 disabled:opacity-40 disabled:cursor-not-allowed transition-colors duration-300 cursor-pointer"
               aria-label="Next"
               type="button"

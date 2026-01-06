@@ -68,7 +68,7 @@ const Navbar = async () => {
             {/* Botón For Companies - Solo Desktop */}
             <Link
               href="/team-building"
-              className="hidden lg:flex bg-primary-light hover:bg-primary-light/90 text-black px-3 py-1.5 rounded-full transition-colors text-xs font-medium whitespace-nowrap flex-shrink-0"
+              className="hidden lg:flex bg-primary-light hover:bg-primary-light/90 text-black px-3 py-1 rounded-full transition-colors text-[0.875rem] font-medium whitespace-nowrap flex-shrink-0"
             >
               For Companies
             </Link>

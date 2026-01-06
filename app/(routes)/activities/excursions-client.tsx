@@ -6,6 +6,7 @@ import ExcursionCard from "@/components/excursion-card";
 import { Button } from "@/components/ui/button";
 import FilterControlsMobile from "./components/filter-controls-mobile";
 import FiltersControlsExcursions from "./filters-controls";
+import ExcursionCardMobile from "@/components/excursion-card-mobile";
 
 interface ExcursionsClientProps {
   excursions: Excursion[];
@@ -128,7 +129,7 @@ const ExcursionsClient = ({ excursions }: ExcursionsClientProps) => {
         {/* Mobile Grid */}
         <div className="grid sm:hidden gap-x-2 gap-y-6 mt-4 grid-cols-2 md:grid-cols-3 md:gap-10 w-full">
           {visibleExcursionsMobile.map((excursion: Excursion) => (
-            <ExcursionCard key={excursion.route} excursion={excursion} />
+            <ExcursionCardMobile key={excursion.route} excursion={excursion} />
           ))}
 
           {filteredAndSortedExcursions.length === 0 && (

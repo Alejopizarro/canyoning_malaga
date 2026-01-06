@@ -71,7 +71,7 @@ const SearchInput = () => {
           placeholder="Search Activities..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="bg-transparent flex-1 px-2 outline-none text-sm text-background placeholder:text-background"
+          className="bg-transparent flex-1 px-2 outline-none text-[0.875rem] text-background placeholder:text-background"
         />
         {searchQuery && (
           <button
@@ -100,7 +100,7 @@ const SearchInput = () => {
                 placeholder="Search Activities..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="flex-1 px-3 py-2 outline-none text-sm text-background placeholder:text-background animate-in fade-in-0 slide-in-from-right-2 duration-300"
+                className="flex-1 px-3 py-2 outline-none text-[0.875rem] text-background placeholder:text-background animate-in fade-in-0 slide-in-from-right-2 duration-300"
                 autoFocus
               />
               {searchQuery && (
@@ -165,7 +165,7 @@ const SearchInput = () => {
                     setIsSearchOpen(false);
                     setSearchQuery("");
                   }}
-                  className="block text-center text-sm text-primary hover:underline py-2"
+                  className="block text-center text-[0.875rem] text-primary hover:underline py-2"
                 >
                   View all results ({searchResults.length})
                 </Link>
@@ -173,7 +173,7 @@ const SearchInput = () => {
             </div>
           ) : (
             <div className="p-6 text-center">
-              <p className="text-background text-sm">
+              <p className="text-background text-[0.875rem]">
                 No results found for {searchQuery}
               </p>
             </div>

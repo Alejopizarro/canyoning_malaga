@@ -25,7 +25,7 @@ export default function BannerContact() {
         </p>
         <Link
           href="/contact"
-          className="inline-flex items-center px-6 py-3 bg-teal-500 text-white font-semibold rounded-lg hover:bg-teal-600 transition-colors"
+          className="inline-flex items-center px-6 py-3 bg-teal-500 text-white font-semibold rounded-full hover:bg-teal-600 transition-colors"
         >
           Contact Us
         </Link>

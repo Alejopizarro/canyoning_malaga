@@ -29,10 +29,10 @@ interface BlogPost {
 const blogPosts: BlogPost[] = [
   {
     title: "What is Canyoning, Canyoneering or Kloofing?",
-    slug: "/blog/what-is-canyoning-canyoneering",
+    slug: "/blog/what-is-canyoneering",
     excerpt:
       "Discover everything you need to know about canyoning, from basic techniques like rappelling and jumping to the best canyons in Andalusia. The complete guide for beginners and experts.",
-    image: "/blog/canyoning-hero.webp",
+    image: "/rio-verde-4.webp",
     category: "Guides",
     date: "January 15, 2025",
     readTime: "8 min read",
@@ -160,10 +160,10 @@ const BlogCard = ({ post }: { post: BlogPost }) => (
 
 export default function BlogPage() {
   return (
-    <main className="bg-gray-50 pt-20 min-h-screen">
+    <main className="pt-20 min-h-screen">
       {/* Hero Section */}
-      <header className="bg-white border-b border-gray-100">
-        <div className="max-w-6xl mx-auto px-4 py-16 md:py-24">
+      <header className="border-b border-gray-100">
+        <div className="max-w-[1440px] mx-auto px-4 py-16 md:py-24">
           <p className="text-teal-600 font-medium mb-3">Our Blog</p>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             Adventure Stories & Guides
@@ -177,7 +177,7 @@ export default function BlogPage() {
       </header>
 
       {/* Blog Grid */}
-      <section className="max-w-6xl mx-auto px-4 py-12 md:py-16">
+      <section className="max-w-[1440px] mx-auto px-4 py-12 md:py-16">
         {/* Featured Post */}
         <div className="mb-12">
           <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-6">
@@ -247,32 +247,6 @@ export default function BlogPage() {
               <BlogCard key={post.slug} post={post} />
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Newsletter CTA */}
-      <section className="bg-white border-t border-gray-100">
-        <div className="max-w-6xl mx-auto px-4 py-16 text-center">
-          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
-            Stay Updated
-          </h2>
-          <p className="text-gray-600 mb-8 max-w-md mx-auto">
-            Subscribe to our newsletter and never miss new adventures, tips and
-            exclusive offers.
-          </p>
-          <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-transparent"
-            />
-            <button
-              type="submit"
-              className="bg-teal-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-teal-600 transition-colors"
-            >
-              Subscribe
-            </button>
-          </form>
         </div>
       </section>
     </main>

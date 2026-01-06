@@ -1,19 +1,22 @@
+"use client";
 import Image from "next/image";
 import { Button } from "./ui/button";
+import { useRouter } from "next/navigation";
 
 const HeroHome = () => {
+  const router = useRouter();
   return (
     <div className="relative h-screen">
       {/* Capa 1: Fondo - z-0 */}
       <Image
-        src="/bg-home-desktop.png"
+        src="/bg-home-desktop.webp"
         alt="Fondo"
         fill
         priority
         className="hidden sm:flex object-cover z-0"
       />
       <Image
-        src="/bg-home-mobile.png"
+        src="/bg-home-mobile.webp"
         alt="Fondo"
         fill
         priority
@@ -28,7 +31,7 @@ const HeroHome = () => {
         {/* Jumpers */}
         <div className="relative w-full z-3 h-[348px] sm:h-[420px]">
           <Image
-            src="/users-jumping.png"
+            src="/users-jumping.webp"
             alt="Personas"
             fill
             priority
@@ -53,7 +56,8 @@ const HeroHome = () => {
           </h1>
           <Button
             size="lg"
-            className="mt-60 sm:mt-20 z-5 bg-primary-light font-semibold text-black text-lg hover:bg-primary-light/80 hover:text-white shadow-lg"
+            className="mt-60 sm:mt-20 z-5 bg-primary-light font-semibold text-black text-lg hover:bg-primary"
+            onClick={() => router.push("/activities")}
           >
             Explore activities
           </Button>

@@ -34,7 +34,7 @@ export default function BannerCertified() {
             {certifications.map((cert, index) => (
               <div
                 key={index}
-                className="relative w-16 h-16 sm:w-20 sm:h-20 hover:grayscale-0 transition-all duration-300"
+                className="relative w-[150px] h-[150px] hover:grayscale-0 transition-all duration-300"
               >
                 <Image
                   src={cert.logo}

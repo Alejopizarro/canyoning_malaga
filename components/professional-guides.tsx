@@ -207,7 +207,7 @@ export default function ProfessionalGuides() {
           </p>
           <a
             href="mailto:tuurcanyoning@gmail.com"
-            className="inline-flex items-center px-5 py-2.5 border-2 border-gray-900 text-gray-900 font-medium rounded-lg hover:bg-gray-900 hover:text-white transition-colors"
+            className="inline-flex items-center px-5 py-2.5 border-2 border-gray-900 text-gray-900 font-medium rounded-full hover:bg-gray-900 hover:text-white transition-colors"
           >
             Send Us Your CV
           </a>

@@ -34,7 +34,7 @@ const TopActivitiesHome = async () => {
       </div>
 
       {/* Cards Grid */}
-      <div className="relative w-full grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="relative w-full grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10">
         {sortedActivities.map((activity, index) => (
           <Link
             key={activity.slug}
@@ -59,17 +59,17 @@ const TopActivitiesHome = async () => {
 
                 {/* Most Popular Badge */}
                 {activity.isMostPopular && (
-                  <div className="absolute top-3 left-18 -translate-x-1/2 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-md flex items-center gap-1.5">
+                  <div className="absolute top-3 -right-12 -translate-x-1/2 bg-white/95 backdrop-blur-sm px-3 py-1.5 rounded-full shadow-md flex items-start gap-1">
                     <svg
-                      width="16"
-                      height="16"
+                      width="18"
+                      height="18"
                       viewBox="0 0 20 20"
                       fill="currentColor"
                       className="text-teal-500"
                     >
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                     </svg>
-                    <span className="text-xs font-semibold text-gray-800">
+                    <span className="text-xs mt-0.5 font-semibold text-gray-800">
                       Most Popular
                     </span>
                   </div>
@@ -78,43 +78,54 @@ const TopActivitiesHome = async () => {
 
               {/* Content */}
               <div className="p-4">
-                {/* Row 1: Category & Days */}
-                <div className="flex justify-between items-baseline mb-0.5">
-                  <span className="text-teal-600 text-sm font-medium">
-                    {activity.category}
-                  </span>
-                  <span className="text-teal-600 text-xs font-semibold">
-                    {activity.days}
-                  </span>
+                <div className="flex flex-col gap-1 mb-3">
+                  {/* Row 1: Category & Days */}
+                  <p className="text-gray-500 text-sm font-medium">
+                    {!activity.subcategory
+                      ? activity.category
+                      : activity.subcategory}
+                  </p>
+
+                  {/* Row 2: Title & Price */}
+                  <div className="flex justify-between items-baseline">
+                    <h4 className="text-2xl font-bold text-gray-900">
+                      {activity.title}
+                    </h4>
+                    <div className="flex items-center gap-1">
+                      <span className="text-sm text-gray-500">From</span>
+                      <span className="text-2xl font-bold ml-1 -mt-2 text-primary">
+                        {activity.price}€{activity.specialPrice ? "*" : ""}
+                      </span>
+                    </div>
+                  </div>
                 </div>
 
-                {/* Row 2: Title & Price */}
-                <div className="flex justify-between items-baseline mb-2">
-                  <h3 className="text-lg font-bold text-gray-900">
-                    {activity.title}
-                  </h3>
-                  <span className="text-lg font-bold text-gray-900">
-                    {activity.price} €
-                  </span>
-                </div>
+                <div className="flex flex-col h-18 my-2">
+                  {/* Description */}
+                  <p className="text-sm text-gray-500 leading-snug  mb-3">
+                    {activity.description}
+                  </p>
 
-                {/* Description */}
-                <p className="text-sm text-gray-500 leading-snug line-clamp-1 mb-3">
-                  {activity.description}
-                </p>
+                  {/* Special Price */}
+                  {activity.specialPrice && (
+                    <p className="text-sm text-primary font-medium mb-3">
+                      * {activity.specialPrice}
+                    </p>
+                  )}
+                </div>
 
                 {/* Footer */}
                 <div className="flex gap-3 pt-3 border-t border-gray-100">
                   {/* Level */}
-                  <span className="flex items-center gap-1 text-xs text-gray-400">
+                  <span className="flex bg-gray-200 px-2 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-500">
                     <svg
                       width="14"
                       height="14"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      strokeWidth="2"
-                      className="text-gray-300"
+                      strokeWidth="1"
+                      className="text-gray-500"
                     >
                       <path d="M3 3v18h18" />
                       <path d="M18 9l-5 5-4-4-3 3" />
@@ -123,15 +134,15 @@ const TopActivitiesHome = async () => {
                   </span>
 
                   {/* Duration */}
-                  <span className="flex items-center gap-1 text-xs text-gray-400">
+                  <span className="flex bg-gray-200 px-2 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-500">
                     <svg
                       width="14"
                       height="14"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      strokeWidth="2"
-                      className="text-gray-300"
+                      strokeWidth="1"
+                      className="text-gray-500"
                     >
                       <circle cx="12" cy="12" r="10" />
                       <path d="M12 6v6l4 2" />
@@ -140,15 +151,15 @@ const TopActivitiesHome = async () => {
                   </span>
 
                   {/* Location */}
-                  <span className="flex items-center gap-1 text-xs text-gray-400">
+                  <span className="flex bg-gray-200 px-2 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-500">
                     <svg
                       width="14"
                       height="14"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
-                      strokeWidth="2"
-                      className="text-gray-300"
+                      strokeWidth="1"
+                      className="text-gray-500"
                     >
                       <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
                       <circle cx="12" cy="10" r="3" />

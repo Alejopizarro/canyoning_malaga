@@ -27,7 +27,7 @@ const MenuDesktop = ({
     <NavigationMenu>
       <NavigationMenuList className="space-x-0">
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="text-xs font-medium text-white/90 hover:text-white bg-transparent hover:bg-white/10 data-[state=open]:bg-white/10 px-2.5 rounded-full transition-all whitespace-nowrap">
+          <NavigationMenuTrigger className="text-[0.875rem] font-medium text-white/90 hover:text-white bg-transparent hover:bg-white/10 data-[state=open]:bg-white/10 px-2.5 rounded-full transition-all whitespace-nowrap">
             Activities
           </NavigationMenuTrigger>
           <NavigationMenuContent>
@@ -160,7 +160,7 @@ const MenuDesktop = ({
         <NavigationMenuItem>
           <NavigationMenuLink
             href="/about-us"
-            className="text-xs font-medium text-white/90 hover:text-white hover:bg-white/10 py-1.5 px-2.5 rounded-full transition-all inline-block whitespace-nowrap"
+            className="text-[0.875rem] font-medium text-white/90 hover:text-white hover:bg-white/10 py-1.5 px-2.5 rounded-full transition-all inline-block whitespace-nowrap"
           >
             About Us
           </NavigationMenuLink>
@@ -169,7 +169,7 @@ const MenuDesktop = ({
         <NavigationMenuItem>
           <NavigationMenuLink
             href="/blog"
-            className="text-xs font-medium text-white/90 hover:text-white hover:bg-white/10 py-1.5 px-2.5 rounded-full transition-all inline-block whitespace-nowrap"
+            className="text-[0.875rem] font-medium text-white/90 hover:text-white hover:bg-white/10 py-1.5 px-2.5 rounded-full transition-all inline-block whitespace-nowrap"
           >
             Blog
           </NavigationMenuLink>
@@ -178,7 +178,7 @@ const MenuDesktop = ({
         <NavigationMenuItem>
           <NavigationMenuLink
             href="/contact"
-            className="text-xs font-medium text-white/90 hover:text-white hover:bg-white/10 py-1.5 px-2.5 rounded-full transition-all inline-block whitespace-nowrap"
+            className="text-[0.875rem] font-medium text-white/90 hover:text-white hover:bg-white/10 py-1.5 px-2.5 rounded-full transition-all inline-block whitespace-nowrap"
           >
             Contact
           </NavigationMenuLink>

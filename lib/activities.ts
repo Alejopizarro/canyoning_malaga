@@ -39,6 +39,7 @@ export interface Excursion extends SheetExcursion {
   province: string;
   category: string;
   subcategory?: string;
+  specialPrice?: string;
   categoryPath: string;
   route?: string;
 }

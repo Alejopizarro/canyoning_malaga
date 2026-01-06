@@ -7,7 +7,7 @@ const benefits = [
   {
     icon: (
       <svg
-        className="w-6 h-6 text-primary"
+        className="w-8 h-8 text-primary"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -27,7 +27,7 @@ const benefits = [
   {
     icon: (
       <svg
-        className="w-6 h-6 text-primary"
+        className="w-8 h-8 text-primary"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -47,7 +47,7 @@ const benefits = [
   {
     icon: (
       <svg
-        className="w-6 h-6 text-primary"
+        className="w-8 h-8 text-primary"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -90,8 +90,8 @@ export default function WhyChoose() {
             {/* Benefits List */}
             <div className="space-y-6">
               {benefits.map((benefit, index) => (
-                <div key={index} className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-emerald-50 rounded-full flex items-center justify-center">
+                <div key={index} className="flex items-start gap-4">
+                  <div className="flex-shrink-0 mt-1 flex items-center justify-center">
                     {benefit.icon}
                   </div>
                   <div>
@@ -115,13 +115,13 @@ export default function WhyChoose() {
               About Us
             </Button>
           </div>
-          <div className="relative w-full max-w-[544px] h-[400px] sm:h-[500px] lg:h-[600px] mx-auto lg:mx-0 order-2 lg:order-1">
+          <div className="relative w-full max-w-[616px] aspect-square mx-auto lg:mx-0 order-2 lg:order-1">
             {/* Background Image */}
             <Image
               src="/trip-advisor.webp"
               alt="TripAdvisor Travellers Choice Awards 2024"
               fill
-              className="w-full rounded-2xl"
+              className="w-full rounded-2xl object-cover"
             />
           </div>
         </div>

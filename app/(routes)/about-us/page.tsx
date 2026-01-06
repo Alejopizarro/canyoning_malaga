@@ -1,95 +1,5 @@
+import ProfessionalGuides from "@/components/professional-guides";
 import Image from "next/image";
-
-// Team member data
-const officeTeam = [
-  {
-    name: "Jose Moreno",
-    role: "CEO TUUR Adventure Experts",
-    credentials: [
-      "TD Medium Mountain",
-      "TD Canyoning",
-      "TD Kayaking",
-      "Sport & Classic Climbing Expert",
-    ],
-    image: "/team/jose-moreno.jpg",
-  },
-  {
-    name: "Ancor Rodríguez",
-    role: "Marketing & Advertising CMO",
-    credentials: ["Team Building Logistics", "IT Manager"],
-    image: "/team/ancor-rodriguez.jpg",
-  },
-  {
-    name: "Lluis Sabater",
-    role: "Sales Director CSO",
-    credentials: ["Tourism Diploma", "Client Relations Manager"],
-    image: "/team/lluis-sabater.jpg",
-  },
-  {
-    name: "Raffaele Fusco",
-    role: "Sales Director CSO",
-    credentials: ["Customer Service Director", "Tourism & Public Relations"],
-    image: "/team/raffaele-fusco.jpg",
-  },
-];
-
-const actionTeam = [
-  {
-    name: "Jose Cecilia",
-    role: "TUUR Activities Director",
-    credentials: [
-      "TECO Training Professor",
-      "Canyoning & MTB Expert",
-      "TECO Certified",
-    ],
-    image: "/team/jose-cecilia.jpg",
-  },
-  {
-    name: "Israel Navarro",
-    role: "Beach Activities Director",
-    credentials: ["TECO Certified", "Ski Instructor", "Sport Climbing Expert"],
-    image: "/team/israel-navarro.jpg",
-  },
-  {
-    name: "Juan Antonio Salas",
-    role: "TUUR Safety Coordinator",
-    credentials: ["TD Canyoning", "TECO Certified"],
-    image: "/team/juan-antonio-salas.jpg",
-  },
-  {
-    name: "Jose Carlos Rodríguez",
-    role: "Technical Canyoning Coordinator",
-    credentials: [
-      "TD Canyoning",
-      "TD Medium Mountain",
-      "TD Speleology",
-      "Andalusian Canyoning Champion",
-    ],
-    image: "/team/jose-carlos-rodriguez.jpg",
-  },
-  {
-    name: "Sixto Serrano",
-    role: "TUUR Technical Coordinator",
-    credentials: [
-      "Sports Science Degree",
-      "TD Speleology",
-      "TD Canyoning",
-      "Andalusian Speleology School Professor",
-    ],
-    image: "/team/sixto-serrano.jpg",
-  },
-  {
-    name: "Daniel G. Beck",
-    role: "TUUR Logistics Director",
-    credentials: [
-      "TD Speleology",
-      "TD Canyoning",
-      "MTB Expert",
-      "TECO Certified",
-    ],
-    image: "/team/daniel-beck.jpg",
-  },
-];
 
 export default function Page() {
   return (
@@ -97,7 +7,7 @@ export default function Page() {
       {/* Hero Banner Section */}
       <section className="relative h-[60vh] min-h-[450px] flex items-center justify-center overflow-hidden">
         <Image
-          src="/about-hero.jpg"
+          src="/banner-contact-bg.webp"
           alt="TUUR Adventure team"
           fill
           className="object-cover"
@@ -117,8 +27,8 @@ export default function Page() {
       </section>
 
       {/* Who We Are Section */}
-      <section className="py-16 sm:py-24 px-4 sm:px-8 lg:px-16 bg-white">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-16 sm:py-24 px-4 sm:px-8 lg:px-16 bg-background">
+        <div className="max-w-[1440px] mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
@@ -145,7 +55,7 @@ export default function Page() {
             </div>
             <div className="relative h-80 lg:h-[450px] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/about-team-adventure.jpg"
+                src="/team-building-bg.webp"
                 alt="TUUR team in action"
                 fill
                 className="object-cover"
@@ -156,12 +66,12 @@ export default function Page() {
       </section>
 
       {/* Where We Work Section */}
-      <section className="py-16 sm:py-24 px-4 sm:px-8 lg:px-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-16 sm:py-24 px-4 sm:px-8 lg:px-16 bg-background">
+        <div className="max-w-[1440px] mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 relative h-80 lg:h-[400px] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/about-map.jpg"
+                src="/costa-del-sol.webp"
                 alt="TUUR operations map"
                 fill
                 className="object-cover"
@@ -206,112 +116,13 @@ export default function Page() {
       </section>
 
       {/* Office Team Section */}
-      <section className="py-16 sm:py-24 px-4 sm:px-8 lg:px-16 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Office Team
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              The professionals behind the scenes who make every adventure
-              possible
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {officeTeam.map((member) => (
-              <div
-                key={member.name}
-                className="bg-gray-50 rounded-xl overflow-hidden hover:shadow-lg transition-shadow"
-              >
-                <div className="relative h-56">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-5">
-                  <h3 className="text-lg font-bold text-gray-900">
-                    {member.name}
-                  </h3>
-                  <p className="text-blue-600 text-sm font-medium mb-3">
-                    {member.role}
-                  </p>
-                  <ul className="space-y-1">
-                    {member.credentials.map((credential, index) => (
-                      <li
-                        key={index}
-                        className="text-gray-600 text-xs flex items-start"
-                      >
-                        <span className="text-blue-500 mr-2">•</span>
-                        {credential}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Action Team Section */}
-      <section className="py-16 sm:py-24 px-4 sm:px-8 lg:px-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Action Team
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Our certified guides and instructors who lead you through every
-              adventure
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {actionTeam.map((member) => (
-              <div
-                key={member.name}
-                className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow"
-              >
-                <div className="relative h-64">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-5">
-                  <h3 className="text-lg font-bold text-gray-900">
-                    {member.name}
-                  </h3>
-                  <p className="text-blue-600 text-sm font-medium mb-3">
-                    {member.role}
-                  </p>
-                  <ul className="space-y-1">
-                    {member.credentials.map((credential, index) => (
-                      <li
-                        key={index}
-                        className="text-gray-600 text-xs flex items-start"
-                      >
-                        <span className="text-green-500 mr-2">•</span>
-                        {credential}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+      <section className="py-16 sm:py-24 px-4 sm:px-8 lg:px-16">
+        <ProfessionalGuides />
       </section>
 
       {/* Certifications Section */}
-      <section className="py-16 sm:py-24 px-4 sm:px-8 lg:px-16 bg-white">
-        <div className="max-w-6xl mx-auto">
+      <section className="py-16 sm:py-24 px-4 sm:px-8 lg:px-16">
+        <div className="max-w-[1440px] mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
@@ -324,7 +135,7 @@ export default function Page() {
               </p>
 
               <div className="space-y-6">
-                <div className="bg-gray-50 rounded-xl p-6">
+                <div className="bg-white rounded-xl p-6">
                   <h4 className="font-bold text-gray-900 mb-3 flex items-center">
                     <span className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
                       <span className="text-green-600">✓</span>
@@ -341,7 +152,7 @@ export default function Page() {
                   </ul>
                 </div>
 
-                <div className="bg-gray-50 rounded-xl p-6">
+                <div className="bg-white rounded-xl p-6">
                   <h4 className="font-bold text-gray-900 mb-3 flex items-center">
                     <span className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center mr-3">
                       <span className="text-green-600">✓</span>
@@ -414,9 +225,17 @@ export default function Page() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 sm:py-24 px-4 sm:px-8 lg:px-16 bg-gray-900 text-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+      <section className="relative h-[60vh] min-h-[450px] flex items-center justify-center overflow-hidden">
+        <Image
+          src="/casares-6.webp"
+          alt="TUUR Adventure team"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="max-w-4xl relative z-10 mx-auto text-center">
+          <h2 className="text-3xl text-white sm:text-4xl font-bold mb-4">
             Ready for Your Next Adventure?
           </h2>
           <p className="text-gray-300 max-w-2xl mx-auto mb-8">
@@ -427,7 +246,7 @@ export default function Page() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="/activities"
-              className="px-8 py-4 bg-white text-gray-900 font-bold rounded-full hover:bg-gray-100 transition-colors"
+              className="px-8 py-4 bg-primary-light hover:bg-primary text-gray-900 font-bold rounded-full hover:bg-gray-100 transition-colors"
             >
               Explore Activities
             </a>
