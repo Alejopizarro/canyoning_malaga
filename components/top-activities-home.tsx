@@ -100,7 +100,7 @@ const TopActivitiesHome = async () => {
                   </div>
                 </div>
 
-                <div className="flex flex-col h-18 my-2">
+                <div className="flex flex-col md:h-20 my-2">
                   {/* Description */}
                   <p className="text-sm text-gray-500 leading-snug  mb-3">
                     {activity.description}

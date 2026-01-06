@@ -8,7 +8,7 @@ export default function Page() {
       <section className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
         {/* Background Image */}
         <Image
-          src="/team-building-bg.jpg"
+          src="/team-building-bg.webp"
           alt="Team building activities in Malaga"
           fill
           className="object-cover"
@@ -30,7 +30,7 @@ export default function Page() {
       </section>
 
       {/* Intro Section */}
-      <section className="py-16 sm:py-24 px-4 sm:px-8 lg:px-16 bg-white">
+      <section className="py-16 sm:py-24 px-4 sm:px-8 lg:px-16">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -57,7 +57,7 @@ export default function Page() {
             </div>
             <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/tuur-canyoning-team.jpg"
+                src="/rio-verde-4.webp"
                 alt="Team building group doing canyoning"
                 fill
                 className="object-cover"
@@ -68,7 +68,7 @@ export default function Page() {
       </section>
 
       {/* Activities Section */}
-      <section className="py-16 sm:py-24 px-4 sm:px-8 lg:px-16 bg-gray-50">
+      <section className="py-16 sm:py-24 px-4 sm:px-8 lg:px-16">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
@@ -110,7 +110,7 @@ export default function Page() {
             <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
               <div className="relative h-48">
                 <Image
-                  src="/VF-Ronda-1.jpg"
+                  src="/casares-6.webp"
                   alt="Via Ferrata team building"
                   fill
                   className="object-cover"
@@ -135,7 +135,7 @@ export default function Page() {
             <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
               <div className="relative h-48">
                 <Image
-                  src="/kayak-banus-2.png"
+                  src="/kayak-banus-2.webp"
                   alt="Kayak team building"
                   fill
                   className="object-cover"
@@ -160,12 +160,12 @@ export default function Page() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-16 sm:py-24 px-4 sm:px-8 lg:px-16 bg-white">
+      <section className="py-16 sm:py-24 px-4 sm:px-8 lg:px-16">
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 relative h-80 lg:h-96 rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/team-building-benefits.jpg"
+                src="/zarzalones-12.webp"
                 alt="Team building benefits"
                 fill
                 className="object-cover"
@@ -181,7 +181,7 @@ export default function Page() {
                     <span className="text-blue-600 font-bold">✓</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">
+                    <h4 className="font-semibold text-2xl mb-2 text-gray-900">
                       Interpersonal Relationships
                     </h4>
                     <p className="text-gray-600 text-sm">
@@ -195,7 +195,7 @@ export default function Page() {
                     <span className="text-green-600 font-bold">✓</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">
+                    <h4 className="font-semibold text-2xl mb-2 text-gray-900">
                       Cooperation & Strategy
                     </h4>
                     <p className="text-gray-600 text-sm">
@@ -208,7 +208,7 @@ export default function Page() {
                     <span className="text-yellow-600 font-bold">✓</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">
+                    <h4 className="font-semibold text-2xl mb-2 text-gray-900">
                       Motivation & Fun
                     </h4>
                     <p className="text-gray-600 text-sm">
@@ -221,7 +221,7 @@ export default function Page() {
                     <span className="text-purple-600 font-bold">✓</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900">
+                    <h4 className="font-semibold text-2xl mb-2 text-gray-900">
                       Customized Programs
                     </h4>
                     <p className="text-gray-600 text-sm">

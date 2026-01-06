@@ -38,14 +38,14 @@ const guides: Guide[] = [
     role: "Technical Coordinator Canyoning",
     description:
       "'Txus' specialises in advanced canyoning techniques and loves to challenge himself and others. He is a Sport Technician in Canyoning, Medium Mountain and Caving, as well as a Superior Grade Technician in Physical and Sport Activities. He is also one of the Andalusian Champions of Canyoning.",
-    image: "/jose-carlos-rodriguez.jpg",
+    image: "/jose-carlos-rodriguez.webp",
   },
   {
     name: "Isra Navarro",
     role: "Beach Activities Coordinator",
     description:
       "Isra loves outdoor activities and leading teams with professionalism and a lot of humour. He is a certified canyoning guide, Technician in Conducting Physical-Sport Activities in the Natural Environment, Ski instructor, and a Sport Climbing expert. He is also a dog trainer, has his own brand of steel jewellery and is a STAG and HEN party entertainer.",
-    image: "/israel-navarro.jpg",
+    image: "/israel-navarro.webp",
   },
   {
     name: "Krishna Salleras",

@@ -145,10 +145,6 @@ export const complementaryData: Record<string, ComplementaryData> = {
         alt: "Zarzalones canyon - Beautiful landscapes in zarzalones canyon",
       },
       {
-        src: "/zarzalones-7.webp",
-        alt: "Zarzalones canyon - Adventurers in zarzalones canyon",
-      },
-      {
         src: "/zarzalones-8.webp",
         alt: "Zarzalones canyon - Crystal clear waters in zarzalones canyon",
       },
@@ -801,7 +797,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "All year!",
     mainImage: {
-      src: "/zarzalones-3.webp",
+      src: "/zarzalones-4.webp",
       alt: "Kayak Guadiaro River - Kayaking at the mouth of the Guadiaro River",
     },
     images: [],

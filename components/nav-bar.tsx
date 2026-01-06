@@ -43,7 +43,7 @@ const Navbar = async () => {
             {/* Logo Mobile/Tablet */}
             <Link href="/" className="lg:hidden flex-shrink-0">
               <Image
-                src="/logo-tuur-mobile.png"
+                src="/logo-mobile.svg"
                 width={36}
                 height={36}
                 alt="logo tuur canyoning vertical white"
