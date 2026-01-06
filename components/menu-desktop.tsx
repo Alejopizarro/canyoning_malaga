@@ -63,7 +63,7 @@ const MenuDesktop = ({
                 {/* Via Ferrata */}
                 <div className="space-y-2">
                   <Image
-                    src="/VF-Ronda-1.jpg"
+                    src="/casares-4.webp"
                     alt="Via Ferrata in Malaga"
                     width={300}
                     height={200}
@@ -117,7 +117,7 @@ const MenuDesktop = ({
                 {/* More Activities */}
                 <div className="space-y-2">
                   <Image
-                    src="/kayak-banus-2.png"
+                    src="/costa-del-sol.webp"
                     alt="More Activities in Malaga"
                     width={300}
                     height={200}
