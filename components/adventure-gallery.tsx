@@ -77,7 +77,7 @@ export default function AdventureGallery({
             <div className="grid grid-rows-2 gap-4">
               {/* Large Image Top Left */}
               <div
-                className="relative h-full min-h-[300px] overflow-hidden cursor-pointer group"
+                className="relative h-full min-h-[300px] overflow-hidden cursor-pointer group rounded-2xl"
                 onClick={() => openLightbox(0)}
               >
                 <Image
@@ -91,7 +91,7 @@ export default function AdventureGallery({
 
               {/* Small Image Bottom Left */}
               <div
-                className="relative h-full min-h-[200px] overflow-hidden cursor-pointer group"
+                className="relative h-full min-h-[200px] overflow-hidden cursor-pointer group rounded-2xl"
                 onClick={() => openLightbox(1)}
               >
                 <Image
@@ -108,7 +108,7 @@ export default function AdventureGallery({
             <div className="grid grid-rows-[1fr_2fr] gap-4">
               {/* Small Image Top Right */}
               <div
-                className="relative h-full min-h-[150px] overflow-hidden cursor-pointer group"
+                className="relative h-full min-h-[150px] rounded-2xl overflow-hidden cursor-pointer group"
                 onClick={() => openLightbox(2)}
               >
                 <Image
@@ -122,7 +122,7 @@ export default function AdventureGallery({
 
               {/* Large Image Bottom Right - With counter overlay */}
               <div
-                className="relative h-full min-h-[350px] overflow-hidden cursor-pointer group"
+                className="relative h-full min-h-[350px] rounded-2xl overflow-hidden cursor-pointer group"
                 onClick={() => openLightbox(3)}
               >
                 <Image
@@ -135,7 +135,7 @@ export default function AdventureGallery({
 
                 {/* Counter Badge */}
                 {remainingCount > 0 && (
-                  <div className="absolute bottom-4 right-4 bg-black/70 text-white px-4 py-2 text-sm font-medium">
+                  <div className="absolute rounded-full bottom-4 right-4 bg-black/70 text-white px-4 py-2 text-sm font-medium">
                     +{remainingCount} more
                   </div>
                 )}
@@ -148,7 +148,7 @@ export default function AdventureGallery({
       {/* Lightbox */}
       {lightboxOpen && (
         <div
-          className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center"
+          className="fixed inset-0 z-51 bg-black/95 flex items-center justify-center"
           onClick={closeLightbox}
           onKeyDown={handleKeyDown}
           tabIndex={0}
@@ -156,7 +156,7 @@ export default function AdventureGallery({
           {/* Close Button */}
           <button
             onClick={closeLightbox}
-            className="absolute top-4 right-4 z-50 w-12 h-12 flex items-center justify-center text-white hover:bg-white/10 transition-colors"
+            className="absolute top-4 right-4 z-51 rounded-full w-12 h-12 flex items-center justify-center text-white hover:bg-white/10 transition-colors"
             aria-label="Close gallery"
           >
             <X className="w-8 h-8" />
@@ -168,7 +168,7 @@ export default function AdventureGallery({
               e.stopPropagation();
               goToPrevious();
             }}
-            className="absolute left-4 z-50 w-12 h-12 flex items-center justify-center text-white hover:bg-white/10 transition-colors"
+            className="absolute left-4 z-51 w-12 h-12 flex items-center justify-center text-white hover:bg-white/10 transition-colors"
             aria-label="Previous image"
           >
             <ChevronLeft className="w-8 h-8" />
@@ -180,7 +180,7 @@ export default function AdventureGallery({
               e.stopPropagation();
               goToNext();
             }}
-            className="absolute right-4 z-50 w-12 h-12 flex items-center justify-center text-white hover:bg-white/10 transition-colors"
+            className="absolute right-4 z-51 w-12 h-12 flex items-center justify-center text-white hover:bg-white/10 transition-colors"
             aria-label="Next image"
           >
             <ChevronRight className="w-8 h-8" />
@@ -188,7 +188,7 @@ export default function AdventureGallery({
 
           {/* Main Image */}
           <div
-            className="relative w-full h-full max-w-5xl max-h-[70vh] mx-4"
+            className="relative md:-top-15 w-full h-full max-w-5xl max-h-[70vh] mx-4"
             onClick={(e) => e.stopPropagation()}
           >
             <Image
@@ -201,7 +201,7 @@ export default function AdventureGallery({
           </div>
 
           {/* Excursion Link */}
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-50">
+          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-51">
             <Link
               href={`/${galleryImages[currentIndex].categoryPath}/${galleryImages[currentIndex].slug}`}
               className="flex items-center gap-2 text-white hover:underline"

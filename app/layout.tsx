@@ -3,6 +3,7 @@ import { Raleway } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/nav-bar";
 import Footer from "@/components/footer";
+import WhatsAppFloat from "@/components/whatsapp-float";
 
 const raleway = Raleway({
   variable: "--font-raleway",
@@ -26,6 +27,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <WhatsAppFloat />
       </body>
     </html>
   );
