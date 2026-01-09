@@ -1,10 +1,7 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import { useState, useRef } from "react";
 import { Excursion } from "@/lib/activities";
-import { ArrowRight } from "lucide-react";
 import ExcursionCard from "../excursion-card";
 
 interface AllActivitiesCarouselProps {
@@ -16,14 +13,34 @@ const ActivitiesCarousel = ({ excursions }: AllActivitiesCarouselProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Limitar a los primeros 12 resultados
-  const limitedExcursions = excursions.slice(0, 12);
+  const limitedExcursions = excursions.slice(0, 10);
+
+  const getMaxIndex = () => {
+    if (!carouselRef.current) return limitedExcursions.length - 1;
+    const cardWidth =
+      carouselRef.current.scrollWidth / limitedExcursions.length;
+    const containerWidth = carouselRef.current.clientWidth;
+    const visibleCards = Math.floor(containerWidth / cardWidth);
+    return Math.max(0, limitedExcursions.length - visibleCards);
+  };
 
   const scrollToIndex = (index: number) => {
     if (carouselRef.current) {
       const cardWidth =
         carouselRef.current.scrollWidth / limitedExcursions.length;
+      const containerWidth = carouselRef.current.clientWidth;
+      const maxScroll = carouselRef.current.scrollWidth - containerWidth;
+
+      // Calcular el scroll deseado
+      let scrollLeft = cardWidth * index;
+
+      // Si el scroll calculado excede el máximo, usar el máximo para mostrar la última tarjeta completa
+      if (scrollLeft > maxScroll) {
+        scrollLeft = maxScroll;
+      }
+
       carouselRef.current.scrollTo({
-        left: cardWidth * index,
+        left: scrollLeft,
         behavior: "smooth",
       });
       setCurrentIndex(index);
@@ -36,7 +53,8 @@ const ActivitiesCarousel = ({ excursions }: AllActivitiesCarouselProps) => {
   };
 
   const handleNext = () => {
-    const newIndex = Math.min(limitedExcursions.length - 5, currentIndex + 1);
+    const maxIndex = getMaxIndex();
+    const newIndex = Math.min(maxIndex, currentIndex + 1);
     scrollToIndex(newIndex);
   };
 
@@ -103,7 +121,7 @@ const ActivitiesCarousel = ({ excursions }: AllActivitiesCarouselProps) => {
 
             <button
               onClick={handleNext}
-              disabled={currentIndex >= limitedExcursions.length - 5}
+              disabled={currentIndex >= getMaxIndex()}
               className="w-10 h-10 rounded-full border border-gray-300 flex items-center justify-center hover:border-gray-400 disabled:opacity-40 disabled:cursor-not-allowed transition-colors duration-300 cursor-pointer"
               aria-label="Next"
               type="button"

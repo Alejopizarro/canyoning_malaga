@@ -49,12 +49,11 @@ async function fetchSheetData(): Promise<string[][]> {
   const sheetId = process.env.GOOGLE_SHEETS_ID;
   const gid = process.env.GOOGLE_SHEETS_GID || "0";
 
-  console.log("🔍 Variables de entorno:");
-  console.log(
-    "  GOOGLE_SHEETS_ID:",
-    sheetId ? `✅ ${sheetId}` : "❌ No definido"
-  );
-  console.log("  GOOGLE_SHEETS_GID:", gid);
+  // console.log(
+  //   "  GOOGLE_SHEETS_ID:",
+  //   sheetId ? `✅ ${sheetId}` : "❌ No definido"
+  // );
+  // console.log("  GOOGLE_SHEETS_GID:", gid);
 
   if (!sheetId) {
     throw new Error(
@@ -64,7 +63,7 @@ async function fetchSheetData(): Promise<string[][]> {
 
   // URL para obtener el CSV público
   const url = `https://docs.google.com/spreadsheets/d/${sheetId}/export?format=csv&gid=${gid}`;
-  console.log("📡 Fetching URL:", url);
+  // console.log("📡 Fetching URL:", url);
 
   const response = await fetch(url, {
     next: { revalidate: 3600 }, // Revalidar cada hora
@@ -79,9 +78,9 @@ async function fetchSheetData(): Promise<string[][]> {
   console.log("📄 CSV length:", csvText.length, "caracteres");
   // Parsear CSV manualmente (para evitar dependencias externas)
   const rows = parseCSV(csvText);
-  console.log("📊 Rows parseadas:", rows.length);
-  console.log("📋 Primera fila (encabezados):", rows[0]);
-  console.log("📋 Segunda fila (primer dato):", rows[1]);
+  // console.log("📊 Rows parseadas:", rows.length);
+  // console.log("📋 Primera fila (encabezados):", rows[0]);
+  // console.log("📋 Segunda fila (primer dato):", rows[1]);
   return rows;
 }
 
@@ -137,7 +136,14 @@ function parseCSV(csvText: string): string[][] {
 function parseSheetExcursions(rows: string[][]): SheetExcursion[] {
   // Omitir la primera fila (encabezados) y comenzar desde la fila 2
   const dataRows = rows.slice(1);
-  return dataRows.map((row) => {
+  return dataRows.map((row, index) => {
+    // Los índices correctos según el Excel:
+    // 0: id, 1: slug, 2: category, 3: title, 4: subtitle, 5: precio
+    // 6: nota-precio (columna extra)
+    // 7: isMostPopular, 8: isTop3, 9: linkBokun, 10: linkFotos, 11: linkDescripcion
+    const isMostPopularValue = row[7]?.trim().toUpperCase() === "TRUE";
+    const isTop3Value = row[8]?.trim().toUpperCase() === "TRUE";
+
     const excursion: SheetExcursion = {
       id: row[0] || "",
       slug: row[1] || "",
@@ -145,11 +151,11 @@ function parseSheetExcursions(rows: string[][]): SheetExcursion[] {
       title: row[3] || "",
       subtitle: row[4] || "",
       price: parseFloat(row[5]) || 0,
-      isMostPopular: row[6]?.toUpperCase() === "TRUE",
-      isTop3: row[7]?.toUpperCase() === "TRUE",
-      linkBokun: row[8] || "",
-      linkFotos: row[9] || "",
-      linkDescripcion: row[10] || "",
+      isMostPopular: isMostPopularValue,
+      isTop3: isTop3Value,
+      linkBokun: row[9] || "",
+      linkFotos: row[10] || "",
+      linkDescripcion: row[11] || "",
     };
     return excursion;
   });
@@ -164,24 +170,15 @@ import {
 // Función principal: obtener excursiones completas
 export async function getExcursions(): Promise<Excursion[]> {
   try {
-    console.log("🚀 Iniciando getExcursions()");
     const rows = await fetchSheetData();
-    console.log("✅ fetchSheetData completado, filas obtenidas:", rows.length);
-
     const sheetExcursions = parseSheetExcursions(rows);
-    console.log(
-      "✅ parseSheetExcursions completado, excursiones:",
-      sheetExcursions.length
-    );
-    console.log("📦 Primera excursión parseada:", sheetExcursions[0]);
-
     const excursions: Excursion[] = sheetExcursions.map((sheetData) => {
       // Buscar datos complementarios por slug
       const complementary =
         complementaryData[sheetData.slug] || defaultComplementaryData;
 
       // Combinar datos: complementarios primero, luego sobrescribir con campos específicos del Sheet
-      return {
+      const result = {
         ...defaultComplementaryData,
         ...complementary,
         // Solo tomar campos específicos del Sheet que queremos sobrescribir
@@ -197,6 +194,8 @@ export async function getExcursions(): Promise<Excursion[]> {
         // subtitle, category, categoryPath, etc. vienen de complementary-data
         route: sheetData.slug,
       } as Excursion;
+
+      return result;
     });
     console.log(
       "✅ getExcursions completado, total excursiones:",

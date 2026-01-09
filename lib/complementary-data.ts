@@ -189,7 +189,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "All year",
     mainImage: {
-      src: "/rio-verde-4.webp",
+      src: "/rioverde-xpro-1.webp",
       alt: "Rio Verde canyon - One of the best canyons in Andalusia",
     },
     images: [
@@ -267,7 +267,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "15/6 to 30/11",
     mainImage: {
-      src: "/zarzalones-5.webp",
+      src: "/buitreras-1.webp",
       alt: "Buitreras canyon - The Cathedral of Andalusian Canyons",
     },
     images: [
@@ -328,7 +328,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "Mar to Jun & Sep to Nov",
     mainImage: {
-      src: "/la-concha-14.webp",
+      src: "/ronda-vf-1.webp",
       alt: "Tajo de Ronda - Cross through the ancient city of Ronda",
     },
     images: [
@@ -481,7 +481,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "All year",
     mainImage: {
-      src: "/zarzalones-9.webp",
+      src: "/ronda-vf-1.webp",
       alt: "Via Ferrata Ronda - Family-friendly via ferrata at Tajo de Ronda",
     },
     images: [
@@ -769,7 +769,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "Tue | Thu | Sat",
     mainImage: {
-      src: "/rio-verde-4.webp",
+      src: "/banus-kayak-1.webp",
       alt: "Kayak Puerto Banús - Sunrise kayak tour from Puerto Banús",
     },
     images: [
