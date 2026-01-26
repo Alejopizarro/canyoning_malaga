@@ -23,7 +23,7 @@ export default function TrustindexWidget() {
   }, []);
 
   return (
-    <section className="max-w-[1440px] mx-auto py-12 sm:py-16 px-4 sm:px-0 sm:pr-8 bg-background">
+    <section className="max-w-[1440px] mx-auto relative z-20 bg-background py-12 sm:py-16 px-4 sm:px-0 sm:pr-8">
       <div className="" id="trustindex-container"></div>
     </section>
   );
