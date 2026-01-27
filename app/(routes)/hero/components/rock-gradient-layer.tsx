@@ -20,15 +20,20 @@ const ROCK_STAGES = {
       opacity: 1,
     },
     phase1: {
-      scale: 1.5,
+      yPercent: 40,
       opacity: 1,
-      duration: 0.3,
-      ease: "power2.inOut",
+      duration: 3,
+      ease: "power2.out",
+    },
+    hold: {
+      yPercent: 40,
+      duration: 2,
+      ease: "none",
     },
     phase2: {
-      scale: 1.5,
-      yPercent: -100,
-      duration: 0.4,
+      scale: 1.2,
+      yPercent: -120,
+      duration: 5,
       ease: "none",
     },
   },
@@ -39,16 +44,21 @@ const ROCK_STAGES = {
       opacity: 1,
     },
     phase1: {
-      scale: 1,
+      scale: 1.4,
       opacity: 1,
-      duration: 0.3,
-      yPercent: -20,
+      duration: 5,
+      yPercent: 20,
       ease: "power2.inOut",
+    },
+    hold: {
+      yPercent: 20,
+      duration: 0,
+      ease: "none",
     },
     phase2: {
       scale: 1,
       yPercent: -80,
-      duration: 0.4,
+      duration: 5,
       ease: "none",
     },
   },
@@ -79,12 +89,12 @@ const TOP_ACTIVITIES_STAGES = {
     },
     phase1: {
       yPercent: -5,
-      duration: 0.3,
+      duration: 5,
       ease: "power2.inOut",
     },
     phase2: {
-      yPercent: -15,
-      duration: 0.4,
+      yPercent: -10,
+      duration: 5,
       ease: "none",
     },
   },
@@ -102,64 +112,57 @@ export default function RockGradientLayer() {
       topActCfg: typeof TOP_ACTIVITIES_STAGES.desktop,
     ) => {
       // ═══════════════════════════════════════════════════
-      // TIMELINE PARA GRADIENTE SUPERIOR
-      // ═══════════════════════════════════════════════════
-      gsap.set(topGradientRef.current, { opacity: 0 });
-
-      const tlGradient = gsap.timeline({
-        scrollTrigger: {
-          trigger: ".parallax-container",
-          start: "top top",
-          end: "bottom bottom",
-          scrub: 1,
-        },
-      });
-
-      tlGradient
-        .to(topGradientRef.current, {
-          opacity: 1,
-          duration: 0.3,
-        })
-        .to(topGradientRef.current, {
-          opacity: 1,
-          duration: 1,
-          ease: "power2.inOut",
-        });
-
-      // ═══════════════════════════════════════════════════
-      // FASE 1: Parallax container trigger
+      // TIMELINE PARA ROCA + GRADIENTE + TOP ACTIVITIES
       // ═══════════════════════════════════════════════════
       gsap.set(rockRef.current, rockCfg.initial);
+      gsap.set(topGradientRef.current, { opacity: 0 });
       gsap.set("#top-activities", topActCfg.initial);
 
-      const tlParallaxPhase1 = gsap.timeline({
+      const tlRock = gsap.timeline({
         scrollTrigger: {
           trigger: ".parallax-container",
           start: "top top",
           end: "bottom bottom",
-          scrub: 1,
+          scrub: 4,
         },
       });
 
-      tlParallaxPhase1
+      tlRock
+        // FASE 1: Roca, gradiente y top-activities en paralelo
         .to(rockRef.current, rockCfg.phase1, 0)
-        .to("#top-activities", topActCfg.phase1, 0);
-
-      // ═══════════════════════════════════════════════════
-      // FASE 2: Top activities trigger
-      // ═══════════════════════════════════════════════════
-      const tlPhase2 = gsap.timeline({
-        scrollTrigger: {
-          trigger: "#top-activities",
-          start: "top bottom",
-          end: "top top",
-          scrub: 1,
-        },
-      });
-
-      tlPhase2
-        .to(rockRef.current, rockCfg.phase2, 0)
-        .to("#top-activities", topActCfg.phase2, 0);
+        .to(
+          topGradientRef.current,
+          {
+            opacity: 1,
+            duration: rockCfg.phase1.duration,
+            ease: rockCfg.phase1.ease,
+          },
+          0,
+        )
+        .to("#top-activities", topActCfg.phase1, 0)
+        // HOLD: Roca y gradiente quietos
+        .to(rockRef.current, rockCfg.hold)
+        .to(
+          topGradientRef.current,
+          {
+            opacity: 1,
+            duration: rockCfg.hold.duration,
+            ease: rockCfg.hold.ease,
+          },
+          "<",
+        )
+        // FASE 2: Roca, gradiente y top-activities en paralelo
+        .to(rockRef.current, rockCfg.phase2)
+        .to(
+          topGradientRef.current,
+          {
+            opacity: 1,
+            duration: rockCfg.phase2.duration,
+            ease: rockCfg.phase2.ease,
+          },
+          "<",
+        )
+        .to("#top-activities", topActCfg.phase2, "<");
     };
 
     mm.add(BREAKPOINTS.desktop, () =>
@@ -187,7 +190,7 @@ export default function RockGradientLayer() {
       {/* Roca - z-25 para estar SIEMPRE por encima de las nubes (z-18/z-19) */}
       <div
         ref={rockRef}
-        className="absolute bottom-0 left-0 w-full h-[17vh] md:h-[25%] z-25"
+        className="absolute bottom-0 left-0 w-full h-[17vh] md:h-[25%] z-28"
         style={{ transformOrigin: "center bottom" }}
       >
         <Image
@@ -200,6 +203,7 @@ export default function RockGradientLayer() {
         {/* Gradiente inferior - conecta con TopActivities */}
         <div
           className="absolute left-0 w-full pointer-events-none"
+          ref={topGradientRef}
           style={{
             bottom: "-30vh",
             height: "50vh",

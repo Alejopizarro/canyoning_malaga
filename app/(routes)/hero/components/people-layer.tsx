@@ -27,7 +27,7 @@ const PEOPLE_STAGES = {
       width: "60vw",
       height: "60vh",
       opacity: 1,
-      duration: 1,
+      duration: 5,
       ease: "power2.out",
     },
     phase2: {
@@ -53,7 +53,7 @@ const PEOPLE_STAGES = {
       width: "90vw",
       height: "70vh",
       opacity: 1,
-      duration: 4,
+      duration: 5,
       ease: "sine.inOut",
     },
     phase2: {
@@ -61,7 +61,7 @@ const PEOPLE_STAGES = {
       height: "60vh",
       yPercent: 100,
       opacity: 1,
-      duration: 2.5,
+      duration: 5,
       ease: "sine.inOut",
     },
   },
@@ -81,7 +81,7 @@ export default function PeopleLayer() {
           trigger: ".parallax-container",
           start: "top top",
           end: "bottom bottom",
-          scrub: 5,
+          scrub: 4,
         },
       });
 

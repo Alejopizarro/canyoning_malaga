@@ -161,9 +161,9 @@ export default function TextLayer() {
       {/* ═══════════════════════════════════════════════════ */}
       <div
         ref={text1Ref}
-        className="absolute top-5/12 left-1/2 w-full md:w-[1280px] -translate-x-1/2 -translate-y-1/2 text-center z-11"
+        className="absolute top-5/12 left-1/2 w-full max-w-[1280px] -translate-x-1/2 -translate-y-1/2 text-center z-11"
       >
-        <h1 className="text-[4rem] md:text-[8rem] font-extrabold leading-none text-white drop-shadow-2xl">
+        <h1 className="text-[4rem] sm:text-[6rem] lg:text-[7rem] font-extrabold leading-none text-white drop-shadow-2xl">
           Your Next Adventure
         </h1>
       </div>
@@ -173,9 +173,9 @@ export default function TextLayer() {
       {/* ═══════════════════════════════════════════════════ */}
       <div
         ref={text2Ref}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center opacity-0 z-12"
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center opacity-0 z-12 md:w-full"
       >
-        <p className="text-[4rem] md:text-[8rem] leading-none font-extrabold text-white drop-shadow-2xl mt-4">
+        <p className="text-[4rem] sm:text-[6rem] lg:text-[7rem] leading-none font-extrabold text-white drop-shadow-2xl mt-4">
           Begins Here
         </p>
       </div>

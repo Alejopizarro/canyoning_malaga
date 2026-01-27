@@ -19,18 +19,18 @@ const CLOUD_LEFT_STAGES = {
     },
     phase1: {
       x: "0%",
-      yPercent: -2,
+      yPercent: 10,
       scale: 1.5,
       opacity: 1,
-      duration: 0.3,
+      duration: 5,
       ease: "power2.out",
     },
     phase2: {
       x: "-10%",
-      yPercent: -5,
+      yPercent: -25,
       scale: 1.8,
       opacity: 0.8,
-      duration: 1,
+      duration: 5,
       ease: "power2.inOut",
     },
   },
@@ -44,7 +44,7 @@ const CLOUD_LEFT_STAGES = {
       yPercent: -1,
       scale: 1.2,
       opacity: 1,
-      duration: 3,
+      duration: 5,
       ease: "sine.inOut",
     },
     phase2: {
@@ -52,7 +52,7 @@ const CLOUD_LEFT_STAGES = {
       yPercent: -3,
       scale: 1.4,
       opacity: 0.8,
-      duration: 1,
+      duration: 5,
       ease: "power2.inOut",
     },
   },
@@ -92,7 +92,7 @@ export default function CloudLeftLayer() {
   return (
     <div
       ref={cloudRef}
-      className="absolute left-0 -bottom-40 md:-bottom-20 w-[70vh] h-[70vh] opacity-0 z-13"
+      className="absolute left-0 -bottom-40  w-[70vh] h-[70vh] opacity-0 z-13"
     >
       <Image src="/nube.png" alt="Cloud left" fill className="object-contain" />
     </div>

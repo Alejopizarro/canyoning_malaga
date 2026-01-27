@@ -19,10 +19,16 @@ const BARRANCO_STAGES = {
       opacity: 1,
     },
     phase1: {
-      scale: 1.2,
-      opacity: 0.8,
-      duration: 1,
-      ease: "power2.inOut",
+      scale: 1.4,
+      opacity: 1,
+      duration: 3,
+      ease: "power2.outIn",
+    },
+    phase2: {
+      scale: 1.4,
+      opacity: 1,
+      duration: 7,
+      ease: "none",
     },
   },
   mobile: {
@@ -31,10 +37,16 @@ const BARRANCO_STAGES = {
       opacity: 1,
     },
     phase1: {
-      scale: 1.2,
-      opacity: 0.85,
-      duration: 0.7,
+      scale: 1.4,
+      opacity: 1,
+      duration: 5,
       ease: "power2.inOut",
+    },
+    phase2: {
+      scale: 1.4,
+      opacity: 1,
+      duration: 5,
+      ease: "none",
     },
   },
 };
@@ -48,6 +60,11 @@ const MONTANA_STAGES = {
       opacity: 1,
     },
     phase1: {
+      opacity: 1,
+      duration: 1,
+      ease: "none",
+    },
+    phase2: {
       opacity: 0,
       duration: 1,
       ease: "power2.in",
@@ -58,6 +75,11 @@ const MONTANA_STAGES = {
       opacity: 1,
     },
     phase1: {
+      opacity: 1,
+      duration: 1,
+      ease: "none",
+    },
+    phase2: {
       opacity: 0,
       duration: 1,
       ease: "power2.in",
@@ -85,28 +107,32 @@ export default function BackgroundLayer() {
         scrollTrigger: {
           trigger: ".parallax-container",
           start: "top top",
-          end: "20% bottom",
-          scrub: 2,
+          end: "bottom bottom",
+          scrub: 4,
         },
       });
 
-      tlBarranco.to(barrancoRef.current, barrancoCfg.phase1);
+      tlBarranco
+        .to(barrancoRef.current, barrancoCfg.phase1)
+        .to(barrancoRef.current, barrancoCfg.phase2);
 
       // ═══════════════════════════════════════════════════
-      // TIMELINE PARA MONTAÑA (trigger diferente)
+      // TIMELINE PARA MONTAÑA
       // ═══════════════════════════════════════════════════
       gsap.set(montanaRef.current, montanaCfg.initial);
 
       const tlMontana = gsap.timeline({
         scrollTrigger: {
-          trigger: "#top-activities",
+          trigger: ".parallax-container",
           start: "top top",
-          end: "50% bottom",
-          scrub: 2,
+          end: "bottom bottom",
+          scrub: 4,
         },
       });
 
-      tlMontana.to(montanaRef.current, montanaCfg.phase1);
+      tlMontana
+        .to(montanaRef.current, montanaCfg.phase1)
+        .to(montanaRef.current, montanaCfg.phase2);
     };
 
     mm.add(BREAKPOINTS.desktop, () =>

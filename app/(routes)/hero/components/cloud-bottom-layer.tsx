@@ -18,17 +18,17 @@ const CLOUD_BOTTOM_STAGES = {
       opacity: 0,
     },
     phase1: {
-      y: "0%",
+      yPercent: 0,
       opacity: 1,
-      duration: 0.7,
+      duration: 5,
       scale: 1,
       ease: "power2.out",
     },
     phase2: {
       scale: 2,
-      duration: 1,
-      opacity: 1,
-      yPercent: -10,
+      duration: 5,
+      opacity: 0.7,
+      yPercent: -45,
       ease: "power2.inOut",
     },
   },
@@ -37,15 +37,15 @@ const CLOUD_BOTTOM_STAGES = {
       opacity: 0,
     },
     phase1: {
-      y: "0%",
+      yPercent: 0,
       opacity: 1,
-      duration: 0.7,
+      duration: 5,
       scale: 1,
       ease: "power2.out",
     },
     phase2: {
       scale: 1.5,
-      duration: 1,
+      duration: 5,
       opacity: 1,
       yPercent: -5,
       ease: "power2.inOut",
@@ -67,7 +67,7 @@ export default function CloudBottomLayer() {
           trigger: ".parallax-container",
           start: "top top",
           end: "bottom bottom",
-          scrub: 1,
+          scrub: 4,
         },
       });
 
@@ -87,7 +87,7 @@ export default function CloudBottomLayer() {
   return (
     <div
       ref={cloudRef}
-      className="absolute -bottom-120 md:-bottom-80 left-1/2 -translate-x-1/2 w-[200vh] h-[80vh] z-18"
+      className="absolute -bottom-120 md:-bottom-80 left-1/2 -translate-x-1/2 w-[200vh] h-[80vh] z-27"
     >
       <Image
         src="/nube.png"
