@@ -38,14 +38,14 @@ const TEXT1_STAGES = {
     phase1: {
       y: -50,
       opacity: 1,
-      duration: 0.2,
+      duration: 3,
       ease: "power2.out",
     },
     phase2: {
-      yPercent: 190,
+      yPercent: 300,
       opacity: 1,
-      duration: 0.5,
-      ease: "power2.inOut",
+      duration: 1,
+      ease: "power1.inOut",
     },
   },
 };
@@ -63,7 +63,7 @@ const TEXT2_STAGES = {
       y: 0,
       opacity: 1,
       duration: 0.3,
-      ease: "power2.out",
+      ease: "sine.inOut",
     },
     phase2: {
       yPercent: 120,
@@ -80,14 +80,14 @@ const TEXT2_STAGES = {
     phase1: {
       y: 0,
       opacity: 1,
-      duration: 0.3,
-      ease: "power2.out",
+      duration: 3,
+      ease: "sine.inOut",
     },
     phase2: {
-      yPercent: 120,
+      yPercent: 150,
       opacity: 1,
-      duration: 0.7,
-      ease: "power2.inOut",
+      duration: 1,
+      ease: "power1.inOut",
     },
   },
 };
@@ -113,7 +113,7 @@ export default function TextLayer() {
           trigger: ".parallax-container",
           start: "top top",
           end: "bottom bottom",
-          scrub: 1,
+          scrub: 4,
         },
       });
 
@@ -133,7 +133,7 @@ export default function TextLayer() {
           trigger: ".parallax-container",
           start: "top top",
           end: "bottom bottom",
-          scrub: 1,
+          scrub: 4,
         },
       });
 

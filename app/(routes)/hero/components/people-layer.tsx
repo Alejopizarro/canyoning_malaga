@@ -35,8 +35,8 @@ const PEOPLE_STAGES = {
       height: "40vh",
       yPercent: 120,
       opacity: 1,
-      duration: 2,
-      ease: "power2.inOut",
+      duration: 5,
+      ease: "sine.inOut",
     },
   },
   mobile: {
@@ -53,16 +53,16 @@ const PEOPLE_STAGES = {
       width: "90vw",
       height: "70vh",
       opacity: 1,
-      duration: 1,
-      ease: "power2.out",
+      duration: 4,
+      ease: "sine.inOut",
     },
     phase2: {
       width: "80vw",
       height: "60vh",
       yPercent: 100,
       opacity: 1,
-      duration: 2,
-      ease: "power2.inOut",
+      duration: 2.5,
+      ease: "sine.inOut",
     },
   },
 };
@@ -81,7 +81,7 @@ export default function PeopleLayer() {
           trigger: ".parallax-container",
           start: "top top",
           end: "bottom bottom",
-          scrub: 1,
+          scrub: 5,
         },
       });
 

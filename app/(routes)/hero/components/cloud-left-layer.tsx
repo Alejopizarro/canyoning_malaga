@@ -44,8 +44,8 @@ const CLOUD_LEFT_STAGES = {
       yPercent: -1,
       scale: 1.2,
       opacity: 1,
-      duration: 0.3,
-      ease: "power2.out",
+      duration: 3,
+      ease: "sine.inOut",
     },
     phase2: {
       x: "-5%",
@@ -72,7 +72,7 @@ export default function CloudLeftLayer() {
           trigger: ".parallax-container",
           start: "top top",
           end: "bottom bottom",
-          scrub: 1,
+          scrub: 4,
         },
       });
 

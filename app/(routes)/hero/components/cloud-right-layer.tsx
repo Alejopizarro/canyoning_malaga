@@ -45,15 +45,15 @@ const CLOUD_RIGHT_STAGES = {
       yPercent: -1,
       scale: 1.2,
       opacity: 1,
-      duration: 0.3,
-      ease: "power2.out",
+      duration: 3,
+      ease: "sine.inOut",
     },
     phase2: {
       x: "5%",
       yPercent: -3,
       scale: 1.4,
       opacity: 0.8,
-      duration: 0.7,
+      duration: 1,
       ease: "power2.inOut",
     },
   },
@@ -73,7 +73,7 @@ export default function CloudRightLayer() {
           trigger: ".parallax-container",
           start: "top top",
           end: "bottom bottom",
-          scrub: 1,
+          scrub: 4,
         },
       });
 

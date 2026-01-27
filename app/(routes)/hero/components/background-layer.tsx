@@ -31,9 +31,9 @@ const BARRANCO_STAGES = {
       opacity: 1,
     },
     phase1: {
-      scale: 1.1,
+      scale: 1.2,
       opacity: 0.85,
-      duration: 1,
+      duration: 0.7,
       ease: "power2.inOut",
     },
   },
@@ -74,7 +74,7 @@ export default function BackgroundLayer() {
 
     const setup = (
       barrancoCfg: typeof BARRANCO_STAGES.desktop,
-      montanaCfg: typeof MONTANA_STAGES.desktop
+      montanaCfg: typeof MONTANA_STAGES.desktop,
     ) => {
       // ═══════════════════════════════════════════════════
       // TIMELINE PARA BARRANCO
@@ -85,8 +85,8 @@ export default function BackgroundLayer() {
         scrollTrigger: {
           trigger: ".parallax-container",
           start: "top top",
-          end: "bottom bottom",
-          scrub: 1,
+          end: "20% bottom",
+          scrub: 2,
         },
       });
 
@@ -101,8 +101,8 @@ export default function BackgroundLayer() {
         scrollTrigger: {
           trigger: "#top-activities",
           start: "top top",
-          end: "bottom bottom",
-          scrub: 1,
+          end: "50% bottom",
+          scrub: 2,
         },
       });
 
@@ -110,10 +110,10 @@ export default function BackgroundLayer() {
     };
 
     mm.add(BREAKPOINTS.desktop, () =>
-      setup(BARRANCO_STAGES.desktop, MONTANA_STAGES.desktop)
+      setup(BARRANCO_STAGES.desktop, MONTANA_STAGES.desktop),
     );
     mm.add(BREAKPOINTS.mobile, () =>
-      setup(BARRANCO_STAGES.mobile, MONTANA_STAGES.mobile)
+      setup(BARRANCO_STAGES.mobile, MONTANA_STAGES.mobile),
     );
 
     return () => mm.revert();
