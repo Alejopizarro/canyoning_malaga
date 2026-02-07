@@ -1,5 +1,5 @@
 import { Excursion } from "@/lib/activities";
-import { ArrowRight, MapPin } from "lucide-react";
+import { ArrowRight, Clock, Gauge, MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -12,7 +12,7 @@ const ExcursionCard = (props: ExcursionCardProps) => {
   const { excursion, showDescription = true } = props;
 
   return (
-    <div className="hover:shadow-lg rounded-2xl transition-shadow duration-300 h-auto w-full max-w-[380px] flex flex-col">
+    <div className="hover:shadow-lg hover:cursor-pointer rounded-2xl transition-shadow duration-300 h-auto w-full max-w-[380px] flex flex-col">
       <div className="p-0">
         <Image
           width={400}
@@ -23,7 +23,7 @@ const ExcursionCard = (props: ExcursionCardProps) => {
         />
         <div
           className={`px-4 flex flex-col py-6 bg-white rounded-b-2xl ${
-            showDescription ? "h-[220px]" : "h-[140px]"
+            showDescription ? "h-[250px]" : "h-[230px]"
           }`}
         >
           <div className="flex items-center mb-1 text-gray-600 gap-1 text-sm">
@@ -43,6 +43,21 @@ const ExcursionCard = (props: ExcursionCardProps) => {
             </div>
           </div>
 
+          <div className="flex flex-wrap gap-3 mt-2">
+            <span className="flex bg-gray-200 px-2 py-1 rounded-lg items-center gap-1 text-sm font-semibold text-gray-500">
+              <MapPin size={12} />
+              {excursion.ubication}
+            </span>
+            <span className="flex bg-gray-200 px-2 py-1 rounded-lg items-center gap-1 text-sm font-semibold text-gray-500">
+              <Gauge size={12} />
+              {excursion.level}
+            </span>
+            <span className="flex bg-gray-200 px-2 py-1 rounded-lg items-center gap-1 text-sm font-semibold text-gray-500">
+              <Clock size={12} />
+              {excursion.duration} hs
+            </span>
+          </div>
+
           {showDescription && (
             <div className="flex-grow mb-2">
               <p className="text-sm text-gray-600 line-clamp-3">
@@ -52,7 +67,7 @@ const ExcursionCard = (props: ExcursionCardProps) => {
           )}
 
           <Link
-            className="font-light text-primary-dark hover:underline"
+            className="font-light text-primary-dark self-baseline hover:underline mt-auto"
             href={`/${excursion.categoryPath}/${excursion.route}`}
           >
             More information{" "}

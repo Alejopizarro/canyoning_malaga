@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useCallback } from "react";
+import { useSearchParams, useRouter, usePathname } from "next/navigation";
 import { Excursion } from "@/lib/activities";
 import ExcursionCard from "@/components/excursion-card";
 import { Button } from "@/components/ui/button";
@@ -13,29 +14,70 @@ interface ExcursionsClientProps {
 }
 
 const ExcursionsClient = ({ excursions }: ExcursionsClientProps) => {
-  const [filterCategory, setFilterCategory] = useState("");
-  const [filterLevel, setFilterLevel] = useState("");
-  const [filterProvince, setFilterProvince] = useState("");
-  const [filterTop3, setFilterTop3] = useState("");
-  const [filterMostPopular, setFilterMostPopular] = useState("");
-  const [sortByPrice, setSortByPrice] = useState("");
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const filterCategory = searchParams.get("category") || "";
+  const filterLevel = searchParams.get("level") || "";
+  const filterProvince = searchParams.get("province") || "";
+  const filterTop3 = searchParams.get("top3") || "";
+  const filterMostPopular = searchParams.get("popular") || "";
+  const sortByPrice = searchParams.get("sort") || "";
+
   const [visibleCount, setVisibleCount] = useState(9);
   const [visibleCountMobile, setVisibleCountMobile] = useState(6);
 
-  const handleClearAllFilters = () => {
-    setFilterCategory("");
-    setFilterLevel("");
-    setFilterProvince("");
-    setFilterTop3("");
-    setFilterMostPopular("");
-    setSortByPrice("");
-  };
+  const updateParam = useCallback(
+    (key: string, value: string) => {
+      const params = new URLSearchParams(searchParams.toString());
+      if (value) {
+        params.set(key, value);
+      } else {
+        params.delete(key);
+      }
+      const qs = params.toString();
+      router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
+    },
+    [searchParams, router, pathname]
+  );
+
+  const setFilterCategory = useCallback(
+    (v: string) => updateParam("category", v),
+    [updateParam]
+  );
+  const setFilterLevel = useCallback(
+    (v: string) => updateParam("level", v),
+    [updateParam]
+  );
+  const setFilterProvince = useCallback(
+    (v: string) => updateParam("province", v),
+    [updateParam]
+  );
+  const setFilterTop3 = useCallback(
+    (v: string) => updateParam("top3", v),
+    [updateParam]
+  );
+  const setFilterMostPopular = useCallback(
+    (v: string) => updateParam("popular", v),
+    [updateParam]
+  );
+  const setSortByPrice = useCallback(
+    (v: string) => updateParam("sort", v),
+    [updateParam]
+  );
+
+  const handleClearAllFilters = useCallback(() => {
+    router.replace(pathname, { scroll: false });
+  }, [router, pathname]);
 
   const filteredAndSortedExcursions = useMemo(() => {
     // Primero filtrar
     let filtered = excursions.filter(
       (excursion: Excursion) =>
-        (filterCategory === "" || excursion.category === filterCategory) &&
+        (filterCategory === "" ||
+          excursion.category.toLowerCase() ===
+            filterCategory.toLowerCase()) &&
         (filterLevel === "" || excursion.level === filterLevel) &&
         (filterProvince === "" || excursion.province === filterProvince) &&
         (filterTop3 === "" || (filterTop3 === "true" && excursion.isTop3)) &&

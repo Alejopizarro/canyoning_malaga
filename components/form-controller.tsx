@@ -24,6 +24,7 @@ import {
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { Check, LoaderCircle, MoveRight, PhoneCall } from "lucide-react";
+import { PhonePrefixSelector } from "@/components/ui/phone-prefix-selector";
 import { useState } from "react";
 import { Checkbox } from "@/components/ui/checkbox";
 import Link from "next/link";
@@ -32,8 +33,12 @@ const formSchema = z.object({
   name: z.string().min(2, {
     message: "Name must be at least 2 characters.",
   }),
+  companyName: z.string().optional(),
   email: z.string().email({
     message: "Please enter a valid email",
+  }),
+  phonePrefix: z.string().min(1, {
+    message: "Please select a phone prefix",
   }),
   phone: z.string().min(7, {
     message: "Phone number must be at least 7 characters",
@@ -60,7 +65,9 @@ export function FormController() {
     resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
+      companyName: "",
       email: "",
+      phonePrefix: "+34",
       phone: "",
       groupType: "",
       approximateDate: "",
@@ -68,6 +75,9 @@ export function FormController() {
       message: "",
     },
   });
+
+  const groupType = form.watch("groupType");
+  const showCompanyField = groupType === "company-team-building";
 
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
     setIsLoading(true);
@@ -77,12 +87,15 @@ export function FormController() {
         process.env.NEXT_PUBLIC_GOOGLE_APPS_SCRIPT_URL || "",
         {
           method: "POST",
-          mode: "no-cors", // importante para evitar problemas de CORS con Apps Script
+          mode: "no-cors",
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(data),
-        }
+          body: JSON.stringify({
+            ...data,
+            phone: `${data.phonePrefix} ${data.phone}`,
+          }),
+        },
       );
 
       console.log("Form submitted:", response.json, data);
@@ -104,55 +117,32 @@ export function FormController() {
     <Form {...form}>
       {!error && !isSuccess && (
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+          {/* Name Field */}
           <FormField
             control={form.control}
             name="name"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-gray-950">Company name</FormLabel>
+                <FormLabel className="text-gray-950">
+                  Name <span className="text-red-500">*</span>
+                </FormLabel>
                 <FormControl>
-                  <Input placeholder="Your business here..." {...field} />
+                  <Input placeholder="Your name..." {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="text-gray-950">Email</FormLabel>
-                <FormControl>
-                  <Input placeholder="johndoe@gmail.com" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="phone"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel className="text-gray-950">Phone number</FormLabel>
-                <FormControl>
-                  <Input placeholder="622333444" {...field} />
-                </FormControl>
-                <FormDescription className="text-sm text-slate-600">
-                  We will contact you to plan your perfect team building
-                  activity.
-                </FormDescription>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+
+          {/* Group Type Field */}
           <FormField
             control={form.control}
             name="groupType"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-gray-950">Group type</FormLabel>
+                <FormLabel className="text-gray-950">
+                  Group type <span className="text-red-500">*</span>
+                </FormLabel>
                 <Select onValueChange={field.onChange} value={field.value}>
                   <FormControl>
                     <SelectTrigger className="w-full text-gray-600">
@@ -160,20 +150,104 @@ export function FormController() {
                     </SelectTrigger>
                   </FormControl>
                   <SelectContent>
-                    <SelectItem value="big-companies">
+                    <SelectItem value="company-team-building">
                       Company / Team Building
                     </SelectItem>
-                    <SelectItem value="small-business">
-                      Small business
+                    <SelectItem value="family">Family</SelectItem>
+                    <SelectItem value="friends">Friends</SelectItem>
+                    <SelectItem value="school">School</SelectItem>
+                    <SelectItem value="sport-team">Sport Team</SelectItem>
+                    <SelectItem value="hen-stag">HEN / STAG</SelectItem>
+                    <SelectItem value="tour-operator-agency">
+                      Tour Operator / Agency
                     </SelectItem>
-                    <SelectItem value="open-group">Open group</SelectItem>
-                    <SelectItem value="other">Other</SelectItem>
                   </SelectContent>
                 </Select>
                 <FormMessage />
               </FormItem>
             )}
           />
+
+          {/* Company Name Field - Only shows when Company / Team Building is selected */}
+          {showCompanyField && (
+            <FormField
+              control={form.control}
+              name="companyName"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="text-gray-950">
+                    Company name{" "}
+                    <span className="text-gray-400 font-normal">
+                      (optional)
+                    </span>
+                  </FormLabel>
+                  <FormControl>
+                    <Input placeholder="Your company name..." {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          )}
+
+          {/* Email Field */}
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-gray-950">
+                  Email <span className="text-red-500">*</span>
+                </FormLabel>
+                <FormControl>
+                  <Input placeholder="johndoe@gmail.com" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          {/* Phone Prefix + Phone Number Fields */}
+          <div className="grid grid-cols-3 gap-3">
+            <FormField
+              control={form.control}
+              name="phonePrefix"
+              render={({ field }) => (
+                <FormItem className="col-span-1">
+                  <FormLabel className="text-gray-950">
+                    Prefix <span className="text-red-500">*</span>
+                  </FormLabel>
+                  <FormControl>
+                    <PhonePrefixSelector
+                      value={field.value}
+                      onChange={field.onChange}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="phone"
+              render={({ field }) => (
+                <FormItem className="col-span-2">
+                  <FormLabel className="text-gray-950">
+                    Phone number <span className="text-red-500">*</span>
+                  </FormLabel>
+                  <FormControl>
+                    <Input placeholder="622 333 444" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+          <FormDescription className="text-sm text-slate-600 -mt-2">
+            We will contact you to plan your perfect team building activity.
+          </FormDescription>
+
+          {/* Approximate Date Field */}
           <FormField
             control={form.control}
             name="approximateDate"
@@ -189,13 +263,16 @@ export function FormController() {
               </FormItem>
             )}
           />
+
+          {/* Estimated People Field */}
           <FormField
             control={form.control}
             name="estimatedPeople"
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="text-gray-950">
-                  Estimated number of people (optional)
+                  Estimated number of people{" "}
+                  <span className="text-gray-400 font-normal">(optional)</span>
                 </FormLabel>
                 <FormControl className="text-gray-600">
                   <Input type="number" placeholder="0" {...field} />
@@ -204,13 +281,16 @@ export function FormController() {
               </FormItem>
             )}
           />
+
+          {/* Message Field */}
           <FormField
             control={form.control}
             name="message"
             render={({ field }) => (
               <FormItem>
                 <FormLabel className="text-gray-950">
-                  Message (optional)
+                  Message{" "}
+                  <span className="text-gray-400 font-normal">(optional)</span>
                 </FormLabel>
                 <FormControl>
                   <Textarea
@@ -223,6 +303,8 @@ export function FormController() {
               </FormItem>
             )}
           />
+
+          {/* Privacy Policy Checkbox */}
           <FormField
             control={form.control}
             name="optim"
@@ -248,6 +330,8 @@ export function FormController() {
               </FormItem>
             )}
           />
+
+          {/* Submit Button */}
           <Button type="submit" className="w-full">
             {isLoading === true && (
               <p className="flex items-center gap-x-2">
@@ -268,7 +352,7 @@ export function FormController() {
           <p>You can contact us at the following number</p>
           <p className="flex items-center gap-x-2 text-xl text-slate-600 font-semibold">
             <PhoneCall />
-            951 68 13 83
+            699 19 91 58
           </p>
         </div>
       )}
@@ -287,7 +371,7 @@ export function FormController() {
           </div>
           <p className="flex items-center gap-x-2 text-xl text-slate-600 font-semibold">
             <PhoneCall />
-            951 68 13 83
+            699 19 91 58
           </p>
         </div>
       )}

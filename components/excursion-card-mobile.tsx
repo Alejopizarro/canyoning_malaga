@@ -27,7 +27,12 @@ const ExcursionCardMobile = (props: ExcursionCardMobileProps) => {
               : excursion.subcategory}
           </div>
           <div className="flex justify-between items-start mb-2">
-            <h4 className="max-w-lg text-lg line-clamp-1">{excursion.title}</h4>
+            <a
+              href={`/${excursion.categoryPath}/${excursion.route}`}
+              className="text-lg font-semibold line-clamp-1"
+            >
+              {excursion.title}
+            </a>
           </div>
 
           <div className="flex-grow mb-2">
@@ -36,11 +41,11 @@ const ExcursionCardMobile = (props: ExcursionCardMobileProps) => {
             </p>
           </div>
 
-          <div className="flex items-center gap-1 mb-2">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-md text-gray-500 mt-1.5">From</span>
             <span className="text-2xl font-bold text-primary">
               {excursion.price}€
             </span>
-            <span className="text-sm text-gray-500">/person</span>
           </div>
 
           <Link

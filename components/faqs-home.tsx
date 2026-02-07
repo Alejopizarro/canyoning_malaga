@@ -49,10 +49,16 @@ export default function FaqsHome() {
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
               FAQs
             </h2>
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-600 mb-8">
               Find answers to your questions about our activities, safety and
               booking process.
             </p>
+            <a
+              href="/faqs"
+              className="border-2 border-gray-900 rounded-lg font-semibold px-4 py-3"
+            >
+              View all FAQs
+            </a>
           </div>
 
           {/* Right Column - Accordion */}

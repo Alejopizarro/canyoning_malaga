@@ -7,7 +7,7 @@ const benefits = [
   {
     icon: (
       <svg
-        className="w-8 h-8 text-primary"
+        className="w-16 h-16 lg:w-8 lg:h-8 text-primary"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -27,7 +27,7 @@ const benefits = [
   {
     icon: (
       <svg
-        className="w-8 h-8 text-primary"
+        className="w-16 h-16 lg:w-8 lg:h-8 text-primary"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -47,7 +47,7 @@ const benefits = [
   {
     icon: (
       <svg
-        className="w-8 h-8 text-primary"
+        className="w-16 h-16 lg:w-8 lg:h-8 text-primary"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -74,7 +74,7 @@ export default function WhyChoose() {
       <div>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Right - Content */}
-          <div className="order-1 lg:order-2">
+          <div className="order-2 text-center lg:text-left">
             <p className="text-primary font-medium mb-2">Our Company</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
               Why Choose Us?
@@ -90,7 +90,10 @@ export default function WhyChoose() {
             {/* Benefits List */}
             <div className="space-y-6">
               {benefits.map((benefit, index) => (
-                <div key={index} className="flex items-start gap-4">
+                <div
+                  key={index}
+                  className="flex flex-col items-center lg:flex-row lg:items-start gap-4"
+                >
                   <div className="flex-shrink-0 mt-1 flex items-center justify-center">
                     {benefit.icon}
                   </div>
@@ -115,7 +118,7 @@ export default function WhyChoose() {
               About Us
             </Button>
           </div>
-          <div className="relative w-full max-w-[616px] aspect-square mx-auto lg:mx-0 order-2 lg:order-1">
+          <div className="relative w-full max-w-[616px] aspect-square mx-auto lg:mx-0 order-1">
             {/* Background Image */}
             <Image
               src="/trip-advisor.webp"

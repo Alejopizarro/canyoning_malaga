@@ -12,16 +12,16 @@ import {
 
 const Footer = () => {
   const canyoningExcursions = excursions.filter(
-    (exc) => exc.category === "Canyoning"
+    (exc) => exc.category === "Canyoning",
   );
   const viaFerrataExcursions = excursions.filter(
-    (exc) => exc.category === "Via Ferrata"
+    (exc) => exc.category === "Via Ferrata",
   );
   const hikingExcursions = excursions.filter(
-    (exc) => exc.category === "Hiking"
+    (exc) => exc.category === "Hiking",
   );
   const moreActivitiesExcursions = excursions.filter(
-    (exc) => exc.category === "More Activities"
+    (exc) => exc.category === "More Activities",
   );
 
   return (
@@ -204,7 +204,7 @@ const Footer = () => {
                   href="tel:+34123456789"
                   className="text-sm text-gray-400 hover:text-primary transition-colors"
                 >
-                  +34 123 456 789
+                  +34 699 19 91 58
                 </a>
               </li>
               <li className="flex items-start space-x-2">
@@ -213,13 +213,13 @@ const Footer = () => {
                   href="mailto:info@tuurcanyoning.com"
                   className="text-sm text-gray-400 hover:text-primary transition-colors"
                 >
-                  info@tuurcanyoning.com
+                  tuurcanyoning@gmail.com
                 </a>
               </li>
               <li className="flex items-start space-x-2">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-primary" />
                 <span className="text-sm text-gray-400">
-                  Marbella, Málaga, Spain
+                  C. San Javier Nº 16 4-B, San Pedro de Alcántara, Málaga
                 </span>
               </li>
             </ul>
@@ -229,30 +229,30 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-start space-y-4 md:space-y-0">
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-gray-400">
               &copy; {new Date().getFullYear()} Tuur Canyoning Malaga. All
               rights reserved.
             </p>
-            <p className="text-xs text-gray-500 max-w-md md:text-center">
+            <p className="text-xs text-gray-400 max-w-md md:text-center">
               Registered in "Registro de Turismo Activo" No: RTA AT/MA00141
               Civil Liability Insurance Policy No: RC/0316/1
             </p>
             <div className="flex space-x-6">
               <Link
                 href="/privacy-policy"
-                className="text-sm text-gray-500 hover:text-primary transition-colors"
+                className="text-sm text-gray-400 hover:text-primary transition-colors"
               >
                 Privacy Policy
               </Link>
               <Link
                 href="/terms-conditions"
-                className="text-sm text-gray-500 hover:text-primary transition-colors"
+                className="text-sm text-gray-400 hover:text-primary transition-colors"
               >
                 Terms & Conditions
               </Link>
               <Link
                 href="/cookies-policy"
-                className="text-sm text-gray-500 hover:text-primary transition-colors"
+                className="text-sm text-gray-400 hover:text-primary transition-colors"
               >
                 Cookies Policy
               </Link>

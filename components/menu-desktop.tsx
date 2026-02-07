@@ -24,7 +24,7 @@ const MenuDesktop = ({
   moreActivitiesExcursions,
 }: MenuDesktopProps) => {
   return (
-    <NavigationMenu>
+    <NavigationMenu delayDuration={0}>
       <NavigationMenuList className="space-x-0">
         <NavigationMenuItem>
           <NavigationMenuTrigger className="text-[0.875rem] font-medium text-white/90 hover:text-white bg-transparent hover:bg-white/10 data-[state=open]:bg-white/10 px-2.5 rounded-full transition-all whitespace-nowrap">
@@ -42,9 +42,12 @@ const MenuDesktop = ({
                     height={200}
                     className="rounded-2xl w-48 h-32 object-cover mb-2"
                   />
-                  <h3 className="font-bold px-2 text-sm text-primary-light mb-3">
+                  <a
+                    href="/activities?category=canyoning"
+                    className="font-bold px-2 text-sm text-primary-light mb-3"
+                  >
                     Canyoning
-                  </h3>
+                  </a>
                   {canyoningExcursions.slice(0, 3).map((excursion) => (
                     <Link
                       key={excursion.slug}
@@ -69,9 +72,12 @@ const MenuDesktop = ({
                     height={200}
                     className="rounded-lg w-48 h-32 object-cover mb-2"
                   />
-                  <h3 className="font-bold px-2 text-sm text-primary-light mb-3">
+                  <a
+                    href="/activities?category=Via+Ferrata"
+                    className="font-bold px-2 text-sm text-primary-light mb-3"
+                  >
                     Via Ferrata
-                  </h3>
+                  </a>
                   {viaFerrataExcursions.slice(0, 3).map((excursion) => (
                     <Link
                       key={excursion.slug}
@@ -96,9 +102,12 @@ const MenuDesktop = ({
                     height={200}
                     className="rounded-lg w-48 h-32 object-cover mb-2"
                   />
-                  <h3 className="font-bold px-2 text-sm text-primary-light mb-3">
+                  <a
+                    href="/activities?category=Hiking"
+                    className="font-bold px-2 text-sm text-primary-light mb-3"
+                  >
                     Hiking
-                  </h3>
+                  </a>
                   {hikingExcursions.slice(0, 3).map((excursion) => (
                     <Link
                       key={excursion.slug}
@@ -123,9 +132,12 @@ const MenuDesktop = ({
                     height={200}
                     className="rounded-lg w-48 h-32 object-cover mb-2"
                   />
-                  <h3 className="font-bold px-2 text-sm text-primary-light mb-3">
+                  <a
+                    href="/activities?category=More+Activities"
+                    className="font-bold px-2 text-sm text-primary-light mb-3"
+                  >
                     More Activities
-                  </h3>
+                  </a>
                   {moreActivitiesExcursions.slice(0, 3).map((excursion) => (
                     <Link
                       key={excursion.slug}

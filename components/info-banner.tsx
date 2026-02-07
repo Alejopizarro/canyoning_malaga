@@ -25,36 +25,31 @@ export default function InfoBanner({
   const location = ubication || province;
 
   return (
-    <div className="flex flex-wrap items-center gap-4">
+    <div className="flex flex-wrap items-center gap-2">
       {/* Level */}
-      <div className="bg-gray-300 flex items-center gap-2 px-3 py-1 text-md rounded-lg shadow-sm">
+      <span className="flex bg-gray-200 px-4 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-500">
         <Users size={15} />
-        <span className="font-semibold text-gray-700">
-          {getLevelText(level)}
-        </span>
-      </div>
-
+        {getLevelText(level)}
+      </span>
       {/* Age */}
-      <div className="flex items-center gap-2 bg-gray-300 text-md px-3 py-1 rounded-lg shadow-sm">
+      <span className="flex bg-gray-200 px-4 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-500">
         <Calendar size={15} />
-        <span className="font-semibold text-gray-700">
-          From {minimumAge} y.o.
-        </span>
-      </div>
+        From {minimumAge} y.o.
+      </span>
 
       {/* Location */}
       {location && (
-        <div className="flex items-center gap-2 bg-gray-300 px-3 py-1 rounded-lg shadow-sm">
+        <span className="flex bg-gray-200 px-4 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-500">
           <MapPin size={15} />
-          <span className="font-semibold text-gray-700">{location}</span>
-        </div>
+          {location}
+        </span>
       )}
 
       {/* Duration */}
-      <div className="flex items-center gap-2 bg-gray-300 px-3 py-1 rounded-lg shadow-sm">
+      <span className="flex bg-gray-200 px-4 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-500">
         <Clock size={15} />
-        <span className="font-semibold text-gray-700">{duration} hours</span>
-      </div>
+        {duration} hours
+      </span>
     </div>
   );
 }

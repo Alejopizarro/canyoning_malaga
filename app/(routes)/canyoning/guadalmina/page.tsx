@@ -11,6 +11,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import PrivateTourCTA from "@/components/private-tour";
+import CheckAvailabilityButton from "../../../../components/ui/check-availability-button";
 
 const faqs: Faq[] = [
   {
@@ -120,6 +122,7 @@ export default async function Page() {
     subtitle: guadalmina.subtitle,
     categoryPath: guadalmina.categoryPath,
     categoryText: guadalmina.category,
+    isMostPopular: guadalmina.isMostPopular,
     rating: {
       value: guadalmina.rating.value,
       totalReviews: guadalmina.rating.reviews,
@@ -135,13 +138,17 @@ export default async function Page() {
     ubication: guadalmina.ubication,
     duration: guadalmina.duration,
     level: guadalmina.level,
+    specialPrice: guadalmina.specialPrice,
   };
 
   return (
     <div className="pt-20">
       <Hero excursion={excursionHero} />
-      <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-x-16 px-4 pt-20 sm:px-16 py-4 sm:py-8">
-        <div className="flex flex-col gap-8">
+      <div className="mx-4">
+        <CheckAvailabilityButton />
+      </div>
+      <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-x-16 px-4 sm:px-16 py-4 sm:py-8">
+        <div className="flex flex-col gap-4">
           <ExcursionDescription excursion={excursionDescription} />
 
           {/* Introducción */}
@@ -154,7 +161,7 @@ export default async function Page() {
           </div>
 
           {/* Highlights */}
-          <div className="mt-4">
+          <div className="my-4">
             <h4 className="font-semibold text-gray-900 mb-4 text-lg">
               Activity Highlights
             </h4>
@@ -219,7 +226,7 @@ export default async function Page() {
                     {DESCRIPTION_DATA.whatsIncluded.included.map(
                       (item, index) => (
                         <li key={index}>{item}</li>
-                      )
+                      ),
                     )}
                   </ul>
                 </div>
@@ -277,20 +284,12 @@ export default async function Page() {
             </AccordionItem>
           </Accordion>
         </div>
-        <div className="flex flex-col space-y-8">
+        <div id="bokun-section">
           <Bokun />
-          <div className="relative w-full aspect-video">
-            <iframe
-              className="absolute top-0 left-0 w-full h-full rounded-lg"
-              src="https://www.youtube.com/embed/S3E0cKEYCSQ"
-              title="Guadalmina Canyon Video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
         </div>
       </div>
       <ReviewsCarousel />
+      <PrivateTourCTA />
       <Faqs faqs={faqs} />
     </div>
   );

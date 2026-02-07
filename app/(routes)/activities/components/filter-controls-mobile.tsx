@@ -47,7 +47,7 @@ const FilterControlsMobile = (props: FilterControlsMobileProps) => {
       <Accordion type="single" collapsible className="w-full">
         <AccordionItem value="filters" className="border-0 px-0">
           <AccordionTrigger className="px-0 [&[data-state=open]]:bg-background">
-            <p className="font-bold text-xl">Filters</p>
+            <p className="font-medium text-xl">Filters</p>
           </AccordionTrigger>
           <AccordionContent className="px-0">
             <FiltersControlsExcursions

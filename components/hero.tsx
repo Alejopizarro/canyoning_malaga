@@ -2,6 +2,7 @@ import Link from "next/link";
 import GridHero from "./grid-hero";
 import StarRating from "./ui/stars-rating";
 import { Image } from "@/app/data";
+import { Star } from "lucide-react";
 
 interface Excursion {
   mainImage: Image;
@@ -10,6 +11,7 @@ interface Excursion {
   subtitle?: string;
   categoryPath?: string;
   categoryText: string;
+  isMostPopular?: boolean;
   rating: {
     value: number;
     totalReviews: number;
@@ -45,23 +47,36 @@ const Hero = (props: HeroProps) => {
               href={`/activities/${excursion.categoryPath?.toLowerCase()}/${excursion.title
                 .toLowerCase()
                 .replace(/\s+/g, "-")}`}
-              className="pl-1 hover:text-gray-700 transition-colors"
+              className="pl-1 font-semibold hover:text-gray-700 transition-colors"
             >
               {excursion.title.toLowerCase()}
             </Link>
           </p>
-          <h1 className="text-4xl font-semibold mb-2 tracking-tight">
+          <h1 className="text-4xl font-extrabold mb-2 tracking-tight">
             {!excursion.subtitle ? excursion.title : excursion.subtitle}
           </h1>
-          <div className="flex flex-wrap items-center justify-between gap-6 text-xl ">
+          <div className="flex flex-wrap items-center gap-6 text-xl ">
             <StarRating
               value={excursion.rating.value}
               totalReviews={excursion.rating.totalReviews}
             />
+
+            {excursion.isMostPopular ? (
+              <p className="text-sm flex items-center bg-gray-200 px-2 py-1 font-semibold text-gray-700 ">
+                <Star size={12} className="mr-1" />
+                Most Popular
+              </p>
+            ) : (
+              ""
+            )}
           </div>
         </div>
       </div>
-      <GridHero mainImage={excursion.mainImage} images={excursion.images} />
+      <GridHero
+        mainImage={excursion.mainImage}
+        videoYoutube="https://www.youtube.com/embed/S3E0cKEYCSQ"
+        images={excursion.images}
+      />
     </div>
   );
 };

@@ -3,12 +3,14 @@
 import { useState, useRef } from "react";
 import { Excursion } from "@/lib/activities";
 import ExcursionCard from "../excursion-card";
+import { useRouter } from "next/navigation";
 
 interface AllActivitiesCarouselProps {
   excursions: Excursion[];
 }
 
 const ActivitiesCarousel = ({ excursions }: AllActivitiesCarouselProps) => {
+  const router = useRouter();
   const carouselRef = useRef<HTMLDivElement>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -70,8 +72,11 @@ const ActivitiesCarousel = ({ excursions }: AllActivitiesCarouselProps) => {
         >
           {limitedExcursions.map((excursion) => (
             <div
-              className="flex-shrink-0 h-[484px] w-[280px] md:w-[calc((100%-3rem)/4.25)]"
+              className="flex-shrink-0 h-fit w-[280px] md:w-[calc((100%-3rem)/4.25)]"
               key={excursion.id}
+              onClick={() =>
+                router.push(`/${excursion.categoryPath}/${excursion.route}`)
+              }
             >
               <ExcursionCard showDescription={false} excursion={excursion} />
             </div>
@@ -79,7 +84,7 @@ const ActivitiesCarousel = ({ excursions }: AllActivitiesCarouselProps) => {
         </div>
 
         {/* Navigation */}
-        <div className="flex items-center justify-between mt-6 relative z-10">
+        <div className="flex items-center justify-between mt-2 relative z-10">
           {/* Dots */}
           <div className="flex gap-1.5">
             {Array.from({ length: Math.min(6, limitedExcursions.length) }).map(
@@ -93,7 +98,7 @@ const ActivitiesCarousel = ({ excursions }: AllActivitiesCarouselProps) => {
                   aria-label={`Go to slide ${index + 1}`}
                   type="button"
                 />
-              )
+              ),
             )}
           </div>
 

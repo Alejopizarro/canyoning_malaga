@@ -20,7 +20,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
   guadalmina: {
     subtitle: "The Best Canyoning Experience Near Marbella",
     description:
-      "Perfect canyoning descent for beginners. Close to Marbella, ideal for families. Available all year round.",
+      "Perfect canyoning descent for beginners. Close to Marbella, ideal for families. Available all year round. Fun guaranteed!",
     videoYoutube: "",
     days: "Every day!",
     mainImage: {
@@ -45,10 +45,11 @@ export const complementaryData: Record<string, ComplementaryData> = {
         alt: "Guadalmina canyon - Slide down natural water slides in guadalmina canyon",
       },
     ],
+    specialPrice: "Special Open Group Price: Every Day!",
     isOffer: false,
     rating: { value: 4.8, reviews: 2087 },
     level: "easy",
-    ubication: "Marbella",
+    ubication: "Marbella, Málaga",
     duration: 3,
     minimumAge: 6,
     province: "Málaga",
@@ -176,7 +177,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     province: "Málaga",
     duration: 4,
     minimumAge: 9,
-    ubication: "Yunquera, Málaga (Sierra de las Nieves Natural Park)",
+    ubication: "Yunquera, Málaga",
     category: "Canyoning",
     categoryPath: "canyoning",
   },
@@ -216,7 +217,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     province: "Granada",
     duration: 7,
     minimumAge: 15,
-    ubication: "Otivar",
+    ubication: "Otivar, Granada",
     category: "Canyoning",
     categoryPath: "canyoning",
   },
@@ -315,7 +316,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     category: "Canyoning",
     categoryPath: "canyoning",
     duration: 6,
-    ubication: "Colm. de la Fra.",
+    ubication: "Colm. de la Fra., Málaga",
     minimumAge: 8,
   },
 
@@ -377,7 +378,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     categoryPath: "canyoning",
     duration: 4,
     minimumAge: 8,
-    ubication: "Ronda",
+    ubication: "Ronda, Málaga",
   },
 
   trevelez: {
@@ -530,7 +531,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     categoryPath: "via-ferrata",
     duration: 2.5,
     minimumAge: 7,
-    ubication: "Ronda",
+    ubication: "Ronda, Málaga",
   },
 
   casares: {
@@ -579,7 +580,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     categoryPath: "via-ferrata",
     duration: 2.5,
     minimumAge: 11,
-    ubication: "Casares",
+    ubication: "Casares, Málaga",
   },
 
   "el-chorro": {
@@ -623,7 +624,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     categoryPath: "via-ferrata",
     duration: 4,
     minimumAge: 14,
-    ubication: "El Chorro",
+    ubication: "El Chorro, Málaga",
   },
 
   // ==================== HIKING ====================
@@ -712,7 +713,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     categoryPath: "hiking",
     duration: 6.5,
     minimumAge: 11,
-    ubication: "Marbella",
+    ubication: "Marbella, Málaga",
   },
 
   // Slug actualizado según Sheet: "istan" en vez de "hiking-istan"
@@ -786,7 +787,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     subcategory: "Kayak",
     categoryPath: "more-activities",
     duration: 2,
-    ubication: "Marbella",
+    ubication: "Marbella, Málaga",
     minimumAge: 3,
   },
 
@@ -833,7 +834,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     categoryPath: "more-activities",
     duration: 4,
     minimumAge: 12,
-    ubication: "Marbella",
+    ubication: "Marbella, Málaga",
   },
 
   "buggy-tour-marbella": {
@@ -856,7 +857,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     categoryPath: "more-activities",
     duration: 3,
     minimumAge: 18,
-    ubication: "Marbella",
+    ubication: "Marbella, Málaga",
   },
 
   "jet-ski-marbella": {
@@ -879,7 +880,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     categoryPath: "more-activities",
     duration: 2,
     minimumAge: 16,
-    ubication: "Marbella",
+    ubication: "Marbella, Málaga",
   },
 
   "gymkhana-marbella": {
@@ -902,7 +903,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     subcategory: "Gymkhana",
     duration: 3,
     minimumAge: 8,
-    ubication: "Marbella",
+    ubication: "Marbella, Málaga",
   },
 
   "caving-experience": {

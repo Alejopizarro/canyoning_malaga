@@ -70,9 +70,12 @@ const ItemsMenuMobile = ({
               <AccordionContent className="flex flex-col space-y-4 items-start px-2 pt-2">
                 {/* Canyoning */}
                 <div className="w-full">
-                  <p className="font-bold text-sm text-primary mb-2">
+                  <a
+                    href="/activities?category=Canyoning"
+                    className="font-bold text-sm text-primary mb-2"
+                  >
                     Canyoning
-                  </p>
+                  </a>
                   <div className="flex flex-col space-y-1">
                     {canyoningExcursions.slice(0, 5).map((excursion) => (
                       <Link
@@ -90,9 +93,12 @@ const ItemsMenuMobile = ({
 
                 {/* Via Ferrata */}
                 <div className="w-full">
-                  <p className="font-bold text-sm text-primary mb-2">
+                  <a
+                    href="/activities?category=Via+Ferrata"
+                    className="font-bold text-sm text-primary mb-2"
+                  >
                     Via Ferrata
-                  </p>
+                  </a>
                   <div className="flex flex-col space-y-1">
                     {viaFerrataExcursions.slice(0, 5).map((excursion) => (
                       <Link
@@ -110,7 +116,12 @@ const ItemsMenuMobile = ({
 
                 {/* Hiking */}
                 <div className="w-full">
-                  <p className="font-bold text-sm text-primary mb-2">Hiking</p>
+                  <a
+                    href="/activities?category=Hiking"
+                    className="font-bold text-sm text-primary mb-2"
+                  >
+                    Hiking
+                  </a>
                   <div className="flex flex-col space-y-1">
                     {hikingExcursions.slice(0, 5).map((excursion) => (
                       <Link
@@ -128,9 +139,12 @@ const ItemsMenuMobile = ({
 
                 {/* More Activities */}
                 <div className="w-full">
-                  <p className="font-bold text-sm text-primary mb-2">
+                  <a
+                    href="/activities?category=More+Activities"
+                    className="font-bold text-sm text-primary mb-2"
+                  >
                     More Activities
-                  </p>
+                  </a>
                   <div className="flex flex-col space-y-1">
                     {moreActivitiesExcursions.slice(0, 5).map((excursion) => (
                       <Link

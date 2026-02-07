@@ -12,6 +12,7 @@ export interface GridHeroImage {
 interface GridHeroProps {
   mainImage: GridHeroImage;
   images: GridHeroImage[];
+  videoYoutube?: string;
 }
 
 const GridHero = (props: GridHeroProps) => {
@@ -19,16 +20,16 @@ const GridHero = (props: GridHeroProps) => {
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
 
-  const { mainImage, images } = props;
+  const { mainImage, images, videoYoutube } = props;
 
-  // Tomamos máximo 4 imágenes del array
-  const displayImages = images.slice(0, 4);
+  // Si hay video, reservamos 1 slot para él y tomamos máximo 3 imágenes; si no, 4
+  const displayImages = videoYoutube ? images.slice(0, 3) : images.slice(0, 4);
   // Array combinado para mobile: mainImage + images
   const allImages = [mainImage, ...images];
   // Array completo para la galería (mainImage + todas las images)
   const galleryImages = [mainImage, ...images];
 
-  const hasMoreImages = images.length > 4;
+  const hasMoreImages = images.length > 3;
 
   const openGallery = (startIndex: number = 0) => {
     setGalleryIndex(startIndex);
@@ -43,13 +44,13 @@ const GridHero = (props: GridHeroProps) => {
 
   const nextImage = () => {
     setGalleryIndex((prev) =>
-      prev === galleryImages.length - 1 ? 0 : prev + 1
+      prev === galleryImages.length - 1 ? 0 : prev + 1,
     );
   };
 
   const prevImage = () => {
     setGalleryIndex((prev) =>
-      prev === 0 ? galleryImages.length - 1 : prev - 1
+      prev === 0 ? galleryImages.length - 1 : prev - 1,
     );
   };
 
@@ -63,14 +64,25 @@ const GridHero = (props: GridHeroProps) => {
             alt={mainImage.alt}
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover cursor-pointer"
+            className="object-cover cursor-pointer rounded-lg"
             onClick={() => openGallery(0)}
             priority
           />
         </div>
 
-        {/* Grid de máximo 4 imágenes */}
+        {/* Grid de máximo 4 elementos (video opcional + imágenes) */}
         <div className="grid grid-cols-2 gap-4 h-full relative">
+          {videoYoutube && (
+            <div className="relative w-full h-full">
+              <iframe
+                className="absolute top-0 left-0 w-full h-full rounded-lg"
+                src={videoYoutube}
+                title="Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          )}
           {displayImages.map((img, index) => (
             <div key={index} className="relative h-full">
               <Image
@@ -78,7 +90,7 @@ const GridHero = (props: GridHeroProps) => {
                 alt={img.alt}
                 fill
                 sizes="(max-width: 768px) 100vw, 25vw"
-                className="object-cover cursor-pointer"
+                className="object-cover cursor-pointer rounded-lg"
                 onClick={() => openGallery(index + 1)}
               />
             </div>
@@ -101,26 +113,81 @@ const GridHero = (props: GridHeroProps) => {
 
       {/* Mobile: Imagen grande arriba + carousel abajo */}
       <div className="md:hidden">
-        {/* Imagen principal grande */}
+        {/* Imagen principal o video grande */}
         <div className="relative w-full h-[400px] mb-4">
-          <Image
-            src={allImages[currentImage].src}
-            alt={allImages[currentImage].alt}
-            fill
-            sizes="100vw"
-            className="object-cover rounded-lg"
-            priority
-          />
+          {videoYoutube && currentImage === 1 ? (
+            <iframe
+              className="absolute top-0 left-0 w-full h-full rounded-lg"
+              src={videoYoutube}
+              title="Video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          ) : (
+            <Image
+              src={
+                allImages[videoYoutube && currentImage >= 2 ? currentImage - 1 : currentImage]?.src ??
+                allImages[0].src
+              }
+              alt={
+                allImages[videoYoutube && currentImage >= 2 ? currentImage - 1 : currentImage]?.alt ??
+                allImages[0].alt
+              }
+              fill
+              sizes="100vw"
+              className="object-cover rounded-lg"
+              priority
+            />
+          )}
         </div>
 
         {/* Carousel de miniaturas */}
-        <div className="flex gap-3 overflow-x-auto py-2">
-          {allImages.map((img, index) => (
+        <div className="flex gap-3 overflow-x-auto py-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          {/* Main image thumbnail - always first */}
+          <button
+            onClick={() => setCurrentImage(0)}
+            className={`relative flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${
+              currentImage === 0
+                ? "border-blue-500 scale-105"
+                : "border-transparent opacity-70"
+            }`}
+          >
+            <Image
+              src={mainImage.src}
+              alt={mainImage.alt}
+              fill
+              sizes="80px"
+              className="object-cover"
+            />
+          </button>
+          {/* Video thumbnail - second */}
+          {videoYoutube && (
+            <button
+              onClick={() => setCurrentImage(1)}
+              className={`relative flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${
+                currentImage === 1
+                  ? "border-blue-500 scale-105"
+                  : "border-transparent opacity-70"
+              }`}
+            >
+              <div className="w-full h-full bg-gray-800 flex items-center justify-center">
+                <svg
+                  className="w-8 h-8 text-white"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+            </button>
+          )}
+          {/* Rest of images */}
+          {images.map((img, index) => (
             <button
               key={index}
-              onClick={() => setCurrentImage(index)}
+              onClick={() => setCurrentImage(index + (videoYoutube ? 2 : 1))}
               className={`relative flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${
-                currentImage === index
+                currentImage === index + (videoYoutube ? 2 : 1)
                   ? "border-blue-500 scale-105"
                   : "border-transparent opacity-70"
               }`}
@@ -138,7 +205,9 @@ const GridHero = (props: GridHeroProps) => {
 
         {/* Indicadores opcionales */}
         <div className="flex justify-center gap-2 mt-4">
-          {allImages.map((_, index) => (
+          {Array.from({
+            length: allImages.length + (videoYoutube ? 1 : 0),
+          }).map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentImage(index)}
