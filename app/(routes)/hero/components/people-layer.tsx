@@ -15,13 +15,13 @@ gsap.registerPlugin(ScrollTrigger);
 const PEOPLE_STAGES = {
   desktop: {
     initial: {
-      width: "400vw",
-      height: "400vh",
+      width: "700vw",
+      height: "700vh",
       top: "50%",
       left: "50%",
       xPercent: -50,
       yPercent: -50,
-      opacity: 0,
+      opacity: 1,
     },
     phase1: {
       width: "60vw",
@@ -47,7 +47,7 @@ const PEOPLE_STAGES = {
       left: "50%",
       xPercent: -50,
       yPercent: -50,
-      opacity: 0,
+      opacity: 1,
     },
     phase1: {
       width: "90vw",

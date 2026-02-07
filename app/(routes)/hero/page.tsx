@@ -19,9 +19,9 @@ export default async function Home() {
       <HeroParallaxSection />
       <TransitionLayer />
       <TopActivitiesHome />
-      <div className="-mt-[35vh] bg-background z-20 relative">
+      {/* <div className="-mt-[35vh] bg-background z-20 relative">
         <TrustindexWidget />
-      </div>
+      </div> */}
       <BannerTeamBuilding />
       <AllActivitiesSection excursions={excursions} />
       <WhyChoose />

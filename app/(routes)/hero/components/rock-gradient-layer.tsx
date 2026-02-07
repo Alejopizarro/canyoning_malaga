@@ -20,10 +20,11 @@ const ROCK_STAGES = {
       opacity: 1,
     },
     phase1: {
+      scale: 1.4,
       yPercent: 40,
       opacity: 1,
       duration: 3,
-      ease: "power2.out",
+      ease: "power2.outIn",
     },
     hold: {
       yPercent: 40,
@@ -40,7 +41,7 @@ const ROCK_STAGES = {
   mobile: {
     initial: {
       y: 0,
-      scale: 1.2,
+      scale: 1,
       opacity: 1,
     },
     phase1: {
@@ -73,12 +74,12 @@ const TOP_ACTIVITIES_STAGES = {
       y: 0,
     },
     phase1: {
-      yPercent: -10,
+      // yPercent: -10,
       duration: 0.3,
       ease: "power2.inOut",
     },
     phase2: {
-      yPercent: -25,
+      // yPercent: -25,
       duration: 0.4,
       ease: "none",
     },
@@ -198,6 +199,7 @@ export default function RockGradientLayer() {
           alt="Rock"
           fill
           className="object-cover md:object-contain object-bottom"
+          style={{ filter: "brightness(0.85)" }}
         />
 
         {/* Gradiente inferior - conecta con TopActivities */}

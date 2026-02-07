@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Separator } from "@/components/ui/separator";
 import { getExcursions } from "@/lib/activities";
 import TopActivities from "@/components/top-activities";
@@ -14,7 +15,9 @@ const ExcursionesPage = async () => {
         <h1 className="pb-4 text-2xl font-bold">Explore All Excursions</h1>
         <Separator />
 
-        <ExcursionsClient excursions={excursions} />
+        <Suspense>
+          <ExcursionsClient excursions={excursions} />
+        </Suspense>
       </div>
       <BannerTeamBuilding />
       <FaqsHome />

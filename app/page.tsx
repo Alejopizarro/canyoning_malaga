@@ -1,24 +1,23 @@
-import AdventureGallery from "@/components/adventure-gallery";
-import AllActivitiesSection from "@/components/all-activities-section";
-import BannerCertified from "@/components/banner-certified";
-import BannerContact from "@/components/banner-contact";
-import BannerTeamBuilding from "@/components/banner-team-building";
-import FaqsHome from "@/components/faqs-home";
-import HeroHome from "@/components/hero-home";
-import ProfessionalGuides from "@/components/professional-guides";
-import TopActivitiesHome from "@/components/top-activities-home";
-import TrustindexWidget from "@/components/trustindex-widget";
-import WhyChoose from "@/components/why-choose";
 import { getExcursions } from "@/lib/activities";
+import HeroParallaxSection from "./(routes)/hero/components/home-parallax";
+import TransitionLayer from "./(routes)/hero/components/transition-layer";
+import TopActivitiesHome from "@/components/top-activities-home";
+import BannerTeamBuilding from "@/components/banner-team-building";
+import AllActivitiesSection from "@/components/all-activities-section";
+import WhyChoose from "@/components/why-choose";
+import BannerCertified from "@/components/banner-certified";
+import ProfessionalGuides from "@/components/professional-guides";
+import BannerContact from "@/components/banner-contact";
+import FaqsHome from "@/components/faqs-home";
+import AdventureGallery from "@/components/adventure-gallery";
 
 export default async function Home() {
   const excursions = await getExcursions();
-
   return (
-    <>
-      <HeroHome />
+    <main className="min-h-screen">
+      <HeroParallaxSection />
+      <TransitionLayer />
       <TopActivitiesHome />
-      <TrustindexWidget />
       <BannerTeamBuilding />
       <AllActivitiesSection excursions={excursions} />
       <WhyChoose />
@@ -27,6 +26,6 @@ export default async function Home() {
       <BannerContact />
       <FaqsHome />
       <AdventureGallery excursions={excursions} />
-    </>
+    </main>
   );
 }

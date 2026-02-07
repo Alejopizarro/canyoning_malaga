@@ -65,7 +65,7 @@ const MONTANA_STAGES = {
       ease: "none",
     },
     phase2: {
-      opacity: 0,
+      opacity: 1,
       duration: 1,
       ease: "power2.in",
     },
@@ -80,7 +80,7 @@ const MONTANA_STAGES = {
       ease: "none",
     },
     phase2: {
-      opacity: 0,
+      opacity: 1,
       duration: 1,
       ease: "power2.in",
     },

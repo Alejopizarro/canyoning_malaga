@@ -41,8 +41,8 @@ const faqs = [
 
 export default function FaqsHome() {
   return (
-    <section className="py-16 sm:py-24 px-4 sm:px-8 max-w-[1440px] mx-auto bg-background">
-      <div>
+    <section className="relative z-20 bg-background">
+      <div className="py-16 sm:py-24 px-4 sm:px-8 max-w-[1440px] mx-auto ">
         <div className="grid lg:grid-cols-3 gap-10 lg:gap-16">
           {/* Left Column - Header */}
           <div className="lg:col-span-1">

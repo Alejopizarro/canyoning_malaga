@@ -37,13 +37,13 @@ export default function AdventureGallery({
 
   const goToPrevious = () => {
     setCurrentIndex((prev) =>
-      prev === 0 ? galleryImages.length - 1 : prev - 1
+      prev === 0 ? galleryImages.length - 1 : prev - 1,
     );
   };
 
   const goToNext = () => {
     setCurrentIndex((prev) =>
-      prev === galleryImages.length - 1 ? 0 : prev + 1
+      prev === galleryImages.length - 1 ? 0 : prev + 1,
     );
   };
 
@@ -59,8 +59,8 @@ export default function AdventureGallery({
 
   return (
     <>
-      <section className="py-16 sm:py-24 px-4 sm:px-8 max-w-[1440px] mx-auto bg-background">
-        <div>
+      <section className="relative z-20 bg-background">
+        <div className="py-16 sm:py-24 px-4 sm:px-8 max-w-[1440px] mx-auto ">
           {/* Header */}
           <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">

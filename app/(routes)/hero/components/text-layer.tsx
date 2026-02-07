@@ -18,13 +18,13 @@ const TEXT1_STAGES = {
       opacity: 1,
     },
     phase1: {
-      y: -40,
+      y: -65,
       opacity: 1,
       duration: 0.2,
       ease: "power2.out",
     },
     phase2: {
-      yPercent: 250,
+      yPercent: -150,
       opacity: 1,
       duration: 0.5,
       ease: "power2.inOut",
@@ -42,7 +42,7 @@ const TEXT1_STAGES = {
       ease: "power2.out",
     },
     phase2: {
-      yPercent: 300,
+      yPercent: -200,
       opacity: 1,
       duration: 1,
       ease: "power1.inOut",
@@ -66,7 +66,7 @@ const TEXT2_STAGES = {
       ease: "sine.inOut",
     },
     phase2: {
-      yPercent: 120,
+      yPercent: -150,
       opacity: 1,
       duration: 0.7,
       ease: "power2.inOut",
@@ -84,7 +84,7 @@ const TEXT2_STAGES = {
       ease: "sine.inOut",
     },
     phase2: {
-      yPercent: 150,
+      yPercent: -200,
       opacity: 1,
       duration: 1,
       ease: "power1.inOut",
@@ -161,9 +161,12 @@ export default function TextLayer() {
       {/* ═══════════════════════════════════════════════════ */}
       <div
         ref={text1Ref}
-        className="absolute top-5/12 left-1/2 w-full max-w-[1280px] -translate-x-1/2 -translate-y-1/2 text-center z-11"
+        className="absolute top-5/12 left-1/2 w-full max-w-[1280px] 2xl:max-w-[1440px] -translate-x-1/2 -translate-y-1/2 text-center z-11"
       >
-        <h1 className="text-[4rem] sm:text-[6rem] lg:text-[7rem] font-extrabold leading-none text-white drop-shadow-2xl">
+        <h1
+          className="font-extrabold leading-none text-white drop-shadow-2xl"
+          style={{ fontSize: "clamp(4rem, 7vw, 10rem)" }}
+        >
           Your Next Adventure
         </h1>
       </div>
@@ -173,9 +176,12 @@ export default function TextLayer() {
       {/* ═══════════════════════════════════════════════════ */}
       <div
         ref={text2Ref}
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center opacity-0 z-12 md:w-full"
+        className="absolute top-[46%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-center opacity-0 z-12 md:w-full"
       >
-        <p className="text-[4rem] sm:text-[6rem] lg:text-[7rem] leading-none font-extrabold text-white drop-shadow-2xl mt-4">
+        <p
+          className="leading-none font-extrabold text-white drop-shadow-2xl"
+          style={{ fontSize: "clamp(4rem, 7vw, 10rem)" }}
+        >
           Begins Here
         </p>
       </div>

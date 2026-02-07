@@ -92,9 +92,15 @@ export default function CloudLeftLayer() {
   return (
     <div
       ref={cloudRef}
-      className="absolute left-0 -bottom-40  w-[70vh] h-[70vh] opacity-0 z-13"
+      className="absolute left-0 bottom-0 translate-y-1/2 w-[70vh] h-[70vh] opacity-0 z-13"
     >
-      <Image src="/nube.png" alt="Cloud left" fill className="object-contain" />
+      <Image
+        src="/nube.png"
+        alt="Cloud left"
+        fill
+        className="object-contain"
+        style={{ transform: "scaleY(-1) scaleX(-1)" }}
+      />
     </div>
   );
 }

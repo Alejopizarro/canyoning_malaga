@@ -84,7 +84,7 @@ export default function TransitionLayer() {
     <div
       ref={transitionRef}
       className="relative w-full h-[30vh] z-15 pointer-events-none"
-      style={{ marginTop: "-15vh" }}
+      style={{ marginTop: "-30vh" }}
     >
       {/* Gradiente de transición: de transparente a #f9f9f9 */}
       <div

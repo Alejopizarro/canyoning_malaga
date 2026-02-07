@@ -70,8 +70,8 @@ export default function WhyChoose() {
   const router = useRouter();
 
   return (
-    <section className="max-w-[1440px] py-16 sm:py-24 px-4 sm:px-8 mx-auto bg-background">
-      <div>
+    <section className="relative z-20 bg-background">
+      <div className="max-w-[1440px] py-16 sm:py-24 px-4 sm:px-8 mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Right - Content */}
           <div className="order-2 text-center lg:text-left">

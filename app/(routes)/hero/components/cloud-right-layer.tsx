@@ -93,13 +93,14 @@ export default function CloudRightLayer() {
   return (
     <div
       ref={cloudRef}
-      className="absolute right-0 -bottom-40 w-[70vh] h-[70vh] opacity-0 z-13"
+      className="absolute right-0 bottom-0 translate-y-1/2 w-[70vh] h-[70vh] opacity-0 z-13"
     >
       <Image
         src="/nube.png"
         alt="Cloud right"
         fill
         className="object-contain"
+        style={{ transform: "scaleY(-1)" }}
       />
     </div>
   );

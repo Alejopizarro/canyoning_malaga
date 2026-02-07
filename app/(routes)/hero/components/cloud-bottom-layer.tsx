@@ -19,16 +19,16 @@ const CLOUD_BOTTOM_STAGES = {
     },
     phase1: {
       yPercent: 0,
-      opacity: 1,
+      opacity: 0,
       duration: 5,
-      scale: 1,
+      scale: 0.8,
       ease: "power2.out",
     },
     phase2: {
-      scale: 2,
+      scale: 1.2,
       duration: 5,
       opacity: 0.7,
-      yPercent: -45,
+      yPercent: -30,
       ease: "power2.inOut",
     },
   },
@@ -38,15 +38,15 @@ const CLOUD_BOTTOM_STAGES = {
     },
     phase1: {
       yPercent: 0,
-      opacity: 1,
+      opacity: 0,
       duration: 5,
-      scale: 1,
+      scale: 0.8,
       ease: "power2.out",
     },
     phase2: {
-      scale: 1.5,
+      scale: 1.2,
       duration: 5,
-      opacity: 1,
+      opacity: 0.8,
       yPercent: -5,
       ease: "power2.inOut",
     },
@@ -87,13 +87,14 @@ export default function CloudBottomLayer() {
   return (
     <div
       ref={cloudRef}
-      className="absolute -bottom-120 md:-bottom-80 left-1/2 -translate-x-1/2 w-[200vh] h-[80vh] z-27"
+      className="absolute bottom-0 translate-y-[60%] left-1/2 -translate-x-1/2 w-[120vh] h-[50vh] z-19"
     >
       <Image
         src="/nube.png"
         alt="Cloud bottom"
         fill
-        className="object-contain w-[200vh] h-[80vh] z-19"
+        className="object-contain"
+        style={{ transform: "scaleY(-1)" }}
       />
     </div>
   );

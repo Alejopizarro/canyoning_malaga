@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getSeasonLabel } from "@/lib/season";
 import { getTop3Excursions } from "@/lib/activities";
+import TrustindexWidget from "./trustindex-widget";
 
 const levelConfig = {
   easy: "All Levels",
@@ -20,7 +21,7 @@ const TopActivitiesHome = async () => {
 
   return (
     <section id="top-activities" className="relative z-21 w-full bg-background">
-      <div className="max-w-[1440px] pt-24 pb-8  mx-auto px-4 md:px-8 flex flex-col items-center justify-start">
+      <div className="max-w-[1440px] pt-10 pb-8 mx-auto px-4 md:px-8 flex flex-col items-center justify-start">
         {/* Header */}
         <div className="relative text-center mb-10">
           <span className="block text-md md:text-xl mb-2">
@@ -165,6 +166,7 @@ const TopActivitiesHome = async () => {
           ))}
         </div>
       </div>
+      <TrustindexWidget />
     </section>
   );
 };

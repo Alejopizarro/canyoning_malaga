@@ -176,8 +176,8 @@ const GuideCard = ({ guide }: { guide: Guide }) => {
 
 export default function ProfessionalGuides() {
   return (
-    <section className="py-16 sm:py-24 px-4 sm:px-8 max-w-[1440px] mx-auto bg-background">
-      <div>
+    <section className="relative z-20 bg-background">
+      <div className="max-w-[1440px] py-16 sm:py-24 px-4 sm:px-8 mx-auto">
         {/* Header */}
         <div className="mb-10">
           <p className="text-gray-500 text-sm mb-2">Our Team</p>

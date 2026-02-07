@@ -25,7 +25,7 @@ const Footer = () => {
   );
 
   return (
-    <footer className="bg-gradient-to-b from-neutral-900 to-black text-white">
+    <footer className="relative z-20 bg-gradient-to-b from-neutral-900 to-black text-white">
       <div className="max-w-[1440px] mx-auto px-4 py-12 lg:py-16">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6 mb-8">
