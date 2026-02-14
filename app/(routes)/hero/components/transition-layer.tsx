@@ -12,6 +12,20 @@ gsap.registerPlugin(ScrollTrigger);
 // CONTROLADOR DE ETAPAS DE LA TRANSICIÓN
 // ═══════════════════════════════════════════════════════════════════
 const TRANSITION_STAGES = {
+  desktopXL: {
+    initial: {
+      y: 0,
+    },
+    phase1: {
+      duration: 0.3,
+      ease: "power2.inOut",
+    },
+    phase2: {
+      yPercent: -40,
+      duration: 0.4,
+      ease: "none",
+    },
+  },
   desktop: {
     initial: {
       y: 0,
@@ -74,6 +88,7 @@ export default function TransitionLayer() {
       tlPhase2.to(transitionRef.current, stages.phase2);
     };
 
+    mm.add(BREAKPOINTS.desktopXL, () => setup(TRANSITION_STAGES.desktopXL));
     mm.add(BREAKPOINTS.desktop, () => setup(TRANSITION_STAGES.desktop));
     mm.add(BREAKPOINTS.mobile, () => setup(TRANSITION_STAGES.mobile));
 
@@ -83,8 +98,7 @@ export default function TransitionLayer() {
   return (
     <div
       ref={transitionRef}
-      className="relative w-full h-[30vh] z-15 pointer-events-none"
-      style={{ marginTop: "-30vh" }}
+      className="relative w-full h-[25vh] min-[1440px]:h-[50vh] -mt-[30vh] min-[1440px]:-mt-[50vh] z-15 pointer-events-none"
     >
       {/* Gradiente de transición: de transparente a #f9f9f9 */}
       <div

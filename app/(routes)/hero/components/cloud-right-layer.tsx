@@ -13,6 +13,28 @@ gsap.registerPlugin(ScrollTrigger);
 // CONTROLADOR DE ETAPAS DE LA NUBE DERECHA
 // ═══════════════════════════════════════════════════════════════════
 const CLOUD_RIGHT_STAGES = {
+  desktopXL: {
+    initial: {
+      x: "50%",
+      opacity: 0,
+    },
+    phase1: {
+      x: "0%",
+      yPercent: -20,
+      scale: 2,
+      opacity: 1,
+      duration: 5,
+      ease: "power2.out",
+    },
+    phase2: {
+      x: "10%",
+      yPercent: -60,
+      scale: 3.8,
+      opacity: 0.8,
+      duration: 5,
+      ease: "power2.inOut",
+    },
+  },
   desktop: {
     initial: {
       x: "50%",
@@ -42,7 +64,7 @@ const CLOUD_RIGHT_STAGES = {
     },
     phase1: {
       x: "0%",
-      yPercent: -1,
+      yPercent: -30,
       scale: 1.2,
       opacity: 1,
       duration: 5,
@@ -50,10 +72,10 @@ const CLOUD_RIGHT_STAGES = {
     },
     phase2: {
       x: "5%",
-      yPercent: -3,
+      yPercent: -60,
       scale: 1.4,
-      opacity: 5,
-      duration: 1,
+      opacity: 0.8,
+      duration: 5,
       ease: "power2.inOut",
     },
   },
@@ -84,6 +106,7 @@ export default function CloudRightLayer() {
         .to(cloudRef.current, stages.phase2);
     };
 
+    mm.add(BREAKPOINTS.desktopXL, () => setup(CLOUD_RIGHT_STAGES.desktopXL));
     mm.add(BREAKPOINTS.desktop, () => setup(CLOUD_RIGHT_STAGES.desktop));
     mm.add(BREAKPOINTS.mobile, () => setup(CLOUD_RIGHT_STAGES.mobile));
 

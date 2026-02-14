@@ -12,6 +12,24 @@ gsap.registerPlugin(ScrollTrigger);
 // CONTROLADOR DE ETAPAS DEL TEXTO 1: "Your Next Adventure"
 // ═══════════════════════════════════════════════════════════════════
 const TEXT1_STAGES = {
+  desktopXL: {
+    initial: {
+      y: 0,
+      opacity: 1,
+    },
+    phase1: {
+      y: -65,
+      opacity: 1,
+      duration: 0.2,
+      ease: "power2.out",
+    },
+    phase2: {
+      yPercent: -150,
+      opacity: 1,
+      duration: 0.5,
+      ease: "power2.inOut",
+    },
+  },
   desktop: {
     initial: {
       y: 0,
@@ -54,6 +72,24 @@ const TEXT1_STAGES = {
 // CONTROLADOR DE ETAPAS DEL TEXTO 2: "Begins Here"
 // ═══════════════════════════════════════════════════════════════════
 const TEXT2_STAGES = {
+  desktopXL: {
+    initial: {
+      y: 0,
+      opacity: 0,
+    },
+    phase1: {
+      y: 0,
+      opacity: 1,
+      duration: 0.3,
+      ease: "sine.inOut",
+    },
+    phase2: {
+      yPercent: -150,
+      opacity: 1,
+      duration: 0.7,
+      ease: "power2.inOut",
+    },
+  },
   desktop: {
     initial: {
       y: 0,
@@ -144,6 +180,9 @@ export default function TextLayer() {
         .to(text2Ref.current, text2Cfg.phase2);
     };
 
+    mm.add(BREAKPOINTS.desktopXL, () =>
+      setup(TEXT1_STAGES.desktopXL, TEXT2_STAGES.desktopXL),
+    );
     mm.add(BREAKPOINTS.desktop, () =>
       setup(TEXT1_STAGES.desktop, TEXT2_STAGES.desktop),
     );
@@ -161,7 +200,7 @@ export default function TextLayer() {
       {/* ═══════════════════════════════════════════════════ */}
       <div
         ref={text1Ref}
-        className="absolute top-5/12 left-1/2 w-full max-w-[1280px] 2xl:max-w-[1440px] -translate-x-1/2 -translate-y-1/2 text-center z-11"
+        className="absolute top-5/12 left-1/2 w-full max-w-[1280px] 2xl:max-w-[1680px] -translate-x-1/2 -translate-y-1/2 text-center z-11"
       >
         <h1
           className="font-extrabold leading-none text-white drop-shadow-2xl"
@@ -176,7 +215,7 @@ export default function TextLayer() {
       {/* ═══════════════════════════════════════════════════ */}
       <div
         ref={text2Ref}
-        className="absolute top-[46%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-center opacity-0 z-12 md:w-full"
+        className="absolute top-[50%] md:top-[46%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-center opacity-0 z-12 md:w-full"
       >
         <p
           className="leading-none font-extrabold text-white drop-shadow-2xl"

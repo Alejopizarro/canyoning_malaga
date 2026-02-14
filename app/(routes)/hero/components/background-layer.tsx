@@ -13,6 +13,24 @@ gsap.registerPlugin(ScrollTrigger);
 // CONTROLADOR DE ETAPAS DEL BARRANCO
 // ═══════════════════════════════════════════════════════════════════
 const BARRANCO_STAGES = {
+  desktopXL: {
+    initial: {
+      scale: 1,
+      opacity: 1,
+    },
+    phase1: {
+      scale: 1.4,
+      opacity: 1,
+      duration: 3,
+      ease: "power2.outIn",
+    },
+    phase2: {
+      scale: 1.4,
+      opacity: 1,
+      duration: 7,
+      ease: "none",
+    },
+  },
   desktop: {
     initial: {
       scale: 1,
@@ -55,6 +73,21 @@ const BARRANCO_STAGES = {
 // CONTROLADOR DE ETAPAS DE LA MONTAÑA
 // ═══════════════════════════════════════════════════════════════════
 const MONTANA_STAGES = {
+  desktopXL: {
+    initial: {
+      opacity: 1,
+    },
+    phase1: {
+      opacity: 1,
+      duration: 1,
+      ease: "none",
+    },
+    phase2: {
+      opacity: 1,
+      duration: 1,
+      ease: "power2.in",
+    },
+  },
   desktop: {
     initial: {
       opacity: 1,
@@ -135,6 +168,9 @@ export default function BackgroundLayer() {
         .to(montanaRef.current, montanaCfg.phase2);
     };
 
+    mm.add(BREAKPOINTS.desktopXL, () =>
+      setup(BARRANCO_STAGES.desktopXL, MONTANA_STAGES.desktopXL),
+    );
     mm.add(BREAKPOINTS.desktop, () =>
       setup(BARRANCO_STAGES.desktop, MONTANA_STAGES.desktop),
     );

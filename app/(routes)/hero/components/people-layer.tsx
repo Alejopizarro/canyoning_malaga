@@ -13,6 +13,32 @@ gsap.registerPlugin(ScrollTrigger);
 // CONTROLADOR DE ETAPAS DE LA PAREJA
 // ═══════════════════════════════════════════════════════════════════
 const PEOPLE_STAGES = {
+  desktopXL: {
+    initial: {
+      width: "700vw",
+      height: "700vh",
+      top: "50%",
+      left: "50%",
+      xPercent: -50,
+      yPercent: -50,
+      opacity: 1,
+    },
+    phase1: {
+      width: "60vw",
+      height: "60vh",
+      opacity: 1,
+      duration: 5,
+      ease: "power2.out",
+    },
+    phase2: {
+      width: "40vw",
+      height: "40vh",
+      yPercent: 120,
+      opacity: 1,
+      duration: 5,
+      ease: "sine.inOut",
+    },
+  },
   desktop: {
     initial: {
       width: "700vw",
@@ -41,8 +67,8 @@ const PEOPLE_STAGES = {
   },
   mobile: {
     initial: {
-      width: "300vw",
-      height: "300vh",
+      width: "750vw",
+      height: "750vh",
       top: "50%",
       left: "50%",
       xPercent: -50,
@@ -92,6 +118,7 @@ export default function PeopleLayer() {
         .to(peopleRef.current, stages.phase2);
     };
 
+    mm.add(BREAKPOINTS.desktopXL, () => setup(PEOPLE_STAGES.desktopXL));
     mm.add(BREAKPOINTS.desktop, () => setup(PEOPLE_STAGES.desktop));
     mm.add(BREAKPOINTS.mobile, () => setup(PEOPLE_STAGES.mobile));
 

@@ -12,6 +12,28 @@ gsap.registerPlugin(ScrollTrigger);
 // CONTROLADOR DE ETAPAS DE LA NUBE IZQUIERDA
 // ═══════════════════════════════════════════════════════════════════
 const CLOUD_LEFT_STAGES = {
+  desktopXL: {
+    initial: {
+      x: "-50%",
+      opacity: 0,
+    },
+    phase1: {
+      x: "0%",
+      yPercent: -20,
+      scale: 2,
+      opacity: 1,
+      duration: 5,
+      ease: "power2.out",
+    },
+    phase2: {
+      x: "-10%",
+      yPercent: -60,
+      scale: 3,
+      opacity: 0.8,
+      duration: 5,
+      ease: "power2.inOut",
+    },
+  },
   desktop: {
     initial: {
       x: "-50%",
@@ -41,7 +63,7 @@ const CLOUD_LEFT_STAGES = {
     },
     phase1: {
       x: "0%",
-      yPercent: -1,
+      yPercent: -30,
       scale: 1.2,
       opacity: 1,
       duration: 5,
@@ -49,7 +71,7 @@ const CLOUD_LEFT_STAGES = {
     },
     phase2: {
       x: "-5%",
-      yPercent: -3,
+      yPercent: -60,
       scale: 1.4,
       opacity: 0.8,
       duration: 5,
@@ -83,6 +105,7 @@ export default function CloudLeftLayer() {
         .to(cloudRef.current, stages.phase2);
     };
 
+    mm.add(BREAKPOINTS.desktopXL, () => setup(CLOUD_LEFT_STAGES.desktopXL));
     mm.add(BREAKPOINTS.desktop, () => setup(CLOUD_LEFT_STAGES.desktop));
     mm.add(BREAKPOINTS.mobile, () => setup(CLOUD_LEFT_STAGES.mobile));
 
