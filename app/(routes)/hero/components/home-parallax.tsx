@@ -11,7 +11,7 @@ import TextLayer from "./text-layer";
 
 export default function HeroParallaxSection() {
   return (
-    <section className="parallax-container relative h-[150vh] md:h-[200vh] w-full">
+    <section className="parallax-container relative h-[200vh] md:h-[200vh] w-full">
       <div className="sticky top-0 h-screen w-full overflow-hidden bg-black">
         <BackgroundLayer />
         <TextLayer />

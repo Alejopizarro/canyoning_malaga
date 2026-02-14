@@ -77,8 +77,8 @@ const ROCK_STAGES = {
       ease: "power2.inOut",
     },
     hold: {
-      yPercent: -40,
-      duration: 0,
+      yPercent: 10,
+      duration: 2,
       ease: "none",
     },
     phase2: {

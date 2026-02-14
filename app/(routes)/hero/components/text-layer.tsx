@@ -81,7 +81,7 @@ const TEXT2_STAGES = {
       y: 0,
       opacity: 1,
       duration: 0.3,
-      ease: "sine.inOut",
+      ease: "sine.in",
     },
     phase2: {
       yPercent: -150,
@@ -215,7 +215,7 @@ export default function TextLayer() {
       {/* ═══════════════════════════════════════════════════ */}
       <div
         ref={text2Ref}
-        className="absolute top-[50%] md:top-[46%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-center opacity-0 z-12 md:w-full"
+        className="absolute top-[51%] md:top-[46%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-center opacity-0 z-12 md:w-full"
       >
         <p
           className="leading-none font-extrabold text-white drop-shadow-2xl"
