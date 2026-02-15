@@ -1,6 +1,5 @@
 import Bokun from "@/components/bokun";
 import Hero from "@/components/hero";
-import ReviewsCarousel from "@/components/ui/reviews-carousel";
 import ExcursionDescription from "@/components/excursion-description";
 import Faqs, { Faq } from "../../activities/components/faqs";
 import { getExcursionByPath } from "@/lib/activities";
@@ -11,6 +10,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import PrivateTourCTA from "@/components/private-tour";
+import CheckAvailabilityButton from "../../../../components/ui/check-availability-button";
+import TrustindexWidget from "@/components/trustindex-widget";
 
 const faqs: Faq[] = [
   {
@@ -27,6 +29,16 @@ const faqs: Faq[] = [
     answer:
       "Yes, the Via Ferrata is located right next to the famous Caminito del Rey area, which offers additional options like rock climbing, hiking, and kayaking. IMPORTANT: This activity does NOT include a visit to Caminito del Rey.",
   },
+  {
+    question: "Can I skip the rappel at the end?",
+    answer:
+      "Yes, the 12-meter rappel is optional. If you prefer not to do it, there is an alternative path to descend safely.",
+  },
+  {
+    question: "Why is it not available in summer?",
+    answer:
+      "The route is closed from July 1st to August 31st due to extreme heat conditions. High temperatures make the activity unsafe and uncomfortable. We operate from September 1st to June 30th.",
+  },
 ];
 
 // Descripción de la excursión
@@ -41,7 +53,7 @@ const ACTIVITY_HIGHLIGHTS = [
   },
   {
     icon: "✅",
-    title: "Location",
+    title: "Prime Location",
     description:
       "Situated in El Chorro, next to the Caminito del Rey, ideal for combining with rock climbing, hiking, or kayaking.",
   },
@@ -53,9 +65,9 @@ const ACTIVITY_HIGHLIGHTS = [
   },
   {
     icon: "✅",
-    title: "Rappel Descent (optional)",
+    title: "Rappel Descent",
     description:
-      "Finalize the route with an exhilarating 12-meter abseil (rappel).",
+      "Finalize the route with an exhilarating 12-meter abseil (rappel) - optional.",
   },
 ];
 
@@ -75,7 +87,7 @@ const DESCRIPTION_DATA = {
     "Water and food/snacks (Energy bars, etc.)",
   ],
   meetingPoint: {
-    location: "El Chorro, Antequera-El Chorro, Málaga.",
+    location: "El Chorro, Antequera-El Chorro",
     mapUrl: "https://maps.app.goo.gl/9KLpVshzV7BRUXCp9",
     note: "Important Timetable Note: Participants must arrive 15 minutes before the start time to organize the group and attend the safety briefing. A 15-minute courtesy waiting time is granted for accidental delays; after this time, the activity will start without absent participants, resulting in the forfeiture of service rights.",
   },
@@ -88,41 +100,50 @@ const DESCRIPTION_DATA = {
 };
 
 export default async function Page() {
-  const elChorro = await getExcursionByPath("via-ferrata", "el-chorro");
+  const viaFerrataElChorro = await getExcursionByPath(
+    "Via-Ferrata",
+    "el-chorro",
+  );
 
-  if (!elChorro) {
+  if (!viaFerrataElChorro) {
     notFound();
   }
 
   const excursionHero = {
-    mainImage: elChorro.mainImage,
-    images: elChorro.images,
-    title: elChorro.title,
-    subtitle: elChorro.subtitle,
-    categoryPath: elChorro.categoryPath,
-    categoryText: elChorro.category,
+    mainImage: viaFerrataElChorro.mainImage,
+    images: viaFerrataElChorro.images,
+    title: viaFerrataElChorro.title,
+    subtitle: viaFerrataElChorro.subtitle,
+    categoryPath: viaFerrataElChorro.categoryPath,
+    categoryText: viaFerrataElChorro.category,
+    isMostPopular: viaFerrataElChorro.isMostPopular,
+    videoYoutube: viaFerrataElChorro.videoYoutube,
     rating: {
-      value: elChorro.rating.value,
-      totalReviews: elChorro.rating.reviews,
+      value: viaFerrataElChorro.rating.value,
+      totalReviews: viaFerrataElChorro.rating.reviews,
     },
   };
 
   const excursionDescription = {
-    title: elChorro.title,
-    category: elChorro.category,
-    price: elChorro.price,
-    days: elChorro.days,
-    minimumAge: elChorro.minimumAge,
-    ubication: elChorro.ubication,
-    duration: elChorro.duration,
-    level: elChorro.level,
+    title: viaFerrataElChorro.title,
+    category: viaFerrataElChorro.category,
+    price: viaFerrataElChorro.price,
+    days: viaFerrataElChorro.days,
+    minimumAge: viaFerrataElChorro.minimumAge,
+    ubication: viaFerrataElChorro.ubication,
+    duration: viaFerrataElChorro.duration,
+    level: viaFerrataElChorro.level,
+    specialPrice: viaFerrataElChorro.specialPrice,
   };
 
   return (
     <div className="pt-20">
       <Hero excursion={excursionHero} />
-      <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-x-16 px-4 pt-20 sm:px-16 py-4 sm:py-8">
-        <div className="flex flex-col gap-8">
+      <div className="mx-4">
+        <CheckAvailabilityButton />
+      </div>
+      <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-x-16 px-4 sm:px-16 py-4 sm:py-8">
+        <div className="flex flex-col gap-4">
           <ExcursionDescription excursion={excursionDescription} />
 
           {/* Introducción */}
@@ -131,7 +152,7 @@ export default async function Page() {
           </div>
 
           {/* Highlights */}
-          <div className="mt-4">
+          <div className="my-4">
             <h4 className="font-semibold text-gray-900 mb-4 text-lg">
               Activity Highlights
             </h4>
@@ -147,6 +168,32 @@ export default async function Page() {
                 </li>
               ))}
             </ul>
+          </div>
+
+          {/* Season Notice */}
+          <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 my-2">
+            <h4 className="font-semibold text-amber-800 mb-2">
+              📅 Seasonal Availability
+            </h4>
+            <p className="text-amber-700 text-sm">
+              This activity is available from{" "}
+              <strong>September 1st to June 30th</strong>. The route is closed
+              during July and August due to extreme heat conditions.
+            </p>
+          </div>
+
+          {/* Safety Box - E-E-A-T */}
+          <div className="bg-green-50 border border-green-200 rounded-lg p-4 my-2">
+            <h4 className="font-semibold text-green-800 mb-2">
+              🛡️ Safety is Our Commitment
+            </h4>
+            <p className="text-green-700 text-sm">
+              All excursions are guided by certified professional guides who
+              prioritize the safety of the group. We supply high-quality,
+              regularly inspected safety gear for every activity. The guide
+              maintains the authority to modify or suspend the activity if any
+              situation poses a danger to the participants.
+            </p>
           </div>
 
           {/* Accordion con toda la información */}
@@ -179,21 +226,6 @@ export default async function Page() {
                   progression technique, culminating in a final 12-meter rappel
                   (optional).
                 </p>
-
-                {/* Safety Box */}
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-4">
-                  <h4 className="font-semibold text-blue-900 mb-2">
-                    🛡️ Safety is Our Commitment
-                  </h4>
-                  <p className="text-blue-800 text-sm">
-                    All excursions are guided by certified professional guides
-                    who prioritize the safety of the group. We supply
-                    high-quality, regularly inspected safety gear for every
-                    activity. The guide maintains the authority to modify or
-                    suspend the activity if any situation poses a danger to the
-                    participants.
-                  </p>
-                </div>
               </AccordionContent>
             </AccordionItem>
 
@@ -207,7 +239,7 @@ export default async function Page() {
                     {DESCRIPTION_DATA.whatsIncluded.included.map(
                       (item, index) => (
                         <li key={index}>{item}</li>
-                      )
+                      ),
                     )}
                   </ul>
                 </div>
@@ -263,23 +295,48 @@ export default async function Page() {
                 </ol>
               </AccordionContent>
             </AccordionItem>
+
+            {/* Technical Details - Específico para via ferrata */}
+            <AccordionItem value="item-6">
+              <AccordionTrigger>Technical Details</AccordionTrigger>
+              <AccordionContent className="flex flex-col gap-y-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <p className="text-sm text-gray-500">
+                      Vertical Development
+                    </p>
+                    <p className="font-semibold">200m</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">Zip Line</p>
+                    <p className="font-semibold">30+ meters</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">Rappel</p>
+                    <p className="font-semibold">12 meters (optional)</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">Duration</p>
+                    <p className="font-semibold">4:30 Hours</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">Level</p>
+                    <p className="font-semibold">Advanced (Level 3)</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">Minimum Age</p>
+                    <p className="font-semibold">+14 Years Old</p>
+                  </div>
+                </div>
+              </AccordionContent>
+            </AccordionItem>
           </Accordion>
         </div>
-        <div className="flex flex-col space-y-8">
+        <div id="bokun-section">
           <Bokun />
-          {/* TODO: Añadir video de YouTube cuando esté disponible */}
-          {/* <div className="relative w-full aspect-video">
-            <iframe
-              className="absolute top-0 left-0 w-full h-full rounded-lg"
-              src="https://www.youtube.com/embed/VIDEO_ID"
-              title="Via Ferrata El Chorro Video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div> */}
         </div>
       </div>
-      <ReviewsCarousel />
+      <TrustindexWidget /> <PrivateTourCTA />
       <Faqs faqs={faqs} />
     </div>
   );

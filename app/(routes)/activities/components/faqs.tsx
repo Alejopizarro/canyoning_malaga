@@ -18,18 +18,19 @@ const Faqs = (props: FaqsProps) => {
   const { faqs } = props;
 
   return (
-    <div className="flex flex-col items-center text-center px-4 py-4 sm:py-12">
-      <h2 className="text-4xl sm:text-6xl font-semibold">FAQs</h2>
-      <p className="text-gray-600 mt-4 max-w-3xl">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos repellat
-        modi quidem soluta quaerat? Earum adipisci blanditiis recusandae
-        corrupti reprehenderit beatae inventore delectus. Nisi dolorem, illum
-        ullam ea dolore non!
-      </p>
+    <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row gap-6 items-start md:justify-between px-4 py-4 sm:py-12">
+      <div className="flex flex-col mb-6">
+        <h2 className="text-4xl sm:text-6xl font-semibold">FAQs</h2>
+        <p className="text-gray-600 mt-4 max-w-2xl">
+          Here are some of the most common questions about this activity. If you
+          have any other questions, feel free to contact us! We are here to help
+          you have the best experience possible.
+        </p>
+      </div>
       <Accordion
         type="single"
         collapsible
-        className="text-left max-w-3xl w-full mt-8 space-y-4"
+        className="text-left max-w-3xl w-full space-y-4"
       >
         {faqs?.map((faq, index) => (
           <AccordionItem key={index} value={`item-${index}`}>

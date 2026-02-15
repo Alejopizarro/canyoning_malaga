@@ -479,48 +479,40 @@ export const complementaryData: Record<string, ComplementaryData> = {
       "Via Ferrata in Ronda (Malaga) - This is the ideal via ferrata for families",
     description:
       "Family-friendly via ferrata at Tajo de Ronda. Spectacular views of the New Bridge. Ideal for beginners from 7 years old.",
-    videoYoutube: "",
+    videoYoutube: "https://www.youtube.com/watch?v=ofV6ZisZZ00",
     days: "All year",
     mainImage: {
-      src: "/ronda-vf-1.webp",
+      src: "/VF-Ronda-1.webp",
       alt: "Via Ferrata Ronda - Family-friendly via ferrata at Tajo de Ronda",
     },
     images: [
       {
-        src: "/VF-Ronda-2.jpg",
+        src: "/VF-Ronda-2.webp",
         alt: "Via Ferrata Ronda - Spectacular views of the New Bridge in via ferrata ronda",
       },
       {
-        src: "/VF-Ronda-3.jpg",
+        src: "/VF-Ronda-3.webp",
         alt: "Via Ferrata Ronda - Crossing a monkey bridge in via ferrata ronda",
       },
       {
-        src: "/VF-Ronda-4.jpg",
+        src: "/VF-Ronda-4.webp",
         alt: "Via Ferrata Ronda - Rappelling down a waterfall in via ferrata ronda",
       },
       {
-        src: "/VF-Ronda-5.jpg",
+        src: "/VF-Ronda-5.webp",
         alt: "Via Ferrata Ronda - Adventurers in via ferrata ronda",
       },
       {
-        src: "/VF-Ronda-6.jpg",
+        src: "/VF-Ronda-6.webp",
         alt: "Via Ferrata Ronda - Nature in via ferrata ronda",
       },
       {
-        src: "/VF-Ronda-7.jpg",
+        src: "/VF-Ronda-7.webp",
         alt: "Via Ferrata Ronda - Canyon walls in via ferrata ronda",
       },
       {
-        src: "/VF-Ronda-8.jpg",
+        src: "/VF-Ronda-8.webp",
         alt: "Via Ferrata Ronda - Spectacular landscapes in via ferrata ronda",
-      },
-      {
-        src: "/VF-Ronda-9.jpg",
-        alt: "Via Ferrata Ronda - Aerial views in via ferrata ronda",
-      },
-      {
-        src: "/VF-Ronda-10.jpg",
-        alt: "Via Ferrata Ronda - Excitement in via ferrata ronda",
       },
     ],
     isOffer: false,
@@ -588,7 +580,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
       "Via Ferrata el Chorro (Malaga): One of the most complete and aerial Vias Ferratas in Southern Andalusia",
     description:
       "The best via ferrata in Andalusia. Next to Caminito del Rey. 35-meter zipline and +180m elevation gain.",
-    videoYoutube: "",
+    videoYoutube: "https://www.youtube.com/watch?v=ofV6ZisZZ00",
     days: "All year",
     mainImage: {
       src: "/el-chorro-1.webp",
@@ -596,24 +588,44 @@ export const complementaryData: Record<string, ComplementaryData> = {
     },
     images: [
       {
-        src: "/el-chorro-7.webp",
+        src: "/el-chorro-2.webp",
         alt: "Via Ferrata El Chorro - Spectacular views in el chorro via ferrata",
       },
       {
-        src: "/el-chorro-8.webp",
+        src: "/el-chorro-3.webp",
         alt: "Via Ferrata El Chorro - Rappelling down a waterfall in el chorro via ferrata",
       },
       {
-        src: "/el-chorro-9.webp",
+        src: "/el-chorro-4.webp",
         alt: "Via Ferrata El Chorro - Crossing a monkey bridge in el chorro via ferrata",
       },
       {
-        src: "/el-chorro-10.webp",
+        src: "/el-chorro-5.webp",
         alt: "Via Ferrata El Chorro - Ziplining in el chorro via ferrata",
       },
       {
-        src: "/el-chorro-11.webp",
+        src: "/el-chorro-6.webp",
         alt: "Via Ferrata El Chorro - Adventurers in el chorro via ferrata",
+      },
+      {
+        src: "/el-chorro-7.webp",
+        alt: "Via Ferrata El Chorro - Nature in el chorro via ferrata",
+      },
+      {
+        src: "/el-chorro-8.webp",
+        alt: "Via Ferrata El Chorro - Canyon walls in el chorro via ferrata",
+      },
+      {
+        src: "/el-chorro-9.webp",
+        alt: "Via Ferrata El Chorro - Spectacular landscapes in el chorro via ferrata",
+      },
+      {
+        src: "/el-chorro-10.webp",
+        alt: "Via Ferrata El Chorro - Aerial views in el chorro via ferrata",
+      },
+      {
+        src: "/el-chorro-11.webp",
+        alt: "Via Ferrata El Chorro - Challenging sections in el chorro via ferrata",
       },
     ],
     isOffer: false,
@@ -703,7 +715,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
         alt: "Hiking La Concha - Serene landscapes near la concha peak",
       },
     ],
-    specialPrice: "Minimum 2, price per person.",
+    specialPrice: "*Minimum 2 people. Available Monday to Friday.",
     videoYoutube: "https://www.youtube.com/watch?v=lFEBPOm6354",
     isOffer: false,
     rating: { value: 0, reviews: 0 },
