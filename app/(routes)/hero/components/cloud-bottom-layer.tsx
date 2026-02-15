@@ -56,7 +56,7 @@ const CLOUD_BOTTOM_STAGES = {
       opacity: 0,
     },
     phase1: {
-      yPercent: 0,
+      yPercent: -20,
       opacity: 0,
       duration: 5,
       scale: 0.8,
@@ -66,7 +66,7 @@ const CLOUD_BOTTOM_STAGES = {
       scale: 1.2,
       duration: 5,
       opacity: 0.8,
-      yPercent: -5,
+      yPercent: -60,
       ease: "power2.inOut",
     },
   },
@@ -109,8 +109,18 @@ export default function CloudBottomLayer() {
       ref={cloudRef}
       className="absolute bottom-0 translate-y-[60%] left-0 w-full h-[50vh] z-30 flex"
     >
-      {/* Nube izquierda */}
-      <div className="relative w-1/2 h-full overflow-hidden">
+      {/* Mobile: una sola nube */}
+      <div className="relative md:hidden w-full h-full">
+        <Image
+          src="/nube.png"
+          alt="Cloud bottom"
+          fill
+          className="object-cover"
+          style={{ transform: "scaleY(-1)" }}
+        />
+      </div>
+      {/* Desktop: dos nubes espejadas */}
+      <div className="relative hidden md:block w-1/2 h-full overflow-hidden">
         <Image
           src="/nube.png"
           alt="Cloud bottom left"
@@ -119,8 +129,7 @@ export default function CloudBottomLayer() {
           style={{ transform: "scaleY(-1)" }}
         />
       </div>
-      {/* Nube derecha (espejada horizontalmente) */}
-      <div className="relative w-1/2 h-full overflow-hidden">
+      <div className="relative hidden md:block w-1/2 h-full overflow-hidden">
         <Image
           src="/nube.png"
           alt="Cloud bottom right"

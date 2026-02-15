@@ -65,24 +65,24 @@ const ROCK_STAGES = {
   },
   mobile: {
     initial: {
-      y: -5,
-      scale: 1,
+      y: 0,
+      scale: 1.1,
       opacity: 1,
     },
     phase1: {
-      scale: 1,
+      scale: 1.1,
       opacity: 1,
       duration: 3,
-      yPercent: 10,
+      yPercent: 0,
       ease: "power2.inOut",
     },
     hold: {
-      yPercent: 10,
+      yPercent: 0,
       duration: 2,
       ease: "none",
     },
     phase2: {
-      scale: 1,
+      scale: 1.1,
       yPercent: -120,
       duration: 7,
       ease: "none",
@@ -163,14 +163,14 @@ export default function RockGradientLayer() {
           trigger: ".parallax-container",
           start: "top top",
           end: "bottom bottom",
-          scrub: 1,
+          scrub: 4,
         },
       });
 
       tlRock
         // FASE 1: Roca, gradiente inferior, gradiente superior y top-activities en paralelo
         .to(rockRef.current, rockCfg.phase1, 0)
-        .to(bottomGradientRef.current, { ...rockCfg.phase1, opacity: 1 }, 0)
+        .to(bottomGradientRef.current, rockCfg.phase1, 0)
         .to(
           topGradientRef.current,
           {
@@ -195,7 +195,7 @@ export default function RockGradientLayer() {
         )
         // FASE 2: Roca, gradiente inferior, gradiente superior y top-activities en paralelo
         .to(rockRef.current, rockCfg.phase2)
-        .to(bottomGradientRef.current, rockCfg.phase2, "<")
+        .to(bottomGradientRef.current, { ...rockCfg.phase2, opacity: 1 }, "<")
         .to(
           topGradientRef.current,
           {
@@ -236,7 +236,7 @@ export default function RockGradientLayer() {
       {/* Roca - z-28 por encima de las nubes (z-30) */}
       <div
         ref={rockRef}
-        className="absolute bottom-0 left-0 w-full h-[17vh] md:h-[25%] z-28"
+        className="absolute bottom-0 left-0 md:left-0 w-full h-[17vh] md:h-[25%] z-28"
         style={{ transformOrigin: "center bottom" }}
       >
         <Image
