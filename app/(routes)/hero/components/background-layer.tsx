@@ -18,7 +18,6 @@ const BARRANCO_STAGES = {
       scale: 1,
       opacity: 1,
     },
-    transformOrigin: "center center",
     phase1: {
       scale: 1.4,
       opacity: 1,
@@ -37,7 +36,6 @@ const BARRANCO_STAGES = {
       scale: 1,
       opacity: 1,
     },
-    transformOrigin: "center center",
     phase1: {
       scale: 1.4,
       opacity: 1,
@@ -56,7 +54,6 @@ const BARRANCO_STAGES = {
       scale: 1,
       opacity: 1,
     },
-    transformOrigin: "center bottom",
     phase1: {
       scale: 1.4,
       opacity: 1,
@@ -137,10 +134,7 @@ export default function BackgroundLayer() {
       // ═══════════════════════════════════════════════════
       // TIMELINE PARA BARRANCO
       // ═══════════════════════════════════════════════════
-      gsap.set(barrancoRef.current, {
-        ...barrancoCfg.initial,
-        transformOrigin: barrancoCfg.transformOrigin ?? "center center",
-      });
+      gsap.set(barrancoRef.current, barrancoCfg.initial);
 
       const tlBarranco = gsap.timeline({
         scrollTrigger: {
@@ -203,6 +197,7 @@ export default function BackgroundLayer() {
       <div
         ref={barrancoRef}
         className="absolute inset-0 w-full h-full z-10"
+        style={{ transformOrigin: "center center" }}
       >
         <Image
           src="/barranco.png"

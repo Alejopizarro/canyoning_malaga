@@ -140,6 +140,7 @@ const TOP_ACTIVITIES_STAGES = {
 
 export default function RockGradientLayer() {
   const topGradientRef = useRef<HTMLDivElement>(null);
+  const bottomGradientRef = useRef<HTMLDivElement>(null);
   const rockRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -153,6 +154,7 @@ export default function RockGradientLayer() {
       // TIMELINE PARA ROCA + GRADIENTE + TOP ACTIVITIES
       // ═══════════════════════════════════════════════════
       gsap.set(rockRef.current, rockCfg.initial);
+      gsap.set(bottomGradientRef.current, { ...rockCfg.initial, opacity: 0 });
       gsap.set(topGradientRef.current, { opacity: 0 });
       gsap.set("#top-activities", topActCfg.initial);
 
@@ -161,13 +163,14 @@ export default function RockGradientLayer() {
           trigger: ".parallax-container",
           start: "top top",
           end: "bottom bottom",
-          scrub: 4,
+          scrub: 1,
         },
       });
 
       tlRock
-        // FASE 1: Roca, gradiente y top-activities en paralelo
+        // FASE 1: Roca, gradiente inferior, gradiente superior y top-activities en paralelo
         .to(rockRef.current, rockCfg.phase1, 0)
+        .to(bottomGradientRef.current, { ...rockCfg.phase1, opacity: 1 }, 0)
         .to(
           topGradientRef.current,
           {
@@ -178,8 +181,9 @@ export default function RockGradientLayer() {
           0,
         )
         .to("#top-activities", topActCfg.phase1, 0)
-        // HOLD: Roca y gradiente quietos
+        // HOLD: Roca, gradiente inferior y gradiente superior quietos
         .to(rockRef.current, rockCfg.hold)
+        .to(bottomGradientRef.current, rockCfg.hold, "<")
         .to(
           topGradientRef.current,
           {
@@ -189,8 +193,9 @@ export default function RockGradientLayer() {
           },
           "<",
         )
-        // FASE 2: Roca, gradiente y top-activities en paralelo
+        // FASE 2: Roca, gradiente inferior, gradiente superior y top-activities en paralelo
         .to(rockRef.current, rockCfg.phase2)
+        .to(bottomGradientRef.current, rockCfg.phase2, "<")
         .to(
           topGradientRef.current,
           {
@@ -228,7 +233,7 @@ export default function RockGradientLayer() {
         }}
       />
 
-      {/* Roca - z-25 para estar SIEMPRE por encima de las nubes (z-18/z-19) */}
+      {/* Roca - z-28 por encima de las nubes (z-30) */}
       <div
         ref={rockRef}
         className="absolute bottom-0 left-0 w-full h-[17vh] md:h-[25%] z-28"
@@ -241,11 +246,16 @@ export default function RockGradientLayer() {
           className="object-cover md:object-contain object-bottom"
           style={{ filter: "brightness(0.85)" }}
         />
+      </div>
 
-        {/* Gradiente inferior - conecta con TopActivities */}
+      {/* Gradiente inferior - z-32 por encima de nubes (z-30), tapa todo y conecta con TopActivities */}
+      <div
+        ref={bottomGradientRef}
+        className="absolute bottom-0 left-0 w-full h-[17vh] md:h-[25%] z-32 pointer-events-none"
+        style={{ transformOrigin: "center bottom" }}
+      >
         <div
-          className="absolute left-0 w-full pointer-events-none"
-          ref={topGradientRef}
+          className="absolute left-0 w-full"
           style={{
             bottom: "-30vh",
             height: "50vh",

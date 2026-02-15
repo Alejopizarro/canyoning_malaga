@@ -215,7 +215,7 @@ export default function TextLayer() {
       {/* ═══════════════════════════════════════════════════ */}
       <div
         ref={text2Ref}
-        className="absolute top-[51%] md:top-[46%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-center opacity-0 z-12 md:w-full"
+        className="absolute top-[51%] md:top-[47%] left-1/2 -translate-x-1/2 -translate-y-1/2 text-center opacity-0 z-12 md:w-full"
       >
         <p
           className="leading-none font-extrabold text-white drop-shadow-2xl"

@@ -42,7 +42,7 @@ const CLOUD_RIGHT_STAGES = {
     },
     phase1: {
       x: "0%",
-      yPercent: 10,
+      yPercent: -15,
       scale: 1.5,
       opacity: 1,
       duration: 5,
@@ -50,7 +50,7 @@ const CLOUD_RIGHT_STAGES = {
     },
     phase2: {
       x: "10%",
-      yPercent: -25,
+      yPercent: -45,
       scale: 1.8,
       opacity: 0.8,
       duration: 5,

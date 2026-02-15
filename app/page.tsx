@@ -1,6 +1,6 @@
 import { getExcursions } from "@/lib/activities";
 import HeroParallaxSection from "./(routes)/hero/components/home-parallax";
-import TransitionLayer from "./(routes)/hero/components/transition-layer";
+
 import TopActivitiesHome from "@/components/top-activities-home";
 import BannerTeamBuilding from "@/components/banner-team-building";
 import AllActivitiesSection from "@/components/all-activities-section";
@@ -16,7 +16,6 @@ export default async function Home() {
   return (
     <main className="min-h-screen">
       <HeroParallaxSection />
-      <TransitionLayer />
       <TopActivitiesHome />
       <BannerTeamBuilding />
       <AllActivitiesSection excursions={excursions} />

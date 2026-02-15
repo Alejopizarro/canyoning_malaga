@@ -20,8 +20,11 @@ const TopActivitiesHome = async () => {
   });
 
   return (
-    <section id="top-activities" className="relative z-21 w-full bg-background">
-      <div className="max-w-[1440px] pt-10 pb-8 mx-auto px-4 md:px-8 flex flex-col items-center justify-start">
+    <section
+      id="top-activities"
+      className="relative z-21 w-full bg-background -mt-[15vh] md:-mt-[20vh]"
+    >
+      <div className="max-w-[1440px]pt-10 pb-8 mx-auto px-4 md:px-8 flex flex-col items-center justify-start">
         {/* Header */}
         <div className="relative text-center mb-10">
           <span className="block text-md md:text-xl mb-2">

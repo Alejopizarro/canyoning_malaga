@@ -107,15 +107,28 @@ export default function CloudBottomLayer() {
   return (
     <div
       ref={cloudRef}
-      className="absolute bottom-0 translate-y-[60%] left-1/2 -translate-x-1/2 w-[120vh] h-[50vh] z-30"
+      className="absolute bottom-0 translate-y-[60%] left-0 w-full h-[50vh] z-30 flex"
     >
-      <Image
-        src="/nube.png"
-        alt="Cloud bottom"
-        fill
-        className="object-contain"
-        style={{ transform: "scaleY(-1)" }}
-      />
+      {/* Nube izquierda */}
+      <div className="relative w-1/2 h-full overflow-hidden">
+        <Image
+          src="/nube.png"
+          alt="Cloud bottom left"
+          fill
+          className="object-cover object-right"
+          style={{ transform: "scaleY(-1)" }}
+        />
+      </div>
+      {/* Nube derecha (espejada horizontalmente) */}
+      <div className="relative w-1/2 h-full overflow-hidden">
+        <Image
+          src="/nube.png"
+          alt="Cloud bottom right"
+          fill
+          className="object-cover object-left"
+          style={{ transform: "scale(-1, -1)" }}
+        />
+      </div>
     </div>
   );
 }
