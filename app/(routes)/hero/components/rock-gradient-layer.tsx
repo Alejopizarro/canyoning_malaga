@@ -96,42 +96,45 @@ const ROCK_STAGES = {
 const TOP_ACTIVITIES_STAGES = {
   desktopXL: {
     initial: {
-      y: 0,
+      yPercent: 30,
     },
     phase1: {
-      duration: 0.3,
+      yPercent: 20,
+      duration: 3,
       ease: "power2.inOut",
     },
     phase2: {
-      duration: 0.4,
+      yPercent: 0,
+      duration: 5,
       ease: "none",
     },
   },
   desktop: {
     initial: {
-      y: 0,
+      yPercent: 30,
     },
     phase1: {
-      // yPercent: -10,
-      duration: 0.3,
+      yPercent: 20,
+      duration: 3,
       ease: "power2.inOut",
     },
     phase2: {
-      // yPercent: -25,
-      duration: 0.4,
+      yPercent: 0,
+      duration: 5,
       ease: "none",
     },
   },
   mobile: {
     initial: {
-      y: 0,
+      yPercent: 20,
     },
     phase1: {
+      yPercent: 15,
       duration: 5,
       ease: "power2.inOut",
     },
     phase2: {
-      // yPercent: -10,
+      yPercent: 0,
       duration: 5,
       ease: "none",
     },

@@ -16,6 +16,7 @@ interface Excursion {
     value: number;
     totalReviews: number;
   };
+  videoYoutube?: string;
 }
 
 interface HeroProps {
@@ -74,7 +75,7 @@ const Hero = (props: HeroProps) => {
       </div>
       <GridHero
         mainImage={excursion.mainImage}
-        videoYoutube="https://www.youtube.com/embed/S3E0cKEYCSQ"
+        videoYoutube={excursion.videoYoutube}
         images={excursion.images}
       />
     </div>

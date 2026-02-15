@@ -14,7 +14,7 @@ import AdventureGallery from "@/components/adventure-gallery";
 export default async function Home() {
   const excursions = await getExcursions();
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-background">
       <HeroParallaxSection />
       <TopActivitiesHome />
       <BannerTeamBuilding />

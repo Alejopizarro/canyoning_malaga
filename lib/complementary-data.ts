@@ -21,7 +21,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     subtitle: "The Best Canyoning Experience Near Marbella",
     description:
       "Perfect canyoning descent for beginners. Close to Marbella, ideal for families. Available all year round. Fun guaranteed!",
-    videoYoutube: "",
+    videoYoutube: "https://www.youtube.com/watch?v=S3E0cKEYCSQ",
     days: "Every day!",
     mainImage: {
       src: "/guadalmina-1.webp",
@@ -632,7 +632,6 @@ export const complementaryData: Record<string, ComplementaryData> = {
     subtitle: "Hiking La Concha - Ascent to Marbella's most iconic peak",
     description:
       "Ascent to Marbella's most iconic peak (1,215m). Panoramic views of Costa del Sol, Gibraltar and Africa.",
-    videoYoutube: "",
     days: "All year!",
     mainImage: {
       src: "/la-concha-1.webp",
@@ -705,6 +704,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
       },
     ],
     specialPrice: "Minimum 2, price per person.",
+    videoYoutube: "https://www.youtube.com/watch?v=lFEBPOm6354",
     isOffer: false,
     rating: { value: 0, reviews: 0 },
     level: "advanced",

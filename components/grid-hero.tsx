@@ -15,12 +15,25 @@ interface GridHeroProps {
   videoYoutube?: string;
 }
 
+function toEmbedUrl(url: string): string {
+  // Already an embed URL
+  if (url.includes("/embed/")) return url;
+  // Standard watch URL: https://www.youtube.com/watch?v=VIDEO_ID
+  const watchMatch = url.match(/[?&]v=([^&]+)/);
+  if (watchMatch) return `https://www.youtube.com/embed/${watchMatch[1]}`;
+  // Short URL: https://youtu.be/VIDEO_ID
+  const shortMatch = url.match(/youtu\.be\/([^?&]+)/);
+  if (shortMatch) return `https://www.youtube.com/embed/${shortMatch[1]}`;
+  return url;
+}
+
 const GridHero = (props: GridHeroProps) => {
   const [currentImage, setCurrentImage] = useState(0);
   const [isGalleryOpen, setIsGalleryOpen] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
 
-  const { mainImage, images, videoYoutube } = props;
+  const { mainImage, images } = props;
+  const videoYoutube = props.videoYoutube ? toEmbedUrl(props.videoYoutube) : undefined;
 
   // Si hay video, reservamos 1 slot para él y tomamos máximo 3 imágenes; si no, 4
   const displayImages = videoYoutube ? images.slice(0, 3) : images.slice(0, 4);
