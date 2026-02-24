@@ -62,7 +62,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
       "Rio Verde Canyoning: Turquoise Water Jumps Near Granada & Málaga",
     description:
       "One of the best canyons in Andalusia. Turquoise waters, optional jumps and rappelling. Fun guaranteed.",
-    videoYoutube: "",
+    videoYoutube: "https://www.youtube.com/watch?v=MdOs7KoTGMw",
     days: "From March 1st to November 30th",
     mainImage: {
       src: "/rio-verde-1.webp",
@@ -531,7 +531,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
       "Via Ferrata in Casares with Stunning Views of Africa and Gibraltar",
     description:
       "Intermediate level with views of Africa and Gibraltar. Two monkey bridges and aerial traverses. 35 min from Marbella.",
-    videoYoutube: "",
+    videoYoutube: "https://www.youtube.com/watch?v=ofV6ZisZZ00",
     days: "Mon | Fri",
     mainImage: {
       src: "/casares-1.webp",

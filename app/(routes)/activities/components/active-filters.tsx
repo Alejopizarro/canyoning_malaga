@@ -16,6 +16,13 @@ interface ActiveFiltersProps {
   onClearAll: () => void;
 }
 
+const categoryLabels: Record<string, string> = {
+  canyoning: "Canyoning",
+  "via-ferrata": "Via Ferrata",
+  hiking: "Hiking",
+  activities: "More Activities",
+};
+
 const ActiveFilters = ({
   filterCategory,
   filterLevel,
@@ -62,7 +69,7 @@ const ActiveFilters = ({
         {filterCategory && (
           <div className="inline-flex items-center gap-1 px-3 py-1 bg-white border border-gray-300 rounded-full text-sm">
             <span className="font-medium text-gray-700">Category:</span>
-            <span className="text-gray-600">{filterCategory}</span>
+            <span className="text-gray-600">{categoryLabels[filterCategory] || filterCategory}</span>
             <button
               onClick={onRemoveCategory}
               className="ml-1 hover:bg-gray-100 rounded-full p-0.5"

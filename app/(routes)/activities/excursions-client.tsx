@@ -76,8 +76,7 @@ const ExcursionsClient = ({ excursions }: ExcursionsClientProps) => {
     let filtered = excursions.filter(
       (excursion: Excursion) =>
         (filterCategory === "" ||
-          excursion.category.toLowerCase() ===
-            filterCategory.toLowerCase()) &&
+          excursion.categoryPath === filterCategory) &&
         (filterLevel === "" || excursion.level === filterLevel) &&
         (filterProvince === "" || excursion.province === filterProvince) &&
         (filterTop3 === "" || (filterTop3 === "true" && excursion.isTop3)) &&

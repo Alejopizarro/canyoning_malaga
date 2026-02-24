@@ -11,7 +11,10 @@ const ExcursionCardMobile = (props: ExcursionCardMobileProps) => {
   const { excursion } = props;
 
   return (
-    <div className="hover:shadow-lg transition-shadow duration-300 h-auto w-full max-w-[380px] flex flex-col">
+    <Link
+      href={`/${excursion.categoryPath}/${excursion.route}`}
+      className="hover:shadow-lg transition-shadow duration-300 h-auto w-full max-w-[380px] flex flex-col"
+    >
       <div className="p-0">
         <Image
           width={400}
@@ -57,7 +60,7 @@ const ExcursionCardMobile = (props: ExcursionCardMobileProps) => {
           </Link>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

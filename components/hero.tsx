@@ -37,21 +37,17 @@ const Hero = (props: HeroProps) => {
             >
               activities
             </Link>
-            {excursion.categoryPath && (
-              <>
-                {" > "}
-                <span className="px-1">{excursion.categoryPath}</span>
-              </>
-            )}
             {" > "}
             <Link
-              href={`/activities/${excursion.categoryPath?.toLowerCase()}/${excursion.title
-                .toLowerCase()
-                .replace(/\s+/g, "-")}`}
-              className="pl-1 font-semibold hover:text-gray-700 transition-colors"
+              href={`/activities?category=${excursion.categoryPath}`}
+              className="px-1 hover:text-gray-700 transition-colors"
             >
-              {excursion.title.toLowerCase()}
+              {excursion.categoryText.toLowerCase()}
             </Link>
+            {" > "}
+            <span className="pl-1 font-semibold hover:text-gray-700 transition-colors">
+              {excursion.title.toLowerCase()}
+            </span>
           </p>
           <h1 className="text-4xl font-extrabold mb-2 tracking-tight">
             {!excursion.subtitle ? excursion.title : excursion.subtitle}

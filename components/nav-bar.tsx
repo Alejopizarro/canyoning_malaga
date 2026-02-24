@@ -63,7 +63,7 @@ const Navbar = async () => {
           </div>
 
           <div className="flex items-center space-x-2 lg:space-x-3 flex-shrink-0">
-            <SearchInput />
+            <SearchInput excursions={excursions} />
 
             {/* Botón For Companies - Solo Desktop */}
             <Link

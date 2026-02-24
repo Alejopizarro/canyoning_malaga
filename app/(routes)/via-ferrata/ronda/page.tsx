@@ -1,6 +1,4 @@
-import Bokun from "@/components/bokun";
 import Hero from "@/components/hero";
-import ReviewsCarousel from "@/components/ui/reviews-carousel";
 import ExcursionDescription from "@/components/excursion-description";
 import Faqs, { Faq } from "../../activities/components/faqs";
 import { getExcursionByPath } from "@/lib/activities";
@@ -14,6 +12,7 @@ import {
 import PrivateTourCTA from "@/components/private-tour";
 import CheckAvailabilityButton from "../../../../components/ui/check-availability-button";
 import TrustindexWidget from "@/components/trustindex-widget";
+import { ActivityBookingForm } from "@/components/activity-booking-form";
 
 const faqs: Faq[] = [
   {
@@ -309,8 +308,15 @@ export default async function Page() {
             </AccordionItem>
           </Accordion>
         </div>
-        <div id="bokun-section">
-          <Bokun />
+        <div
+          id="bokun-section"
+          className="flex flex-col md:items-center md:text-center"
+        >
+          <h2 className="text-2xl font-semibold mb-4">Book Your Adventure</h2>
+          <p className="text-gray-600 mb-4">
+            Secure your spot on this thrilling via ferrata adventure in Ronda.
+          </p>
+          <ActivityBookingForm activityName={viaFerrataRonda.title} />
         </div>
       </div>
       <TrustindexWidget />

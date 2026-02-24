@@ -1,6 +1,5 @@
 import Bokun from "@/components/bokun";
 import Hero from "@/components/hero";
-import ReviewsCarousel from "@/components/ui/reviews-carousel";
 import ExcursionDescription from "@/components/excursion-description";
 import Faqs, { Faq } from "../../activities/components/faqs";
 import { getExcursionByPath } from "@/lib/activities";
@@ -11,6 +10,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import PrivateTourCTA from "@/components/private-tour";
+import CheckAvailabilityButton from "../../../../components/ui/check-availability-button";
+import TrustindexWidget from "@/components/trustindex-widget";
+import { ActivityBookingForm } from "@/components/activity-booking-form";
 
 const faqs: Faq[] = [
   {
@@ -27,10 +30,23 @@ const faqs: Faq[] = [
     question: "How long does the activity take?",
     answer: "The ascent lasts approximately 2 hours and 30 minutes.",
   },
+  {
+    question: "What if I'm afraid of heights?",
+    answer:
+      "Via ferrata is actually a great way to build confidence with heights in a controlled environment. Our guides are experienced in helping participants overcome their fears, and you'll be securely attached to the safety cable at all times.",
+  },
 ];
 
-// Descripción de la excursión
-const EXCURSION_INTRO = `Experience the thrill of climbing in the picturesque white village of Casares. This spectacular via ferrata offers breathtaking views of the Rock of Gibraltar and the African coast, making it the perfect ascent for adventurous beginners and families seeking vertical challenges.`;
+// Descripción de la excursión con negritas
+const EXCURSION_INTRO = (
+  <>
+    Experience the thrill of climbing in the picturesque white village of{" "}
+    <strong>Casares</strong>. This spectacular via ferrata offers breathtaking{" "}
+    <strong>views of the Rock of Gibraltar and the African coast</strong>,
+    making it the perfect ascent for adventurous beginners and families seeking
+    vertical challenges.
+  </>
+);
 
 const ACTIVITY_HIGHLIGHTS = [
   {
@@ -75,17 +91,10 @@ const DESCRIPTION_DATA = {
     "Water and food/snacks (Energy bars, etc.)",
   ],
   meetingPoint: {
-    location: "Casares, Málaga.",
+    location: "Casares, Málaga",
     mapUrl: "https://goo.gl/maps/2QvqDFfMjAtkEx626",
     note: "Important Timetable Note: Participants must arrive 15 minutes before the start time to organize the group and attend the safety briefing. A 15-minute courtesy waiting time is granted for accidental delays; after this time, the activity will start without absent participants, resulting in the forfeiture of service rights.",
   },
-  itinerary: [
-    "Meet your guide at the designated meeting point (15 minutes prior to start time).",
-    "Gear up: Put on the safety equipment and attend the safety briefing.",
-    "Ascent to Casares Peak: Progress through the two challenging sections of the Via Ferrata, traversing the bridges and climbing the cliff face.",
-    "Summit Views: Reach the top for breathtaking views of the African Coast and Gibraltar.",
-    "Descent & Conclusion: Return to the starting point (duration approximately 2:30 hours in total).",
-  ],
 };
 
 export default async function Page() {
@@ -102,6 +111,8 @@ export default async function Page() {
     subtitle: casares.subtitle,
     categoryPath: casares.categoryPath,
     categoryText: casares.category,
+    isMostPopular: casares.isMostPopular,
+    videoYoutube: casares.videoYoutube,
     rating: {
       value: casares.rating.value,
       totalReviews: casares.rating.reviews,
@@ -117,13 +128,17 @@ export default async function Page() {
     ubication: casares.ubication,
     duration: casares.duration,
     level: casares.level,
+    specialPrice: casares.specialPrice,
   };
 
   return (
     <div className="pt-20">
       <Hero excursion={excursionHero} />
-      <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-x-16 px-4 pt-20 sm:px-16 py-4 sm:py-8">
-        <div className="flex flex-col gap-8">
+      <div className="mx-4">
+        <CheckAvailabilityButton />
+      </div>
+      <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-x-16 px-4 sm:px-16 py-4 sm:py-8">
+        <div className="flex flex-col gap-4">
           <ExcursionDescription excursion={excursionDescription} />
 
           {/* Introducción */}
@@ -132,7 +147,7 @@ export default async function Page() {
           </div>
 
           {/* Highlights */}
-          <div className="mt-4">
+          <div className="my-4">
             <h4 className="font-semibold text-gray-900 mb-4 text-lg">
               Activity Highlights
             </h4>
@@ -150,6 +165,21 @@ export default async function Page() {
             </ul>
           </div>
 
+          {/* Safety Box - E-E-A-T */}
+          <div className="bg-green-50 border border-green-200 rounded-lg p-4 my-4">
+            <h4 className="font-semibold text-green-800 mb-2">
+              🛡️ Safety is Our Commitment
+            </h4>
+            <p className="text-green-700 text-sm">
+              All excursions are guided by{" "}
+              <strong>certified professional guides</strong> who prioritize the
+              safety of the group. We supply high-quality, regularly inspected
+              safety gear for every activity. The guide maintains the authority
+              to modify or suspend the activity if any situation poses a danger
+              to the participants.
+            </p>
+          </div>
+
           {/* Accordion con toda la información */}
           <Accordion type="single" collapsible>
             {/* Description */}
@@ -160,8 +190,8 @@ export default async function Page() {
                   The Vertical Gateway to the Genal Valley
                 </h3>
                 <p>
-                  The Via Ferrata Casares faces the deep valley near the famous
-                  white village and climbs to its highest point.
+                  The <strong>Via Ferrata Casares</strong> faces the deep valley
+                  near the famous white village and climbs to its highest point.
                 </p>
                 <p>
                   This 2.5-hour route is classified as the next logical step in
@@ -169,9 +199,10 @@ export default async function Page() {
                   recommended for those with some prior sports experience.
                 </p>
                 <p>
-                  The route includes thrilling elements like monkey bridges and
-                  horizontal crossings, culminating in an extra leaded section
-                  for added challenge.
+                  The route includes thrilling elements like{" "}
+                  <strong>monkey bridges</strong> and{" "}
+                  <strong>horizontal crossings</strong>, culminating in an extra
+                  leaded section for added challenge.
                 </p>
                 <p>
                   This route is combinable with other nearby via ferratas in the
@@ -181,21 +212,6 @@ export default async function Page() {
                   End your adventure by enjoying typical tapas in the beautiful
                   Casares village square.
                 </p>
-
-                {/* Safety Box */}
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-4">
-                  <h4 className="font-semibold text-blue-900 mb-2">
-                    🛡️ Safety is Our Commitment
-                  </h4>
-                  <p className="text-blue-800 text-sm">
-                    All excursions are guided by certified professional guides
-                    who prioritize the safety of the group. We supply
-                    high-quality, regularly inspected safety gear for every
-                    activity. The guide maintains the authority to modify or
-                    suspend the activity if any situation poses a danger to the
-                    participants.
-                  </p>
-                </div>
               </AccordionContent>
             </AccordionItem>
 
@@ -208,8 +224,17 @@ export default async function Page() {
                   <ul className="list-disc pl-6 space-y-2">
                     {DESCRIPTION_DATA.whatsIncluded.included.map(
                       (item, index) => (
-                        <li key={index}>{item}</li>
-                      )
+                        <li key={index}>
+                          {item.includes("Full photo report") ? (
+                            <>
+                              <strong>Full photo report!</strong> (A link is
+                              sent via WhatsApp within 24 hours)
+                            </>
+                          ) : (
+                            item
+                          )}
+                        </li>
+                      ),
                     )}
                   </ul>
                 </div>
@@ -246,11 +271,15 @@ export default async function Page() {
                     View on Google Maps
                   </a>
                 )}
-                {DESCRIPTION_DATA.meetingPoint.note && (
-                  <p className="text-sm text-gray-600 italic">
-                    {DESCRIPTION_DATA.meetingPoint.note}
-                  </p>
-                )}
+                <p className="text-sm text-gray-600 italic">
+                  <strong>Important Timetable Note:</strong> Participants must
+                  arrive 15 minutes before the start time to organize the group
+                  and attend the safety briefing. A{" "}
+                  <strong>15-minute courtesy waiting time</strong> is granted
+                  for accidental delays; after this time, the activity will
+                  start without absent participants, resulting in the forfeiture
+                  of service rights.
+                </p>
               </AccordionContent>
             </AccordionItem>
 
@@ -259,29 +288,78 @@ export default async function Page() {
               <AccordionTrigger>Itinerary</AccordionTrigger>
               <AccordionContent className="flex flex-col gap-y-4">
                 <ol className="list-decimal pl-6 space-y-2">
-                  {DESCRIPTION_DATA.itinerary.map((step, index) => (
-                    <li key={index}>{step}</li>
-                  ))}
+                  <li>
+                    <strong>Meet your guide</strong> at the designated meeting
+                    point (15 minutes prior to start time).
+                  </li>
+                  <li>
+                    <strong>Gear up:</strong> Put on the safety equipment and
+                    attend the safety briefing.
+                  </li>
+                  <li>
+                    <strong>Ascent to Casares Peak:</strong> Progress through
+                    the two challenging sections of the Via Ferrata, traversing
+                    the bridges and climbing the cliff face.
+                  </li>
+                  <li>
+                    <strong>Summit Views:</strong> Reach the top for
+                    breathtaking views of the African Coast and Gibraltar.
+                  </li>
+                  <li>
+                    <strong>Descent & Conclusion:</strong> Return to the
+                    starting point (duration approximately 2:30 hours in total).
+                  </li>
                 </ol>
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* Technical Details */}
+            <AccordionItem value="item-6">
+              <AccordionTrigger>Technical Details</AccordionTrigger>
+              <AccordionContent className="flex flex-col gap-y-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <p className="text-sm text-gray-500">Route Length</p>
+                    <p className="font-semibold">120m + 90m sections</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">Duration</p>
+                    <p className="font-semibold">2:30 Hours</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">Level</p>
+                    <p className="font-semibold">Moderate (Level 2)</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">Minimum Age</p>
+                    <p className="font-semibold">+11 Years Old (or 155cm)</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">Season</p>
+                    <p className="font-semibold">All Year</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">Key Features</p>
+                    <p className="font-semibold">2 Monkey Bridges</p>
+                  </div>
+                </div>
               </AccordionContent>
             </AccordionItem>
           </Accordion>
         </div>
-        <div className="flex flex-col space-y-8">
-          <Bokun />
-          {/* TODO: Añadir video de YouTube cuando esté disponible */}
-          {/* <div className="relative w-full aspect-video">
-            <iframe
-              className="absolute top-0 left-0 w-full h-full rounded-lg"
-              src="https://www.youtube.com/embed/VIDEO_ID"
-              title="Via Ferrata Casares Video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div> */}
+        <div
+          id="bokun-section"
+          className="flex flex-col md:items-center md:text-center"
+        >
+          <h2 className="text-2xl font-semibold mb-4">Book Your Adventure</h2>
+          <p className="text-gray-600 mb-4">
+            Secure your spot on this thrilling Via Ferrata adventure in Casares.
+          </p>
+          <ActivityBookingForm activityName={casares.title} />
         </div>
       </div>
-      <ReviewsCarousel />
+      <TrustindexWidget />
+      <PrivateTourCTA />
       <Faqs faqs={faqs} />
     </div>
   );

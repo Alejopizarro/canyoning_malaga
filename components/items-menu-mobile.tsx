@@ -65,13 +65,21 @@ const ItemsMenuMobile = ({
             {/* Activities */}
             <AccordionItem value="item-2" className="border-none">
               <AccordionTrigger className="font-semibold py-3 px-2 text-[1.25rem] hover:bg-gray-50 rounded-lg hover:no-underline text-gray-900">
-                Activities
+                <p className="flex items-center gap-4">
+                  Activities
+                  <Link
+                    href="/activities"
+                    className="text-xs font-medium text-primary underline underline-offset-2 hover:text-primary-dark transition-colors whitespace-nowrap"
+                  >
+                    See all
+                  </Link>
+                </p>
               </AccordionTrigger>
               <AccordionContent className="flex flex-col space-y-4 items-start px-2 pt-2">
                 {/* Canyoning */}
                 <div className="w-full">
                   <a
-                    href="/activities?category=Canyoning"
+                    href="/activities?category=canyoning"
                     className="font-bold text-sm text-primary mb-2"
                   >
                     Canyoning
@@ -94,7 +102,7 @@ const ItemsMenuMobile = ({
                 {/* Via Ferrata */}
                 <div className="w-full">
                   <a
-                    href="/activities?category=Via+Ferrata"
+                    href="/activities?category=via-ferrata"
                     className="font-bold text-sm text-primary mb-2"
                   >
                     Via Ferrata
@@ -117,7 +125,7 @@ const ItemsMenuMobile = ({
                 {/* Hiking */}
                 <div className="w-full">
                   <a
-                    href="/activities?category=Hiking"
+                    href="/activities?category=hiking"
                     className="font-bold text-sm text-primary mb-2"
                   >
                     Hiking
@@ -140,7 +148,7 @@ const ItemsMenuMobile = ({
                 {/* More Activities */}
                 <div className="w-full">
                   <a
-                    href="/activities?category=More+Activities"
+                    href="/activities?category=activities"
                     className="font-bold text-sm text-primary mb-2"
                   >
                     More Activities
@@ -149,9 +157,7 @@ const ItemsMenuMobile = ({
                     {moreActivitiesExcursions.slice(0, 5).map((excursion) => (
                       <Link
                         key={excursion.slug}
-                        href={`/${excursion.categoryPath || "activities"}/${
-                          excursion.slug
-                        }`}
+                        href={`/activities/${excursion.slug}`}
                         className="text-sm text-gray-600 hover:text-primary transition-colors py-1.5 hover:bg-gray-50 rounded"
                       >
                         {excursion.title}

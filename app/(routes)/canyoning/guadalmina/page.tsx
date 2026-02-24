@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/accordion";
 import PrivateTourCTA from "@/components/private-tour";
 import CheckAvailabilityButton from "../../../../components/ui/check-availability-button";
+import TrustindexWidget from "@/components/trustindex-widget";
 
 const faqs: Faq[] = [
   {
@@ -142,7 +143,7 @@ export default async function Page() {
   };
 
   return (
-    <div className="pt-20">
+    <div className="pt-20 py-8">
       <Hero excursion={excursionHero} />
       <div className="mx-4">
         <CheckAvailabilityButton />
@@ -154,9 +155,14 @@ export default async function Page() {
           {/* Introducción */}
           <div className="flex flex-col gap-4">
             <p className="text-gray-700 leading-relaxed">
-              {EXCURSION_INTRO.split('"The Narrowest Canyon."')[0]}
-              <strong>&quot;The Narrowest Canyon.&quot;</strong>
-              {EXCURSION_INTRO.split('"The Narrowest Canyon."')[1]}
+              Discover{" "}
+              <strong>the best canyoning experience near Marbella</strong> in
+              the Guadalmina Canyon, famously known as{" "}
+              <strong>&quot;The Narrowest Canyon.&quot;</strong> This dynamic
+              half-day activity is perfect for beginners, friends, and families
+              (from 6 y.o. in summer), offering fun and excitement{" "}
+              <strong>every day of the year</strong> thanks to its temperate
+              waters.
             </p>
           </div>
 
@@ -179,6 +185,21 @@ export default async function Page() {
             </ul>
           </div>
 
+          {/* Safety Box - E-E-A-T */}
+          <div className="bg-green-50 border border-green-200 rounded-lg p-4 my-4">
+            <h4 className="font-semibold text-green-800 mb-2">
+              🛡️ Safety is Our Commitment
+            </h4>
+            <p className="text-green-700 text-sm">
+              All excursions are guided by{" "}
+              <strong>certified professional guides</strong> who prioritize the
+              safety of the group. We supply high-quality, regularly inspected
+              safety gear for every activity. The guide maintains the authority
+              to modify or suspend the activity if any situation poses a danger
+              to the participants.
+            </p>
+          </div>
+
           {/* Accordion con toda la información */}
           <Accordion type="single" collapsible>
             {/* Description */}
@@ -189,24 +210,27 @@ export default async function Page() {
                   The Best Canyon Overall for Coastal Tourists
                 </h3>
                 <p>
-                  The Guadalmina Canyon, situated in the charming town of
-                  Benahavís near Marbella, is our most requested activity due to
-                  its accessibility and high fun factor. This route provides the
-                  ideal canyoning trip for groups, bachelor parties, and
-                  families looking for a half-day adventure (3 hours).
+                  The Guadalmina Canyon, situated in the charming town of{" "}
+                  <strong>Benahavís</strong> near <strong>Marbella</strong>, is
+                  our most requested activity due to its accessibility and high
+                  fun factor. This route provides the ideal canyoning trip for
+                  groups, bachelor parties, and families looking for a half-day
+                  adventure (3 hours).
                 </p>
                 <p>
                   In this beautiful natural environment, you will learn the
-                  basic progression techniques of canyoning that are accessible
-                  to all participants. The gorge narrows dramatically as you
-                  progress, revealing a truly impressive landscape.
+                  basic progression techniques of <strong>canyoning</strong>{" "}
+                  that are accessible to all participants. The gorge narrows
+                  dramatically as you progress, revealing a truly impressive
+                  landscape.
                 </p>
                 <p>
                   For those seeking an extra adrenaline rush, optional jumps of
-                  up to 6 meters into deep pools are available; alternatively,
-                  you can opt for the fun toboggan ride or a short abseil
-                  descent (rappelling of 5 metres) if you prefer to avoid the
-                  higher jumps.
+                  up to <strong>6 meters</strong> into deep pools are available;
+                  alternatively, you can opt for the fun{" "}
+                  <strong>toboggan ride</strong> or a short{" "}
+                  <strong>abseil</strong> descent (rappelling of 5 metres) if
+                  you prefer to avoid the higher jumps.
                 </p>
                 <p>
                   We offer this canyon year-round, making it a reliable option,
@@ -282,13 +306,54 @@ export default async function Page() {
                 </ol>
               </AccordionContent>
             </AccordionItem>
+
+            {/* Technical Details */}
+            <AccordionItem value="item-6">
+              <AccordionTrigger>Technical Details</AccordionTrigger>
+              <AccordionContent className="flex flex-col gap-y-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <p className="text-sm text-gray-500">Max. Jump Height</p>
+                    <p className="font-semibold">Up to 6 meters (optional)</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">Rappel</p>
+                    <p className="font-semibold">Up to 4 meters</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">Toboggan</p>
+                    <p className="font-semibold">2 meters</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">Duration</p>
+                    <p className="font-semibold">3:00 Hours</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">Level</p>
+                    <p className="font-semibold">All Levels (Level 1)</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">Minimum Age</p>
+                    <p className="font-semibold">From 6 Years Old</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">Season</p>
+                    <p className="font-semibold">All Year</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">Max. Capacity</p>
+                    <p className="font-semibold">Up to 12 participants per guide</p>
+                  </div>
+                </div>
+              </AccordionContent>
+            </AccordionItem>
           </Accordion>
         </div>
         <div id="bokun-section">
           <Bokun />
         </div>
       </div>
-      <ReviewsCarousel />
+      <TrustindexWidget />
       <PrivateTourCTA />
       <Faqs faqs={faqs} />
     </div>

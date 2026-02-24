@@ -1,3 +1,5 @@
+"use client";
+
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -7,6 +9,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Excursion } from "@/lib/activities";
 import Image from "next/image";
 
@@ -23,11 +26,16 @@ const MenuDesktop = ({
   hikingExcursions,
   moreActivitiesExcursions,
 }: MenuDesktopProps) => {
+  const router = useRouter();
+
   return (
     <NavigationMenu delayDuration={0}>
       <NavigationMenuList className="space-x-0">
         <NavigationMenuItem>
-          <NavigationMenuTrigger className="text-[0.875rem] font-medium text-white/90 hover:text-white bg-transparent hover:bg-white/10 data-[state=open]:bg-white/10 px-2.5 rounded-full transition-all whitespace-nowrap">
+          <NavigationMenuTrigger
+            onClick={() => router.push("/activities")}
+            className="text-[0.875rem] font-medium text-white/90 hover:text-white bg-transparent hover:bg-white/10 data-[state=open]:bg-white/10 px-2.5 rounded-full transition-all whitespace-nowrap"
+          >
             Activities
           </NavigationMenuTrigger>
           <NavigationMenuContent>
@@ -54,7 +62,7 @@ const MenuDesktop = ({
                       href={`/${excursion.categoryPath || "canyoning"}/${
                         excursion.slug
                       }`}
-                      className="block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-neutral-600/80 hover:text-primary focus:bg-gray-100"
+                      className="block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-neutral-600/80 hover:text-primary focus:bg-neutral-600/50"
                     >
                       <div className="text-sm font-medium leading-tight text-background">
                         {excursion.title}
@@ -73,7 +81,7 @@ const MenuDesktop = ({
                     className="rounded-lg w-48 h-32 object-cover mb-2"
                   />
                   <a
-                    href="/activities?category=Via+Ferrata"
+                    href="/activities?category=via-ferrata"
                     className="font-bold px-2 text-sm text-primary-light mb-3"
                   >
                     Via Ferrata
@@ -84,7 +92,7 @@ const MenuDesktop = ({
                       href={`/${excursion.categoryPath || "via-ferrata"}/${
                         excursion.slug
                       }`}
-                      className="block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-neutral-600/80 hover:text-primary focus:bg-gray-100"
+                      className="block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-neutral-600/80 hover:text-primary focus:bg-neutral-600/50"
                     >
                       <div className="text-sm font-medium leading-tight text-background">
                         {excursion.title}
@@ -103,7 +111,7 @@ const MenuDesktop = ({
                     className="rounded-lg w-48 h-32 object-cover mb-2"
                   />
                   <a
-                    href="/activities?category=Hiking"
+                    href="/activities?category=hiking"
                     className="font-bold px-2 text-sm text-primary-light mb-3"
                   >
                     Hiking
@@ -114,7 +122,7 @@ const MenuDesktop = ({
                       href={`/${excursion.categoryPath || "hiking"}/${
                         excursion.slug
                       }`}
-                      className="block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-neutral-600/80 hover:text-primary focus:bg-gray-100"
+                      className="block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-neutral-600/80 hover:text-primary focus:bg-neutral-600/50"
                     >
                       <div className="text-sm font-medium leading-tight text-background">
                         {excursion.title}
@@ -133,7 +141,7 @@ const MenuDesktop = ({
                     className="rounded-lg w-48 h-32 object-cover mb-2"
                   />
                   <a
-                    href="/activities?category=More+Activities"
+                    href="/activities?category=activities"
                     className="font-bold px-2 text-sm text-primary-light mb-3"
                   >
                     More Activities
@@ -141,10 +149,8 @@ const MenuDesktop = ({
                   {moreActivitiesExcursions.slice(0, 3).map((excursion) => (
                     <Link
                       key={excursion.slug}
-                      href={`/${excursion.categoryPath || "activities"}/${
-                        excursion.slug
-                      }`}
-                      className="block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-neutral-600/80 hover:text-primary focus:bg-gray-100"
+                      href={`/activities/${excursion.slug}`}
+                      className="block select-none rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-neutral-600/80 hover:text-primary focus:bg-gray-600/50"
                     >
                       <div className="text-sm font-medium leading-tight text-background">
                         {excursion.title}

@@ -11,14 +11,19 @@ type FilterCategoryProps = {
 const FilterCategory = (props: FilterCategoryProps) => {
   const { setFilterCategory, excursions } = props;
 
-  const categories = ["Canyoning", "Via Ferrata", "Hiking", "More Activities"];
+  const categories = [
+    { label: "Canyoning", path: "canyoning" },
+    { label: "Via Ferrata", path: "via-ferrata" },
+    { label: "Hiking", path: "hiking" },
+    { label: "More Activities", path: "activities" },
+  ];
 
   const categoryCounts = useMemo(() => {
     const counts: { [key: string]: number } = {};
     if (Array.isArray(excursions)) {
       excursions.forEach((excursion) => {
-        const category = excursion.category;
-        counts[category] = (counts[category] || 0) + 1;
+        const path = excursion.categoryPath;
+        counts[path] = (counts[path] || 0) + 1;
       });
     }
     return counts;
@@ -34,11 +39,11 @@ const FilterCategory = (props: FilterCategoryProps) => {
             All ({excursions.length})
           </Label>
         </div>
-        {categories.map((category: string) => (
-          <div key={category} className="flex items-center space-x-2">
-            <RadioGroupItem value={category} id={category} />
-            <Label htmlFor={category} className="cursor-pointer">
-              {category} ({categoryCounts[category] || 0})
+        {categories.map((category) => (
+          <div key={category.path} className="flex items-center space-x-2">
+            <RadioGroupItem value={category.path} id={category.path} />
+            <Label htmlFor={category.path} className="cursor-pointer">
+              {category.label} ({categoryCounts[category.path] || 0})
             </Label>
           </div>
         ))}

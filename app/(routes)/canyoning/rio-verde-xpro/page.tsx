@@ -1,4 +1,4 @@
-import Bokun from "@/components/bokun";
+import Script from "next/script";
 import Hero from "@/components/hero";
 import ReviewsCarousel from "@/components/ui/reviews-carousel";
 import ExcursionDescription from "@/components/excursion-description";
@@ -111,6 +111,7 @@ export default async function Page() {
 
   if (!rioVerdeXpro) {
     notFound();
+    5;
   }
 
   const excursionHero = {
@@ -348,7 +349,15 @@ export default async function Page() {
           </Accordion>
         </div>
         <div id="bokun-section">
-          <Bokun />
+          <Script
+            src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=b5f48f0c-7b7c-486c-830a-f76ae50e1d7b"
+            strategy="lazyOnload"
+          />
+          <div
+            className="bokunWidget"
+            data-src="https://widgets.bokun.io/online-sales/b5f48f0c-7b7c-486c-830a-f76ae50e1d7b/experience-calendar/1153743"
+          ></div>
+          <noscript>Please enable javascript in your browser to book</noscript>
         </div>
       </div>
       <TrustindexWidget />

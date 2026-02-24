@@ -11,6 +11,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import PrivateTourCTA from "@/components/private-tour";
+import CheckAvailabilityButton from "../../../../components/ui/check-availability-button";
+import TrustindexWidget from "@/components/trustindex-widget";
+import { ActivityBookingForm } from "@/components/activity-booking-form";
 
 const faqs: Faq[] = [
   {
@@ -35,14 +39,16 @@ const faqs: Faq[] = [
   },
 ];
 
-// Descripción de la excursión
-const EXCURSION_INTRO = `Dive into Andalusia's aquatic jewel, the Río Verde, famed worldwide for its intensely turquoise waters and dynamic natural route. Discover an exhilarating river descent perfect for beginners and families seeking thrilling natural jumps and swimming in breathtaking landscapes.`;
-
-const EXCURSION_DESCRIPTION = `The Río Verde canyoning trip is one of the best adventures you can do in Andalusia, taking place in the majestic Sierra de Almijara, just 20 km from Almuñecar and about 50 minutes by car from Málaga. This activity is designed for all audiences, including those new to canyoning.
-
-You will actively walk, swim, and navigate the gorge, encountering natural features sculpted by water over thousands of years. The dynamic route includes natural slides up to 4 meters, swimming in deep pozas (pools), and the option to take jumps from 3 to 9 meters (all jumps are optional).
-
-If you are looking for a bigger challenge, inquire about the Río Verde X-Pro version, which is a 7-hour integral canyon requiring a higher physical level.`;
+// Descripción de la excursión con negritas
+const EXCURSION_INTRO = (
+  <>
+    Dive into <strong>Andalusia&apos;s aquatic jewel</strong>, the Río Verde,
+    famed worldwide for its intensely{" "}
+    <strong>turquoise waters and dynamic natural route</strong>. Discover an
+    exhilarating river descent perfect for beginners and families seeking
+    thrilling natural jumps and swimming in breathtaking landscapes.
+  </>
+);
 
 const ACTIVITY_HIGHLIGHTS = [
   {
@@ -91,20 +97,13 @@ const DESCRIPTION_DATA = {
   ],
   meetingPoint: {
     location: "Otivar, Granada. In front of the bar-restaurant EL CAPRICHO.",
-    mapUrl: "https://goo.gl/maps/MjFGHNrmqgef7bx5",
+    mapUrl: "https://goo.gl/maps/MjFGHNrmqgef7b2x5",
     note: "Compliance Note: Please arrive at the meeting point 15 minutes before the stated time for organization; a 15-minute courtesy time is provided for delays, after which the activity will start without absent participants.",
   },
-  itinerary: [
-    "Meet your guide: Arrive at the designated meeting point 15 minutes before start time.",
-    "Approaching the canyon entrance: Take your guide's van and then walk to the start of the canyon (⁓45 minutes).",
-    "Gear up: Put on all the provided canyoning safety equipment and listen to the guide's safety guidelines.",
-    "Canyoning Time! Walk, swim, slide, jump, and rappel through the river for about 4.5 hours.",
-    "Return: You will finish near your guide's van. Take off your equipment, get in the van and head back to the original meeting point. Thank your guide for an unforgettable day!",
-  ],
 };
 
 export default async function Page() {
-  const rioVerde = await getExcursionByPath("canyoning", "rio-verde");
+  const rioVerde = await getExcursionByPath("Canyoning", "rio-verde");
 
   if (!rioVerde) {
     notFound();
@@ -117,6 +116,8 @@ export default async function Page() {
     subtitle: rioVerde.subtitle,
     categoryPath: rioVerde.categoryPath,
     categoryText: rioVerde.category,
+    isMostPopular: rioVerde.isMostPopular,
+    videoYoutube: rioVerde.videoYoutube,
     rating: {
       value: rioVerde.rating.value,
       totalReviews: rioVerde.rating.reviews,
@@ -132,13 +133,17 @@ export default async function Page() {
     ubication: rioVerde.ubication,
     duration: rioVerde.duration,
     level: rioVerde.level,
+    specialPrice: rioVerde.specialPrice,
   };
 
   return (
-    <div className="pt-20">
+    <div className="pt-20 py-8">
       <Hero excursion={excursionHero} />
-      <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-x-16 px-4 pt-20 sm:px-16 py-4 sm:py-8">
-        <div className="flex flex-col gap-8">
+      <div className="mx-4">
+        <CheckAvailabilityButton />
+      </div>
+      <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-x-16 px-4 sm:px-16 py-4 sm:py-8">
+        <div className="flex flex-col gap-4">
           <ExcursionDescription excursion={excursionDescription} />
 
           {/* Introducción */}
@@ -147,7 +152,7 @@ export default async function Page() {
           </div>
 
           {/* Highlights */}
-          <div className="mt-4">
+          <div className="my-4">
             <h4 className="font-semibold text-gray-900 mb-4 text-lg">
               Activity Highlights
             </h4>
@@ -165,6 +170,33 @@ export default async function Page() {
             </ul>
           </div>
 
+          {/* Season Notice */}
+          <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 my-2">
+            <h4 className="font-semibold text-amber-800 mb-2">
+              📅 Seasonal Availability
+            </h4>
+            <p className="text-amber-700 text-sm">
+              This activity is available from{" "}
+              <strong>March 1st to November 30th</strong>. The season is
+              determined by optimal water levels and weather conditions.
+            </p>
+          </div>
+
+          {/* Safety Box - E-E-A-T */}
+          <div className="bg-green-50 border border-green-200 rounded-lg p-4 my-2">
+            <h4 className="font-semibold text-green-800 mb-2">
+              🛡️ Safety is Our Commitment
+            </h4>
+            <p className="text-green-700 text-sm">
+              All excursions are guided by{" "}
+              <strong>certified professional guides</strong> who prioritize the
+              safety of the group. We supply high-quality, regularly inspected
+              safety gear for every activity. The guide maintains the authority
+              to modify or suspend the activity if any situation poses a danger
+              to the participants.
+            </p>
+          </div>
+
           {/* Accordion con toda la información */}
           <Accordion type="single" collapsible>
             {/* Description */}
@@ -179,7 +211,7 @@ export default async function Page() {
                   can do in Andalusia, taking place in the majestic Sierra de
                   Almijara, just 20 km from Almuñecar and about 50 minutes by
                   car from Málaga. This activity is designed for all audiences,
-                  including those new to canyoning.
+                  including <strong>those new to canyoning.</strong>
                 </p>
                 <p>
                   You will actively walk, swim, and navigate the gorge,
@@ -189,25 +221,10 @@ export default async function Page() {
                   jumps from 3 to 9 meters (all jumps are optional).
                 </p>
                 <p>
-                  If you are looking for a bigger challenge, inquire about the
-                  Río Verde X-Pro version, which is a 7-hour integral canyon
-                  requiring a higher physical level.
+                  If you are looking for a bigger challenge, inquire about the{" "}
+                  <strong>Río Verde X-Pro</strong> version, which is a 7-hour
+                  integral canyon requiring a higher physical level.
                 </p>
-
-                {/* Safety Box */}
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-4">
-                  <h4 className="font-semibold text-blue-900 mb-2">
-                    🛡️ Safety is Our Commitment
-                  </h4>
-                  <p className="text-blue-800 text-sm">
-                    All excursions are guided by certified professional guides
-                    who prioritize the safety of the group. We supply
-                    high-quality, regularly inspected safety gear for every
-                    activity. The guide maintains the authority to modify or
-                    suspend the activity if any situation poses a danger to the
-                    participants.
-                  </p>
-                </div>
               </AccordionContent>
             </AccordionItem>
 
@@ -218,11 +235,14 @@ export default async function Page() {
                 <div>
                   <h3 className="text-lg font-semibold mb-3">Includes</h3>
                   <ul className="list-disc pl-6 space-y-2">
-                    {DESCRIPTION_DATA.whatsIncluded.included.map(
-                      (item, index) => (
-                        <li key={index}>{item}</li>
-                      )
-                    )}
+                    <li>Professional Guide</li>
+                    <li>Wetsuit/Neoprene</li>
+                    <li>Canyoning harness, helmet, and rappel equipment</li>
+                    <li>Accident and civil liability insurance</li>
+                    <li>
+                      <strong>Full photo report!</strong> (Sent via WhatsApp
+                      within 24 hours of activity)
+                    </li>
                   </ul>
                 </div>
               </AccordionContent>
@@ -258,11 +278,12 @@ export default async function Page() {
                     View on Google Maps
                   </a>
                 )}
-                {DESCRIPTION_DATA.meetingPoint.note && (
-                  <p className="text-sm text-gray-600 italic">
-                    {DESCRIPTION_DATA.meetingPoint.note}
-                  </p>
-                )}
+                <p className="text-sm text-gray-600 italic">
+                  <strong>Compliance Note:</strong> Please arrive at the meeting
+                  point 15 minutes before the stated time for organization; a
+                  15-minute courtesy time is provided for delays, after which
+                  the activity will start without absent participants.
+                </p>
               </AccordionContent>
             </AccordionItem>
 
@@ -271,29 +292,89 @@ export default async function Page() {
               <AccordionTrigger>Itinerary</AccordionTrigger>
               <AccordionContent className="flex flex-col gap-y-4">
                 <ol className="list-decimal pl-6 space-y-2">
-                  {DESCRIPTION_DATA.itinerary.map((step, index) => (
-                    <li key={index}>{step}</li>
-                  ))}
+                  <li>
+                    <strong>Meet your guide:</strong> Arrive at the designated
+                    meeting point 15 minutes before start time.
+                  </li>
+                  <li>
+                    <strong>Approaching the canyon entrance:</strong> Take your
+                    guide&apos;s van and then walk to the start of the canyon
+                    (⁓45 minutes).
+                  </li>
+                  <li>
+                    <strong>Gear up:</strong> Put on all the provided canyoning
+                    safety equipment and listen to the guide&apos;s safety
+                    guidelines.
+                  </li>
+                  <li>
+                    <strong>Canyoning Time!</strong> Walk, swim, slide, jump,
+                    and rappel through the river for about 4.5 hours.
+                  </li>
+                  <li>
+                    <strong>Return:</strong> You will finish near your
+                    guide&apos;s van. Take off your equipment, get in the van
+                    and head back to the original meeting point. Thank your
+                    guide for an unforgettable day!
+                  </li>
                 </ol>
+              </AccordionContent>
+            </AccordionItem>
+
+            {/* Technical Details */}
+            <AccordionItem value="item-6">
+              <AccordionTrigger>Technical Details</AccordionTrigger>
+              <AccordionContent className="flex flex-col gap-y-4">
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <p className="text-sm text-gray-500">Max. Jump Height</p>
+                    <p className="font-semibold">Up to 9 meters (optional)</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">Rappels</p>
+                    <p className="font-semibold">6m and 9m (mandatory)</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">Natural Slides</p>
+                    <p className="font-semibold">Up to 4 meters</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">Duration</p>
+                    <p className="font-semibold">4:30 Hours</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">Level</p>
+                    <p className="font-semibold">Medium (Level 2)</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">Minimum Age</p>
+                    <p className="font-semibold">+9 Years Old</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">Season</p>
+                    <p className="font-semibold">March 1st - November 30th</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">Max. Capacity</p>
+                    <p className="font-semibold">8 participants per guide</p>
+                  </div>
+                </div>
               </AccordionContent>
             </AccordionItem>
           </Accordion>
         </div>
-        <div className="flex flex-col space-y-8">
-          <Bokun />
-          {/* TODO: Añadir video de YouTube cuando esté disponible */}
-          {/* <div className="relative w-full aspect-video">
-            <iframe
-              className="absolute top-0 left-0 w-full h-full rounded-lg"
-              src="https://www.youtube.com/embed/VIDEO_ID"
-              title="Río Verde Canyon Video"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div> */}
+        <div
+          id="bokun-section"
+          className="flex flex-col md:items-center md:text-center"
+        >
+          <h2 className="text-2xl font-semibold mb-4">Book Your Adventure</h2>
+          <p className="text-gray-600 mb-4">
+            Secure your spot on this thrilling canyoning adventure in Río Verde.
+          </p>
+          <ActivityBookingForm activityName={rioVerde.title} />
         </div>
       </div>
-      <ReviewsCarousel />
+      <TrustindexWidget />
+      <PrivateTourCTA />
       <Faqs faqs={faqs} />
     </div>
   );
