@@ -42,6 +42,7 @@ export interface Excursion extends SheetExcursion {
   specialPrice?: string;
   categoryPath: string;
   route?: string;
+  isDisponible?: boolean;
 }
 
 // Función para obtener los datos crudos del Sheet
@@ -57,7 +58,7 @@ async function fetchSheetData(): Promise<string[][]> {
 
   if (!sheetId) {
     throw new Error(
-      "GOOGLE_SHEETS_ID no está configurado en las variables de entorno"
+      "GOOGLE_SHEETS_ID no está configurado en las variables de entorno",
     );
   }
 
@@ -199,7 +200,7 @@ export async function getExcursions(): Promise<Excursion[]> {
     });
     console.log(
       "✅ getExcursions completado, total excursiones:",
-      excursions.length
+      excursions.length,
     );
     return excursions;
   } catch (error) {
@@ -213,20 +214,20 @@ export async function getExcursions(): Promise<Excursion[]> {
 // Buscar excursión por category y slug (para rutas como /canyoning/guadalmina)
 export async function getExcursionByPath(
   category: string,
-  slug: string
+  slug: string,
 ): Promise<Excursion | undefined> {
   const excursions = await getExcursions();
   const found = excursions.find(
     (exc) =>
       exc.categoryPath.toLowerCase() === category.toLowerCase() &&
-      exc.slug === slug
+      exc.slug === slug,
   );
   return found;
 }
 
 // Buscar excursión solo por slug
 export async function getExcursionBySlug(
-  slug: string
+  slug: string,
 ): Promise<Excursion | undefined> {
   const excursions = await getExcursions();
   return excursions.find((exc) => exc.slug === slug);
@@ -234,13 +235,13 @@ export async function getExcursionBySlug(
 
 // Alias para compatibilidad con código existente
 export async function getExcursionByRoute(
-  route: string
+  route: string,
 ): Promise<Excursion | undefined> {
   return getExcursionBySlug(route);
 }
 
 export async function getExcursionsByCategory(
-  category: string
+  category: string,
 ): Promise<Excursion[]> {
   const excursions = await getExcursions();
   return excursions.filter((exc) => exc.category === category);

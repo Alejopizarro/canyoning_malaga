@@ -17,7 +17,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Check, LoaderCircle, MoveRight, PhoneCall } from "lucide-react";
 import { PhonePrefixSelector } from "@/components/ui/phone-prefix-selector";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Checkbox } from "@/components/ui/checkbox";
 import Link from "next/link";
 
@@ -67,6 +67,19 @@ export function ActivityBookingForm({
       message: "",
     },
   });
+
+  useEffect(() => {
+    form.setValue("activityName", activityName);
+  }, [activityName, form]);
+
+  useEffect(() => {
+    const handler = (e: Event) => {
+      const customEvent = e as CustomEvent<string>;
+      form.setValue("activityName", customEvent.detail);
+    };
+    window.addEventListener("notify-activity", handler);
+    return () => window.removeEventListener("notify-activity", handler);
+  }, [form]);
 
   const onSubmit = async (data: z.infer<typeof bookingFormSchema>) => {
     setIsLoading(true);

@@ -55,6 +55,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     province: "Málaga",
     category: "Canyoning",
     categoryPath: "canyoning",
+    isDisponible: true,
   },
 
   "rio-verde": {
@@ -115,6 +116,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     minimumAge: 9,
     category: "Canyoning",
     categoryPath: "canyoning",
+    isDisponible: true,
   },
 
   zarzalones: {
@@ -180,6 +182,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     ubication: "Yunquera, Málaga",
     category: "Canyoning",
     categoryPath: "canyoning",
+    isDisponible: true,
   },
 
   "rio-verde-xpro": {
@@ -220,6 +223,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     ubication: "Otivar, Granada",
     category: "Canyoning",
     categoryPath: "canyoning",
+    isDisponible: true,
   },
 
   "sima-del-diablo": {
@@ -229,7 +233,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "All year",
     mainImage: {
-      src: "/casares-4.webp",
+      src: "/empty.webp",
       alt: "Sima del Diablo - Technical canyon near the Smurf Village",
     },
     images: [
@@ -259,6 +263,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     duration: 4,
     minimumAge: 8,
     ubication: "Júzcar",
+    isDisponible: false,
   },
 
   buitreras: {
@@ -273,40 +278,60 @@ export const complementaryData: Record<string, ComplementaryData> = {
     },
     images: [
       {
-        src: "/buitreras-2.png",
+        src: "/buitreras-2.webp",
         alt: "Buitreras canyon - Narrow passage in buitreras canyon",
       },
       {
-        src: "/buitreras-3.png",
+        src: "/buitreras-3.webp",
         alt: "Buitreras canyon - Rappelling down a waterfall in buitreras canyon",
       },
       {
-        src: "/buitreras-4.png",
+        src: "/buitreras-4.webp",
         alt: "Buitreras canyon - Jumping into a natural pool in buitreras canyon",
       },
       {
-        src: "/buitreras-5.png",
+        src: "/buitreras-5.webp",
         alt: "Buitreras canyon - Sliding down a natural water slide in buitreras canyon",
       },
       {
-        src: "/buitreras-6.png",
+        src: "/buitreras-6.webp",
         alt: "Buitreras canyon - Spectacular walls in buitreras canyon",
       },
       {
-        src: "/buitreras-7.png",
+        src: "/buitreras-7.webp",
         alt: "Buitreras canyon - Beautiful landscapes in buitreras canyon",
       },
       {
-        src: "/buitreras-8.png",
+        src: "/buitreras-8.webp",
         alt: "Buitreras canyon - Adventurers in buitreras canyon",
       },
       {
-        src: "/buitreras-9.png",
+        src: "/buitreras-9.webp",
         alt: "Buitreras canyon - Crystal clear waters in buitreras canyon",
       },
       {
-        src: "/buitreras-10.png",
+        src: "/buitreras-10.webp",
         alt: "Buitreras canyon - Nature in buitreras canyon",
+      },
+      {
+        src: "/buitreras-11.webp",
+        alt: "Buitreras canyon - Canyon walls in buitreras canyon",
+      },
+      {
+        src: "/buitreras-12.webp",
+        alt: "Buitreras canyon - Canyon walls in buitreras canyon",
+      },
+      {
+        src: "/buitreras-13.webp",
+        alt: "Buitreras canyon - Canyon walls in buitreras canyon",
+      },
+      {
+        src: "/buitreras-14.webp",
+        alt: "Buitreras canyon - Canyon walls in buitreras canyon",
+      },
+      {
+        src: "/buitreras-15.webp",
+        alt: "Buitreras canyon - Canyon walls in buitreras canyon",
       },
     ],
     isOffer: false,
@@ -318,6 +343,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     duration: 6,
     ubication: "Colm. de la Fra., Málaga",
     minimumAge: 8,
+    isDisponible: true,
   },
 
   // Slug actualizado según Sheet: "tajo-ronda" en vez de "tajo-de-ronda"
@@ -329,7 +355,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "Mar to Jun & Sep to Nov",
     mainImage: {
-      src: "/ronda-vf-1.webp",
+      src: "/empty.webp",
       alt: "Tajo de Ronda - Cross through the ancient city of Ronda",
     },
     images: [
@@ -379,6 +405,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     duration: 4,
     minimumAge: 8,
     ubication: "Ronda, Málaga",
+    isDisponible: false,
   },
 
   trevelez: {
@@ -389,29 +416,13 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "September",
     mainImage: {
-      src: "/zarzalones-11.webp",
+      src: "/empty.webp",
       alt: "Trevelez canyon - The highest level technical canyon in Andalusia",
     },
     images: [
       {
-        src: "/trevelez-2.jpg",
+        src: "/empty.jpg",
         alt: "Trevelez canyon - Narrow passage in trevelez canyon",
-      },
-      {
-        src: "/trevelez-3.jpg",
-        alt: "Trevelez canyon - Rappelling down a waterfall in trevelez canyon",
-      },
-      {
-        src: "/trevelez-4.jpg",
-        alt: "Trevelez canyon - Jumping into a natural pool in trevelez canyon",
-      },
-      {
-        src: "/trevelez-5.jpg",
-        alt: "Trevelez canyon - Sliding down a natural water slide in trevelez canyon",
-      },
-      {
-        src: "/trevelez-6.jpg",
-        alt: "Trevelez canyon - Spectacular walls in trevelez canyon",
       },
     ],
     isOffer: false,
@@ -423,6 +434,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     duration: 8,
     minimumAge: 18,
     ubication: "Órgiva",
+    isDisponible: false,
   },
 
   calzadillas: {
@@ -433,33 +445,13 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "Winter",
     mainImage: {
-      src: "/guadalmina-4.webp",
+      src: "/empty.webp",
       alt: "Calzadillas canyon - Granite canyon in Sierra Norte",
     },
     images: [
       {
-        src: "/Calzadillas-2.jpg",
+        src: "/empty.jpg",
         alt: "Calzadillas canyon - Rappelling down a waterfall in calzadillas canyon",
-      },
-      {
-        src: "/Calzadillas-3.jpg",
-        alt: "Calzadillas canyon - Jumping into a natural pool in calzadillas canyon",
-      },
-      {
-        src: "/Calzadillas-4.jpg",
-        alt: "Calzadillas canyon - Sliding down a natural water slide in calzadillas canyon",
-      },
-      {
-        src: "/Calzadillas-5.jpg",
-        alt: "Calzadillas canyon - Beautiful landscapes in calzadillas canyon",
-      },
-      {
-        src: "/Calzadillas-6.jpg",
-        alt: "Calzadillas canyon - Adventurers in calzadillas canyon",
-      },
-      {
-        src: "/Calzadillas-7.jpg",
-        alt: "Calzadillas canyon - Crystal clear waters in calzadillas canyon",
       },
     ],
     isOffer: false,
@@ -471,6 +463,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     duration: 4.5,
     minimumAge: 11,
     ubication: "Almadén Plate",
+    isDisponible: false,
   },
 
   // ==================== VIA FERRATA ====================
@@ -524,6 +517,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     duration: 2.5,
     minimumAge: 7,
     ubication: "Ronda, Málaga",
+    isDisponible: true,
   },
 
   casares: {
@@ -573,6 +567,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     duration: 2.5,
     minimumAge: 11,
     ubication: "Casares, Málaga",
+    isDisponible: true,
   },
 
   "el-chorro": {
@@ -637,6 +632,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     duration: 4,
     minimumAge: 14,
     ubication: "El Chorro, Málaga",
+    isDisponible: true,
   },
 
   // ==================== HIKING ====================
@@ -726,6 +722,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     duration: 6.5,
     minimumAge: 11,
     ubication: "Marbella, Málaga",
+    isDisponible: true,
   },
 
   // Slug actualizado según Sheet: "istan" en vez de "hiking-istan"
@@ -736,7 +733,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "All year!",
     mainImage: {
-      src: "/la-concha-10.webp",
+      src: "/empty.webp",
       alt: "Hiking Istán - Route through ancient Moorish irrigation channels",
     },
     images: [],
@@ -749,6 +746,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     duration: 3,
     minimumAge: 8,
     ubication: "Istán",
+    isDisponible: false,
   },
 
   // Slug actualizado según Sheet: "juanar-forest" en vez de "hiking-juanar"
@@ -759,7 +757,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "All year!",
     mainImage: {
-      src: "/zarzalones-2.webp",
+      src: "/empty.webp",
       alt: "Hiking Juanar Forest - Family hiking through Juanar forests",
     },
     images: [],
@@ -772,6 +770,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     duration: 2,
     minimumAge: 6,
     ubication: "Ojén",
+    isDisponible: false,
   },
 
   // ==================== MORE ACTIVITIES ====================
@@ -787,8 +786,32 @@ export const complementaryData: Record<string, ComplementaryData> = {
     },
     images: [
       {
-        src: "/kayak-banus-2.png",
+        src: "/kayak-banus-2.webp",
         alt: "Kayak Puerto Banús - Kayaking along Marbella's coast",
+      },
+      {
+        src: "/kayak-banus-3.webp",
+        alt: "Kayak Puerto Banús - Enjoying the sunrise during the kayak tour",
+      },
+      {
+        src: "/kayak-banus-4.webp",
+        alt: "Kayak Puerto Banús - Kayaking in calm waters near Puerto Banús",
+      },
+      {
+        src: "/kayak-banus-5.webp",
+        alt: "Kayak Puerto Banús - Spectacular views of Marbella's coast during the kayak tour",
+      },
+      {
+        src: "/kayak-banus-6.webp",
+        alt: "Kayak Puerto Banús - Kayaking experience in Puerto Banús",
+      },
+      {
+        src: "/kayak-banus-7.webp",
+        alt: "Kayak Puerto Banús - Kayaking in the Mediterranean near Puerto Banús",
+      },
+      {
+        src: "/kayak-banus-8.webp",
+        alt: "Kayak Puerto Banús - Kayaking tour with beautiful views of Marbella's coast",
       },
     ],
     isOffer: false,
@@ -801,6 +824,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     duration: 2,
     ubication: "Marbella, Málaga",
     minimumAge: 3,
+    isDisponible: true,
   },
 
   "kayak-guadiaro": {
@@ -810,7 +834,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "All year!",
     mainImage: {
-      src: "/zarzalones-4.webp",
+      src: "/empty.webp",
       alt: "Kayak Guadiaro River - Kayaking at the mouth of the Guadiaro River",
     },
     images: [],
@@ -824,6 +848,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     duration: 2,
     minimumAge: 6,
     ubication: "Guadiaro",
+    isDisponible: false,
   },
 
   "e-bike-marbella": {
@@ -833,7 +858,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "All year!",
     mainImage: {
-      src: "/la-concha-12.webp",
+      src: "/empty.webp",
       alt: "E-Bike Marbella - Electric bike route through Sierra Blanca",
     },
     images: [],
@@ -847,6 +872,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     duration: 4,
     minimumAge: 12,
     ubication: "Marbella, Málaga",
+    isDisponible: true,
   },
 
   "buggy-tour-marbella": {
@@ -870,6 +896,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     duration: 3,
     minimumAge: 18,
     ubication: "Marbella, Málaga",
+    isDisponible: false,
   },
 
   "jet-ski-marbella": {
@@ -879,7 +906,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "All year!",
     mainImage: {
-      src: "/zarzalones-11.webp",
+      src: "/empty.webp",
       alt: "Jet Ski Marbella - Guided jet ski tours from the Marina",
     },
     images: [],
@@ -893,6 +920,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     duration: 2,
     minimumAge: 16,
     ubication: "Marbella, Málaga",
+    isDisponible: false,
   },
 
   "gymkhana-marbella": {
@@ -902,7 +930,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "All year!",
     mainImage: {
-      src: "/zarzalones-12.webp",
+      src: "/empty.webp",
       alt: "Gymkhana Marbella - Fun scavenger hunt through Marbella's old town",
     },
     images: [],
@@ -916,6 +944,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     duration: 3,
     minimumAge: 8,
     ubication: "Marbella, Málaga",
+    isDisponible: false,
   },
 
   "caving-experience": {
@@ -925,7 +954,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "All year!",
     mainImage: {
-      src: "/la-concha-14.webp",
+      src: "/empty.webp",
       alt: "Caving Experience - Family caving adventure",
     },
     images: [],
@@ -939,6 +968,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     duration: 4,
     minimumAge: 7,
     ubication: "Málaga",
+    isDisponible: false,
   },
   "caving-igualeja": {
     subtitle: "Caving Experience - Explore Málaga's Underground Wonders",
@@ -947,7 +977,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "All year!",
     mainImage: {
-      src: "/rio-verde-3.webp",
+      src: "/empty.webp",
       alt: "Caving Igualeja - Family caving adventure",
     },
     images: [],
@@ -961,6 +991,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     duration: 4,
     minimumAge: 7,
     ubication: "Igualeja",
+    isDisponible: false,
   },
 };
 
@@ -970,7 +1001,7 @@ export const defaultComplementaryData: ComplementaryData = {
   description: "",
   videoYoutube: "",
   days: "All year!",
-  mainImage: { src: "/guadalmina-2.webp", alt: "Excursion image" },
+  mainImage: { src: "/empty.webp", alt: "Excursion image" },
   images: [],
   isOffer: false,
   rating: { value: 0, reviews: 0 },
@@ -981,4 +1012,5 @@ export const defaultComplementaryData: ComplementaryData = {
   province: "Málaga",
   category: "More Activities",
   categoryPath: "activities",
+  isDisponible: false,
 };

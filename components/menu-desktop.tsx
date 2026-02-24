@@ -34,7 +34,7 @@ const MenuDesktop = ({
         <NavigationMenuItem>
           <NavigationMenuTrigger
             onClick={() => router.push("/activities")}
-            className="text-[0.875rem] font-medium text-white/90 hover:text-white bg-transparent hover:bg-white/10 data-[state=open]:bg-white/10 px-2.5 rounded-full transition-all whitespace-nowrap"
+            className="text-[0.875rem] font-medium text-white/90 hover:text-white hover:cursor-pointer bg-transparent hover:bg-white/10 data-[state=open]:bg-white/10 px-2.5 rounded-full transition-all whitespace-nowrap"
           >
             Activities
           </NavigationMenuTrigger>
@@ -52,7 +52,7 @@ const MenuDesktop = ({
                   />
                   <a
                     href="/activities?category=canyoning"
-                    className="font-bold px-2 text-sm text-primary-light mb-3"
+                    className="font-bold px-2 text-sm text-primary-light mb-4 hover:text-primary transition-colors hover:underline"
                   >
                     Canyoning
                   </a>
@@ -82,7 +82,7 @@ const MenuDesktop = ({
                   />
                   <a
                     href="/activities?category=via-ferrata"
-                    className="font-bold px-2 text-sm text-primary-light mb-3"
+                    className="font-bold px-2 text-sm text-primary-light mb-4 hover:text-primary transition-colors hover:underline"
                   >
                     Via Ferrata
                   </a>
@@ -112,7 +112,7 @@ const MenuDesktop = ({
                   />
                   <a
                     href="/activities?category=hiking"
-                    className="font-bold px-2 text-sm text-primary-light mb-3"
+                    className="font-bold px-2 text-sm text-primary-light mb-4 hover:text-primary transition-colors hover:underline"
                   >
                     Hiking
                   </a>
@@ -142,7 +142,7 @@ const MenuDesktop = ({
                   />
                   <a
                     href="/activities?category=activities"
-                    className="font-bold px-2 text-sm text-primary-light mb-3"
+                    className="font-bold px-2 text-sm text-primary-light mb-4 hover:text-primary transition-colors hover:underline"
                   >
                     More Activities
                   </a>

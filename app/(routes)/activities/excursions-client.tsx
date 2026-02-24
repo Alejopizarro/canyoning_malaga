@@ -39,32 +39,32 @@ const ExcursionsClient = ({ excursions }: ExcursionsClientProps) => {
       const qs = params.toString();
       router.replace(qs ? `${pathname}?${qs}` : pathname, { scroll: false });
     },
-    [searchParams, router, pathname]
+    [searchParams, router, pathname],
   );
 
   const setFilterCategory = useCallback(
     (v: string) => updateParam("category", v),
-    [updateParam]
+    [updateParam],
   );
   const setFilterLevel = useCallback(
     (v: string) => updateParam("level", v),
-    [updateParam]
+    [updateParam],
   );
   const setFilterProvince = useCallback(
     (v: string) => updateParam("province", v),
-    [updateParam]
+    [updateParam],
   );
   const setFilterTop3 = useCallback(
     (v: string) => updateParam("top3", v),
-    [updateParam]
+    [updateParam],
   );
   const setFilterMostPopular = useCallback(
     (v: string) => updateParam("popular", v),
-    [updateParam]
+    [updateParam],
   );
   const setSortByPrice = useCallback(
     (v: string) => updateParam("sort", v),
-    [updateParam]
+    [updateParam],
   );
 
   const handleClearAllFilters = useCallback(() => {
@@ -75,13 +75,12 @@ const ExcursionsClient = ({ excursions }: ExcursionsClientProps) => {
     // Primero filtrar
     let filtered = excursions.filter(
       (excursion: Excursion) =>
-        (filterCategory === "" ||
-          excursion.categoryPath === filterCategory) &&
+        (filterCategory === "" || excursion.categoryPath === filterCategory) &&
         (filterLevel === "" || excursion.level === filterLevel) &&
         (filterProvince === "" || excursion.province === filterProvince) &&
         (filterTop3 === "" || (filterTop3 === "true" && excursion.isTop3)) &&
         (filterMostPopular === "" ||
-          (filterMostPopular === "true" && excursion.isMostPopular))
+          (filterMostPopular === "true" && excursion.isMostPopular)),
     );
 
     // Luego ordenar por precio si está activo (el precio ya es un número)
@@ -105,7 +104,7 @@ const ExcursionsClient = ({ excursions }: ExcursionsClientProps) => {
   const visibleExcursions = filteredAndSortedExcursions.slice(0, visibleCount);
   const visibleExcursionsMobile = filteredAndSortedExcursions.slice(
     0,
-    visibleCountMobile
+    visibleCountMobile,
   );
   const hasMore = visibleCount < filteredAndSortedExcursions.length;
 
