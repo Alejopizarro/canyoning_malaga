@@ -93,7 +93,7 @@ export function FormController() {
           },
           body: JSON.stringify({
             ...data,
-            phone: `${data.phonePrefix} ${data.phone}`,
+            phone: `${data.phonePrefix.replace("+", "")} ${data.phone}`,
           }),
         },
       );

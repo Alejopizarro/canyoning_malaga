@@ -124,6 +124,7 @@ export default async function Page() {
     categoryPath: guadalmina.categoryPath,
     categoryText: guadalmina.category,
     isMostPopular: guadalmina.isMostPopular,
+    videoYoutube: guadalmina.videoYoutube,
     rating: {
       value: guadalmina.rating.value,
       totalReviews: guadalmina.rating.reviews,
@@ -342,7 +343,9 @@ export default async function Page() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Max. Capacity</p>
-                    <p className="font-semibold">Up to 12 participants per guide</p>
+                    <p className="font-semibold">
+                      Up to 12 participants per guide
+                    </p>
                   </div>
                 </div>
               </AccordionContent>

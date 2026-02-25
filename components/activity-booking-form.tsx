@@ -95,7 +95,7 @@ export function ActivityBookingForm({
           },
           body: JSON.stringify({
             ...data,
-            phone: `${data.phonePrefix} ${data.phone}`,
+            phone: `${data.phonePrefix.replace("+", "")} ${data.phone}`,
           }),
         },
       );
