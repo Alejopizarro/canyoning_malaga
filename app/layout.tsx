@@ -4,6 +4,12 @@ import "./globals.css";
 import Navbar from "@/components/nav-bar";
 import Footer from "@/components/footer";
 import WhatsAppFloat from "@/components/whatsapp-float";
+import { CookieProvider } from "@/context/cookie-context";
+import GoogleAnalytics from "@/lib/analytics";
+import GoogleTagManager from "@/lib/gtm";
+import CookieBanner from "@/components/cookie-banner";
+import CookieConsentModal from "@/components/ui/cookie-consent-modal";
+import CookieSettingsButton from "@/components/ui/cookie-settings-button";
 
 const raleway = Raleway({
   variable: "--font-raleway",
@@ -24,10 +30,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${raleway.variable} font-sans antialiased`}>
-        <Navbar />
-        {children}
-        <Footer />
-        <WhatsAppFloat />
+        <CookieProvider>
+          <GoogleAnalytics />
+          <GoogleTagManager />
+          <Navbar />
+          {children}
+          <Footer />
+          <WhatsAppFloat />
+          <CookieBanner />
+          <CookieConsentModal />
+          <CookieSettingsButton />
+        </CookieProvider>
       </body>
     </html>
   );

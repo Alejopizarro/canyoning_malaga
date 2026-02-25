@@ -1,4 +1,12 @@
-import { Users, Calendar, MapPin, Clock } from "lucide-react";
+import {
+  Users,
+  Calendar,
+  MapPin,
+  Clock,
+  ChartNoAxesColumnIncreasing,
+  TimerReset,
+  PersonStanding,
+} from "lucide-react";
 
 interface InfoBannerProps {
   minimumAge?: number;
@@ -27,28 +35,28 @@ export default function InfoBanner({
   return (
     <div className="flex flex-wrap items-center gap-2">
       {/* Level */}
-      <span className="flex bg-gray-200 px-4 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-500">
-        <Users size={15} />
+      <span className="flex bg-gray-100 px-4 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-900">
+        <ChartNoAxesColumnIncreasing size={12} />
         {getLevelText(level)}
       </span>
       {/* Age */}
-      <span className="flex bg-gray-200 px-4 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-500">
-        <Calendar size={15} />
-        From {minimumAge} y.o.
+
+      <span className="flex bg-gray-100 px-4 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-900">
+        <TimerReset size={15} />
+        {duration} hours
       </span>
 
       {/* Location */}
       {location && (
-        <span className="flex bg-gray-200 px-4 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-500">
-          <MapPin size={15} />
+        <span className="flex bg-gray-100 px-4 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-900">
+          <MapPin size={12} />
           {location}
         </span>
       )}
 
-      {/* Duration */}
-      <span className="flex bg-gray-200 px-4 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-500">
-        <Clock size={15} />
-        {duration} hours
+      <span className="flex bg-gray-100 px-4 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-900">
+        <PersonStanding size={12} />
+        From {minimumAge} y.o.
       </span>
     </div>
   );

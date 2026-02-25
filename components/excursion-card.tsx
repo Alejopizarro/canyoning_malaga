@@ -1,5 +1,13 @@
 import { Excursion } from "@/lib/activities";
-import { ArrowRight, Bell, Clock, MapPin, Users } from "lucide-react";
+import {
+  ArrowRight,
+  Bell,
+  ChartNoAxesColumnIncreasing,
+  Clock,
+  MapPin,
+  TimerReset,
+  Users,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -49,16 +57,16 @@ const ExcursionCard = (props: ExcursionCardProps) => {
         </div>
         {!showDescription && (
           <div className="flex flex-wrap gap-2 my-2">
-            <span className="flex line-clamp-1 bg-gray-200 px-2 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-500">
+            <span className="flex line-clamp-1 bg-gray-100 px-2 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-900">
               <MapPin size={12} />
               {excursion.ubication}
             </span>
-            <span className="flex bg-gray-200 px-2 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-500">
-              <Users size={12} />
+            <span className="flex bg-gray-100 px-2 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-900">
+              <ChartNoAxesColumnIncreasing size={12} />
               {excursion.level === "easy" ? "all levels" : excursion.level}
             </span>
-            <span className="flex bg-gray-200 px-2 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-500">
-              <Clock size={12} />
+            <span className="flex bg-gray-100 px-2 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-900">
+              <TimerReset size={12} />
               {excursion.duration} hs
             </span>
           </div>
