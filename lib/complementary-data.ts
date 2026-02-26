@@ -193,25 +193,65 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "",
     days: "All year",
     mainImage: {
-      src: "/rioverde-xpro-1.webp",
+      src: "/rio-verde-xpro-1.webp",
       alt: "Rio Verde canyon - One of the best canyons in Andalusia",
     },
     images: [
       {
-        src: "/rio-verde-2.jpg",
+        src: "/rio-verde-xpro-2.webp",
         alt: "Rio Verde canyon - Turquoise waters in rio verde canyon",
       },
       {
-        src: "/rio-verde-3.jpg",
+        src: "/rio-verde-xpro-3.webp",
         alt: "Rio Verde canyon - Rappelling down a waterfall in rio verde canyon",
       },
       {
-        src: "/rio-verde-1.jpg",
+        src: "/rio-verde-xpro-4.webp",
         alt: "Rio Verde canyon - Jumping into a natural pool in rio verde canyon",
       },
       {
-        src: "/rio-verde-5.jpg",
+        src: "/rio-verde-xpro-5.webp",
         alt: "Rio Verde canyon - Sliding down a natural water slide in rio verde canyon",
+      },
+      {
+        src: "/rio-verde-xpro-6.webp",
+        alt: "Rio Verde canyon - Beautiful landscapes in rio verde canyon",
+      },
+      {
+        src: "/rio-verde-xpro-7.webp",
+        alt: "Rio Verde canyon - Adventurers in rio verde canyon",
+      },
+      {
+        src: "/rio-verde-xpro-8.webp",
+        alt: "Rio Verde canyon - Crystal clear waters in rio verde canyon",
+      },
+      {
+        src: "/rio-verde-xpro-9.webp",
+        alt: "Rio Verde canyon - Nature in rio verde canyon",
+      },
+      {
+        src: "/rio-verde-xpro-10.webp",
+        alt: "Rio Verde canyon - Canyon walls in rio verde canyon",
+      },
+      {
+        src: "/rio-verde-xpro-11.webp",
+        alt: "Rio Verde canyon - Canyon walls in rio verde canyon",
+      },
+      {
+        src: "/rio-verde-xpro-12.webp",
+        alt: "Rio Verde canyon - Canyon walls in rio verde canyon",
+      },
+      {
+        src: "/rio-verde-xpro-13.webp",
+        alt: "Rio Verde canyon - Canyon walls in rio verde canyon",
+      },
+      {
+        src: "/rio-verde-xpro-14.webp",
+        alt: "Rio Verde canyon - Canyon walls in rio verde canyon",
+      },
+      {
+        src: "/rio-verde-xpro-15.webp",
+        alt: "Rio Verde canyon - Canyon walls in rio verde canyon",
       },
     ],
     isOffer: false,
@@ -222,6 +262,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     minimumAge: 15,
     ubication: "Otivar, Granada",
     category: "Canyoning",
+    specialPrice: "*Price depends on group size. Transfer included.",
     categoryPath: "canyoning",
     isDisponible: true,
   },
@@ -557,7 +598,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
         alt: "Via Ferrata Casares - Canyon walls in via ferrata casares",
       },
     ],
-    specialPrice: "If we reach a minimum of 3 participants",
+    specialPrice: "*Minimum 3 people. Available on Mondays and Fridays.",
     isOffer: false,
     rating: { value: 5, reviews: 2473 },
     level: "moderate",
@@ -630,6 +671,8 @@ export const complementaryData: Record<string, ComplementaryData> = {
     category: "Via Ferrata",
     categoryPath: "via-ferrata",
     duration: 4,
+    specialPrice:
+      "*Minimum 4 people. Available on Mondays, Wednesdays and Fridays.",
     minimumAge: 14,
     ubication: "El Chorro, Málaga",
     isDisponible: true,
@@ -711,7 +754,6 @@ export const complementaryData: Record<string, ComplementaryData> = {
         alt: "Hiking La Concha - Serene landscapes near la concha peak",
       },
     ],
-    specialPrice: "*Minimum 2 people. Available Monday to Friday.",
     videoYoutube: "https://www.youtube.com/watch?v=lFEBPOm6354",
     isOffer: false,
     rating: { value: 0, reviews: 0 },
@@ -721,6 +763,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     categoryPath: "hiking",
     duration: 6.5,
     minimumAge: 11,
+    specialPrice: "Minimum 2 people. Available Monday to Saturday.",
     ubication: "Marbella, Málaga",
     isDisponible: true,
   },
