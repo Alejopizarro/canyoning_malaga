@@ -1,7 +1,7 @@
 import Script from "next/script";
 import Hero from "@/components/hero";
 import ExcursionDescription from "@/components/excursion-description";
-import Faqs, { Faq } from "../../activities/components/faqs";
+import Faqs from "../../activities/components/faqs";
 import { getExcursionByPath } from "@/lib/activities";
 import { notFound } from "next/navigation";
 import {
@@ -13,34 +13,17 @@ import {
 import PrivateTourCTA from "@/components/private-tour";
 import CheckAvailabilityButton from "../../../../components/ui/check-availability-button";
 import TrustindexWidget from "@/components/trustindex-widget";
+import {
+  laConchaMetadata,
+  laConchaFaqs,
+  jsonLdProduct,
+  jsonLdTourExperience,
+  jsonLdLocalBusiness,
+  jsonLdFaq,
+  jsonLdBreadcrumb,
+} from "./metadata";
 
-const faqs: Faq[] = [
-  {
-    question: "Is La Concha safe for children?",
-    answer:
-      "The standard route is recommended for active children from 11 years old due to its length and some narrow sections.",
-  },
-  {
-    question: "Can we see Africa from the top?",
-    answer:
-      "Yes! On clear days, you can clearly see the Strait of Gibraltar and the coast of Africa.",
-  },
-  {
-    question: "What is the difference between the routes?",
-    answer:
-      "The popular Juanar route is a scenic mountain hike, while the Direct Route is an 'Extreme Trekking' experience involving steeper slopes and technical aid ropes.",
-  },
-  {
-    question: "How difficult is the hike?",
-    answer:
-      "La Concha is rated as intermediate (Level 2). It requires a moderate level of fitness due to its 13km distance and 1,215m altitude. The trail has some challenging sections but is manageable for most hikers with basic experience.",
-  },
-  {
-    question: "What happens if the weather is bad?",
-    answer:
-      "Safety is our priority. If weather conditions are unsafe, we may modify or reschedule the activity. Our guides monitor forecasts and will contact you in advance if changes are needed.",
-  },
-];
+export const metadata = laConchaMetadata;
 
 // Descripción de la excursión
 const EXCURSION_INTRO = `Conquer the legendary peak that guards the Costa del Sol. Stand atop Marbella's most famous landmark, 1,215 meters above the sea, and gaze across the Mediterranean to the shores of Africa and Gibraltar.`;
@@ -144,6 +127,32 @@ export default async function Page() {
 
   return (
     <div className="pt-20">
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdProduct) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLdTourExperience),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLdLocalBusiness),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
+      />
+
       <Hero excursion={excursionHero} />
       <div className="mx-4">
         <CheckAvailabilityButton />
@@ -336,7 +345,7 @@ export default async function Page() {
       </div>
       <TrustindexWidget />
       <PrivateTourCTA />
-      <Faqs faqs={faqs} />
+      <Faqs faqs={laConchaFaqs} />
     </div>
   );
 }

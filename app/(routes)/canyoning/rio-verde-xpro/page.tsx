@@ -2,7 +2,7 @@ import Script from "next/script";
 import Hero from "@/components/hero";
 import ReviewsCarousel from "@/components/ui/reviews-carousel";
 import ExcursionDescription from "@/components/excursion-description";
-import Faqs, { Faq } from "../../activities/components/faqs";
+import Faqs from "../../activities/components/faqs";
 import { getExcursionByPath } from "@/lib/activities";
 import { notFound } from "next/navigation";
 import {
@@ -14,34 +14,17 @@ import {
 import PrivateTourCTA from "@/components/private-tour";
 import CheckAvailabilityButton from "../../../../components/ui/check-availability-button";
 import TrustindexWidget from "@/components/trustindex-widget";
+import {
+  rioVerdeXproMetadata,
+  rioVerdeXproFaqs,
+  jsonLdProduct,
+  jsonLdTourExperience,
+  jsonLdLocalBusiness,
+  jsonLdFaq,
+  jsonLdBreadcrumb,
+} from "./metadata";
 
-const faqs: Faq[] = [
-  {
-    question: "Do I need previous experience for the X-Pro?",
-    answer:
-      "While Level 3 is accessible to fit individuals, we recommend it for those with high physical stamina or prior canyoning experience due to its 7-hour duration.",
-  },
-  {
-    question: "What is the difference between the Popular and X-Pro routes?",
-    answer:
-      'The X-Pro is the "Integral" version, doubling the length of the popular route and covering both sections of the canyon.',
-  },
-  {
-    question: "Is there a minimum age?",
-    answer:
-      "Yes, due to the physical demand, the minimum age is +15/16 years old.",
-  },
-  {
-    question: "Can I skip the 18-meter slide?",
-    answer:
-      "Yes, while the 18-meter natural slide is one of the highlights, there are alternative routes if you prefer not to do it. Our guides will always offer options.",
-  },
-  {
-    question: "How should I prepare physically for this route?",
-    answer:
-      "We recommend being in good cardiovascular shape. The 7-hour duration requires stamina for swimming, walking, and climbing. Regular exercise and swimming practice in the weeks before will help you enjoy the experience fully.",
-  },
-];
+export const metadata = rioVerdeXproMetadata;
 
 // Descripción de la excursión
 const EXCURSION_INTRO = `Dive into the most explosive aquatic challenge in Andalusia. Experience the complete "Integral" route of Río Verde, a 7-hour adrenaline-fueled journey through turquoise waters and mythical waterfalls designed for true adventure seekers.`;
@@ -142,6 +125,32 @@ export default async function Page() {
 
   return (
     <div className="pt-20 py-8">
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdProduct) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLdTourExperience),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLdLocalBusiness),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
+      />
+
       <Hero excursion={excursionHero} />
       <div className="mx-4">
         <CheckAvailabilityButton />
@@ -362,7 +371,7 @@ export default async function Page() {
       </div>
       <TrustindexWidget />
       <PrivateTourCTA />
-      <Faqs faqs={faqs} />
+      <Faqs faqs={rioVerdeXproFaqs} />
     </div>
   );
 }

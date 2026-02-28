@@ -1,8 +1,7 @@
 import Bokun from "@/components/bokun";
 import Hero from "@/components/hero";
-import ReviewsCarousel from "@/components/ui/reviews-carousel";
 import ExcursionDescription from "@/components/excursion-description";
-import Faqs, { Faq } from "../../activities/components/faqs";
+import Faqs from "../../activities/components/faqs";
 import { getExcursionByPath } from "@/lib/activities";
 import { notFound } from "next/navigation";
 import {
@@ -14,40 +13,17 @@ import {
 import PrivateTourCTA from "@/components/private-tour";
 import CheckAvailabilityButton from "../../../../components/ui/check-availability-button";
 import TrustindexWidget from "@/components/trustindex-widget";
+import {
+  guadalminaMetadata,
+  guadalminaFaqs,
+  jsonLdProduct,
+  jsonLdTourExperience,
+  jsonLdLocalBusiness,
+  jsonLdFaq,
+  jsonLdBreadcrumb,
+} from "./metadata";
 
-const faqs: Faq[] = [
-  {
-    question: "What should I bring for the canyoning activity?",
-    answer:
-      "You should bring swimwear, a towel, water shoes or sturdy sandals, sunscreen, and a change of clothes.",
-  },
-  {
-    question: "Is prior experience necessary for canyoning?",
-    answer:
-      "No prior experience is necessary. Our guides will provide all the necessary instructions and safety briefings.",
-  },
-  {
-    question: "What is the age limit for participating in canyoning?",
-    answer:
-      "Participants must be at least 10 years old. Minors must be accompanied by an adult.",
-  },
-  {
-    question: "Are there any health restrictions for canyoning?",
-    answer:
-      "Participants should be in good health. Those with heart conditions, pregnancy, or severe mobility issues should consult with us beforehand.",
-  },
-];
-
-// Descripción de la excursión
-const EXCURSION_INTRO = `Discover the best canyoning experience near Marbella in the Guadalmina Canyon, famously known as "The Narrowest Canyon." This dynamic half-day activity is perfect for beginners, friends, and families (from 6 y.o. in summer), offering fun and excitement every day of the year thanks to its temperate waters.`;
-
-const EXCURSION_DESCRIPTION = `The Guadalmina Canyon, situated in the charming town of Benahavís near Marbella, is our most requested activity due to its accessibility and high fun factor. This route provides the ideal canyoning trip for groups, bachelor parties, and families looking for a half-day adventure (3 hours).
-
-In this beautiful natural environment, you will learn the basic progression techniques of canyoning that are accessible to all participants. The gorge narrows dramatically as you progress, revealing a truly impressive landscape.
-
-For those seeking an extra adrenaline rush, optional jumps of up to 6 meters into deep pools are available; alternatively, you can opt for the fun toboggan ride or a short abseil descent (rappelling of 5 metres) if you prefer to avoid the higher jumps.
-
-We offer this canyon year-round, making it a reliable option, even during the winter season (though in winter/rainy season it may have an extra component of adventure!).`;
+export const metadata = guadalminaMetadata;
 
 const ACTIVITY_HIGHLIGHTS = [
   {
@@ -145,6 +121,32 @@ export default async function Page() {
 
   return (
     <div className="pt-20 py-8">
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdProduct) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLdTourExperience),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLdLocalBusiness),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
+      />
+
       <Hero excursion={excursionHero} />
       <div className="mx-4">
         <CheckAvailabilityButton />
@@ -358,7 +360,7 @@ export default async function Page() {
       </div>
       <TrustindexWidget />
       <PrivateTourCTA />
-      <Faqs faqs={faqs} />
+      <Faqs faqs={guadalminaFaqs} />
     </div>
   );
 }

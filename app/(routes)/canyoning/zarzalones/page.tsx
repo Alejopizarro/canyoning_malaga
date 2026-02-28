@@ -1,8 +1,7 @@
 import Script from "next/script";
 import Hero from "@/components/hero";
-import ReviewsCarousel from "@/components/ui/reviews-carousel";
 import ExcursionDescription from "@/components/excursion-description";
-import Faqs, { Faq } from "../../activities/components/faqs";
+import Faqs from "../../activities/components/faqs";
 import { getExcursionByPath } from "@/lib/activities";
 import { notFound } from "next/navigation";
 import {
@@ -14,34 +13,17 @@ import {
 import PrivateTourCTA from "@/components/private-tour";
 import CheckAvailabilityButton from "../../../../components/ui/check-availability-button";
 import TrustindexWidget from "@/components/trustindex-widget";
+import {
+  zarzalonesMetadata,
+  zarzalonesFaqs,
+  jsonLdProduct,
+  jsonLdTourExperience,
+  jsonLdLocalBusiness,
+  jsonLdFaq,
+  jsonLdBreadcrumb,
+} from "./metadata";
 
-const faqs: Faq[] = [
-  {
-    question: "Is Zarzalones suitable for children?",
-    answer:
-      "Yes. The activity is suitable for children from 9 years old who have basic swimming skills.",
-  },
-  {
-    question: "Is previous experience or specific fitness required?",
-    answer:
-      "It is Level 2 (intermediate). It is ideal for those seeking a step-up from beginner canyons but still accessible to those without prior technical experience, although basic physical fitness is required.",
-  },
-  {
-    question: "What's the biggest difference from Guadalmina?",
-    answer:
-      "While Guadalmina is 3 hours, Zarzalones is 4 hours and includes a much higher descent, featuring an impressive 21-meter rappel.",
-  },
-  {
-    question: "Is the 21-meter rappel mandatory?",
-    answer:
-      "Yes, the rappels are part of the route and cannot be skipped. However, our guides will assist you throughout the descent, making it accessible even for first-timers with proper instruction.",
-  },
-  {
-    question: "Why does it run all year round?",
-    answer:
-      "The route begins at the source of the Río Grande, a large cave spring that ensures consistent water flow throughout the entire year, regardless of seasonal rainfall.",
-  },
-];
+export const metadata = zarzalonesMetadata;
 
 // Descripción de la excursión
 const EXCURSION_INTRO = (
@@ -147,6 +129,28 @@ export default async function Page() {
 
   return (
     <div className="pt-20 py-8">
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdProduct) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdTourExperience) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdLocalBusiness) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
+      />
+
       <Hero excursion={excursionHero} />
       <div className="mx-4">
         <CheckAvailabilityButton />
@@ -379,7 +383,7 @@ export default async function Page() {
       </div>
       <TrustindexWidget />
       <PrivateTourCTA />
-      <Faqs faqs={faqs} />
+      <Faqs faqs={zarzalonesFaqs} />
     </div>
   );
 }

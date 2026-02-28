@@ -1,7 +1,7 @@
 import Bokun from "@/components/bokun";
 import Hero from "@/components/hero";
 import ExcursionDescription from "@/components/excursion-description";
-import Faqs, { Faq } from "../../activities/components/faqs";
+import Faqs from "../../activities/components/faqs";
 import { getExcursionByPath } from "@/lib/activities";
 import { notFound } from "next/navigation";
 import {
@@ -14,28 +14,17 @@ import PrivateTourCTA from "@/components/private-tour";
 import CheckAvailabilityButton from "../../../../components/ui/check-availability-button";
 import TrustindexWidget from "@/components/trustindex-widget";
 import { ActivityBookingForm } from "@/components/activity-booking-form";
+import {
+  casaresMetadata,
+  casaresFaqs,
+  jsonLdProduct,
+  jsonLdTourExperience,
+  jsonLdLocalBusiness,
+  jsonLdFaq,
+  jsonLdBreadcrumb,
+} from "./metadata";
 
-const faqs: Faq[] = [
-  {
-    question: "Is the Casares Via Ferrata suitable for beginners?",
-    answer:
-      "Yes, it is recommended for beginners in this sport, and those with some experience in other related physical activities. Minimum age is 11 or 12 years old, or 155cm height.",
-  },
-  {
-    question: "Can this route be combined with others?",
-    answer:
-      "Yes, this via ferrata can be combined with other routes in the Genal Valley, such as Gaucín, El Hacho, or Benalauría. Ask us about our Via Ferrata packs.",
-  },
-  {
-    question: "How long does the activity take?",
-    answer: "The ascent lasts approximately 2 hours and 30 minutes.",
-  },
-  {
-    question: "What if I'm afraid of heights?",
-    answer:
-      "Via ferrata is actually a great way to build confidence with heights in a controlled environment. Our guides are experienced in helping participants overcome their fears, and you'll be securely attached to the safety cable at all times.",
-  },
-];
+export const metadata = casaresMetadata;
 
 // Descripción de la excursión con negritas
 const EXCURSION_INTRO = (
@@ -133,6 +122,32 @@ export default async function Page() {
 
   return (
     <div className="pt-20">
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdProduct) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLdTourExperience),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLdLocalBusiness),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
+      />
+
       <Hero excursion={excursionHero} />
       <div className="mx-4">
         <CheckAvailabilityButton />
@@ -360,7 +375,7 @@ export default async function Page() {
       </div>
       <TrustindexWidget />
       <PrivateTourCTA />
-      <Faqs faqs={faqs} />
+      <Faqs faqs={casaresFaqs} />
     </div>
   );
 }

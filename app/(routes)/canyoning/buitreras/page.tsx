@@ -1,6 +1,6 @@
 import Hero from "@/components/hero";
 import ExcursionDescription from "@/components/excursion-description";
-import Faqs, { Faq } from "../../activities/components/faqs";
+import Faqs from "../../activities/components/faqs";
 import { getExcursionByPath } from "@/lib/activities";
 import { notFound } from "next/navigation";
 import {
@@ -13,34 +13,17 @@ import PrivateTourCTA from "@/components/private-tour";
 import CheckAvailabilityButton from "../../../../components/ui/check-availability-button";
 import TrustindexWidget from "@/components/trustindex-widget";
 import { ActivityBookingForm } from "@/components/activity-booking-form";
+import {
+  buitrerasMetadata,
+  buitrerasFaqs,
+  jsonLdProduct,
+  jsonLdTourExperience,
+  jsonLdLocalBusiness,
+  jsonLdFaq,
+  jsonLdBreadcrumb,
+} from "./metadata";
 
-const faqs: Faq[] = [
-  {
-    question: "Do I need to be an expert?",
-    answer:
-      "While it is a Level 2.5 canyon, it is suitable for beginners with a good physical condition and an athletic spirit.",
-  },
-  {
-    question: "Is it suitable for children?",
-    answer:
-      "Yes, for teenagers from 13-14 years old who are comfortable in the water and fit.",
-  },
-  {
-    question: "When is the best time to go?",
-    answer:
-      "The season runs from mid-May to November to ensure optimal water levels and safety.",
-  },
-  {
-    question: "How high are the jumps?",
-    answer:
-      "The canyon features optional jumps of up to 9 meters into crystal-clear pools. All jumps are optional - you can always choose alternative routes if you prefer.",
-  },
-  {
-    question: "What makes Buitreras special compared to other canyons?",
-    answer:
-      "Buitreras is internationally recognized as the 'Cathedral' of Andalusian ravines due to its spectacular limestone walls exceeding 120 meters in height. It's considered the most majestic canyon descent in the entire region.",
-  },
-];
+export const metadata = buitrerasMetadata;
 
 // Descripción de la excursión
 const EXCURSION_INTRO = `Step into the "Cathedral" of Andalusian ravines. Experience a visual spectacle without precedent as you navigate between vertical rocky walls towering over 120 meters high in the heart of a pristine Natural Park.`;
@@ -140,6 +123,32 @@ export default async function Page() {
 
   return (
     <div className="pt-20">
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdProduct) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLdTourExperience),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLdLocalBusiness),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
+      />
+
       <Hero excursion={excursionHero} />
       <div className="mx-4">
         <CheckAvailabilityButton />
@@ -351,7 +360,7 @@ export default async function Page() {
       </div>
       <TrustindexWidget />
       <PrivateTourCTA />
-      <Faqs faqs={faqs} />
+      <Faqs faqs={buitrerasFaqs} />
     </div>
   );
 }

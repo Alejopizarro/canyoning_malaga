@@ -5,7 +5,11 @@ import Navbar from "@/components/nav-bar";
 import Footer from "@/components/footer";
 import WhatsAppFloat from "@/components/whatsapp-float";
 import { CookieProvider } from "@/context/cookie-context";
-import GoogleTagManager, { GoogleTagManagerNoScript } from "@/lib/gtm";
+import GoogleTagManager, {
+  GoogleTagManagerNoScript,
+  GTMPageViewTracker,
+} from "@/lib/gtm";
+import { Suspense } from "react";
 import CookieBanner from "@/components/cookie-banner";
 import CookieConsentModal from "@/components/ui/cookie-consent-modal";
 import CookieSettingsButton from "@/components/ui/cookie-settings-button";
@@ -16,9 +20,9 @@ const raleway = Raleway({
 });
 
 export const metadata: Metadata = {
-  title: "Canyoning Malaga",
+  title: "TUUR Adventure | The Best Experiences in Andalusia",
   description:
-    "Experience the thrill of canyoning in Malaga with our expert-guided tours. Explore stunning gorges, waterfalls, and natural pools while enjoying safety and fun.",
+    "Discover the best adventure experiences in Andalusia with TUUR Adventure. Explore canyoning, kayaking, and more in Malaga and beyond.",
 };
 
 export default function RootLayout({
@@ -32,6 +36,9 @@ export default function RootLayout({
         <CookieProvider>
           <GoogleTagManager />
           <GoogleTagManagerNoScript />
+          <Suspense fallback={null}>
+            <GTMPageViewTracker />
+          </Suspense>
           <Navbar />
           {children}
           <Footer />

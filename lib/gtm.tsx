@@ -2,6 +2,7 @@
 
 import Script from "next/script";
 import { useEffect, useState } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
 import { useCookieConsent } from "@/context/cookie-context";
 import { analyticsConfig } from "./cookie-utils";
 
@@ -60,6 +61,28 @@ export function GoogleTagManagerNoScript() {
       />
     </noscript>
   );
+}
+
+// Componente que trackea cambios de página en Next.js (SPA navigation)
+export function GTMPageViewTracker() {
+  const { hasAnalyticsConsent } = useCookieConsent();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    if (!hasAnalyticsConsent()) return;
+    if (typeof window === "undefined" || !window.dataLayer) return;
+
+    const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : "");
+
+    window.dataLayer.push({
+      event: "page_view",
+      page_path: url,
+      page_title: document.title,
+    });
+  }, [pathname, searchParams, hasAnalyticsConsent]);
+
+  return null;
 }
 
 // Hook para push events al dataLayer

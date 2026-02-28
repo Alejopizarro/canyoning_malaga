@@ -1,6 +1,6 @@
 import Hero from "@/components/hero";
 import ExcursionDescription from "@/components/excursion-description";
-import Faqs, { Faq } from "../../activities/components/faqs";
+import Faqs from "../../activities/components/faqs";
 import { getExcursionByPath } from "@/lib/activities";
 import { notFound } from "next/navigation";
 import {
@@ -13,33 +13,17 @@ import PrivateTourCTA from "@/components/private-tour";
 import CheckAvailabilityButton from "../../../../components/ui/check-availability-button";
 import TrustindexWidget from "@/components/trustindex-widget";
 import { ActivityBookingForm } from "@/components/activity-booking-form";
+import {
+  rondaMetadata,
+  rondaFaqs,
+  jsonLdProduct,
+  jsonLdTourExperience,
+  jsonLdLocalBusiness,
+  jsonLdFaq,
+  jsonLdBreadcrumb,
+} from "./metadata";
 
-const faqs: Faq[] = [
-  {
-    question: "Is it suitable for someone with no experience?",
-    answer:
-      "Absolutely. This is an initiation route designed for beginners and children from 7 years old.",
-  },
-  {
-    question: "How long does the activity take?",
-    answer: "The full experience lasts approximately 3 hours.",
-  },
-  {
-    question: "Can I do this if I have vertigo?",
-    answer:
-      "While it is an aerial activity, it is a great way to build confidence in a controlled and safe environment.",
-  },
-  {
-    question: "What if I get tired during the climb?",
-    answer:
-      "Don't worry! The route is divided into two sections with rest points in between. Our guides are trained to assist you at any moment and can adapt the pace to your comfort level.",
-  },
-  {
-    question: "Is there parking available near the meeting point?",
-    answer:
-      "Yes, there are several public parking areas in Ronda near the meeting point. We recommend arriving early to find a spot, especially during peak tourist season.",
-  },
-];
+export const metadata = rondaMetadata;
 
 // Descripción de la excursión
 const EXCURSION_INTRO = `Discover Ronda from a perspective few tourists ever see. Scale the breathtaking limestone cliffs of the Tajo gorge, directly under the shadow of the legendary Puente Nuevo, in an adventure that blends thousand-year history with vertical thrill.`;
@@ -137,6 +121,32 @@ export default async function Page() {
 
   return (
     <div className="pt-20 py-8">
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdProduct) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLdTourExperience),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLdLocalBusiness),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
+      />
+
       <Hero excursion={excursionHero} />
       <div className="mx-4">
         <CheckAvailabilityButton />
@@ -321,7 +331,7 @@ export default async function Page() {
       </div>
       <TrustindexWidget />
       <PrivateTourCTA />
-      <Faqs faqs={faqs} />
+      <Faqs faqs={rondaFaqs} />
     </div>
   );
 }

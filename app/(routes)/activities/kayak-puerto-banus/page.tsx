@@ -1,7 +1,7 @@
 import Script from "next/script";
 import Hero from "@/components/hero";
 import ExcursionDescription from "@/components/excursion-description";
-import Faqs, { Faq } from "../../activities/components/faqs";
+import Faqs from "../../activities/components/faqs";
 import { getExcursionByPath } from "@/lib/activities";
 import { notFound } from "next/navigation";
 import {
@@ -13,28 +13,17 @@ import {
 import PrivateTourCTA from "@/components/private-tour";
 import CheckAvailabilityButton from "../../../../components/ui/check-availability-button";
 import TrustindexWidget from "@/components/trustindex-widget";
+import {
+  kayakPuertoBanusMetadata,
+  kayakPuertoBanusFaqs,
+  jsonLdProduct,
+  jsonLdTourExperience,
+  jsonLdLocalBusiness,
+  jsonLdFaq,
+  jsonLdBreadcrumb,
+} from "./metadata";
 
-const faqs: Faq[] = [
-  {
-    question: "Is it safe for very young children?",
-    answer:
-      "Yes, children from 2 years old can participate safely, sitting next to their parents in the kayak.",
-  },
-  {
-    question: "Do I need previous experience?",
-    answer:
-      "No, this is an introductory activity where our guides will teach you everything you need to know.",
-  },
-  {
-    question: "How long is the route?",
-    answer: "The tour covers approximately 3.5 km and lasts around 2 hours.",
-  },
-  {
-    question: "What happens if the weather is bad?",
-    answer:
-      "Safety is our priority. If weather conditions are unsuitable for kayaking (strong winds, storms), we will contact you to reschedule or offer a full refund.",
-  },
-];
+export const metadata = kayakPuertoBanusMetadata;
 
 // Descripción de la excursión con negritas
 const EXCURSION_INTRO = (
@@ -135,6 +124,32 @@ export default async function Page() {
 
   return (
     <div className="pt-20">
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdProduct) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLdTourExperience),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLdLocalBusiness),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
+      />
+
       <Hero excursion={excursionHero} />
       <div className="mx-4">
         <CheckAvailabilityButton />
@@ -368,7 +383,7 @@ export default async function Page() {
       </div>
       <TrustindexWidget />
       <PrivateTourCTA />
-      <Faqs faqs={faqs} />
+      <Faqs faqs={kayakPuertoBanusFaqs} />
     </div>
   );
 }

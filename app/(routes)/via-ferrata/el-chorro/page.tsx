@@ -1,7 +1,7 @@
 import Script from "next/script";
 import Hero from "@/components/hero";
 import ExcursionDescription from "@/components/excursion-description";
-import Faqs, { Faq } from "../../activities/components/faqs";
+import Faqs from "../../activities/components/faqs";
 import { getExcursionByPath } from "@/lib/activities";
 import { notFound } from "next/navigation";
 import {
@@ -13,33 +13,17 @@ import {
 import PrivateTourCTA from "@/components/private-tour";
 import CheckAvailabilityButton from "../../../../components/ui/check-availability-button";
 import TrustindexWidget from "@/components/trustindex-widget";
+import {
+  elChorroMetadata,
+  elChorroFaqs,
+  jsonLdProduct,
+  jsonLdTourExperience,
+  jsonLdLocalBusiness,
+  jsonLdFaq,
+  jsonLdBreadcrumb,
+} from "./metadata";
 
-const faqs: Faq[] = [
-  {
-    question: "What is the minimum age?",
-    answer: "This activity is recommended for participants aged +14 years old.",
-  },
-  {
-    question: "Is previous experience necessary?",
-    answer:
-      "It is a long, highly recommended route but requires good physical condition and vertical progression skills.",
-  },
-  {
-    question: "Is the route near the Caminito del Rey?",
-    answer:
-      "Yes, the Via Ferrata is located right next to the famous Caminito del Rey area, which offers additional options like rock climbing, hiking, and kayaking. IMPORTANT: This activity does NOT include a visit to Caminito del Rey.",
-  },
-  {
-    question: "Can I skip the rappel at the end?",
-    answer:
-      "Yes, the 12-meter rappel is optional. If you prefer not to do it, there is an alternative path to descend safely.",
-  },
-  {
-    question: "Why is it not available in summer?",
-    answer:
-      "The route is closed from July 1st to August 31st due to extreme heat conditions. High temperatures make the activity unsafe and uncomfortable. We operate from September 1st to June 30th.",
-  },
-];
+export const metadata = elChorroMetadata;
 
 // Descripción de la excursión
 const EXCURSION_INTRO = `Conquer Andalusia's most complete Via Ferrata right next to the famous Caminito del Rey. This spectacular vertical route near Málaga features a thrilling 30-meter zip line and a 12-meter rappel, offering an unforgettable challenge in an internationally renowned climbing area.`;
@@ -138,6 +122,32 @@ export default async function Page() {
 
   return (
     <div className="pt-20">
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdProduct) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLdTourExperience),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLdLocalBusiness),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
+      />
+
       <Hero excursion={excursionHero} />
       <div className="mx-4">
         <CheckAvailabilityButton />
@@ -345,7 +355,7 @@ export default async function Page() {
         </div>
       </div>
       <TrustindexWidget /> <PrivateTourCTA />
-      <Faqs faqs={faqs} />
+      <Faqs faqs={elChorroFaqs} />
     </div>
   );
 }

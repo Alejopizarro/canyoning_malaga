@@ -1,8 +1,7 @@
 import Bokun from "@/components/bokun";
 import Hero from "@/components/hero";
-import ReviewsCarousel from "@/components/ui/reviews-carousel";
 import ExcursionDescription from "@/components/excursion-description";
-import Faqs, { Faq } from "../../activities/components/faqs";
+import Faqs from "../../activities/components/faqs";
 import { getExcursionByPath } from "@/lib/activities";
 import { notFound } from "next/navigation";
 import {
@@ -15,29 +14,17 @@ import PrivateTourCTA from "@/components/private-tour";
 import CheckAvailabilityButton from "../../../../components/ui/check-availability-button";
 import TrustindexWidget from "@/components/trustindex-widget";
 import { ActivityBookingForm } from "@/components/activity-booking-form";
+import {
+  rioVerdeMetadata,
+  rioVerdeFaqs,
+  jsonLdProduct,
+  jsonLdTourExperience,
+  jsonLdLocalBusiness,
+  jsonLdFaq,
+  jsonLdBreadcrumb,
+} from "./metadata";
 
-const faqs: Faq[] = [
-  {
-    question: "Do I need previous canyoning experience?",
-    answer:
-      "No. The popular Río Verde route (Level 2) is suitable for beginners and families. Our certified guides will teach you all the necessary technical skills.",
-  },
-  {
-    question: "Is basic swimming knowledge required?",
-    answer:
-      "Yes, basic swimming skills are necessary, as the canyon involves several natural pools where floating or swimming is required. In any case, wetsuits help you to float. We can also provide life jackets free of charge for those who are less confident.",
-  },
-  {
-    question: "What's the difference with the Río Verde X-Pro?",
-    answer:
-      "The X-Pro version is a more explosive 7-hour integral canyon that requires a higher physical level, recommended for experienced athletes and groups (+15 years).",
-  },
-  {
-    question: "What happens if I am late?",
-    answer:
-      "There is a 15-minute courtesy waiting time after the meeting time. If participants do not arrive within this limit, they forfeit their rights to the service, as delays incur additional costs.",
-  },
-];
+export const metadata = rioVerdeMetadata;
 
 // Descripción de la excursión con negritas
 const EXCURSION_INTRO = (
@@ -138,6 +125,28 @@ export default async function Page() {
 
   return (
     <div className="pt-20 py-8">
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdProduct) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdTourExperience) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdLocalBusiness) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdFaq) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdBreadcrumb) }}
+      />
+
       <Hero excursion={excursionHero} />
       <div className="mx-4">
         <CheckAvailabilityButton />
@@ -375,7 +384,7 @@ export default async function Page() {
       </div>
       <TrustindexWidget />
       <PrivateTourCTA />
-      <Faqs faqs={faqs} />
+      <Faqs faqs={rioVerdeFaqs} />
     </div>
   );
 }
