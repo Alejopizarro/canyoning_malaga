@@ -5,7 +5,6 @@ import Navbar from "@/components/nav-bar";
 import Footer from "@/components/footer";
 import WhatsAppFloat from "@/components/whatsapp-float";
 import { CookieProvider } from "@/context/cookie-context";
-import GoogleAnalytics from "@/lib/analytics";
 import GoogleTagManager, { GoogleTagManagerNoScript } from "@/lib/gtm";
 import CookieBanner from "@/components/cookie-banner";
 import CookieConsentModal from "@/components/ui/cookie-consent-modal";
@@ -31,7 +30,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${raleway.variable} font-sans antialiased`}>
         <CookieProvider>
-          <GoogleAnalytics />
           <GoogleTagManager />
           <GoogleTagManagerNoScript />
           <Navbar />
