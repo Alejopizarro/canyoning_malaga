@@ -900,19 +900,19 @@ export default function BestActivitiesMarbellaBlogPost() {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
-                href="/canyoning"
+                href="/activities?category=canyoning"
                 className="bg-white text-green-700 font-semibold px-6 py-3 rounded-lg hover:bg-green-50 transition-colors"
               >
                 View Canyoning
               </Link>
               <Link
-                href="/via-ferrata"
+                href="/activities?category=via-ferrata"
                 className="bg-green-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-green-400 transition-colors"
               >
                 View Via Ferratas
               </Link>
               <Link
-                href="/hiking"
+                href="/activities?category=hiking"
                 className="bg-green-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-green-400 transition-colors"
               >
                 View Hiking

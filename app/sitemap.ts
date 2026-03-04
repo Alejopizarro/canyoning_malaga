@@ -115,7 +115,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/blog/what-is-canyoneering`,
       lastModified: new Date(),
       changeFrequency: "monthly",
-      priority: 0.5,
+      priority: 1.0,
+    },
+    {
+      url: `${baseUrl}/blog/best-activities-marbella`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 1.0,
     },
 
     // Legal pages - Low priority
