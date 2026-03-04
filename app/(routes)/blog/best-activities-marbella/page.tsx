@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "The Best Activities in Marbella & Surroundings | 2026 Guide",
   description:
-    "Discover the best activities in Marbella: canyoning, via ferrata, hiking La Concha, kayaking, white villages & more. Complete guide to outdoor adventures near Marbella, Costa del Sol.",
+    "Discover the best activities in Marbella: canyoning, via ferrata, hiking La Concha, kayaking, white villages & more. Complete guide to outdoor adventures near Marbella.",
   keywords: [
     "activities marbella",
     "things to do in marbella",
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
     description:
       "Discover the best activities in Marbella: canyoning, via ferrata, hiking, kayaking & more. Your complete guide to outdoor adventures on the Costa del Sol.",
     type: "article",
-    publishedTime: "2026-03-13T00:00:00.000Z",
-    modifiedTime: "2026-03-13T00:00:00.000Z",
+    publishedTime: "2026-03-04T00:00:00.000Z",
+    modifiedTime: "2026-03-04T00:00:00.000Z",
     authors: ["TUUR Adventure Experts"],
     images: [
       {
@@ -79,7 +79,7 @@ export default function BestActivitiesMarbellaBlogPost() {
           <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500 mb-6">
             <span>By TUUR Adventure Experts</span>
             <span>•</span>
-            <time dateTime="2026-03-13">March 13, 2026</time>
+            <time dateTime="2026-03-04">March 4, 2026</time>
             <span>•</span>
             <span>15 min read</span>
           </div>
