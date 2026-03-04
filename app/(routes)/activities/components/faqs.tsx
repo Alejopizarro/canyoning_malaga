@@ -18,7 +18,7 @@ const Faqs = (props: FaqsProps) => {
   const { faqs } = props;
 
   return (
-    <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row gap-6 items-start md:justify-between px-4 py-4 sm:py-12">
+    <div className="max-w-[1440px] mx-auto flex flex-col md:flex-row gap-6 items-start md:justify-between px-4 sm:px-16 py-4 sm:py-8">
       <div className="flex flex-col mb-6">
         <h2 className="text-4xl sm:text-6xl font-semibold">FAQs</h2>
         <p className="text-gray-600 mt-4 max-w-2xl">

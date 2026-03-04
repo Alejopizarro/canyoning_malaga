@@ -28,6 +28,16 @@ interface BlogPost {
 
 const blogPosts: BlogPost[] = [
   {
+    title: "The Best Activities in Marbella & Surroundings | 2026 Guide",
+    slug: "/blog/best-activities-marbella",
+    excerpt:
+      "Discover the best activities in Marbella: canyoning, via ferrata, hiking, kayaking & more. Your complete guide to outdoor adventures on the Costa del Sol.",
+    image: "/Marbella-Drone.png",
+    category: "Guides",
+    date: "March 4, 2026",
+    readTime: "15 min read",
+  },
+  {
     title: "What is Canyoning, Canyoneering or Kloofing?",
     slug: "/blog/what-is-canyoneering",
     excerpt:
@@ -48,17 +58,6 @@ const blogPosts: BlogPost[] = [
     readTime: "6 min read",
     isPlaceholder: true,
   },
-  {
-    title: "Top 5 Via Ferratas in Andalusia You Must Try",
-    slug: "/blog/best-via-ferratas-andalusia",
-    excerpt:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
-    image: "",
-    category: "Via Ferrata",
-    date: "Coming Soon",
-    readTime: "5 min read",
-    isPlaceholder: true,
-  },
 ];
 
 const BlogCard = ({ post }: { post: BlogPost }) => (
@@ -75,7 +74,7 @@ const BlogCard = ({ post }: { post: BlogPost }) => (
           src={post.image}
           alt={post.title}
           fill
-          className="object-cover group-hover:scale-105 transition-transform duration-500"
+          className="object-cover"
         />
       ) : (
         <div className="w-full h-full bg-gray-300 flex items-center justify-center">

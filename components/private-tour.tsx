@@ -2,7 +2,7 @@ import WhatsappIcon from "@/public/whatsapp";
 
 const PrivateTourCTA = () => {
   return (
-    <section className="py-12 px-6 max-w-[1440px] mx-auto">
+    <section className="py-12 px-6 max-w-[1440px] mx-auto px-4 sm:px-16 py-4 sm:py-8">
       <h2 className="text-3xl font-bold mb-3 leading-tight">
         Want a Private Tour just for you?
       </h2>
