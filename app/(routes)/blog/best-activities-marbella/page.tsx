@@ -5,7 +5,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "The Best Activities in Marbella & Surroundings | 2026 Guide",
   description:
-    "Discover the best activities in Marbella: canyoning, via ferrata, hiking La Concha, kayaking, white villages & more. Complete guide to outdoor adventures near Marbella.",
+    "Discover the best activities in Marbella: canyoning, via ferrata, hiking La Concha, kayaking & more. Complete guide to outdoor adventures near Marbella.",
   keywords: [
     "activities marbella",
     "things to do in marbella",

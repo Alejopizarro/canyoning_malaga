@@ -22,18 +22,19 @@ export const zarzalonesMetadata: Metadata = {
     "rio grande canyoning",
   ],
   alternates: {
-    canonical: "https://www.canyoningmalaga.com/canyoning/zarzalones",
+    canonical: "https://www.tuuradventure.com/canyoning/zarzalones",
   },
   openGraph: {
-    title: "Zarzalones Canyoning | 21m Waterfall Rappel Near Marbella - From 69€",
+    title:
+      "Zarzalones Canyoning | 21m Waterfall Rappel Near Marbella - From 69€",
     description:
       "Conquer the spectacular 21m waterfall rappel in Sierra de las Nieves. Intermediate canyoning with crystalline waters. All year round.",
-    url: "https://www.canyoningmalaga.com/canyoning/zarzalones",
+    url: "https://www.tuuradventure.com/canyoning/zarzalones",
     siteName: "TUUR Canyoning Malaga",
     type: "website",
     images: [
       {
-        url: "https://www.canyoningmalaga.com/zarzalones-1.webp",
+        url: "https://www.tuuradventure.com/zarzalones-1.webp",
         width: 1200,
         height: 630,
         alt: "Zarzalones Canyon - 21m Waterfall Canyoning Near Marbella",
@@ -46,7 +47,7 @@ export const zarzalonesMetadata: Metadata = {
     title: "Zarzalones Canyoning | 21m Waterfall Rappel - From 69€",
     description:
       "Conquer the 21m waterfall at Zarzalones, Sierra de las Nieves. Intermediate canyoning, all year round.",
-    images: ["https://www.canyoningmalaga.com/zarzalones-1.webp"],
+    images: ["https://www.tuuradventure.com/zarzalones-1.webp"],
   },
   robots: {
     index: true,
@@ -82,14 +83,14 @@ export const jsonLdProduct = {
   name: "Zarzalones Canyoning Experience",
   description:
     "Experience one of the best ravines in Málaga with a thrilling 21-meter rappel in Sierra de las Nieves Natural Park. Intermediate canyoning with crystalline waters at the source of the Río Grande.",
-  image: "https://www.canyoningmalaga.com/zarzalones-1.webp",
+  image: "https://www.tuuradventure.com/zarzalones-1.webp",
   brand: {
     "@type": "Organization",
     name: "TUUR Adventure Experts",
   },
   offers: {
     "@type": "Offer",
-    url: "https://www.canyoningmalaga.com/canyoning/zarzalones",
+    url: "https://www.tuuradventure.com/canyoning/zarzalones",
     priceCurrency: "EUR",
     price: "69",
     priceValidUntil: "2026-12-31",
@@ -114,7 +115,7 @@ export const jsonLdTourExperience = {
   provider: {
     "@type": "TouristInformationCenter",
     name: "TUUR Adventure Experts",
-    url: "https://www.canyoningmalaga.com",
+    url: "https://www.tuuradventure.com",
     telephone: "+34699199158",
     address: {
       "@type": "PostalAddress",
@@ -161,8 +162,8 @@ export const jsonLdLocalBusiness = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "TUUR Canyoning Malaga",
-  image: "https://www.canyoningmalaga.com/logo-tuur.webp",
-  url: "https://www.canyoningmalaga.com",
+  image: "https://www.tuuradventure.com/logo-tuur.webp",
+  url: "https://www.tuuradventure.com",
   telephone: "+34699199158",
   email: "tuurcanyoning@gmail.com",
   address: {
@@ -202,19 +203,19 @@ export const jsonLdBreadcrumb = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://www.canyoningmalaga.com",
+      item: "https://www.tuuradventure.com",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Canyoning",
-      item: "https://www.canyoningmalaga.com/canyoning",
+      item: "https://www.tuuradventure.com/canyoning",
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "Zarzalones",
-      item: "https://www.canyoningmalaga.com/canyoning/zarzalones",
+      item: "https://www.tuuradventure.com/canyoning/zarzalones",
     },
   ],
 };

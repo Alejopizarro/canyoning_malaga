@@ -22,18 +22,18 @@ export const kayakPuertoBanusMetadata: Metadata = {
     "things to do marbella",
   ],
   alternates: {
-    canonical: "https://www.canyoningmalaga.com/activities/kayak-puerto-banus",
+    canonical: "https://www.tuuradventure.com/activities/kayak-puerto-banus",
   },
   openGraph: {
     title: "Kayak Puerto Banús Marbella | Sunrise Tour & Marina - From 40€",
     description:
       "Guided kayak tour from Puerto Banús. Sunrise & morning tours along the luxury marina and Marbella beaches. Family-friendly from age 2. All year.",
-    url: "https://www.canyoningmalaga.com/activities/kayak-puerto-banus",
+    url: "https://www.tuuradventure.com/activities/kayak-puerto-banus",
     siteName: "TUUR Canyoning Malaga",
     type: "website",
     images: [
       {
-        url: "https://www.canyoningmalaga.com/kayak-banus-1.webp",
+        url: "https://www.tuuradventure.com/kayak-banus-1.webp",
         width: 1200,
         height: 630,
         alt: "Kayak Puerto Banús - Sunrise Tour along Marbella's Luxury Marina",
@@ -46,7 +46,7 @@ export const kayakPuertoBanusMetadata: Metadata = {
     title: "Kayak Puerto Banús Marbella | Sunrise Tour & Marina - From 40€",
     description:
       "Guided kayak tour from Puerto Banús. Sunrise & morning tours along the luxury marina. Family-friendly from age 2. All year.",
-    images: ["https://www.canyoningmalaga.com/kayak-banus-1.webp"],
+    images: ["https://www.tuuradventure.com/kayak-banus-1.webp"],
   },
   robots: {
     index: true,
@@ -86,14 +86,14 @@ export const jsonLdProduct = {
   name: "Kayak Puerto Banús Sunrise Tour",
   description:
     "Guided kayak tour from Puerto Banús, Marbella. Paddle along the luxury marina, Rodeito and Duque beaches at sunrise or morning. Family-friendly from age 2, suitable for all levels. 2-hour experience with professional guide and photos included.",
-  image: "https://www.canyoningmalaga.com/kayak-banus-1.webp",
+  image: "https://www.tuuradventure.com/kayak-banus-1.webp",
   brand: {
     "@type": "Organization",
     name: "TUUR Adventure Experts",
   },
   offers: {
     "@type": "Offer",
-    url: "https://www.canyoningmalaga.com/activities/kayak-puerto-banus",
+    url: "https://www.tuuradventure.com/activities/kayak-puerto-banus",
     priceCurrency: "EUR",
     price: "40",
     priceValidUntil: "2026-12-31",
@@ -125,7 +125,7 @@ export const jsonLdTourExperience = {
   provider: {
     "@type": "TouristInformationCenter",
     name: "TUUR Adventure Experts",
-    url: "https://www.canyoningmalaga.com",
+    url: "https://www.tuuradventure.com",
     telephone: "+34699199158",
     address: {
       "@type": "PostalAddress",
@@ -172,8 +172,8 @@ export const jsonLdLocalBusiness = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "TUUR Canyoning Malaga",
-  image: "https://www.canyoningmalaga.com/logo-tuur.webp",
-  url: "https://www.canyoningmalaga.com",
+  image: "https://www.tuuradventure.com/logo-tuur.webp",
+  url: "https://www.tuuradventure.com",
   telephone: "+34699199158",
   email: "tuurcanyoning@gmail.com",
   address: {
@@ -186,7 +186,7 @@ export const jsonLdLocalBusiness = {
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 36.4810,
+    latitude: 36.481,
     longitude: -4.9689,
   },
   aggregateRating: {
@@ -218,19 +218,19 @@ export const jsonLdBreadcrumb = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://www.canyoningmalaga.com",
+      item: "https://www.tuuradventure.com",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Activities",
-      item: "https://www.canyoningmalaga.com/activities",
+      item: "https://www.tuuradventure.com/activities",
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "Kayak Puerto Banús",
-      item: "https://www.canyoningmalaga.com/activities/kayak-puerto-banus",
+      item: "https://www.tuuradventure.com/activities/kayak-puerto-banus",
     },
   ],
 };

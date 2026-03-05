@@ -88,7 +88,7 @@ export default function Page() {
 
             {/* Email Card */}
             <a
-              href="mailto:info@canyoningmalaga.com"
+              href="mailto:tuurcanyoning@gmail.com"
               className="bg-gray-50 rounded-xl p-6 text-center hover:shadow-lg transition-shadow group"
             >
               <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-200 transition-colors">
@@ -108,7 +108,7 @@ export default function Page() {
               </div>
               <h3 className="font-bold text-gray-900 mb-2">Email</h3>
               <p className="text-purple-600 font-medium text-sm">
-                info@canyoningmalaga.com
+                tuurcanyoning@gmail.com
               </p>
               <p className="text-gray-500 text-sm mt-1">Write us anytime</p>
             </a>

@@ -22,18 +22,18 @@ export const laConchaMetadata: Metadata = {
     "hiking near marbella",
   ],
   alternates: {
-    canonical: "https://www.canyoningmalaga.com/hiking/la-concha",
+    canonical: "https://www.tuuradventure.com/hiking/la-concha",
   },
   openGraph: {
     title: "Climb La Concha Marbella | Iconic Peak Hiking - From 80€",
     description:
       "Conquer Marbella's most iconic peak at 1,215m with 360º views of Gibraltar & Africa. Guided hiking with transfer included. Book now!",
-    url: "https://www.canyoningmalaga.com/hiking/la-concha",
+    url: "https://www.tuuradventure.com/hiking/la-concha",
     siteName: "TUUR Canyoning Malaga",
     type: "website",
     images: [
       {
-        url: "https://www.canyoningmalaga.com/la-concha-1.webp",
+        url: "https://www.tuuradventure.com/la-concha-1.webp",
         width: 1200,
         height: 630,
         alt: "Hiking La Concha - The Most Iconic Peak in Marbella",
@@ -46,7 +46,7 @@ export const laConchaMetadata: Metadata = {
     title: "Climb La Concha Marbella | Iconic Peak Hiking - From 80€",
     description:
       "Conquer Marbella's most iconic peak at 1,215m. 360º views of Gibraltar & Africa. Guided hiking with transfer included.",
-    images: ["https://www.canyoningmalaga.com/la-concha-1.webp"],
+    images: ["https://www.tuuradventure.com/la-concha-1.webp"],
   },
   robots: {
     index: true,
@@ -92,14 +92,14 @@ export const jsonLdProduct = {
   name: "Hiking La Concha Marbella Summit",
   description:
     "Conquer La Concha, Marbella's most iconic peak at 1,215m. Guided hiking experience with 360º panoramic views of Gibraltar and Africa. Transfer from Marbella included. 13km route through a biosphere reserve.",
-  image: "https://www.canyoningmalaga.com/la-concha-1.webp",
+  image: "https://www.tuuradventure.com/la-concha-1.webp",
   brand: {
     "@type": "Organization",
     name: "TUUR Adventure Experts",
   },
   offers: {
     "@type": "Offer",
-    url: "https://www.canyoningmalaga.com/hiking/la-concha",
+    url: "https://www.tuuradventure.com/hiking/la-concha",
     priceCurrency: "EUR",
     price: "80",
     priceValidUntil: "2026-12-31",
@@ -131,7 +131,7 @@ export const jsonLdTourExperience = {
   provider: {
     "@type": "TouristInformationCenter",
     name: "TUUR Adventure Experts",
-    url: "https://www.canyoningmalaga.com",
+    url: "https://www.tuuradventure.com",
     telephone: "+34699199158",
     address: {
       "@type": "PostalAddress",
@@ -178,8 +178,8 @@ export const jsonLdLocalBusiness = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "TUUR Canyoning Malaga",
-  image: "https://www.canyoningmalaga.com/logo-tuur.webp",
-  url: "https://www.canyoningmalaga.com",
+  image: "https://www.tuuradventure.com/logo-tuur.webp",
+  url: "https://www.tuuradventure.com",
   telephone: "+34699199158",
   email: "tuurcanyoning@gmail.com",
   address: {
@@ -224,19 +224,19 @@ export const jsonLdBreadcrumb = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://www.canyoningmalaga.com",
+      item: "https://www.tuuradventure.com",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Hiking",
-      item: "https://www.canyoningmalaga.com/hiking",
+      item: "https://www.tuuradventure.com/hiking",
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "La Concha",
-      item: "https://www.canyoningmalaga.com/hiking/la-concha",
+      item: "https://www.tuuradventure.com/hiking/la-concha",
     },
   ],
 };

@@ -4,8 +4,7 @@ import { Faq } from "../../activities/components/faqs";
 // ─── SEO Metadata ───────────────────────────────────────────────────────────
 
 export const guadalminaMetadata: Metadata = {
-  title:
-    "Guadalmina Canyoning Marbella | Best Beginner Canyon - From 45€",
+  title: "Guadalmina Canyoning Marbella | Best Beginner Canyon - From 45€",
   description:
     "Experience the best canyoning near Marbella in Guadalmina Canyon, Benahavís. Beginner & family-friendly from 6 y.o. Jumps, rappelling & slides. Every day, all year round. From 45€. Book now!",
   keywords: [
@@ -22,18 +21,18 @@ export const guadalminaMetadata: Metadata = {
     "the narrowest canyon",
   ],
   alternates: {
-    canonical: "https://www.canyoningmalaga.com/canyoning/guadalmina",
+    canonical: "https://www.tuuradventure.com/canyoning/guadalmina",
   },
   openGraph: {
     title: "Guadalmina Canyoning Marbella | From 45€ - Every Day!",
     description:
       "The best canyoning experience near Marbella. Beginner & family-friendly canyon in Benahavís with jumps, rappelling & slides. All year round.",
-    url: "https://www.canyoningmalaga.com/canyoning/guadalmina",
+    url: "https://www.tuuradventure.com/canyoning/guadalmina",
     siteName: "TUUR Canyoning Malaga",
     type: "website",
     images: [
       {
-        url: "https://www.canyoningmalaga.com/guadalmina-1.webp",
+        url: "https://www.tuuradventure.com/guadalmina-1.webp",
         width: 1200,
         height: 630,
         alt: "Guadalmina Canyon - The Best Canyoning Experience Near Marbella",
@@ -46,7 +45,7 @@ export const guadalminaMetadata: Metadata = {
     title: "Guadalmina Canyoning Marbella | From 45€ - Every Day!",
     description:
       "The best canyoning near Marbella. Beginner & family-friendly. Jumps, rappelling & slides. All year round.",
-    images: ["https://www.canyoningmalaga.com/guadalmina-1.webp"],
+    images: ["https://www.tuuradventure.com/guadalmina-1.webp"],
   },
   robots: {
     index: true,
@@ -87,14 +86,14 @@ export const jsonLdProduct = {
   name: "Guadalmina Canyoning Experience",
   description:
     "The best canyoning experience near Marbella in the Guadalmina Canyon. Beginner-friendly half-day activity perfect for families, friends, and groups. Includes jumps, rappelling, and natural slides.",
-  image: "https://www.canyoningmalaga.com/guadalmina-1.webp",
+  image: "https://www.tuuradventure.com/guadalmina-1.webp",
   brand: {
     "@type": "Organization",
     name: "TUUR Adventure Experts",
   },
   offers: {
     "@type": "Offer",
-    url: "https://www.canyoningmalaga.com/canyoning/guadalmina",
+    url: "https://www.tuuradventure.com/canyoning/guadalmina",
     priceCurrency: "EUR",
     price: "45",
     priceValidUntil: "2026-12-31",
@@ -126,7 +125,7 @@ export const jsonLdTourExperience = {
   provider: {
     "@type": "TouristInformationCenter",
     name: "TUUR Adventure Experts",
-    url: "https://www.canyoningmalaga.com",
+    url: "https://www.tuuradventure.com",
     telephone: "+34699199158",
     address: {
       "@type": "PostalAddress",
@@ -173,8 +172,8 @@ export const jsonLdLocalBusiness = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "TUUR Canyoning Malaga",
-  image: "https://www.canyoningmalaga.com/logo-tuur.webp",
-  url: "https://www.canyoningmalaga.com",
+  image: "https://www.tuuradventure.com/logo-tuur.webp",
+  url: "https://www.tuuradventure.com",
   telephone: "+34699199158",
   email: "tuurcanyoning@gmail.com",
   address: {
@@ -219,19 +218,19 @@ export const jsonLdBreadcrumb = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://www.canyoningmalaga.com",
+      item: "https://www.tuuradventure.com",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Canyoning",
-      item: "https://www.canyoningmalaga.com/canyoning",
+      item: "https://www.tuuradventure.com/canyoning",
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "Guadalmina",
-      item: "https://www.canyoningmalaga.com/canyoning/guadalmina",
+      item: "https://www.tuuradventure.com/canyoning/guadalmina",
     },
   ],
 };

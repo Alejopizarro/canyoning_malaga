@@ -4,8 +4,7 @@ import { Faq } from "../../activities/components/faqs";
 // ─── SEO Metadata ───────────────────────────────────────────────────────────
 
 export const elChorroMetadata: Metadata = {
-  title:
-    "Via Ferrata El Chorro | Next to Caminito del Rey - From 69€",
+  title: "Via Ferrata El Chorro | Next to Caminito del Rey - From 69€",
   description:
     "Conquer Andalusia's most complete via ferrata next to Caminito del Rey. Advanced route with 30m zip line, rappel & Tibetan bridges. 4.5h, from age 14. Sept-June. From 69€. Book now!",
   keywords: [
@@ -22,18 +21,18 @@ export const elChorroMetadata: Metadata = {
     "via ferrata rappel",
   ],
   alternates: {
-    canonical: "https://www.canyoningmalaga.com/via-ferrata/el-chorro",
+    canonical: "https://www.tuuradventure.com/via-ferrata/el-chorro",
   },
   openGraph: {
     title: "Via Ferrata El Chorro | Next to Caminito del Rey - From 69€",
     description:
       "Andalusia's most complete via ferrata next to Caminito del Rey. Zip line, rappel & Tibetan bridges. Advanced route, Sept-June.",
-    url: "https://www.canyoningmalaga.com/via-ferrata/el-chorro",
+    url: "https://www.tuuradventure.com/via-ferrata/el-chorro",
     siteName: "TUUR Canyoning Malaga",
     type: "website",
     images: [
       {
-        url: "https://www.canyoningmalaga.com/el-chorro-1.webp",
+        url: "https://www.tuuradventure.com/el-chorro-1.webp",
         width: 1200,
         height: 630,
         alt: "Via Ferrata El Chorro - The Most Complete Route Next to Caminito del Rey",
@@ -46,7 +45,7 @@ export const elChorroMetadata: Metadata = {
     title: "Via Ferrata El Chorro | Next to Caminito del Rey - From 69€",
     description:
       "Andalusia's most complete via ferrata next to Caminito del Rey. Zip line, rappel & Tibetan bridges. Advanced route, Sept-June.",
-    images: ["https://www.canyoningmalaga.com/el-chorro-1.webp"],
+    images: ["https://www.tuuradventure.com/el-chorro-1.webp"],
   },
   robots: {
     index: true,
@@ -91,14 +90,14 @@ export const jsonLdProduct = {
   name: "Via Ferrata El Chorro Experience",
   description:
     "Conquer Andalusia's most complete via ferrata next to Caminito del Rey. Advanced route featuring a 30m zip line, 12m rappel, monkey and Tibetan bridges. 4.5 hours of vertical adventure in El Chorro, Málaga.",
-  image: "https://www.canyoningmalaga.com/el-chorro-1.webp",
+  image: "https://www.tuuradventure.com/el-chorro-1.webp",
   brand: {
     "@type": "Organization",
     name: "TUUR Adventure Experts",
   },
   offers: {
     "@type": "Offer",
-    url: "https://www.canyoningmalaga.com/via-ferrata/el-chorro",
+    url: "https://www.tuuradventure.com/via-ferrata/el-chorro",
     priceCurrency: "EUR",
     price: "69",
     priceValidUntil: "2026-12-31",
@@ -130,7 +129,7 @@ export const jsonLdTourExperience = {
   provider: {
     "@type": "TouristInformationCenter",
     name: "TUUR Adventure Experts",
-    url: "https://www.canyoningmalaga.com",
+    url: "https://www.tuuradventure.com",
     telephone: "+34699199158",
     address: {
       "@type": "PostalAddress",
@@ -172,8 +171,8 @@ export const jsonLdLocalBusiness = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "TUUR Canyoning Malaga",
-  image: "https://www.canyoningmalaga.com/logo-tuur.webp",
-  url: "https://www.canyoningmalaga.com",
+  image: "https://www.tuuradventure.com/logo-tuur.webp",
+  url: "https://www.tuuradventure.com",
   telephone: "+34699199158",
   email: "tuurcanyoning@gmail.com",
   address: {
@@ -187,7 +186,7 @@ export const jsonLdLocalBusiness = {
   geo: {
     "@type": "GeoCoordinates",
     latitude: 36.9167,
-    longitude: -4.7500,
+    longitude: -4.75,
   },
   aggregateRating: {
     "@type": "AggregateRating",
@@ -218,19 +217,19 @@ export const jsonLdBreadcrumb = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://www.canyoningmalaga.com",
+      item: "https://www.tuuradventure.com",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Via Ferrata",
-      item: "https://www.canyoningmalaga.com/via-ferrata",
+      item: "https://www.tuuradventure.com/via-ferrata",
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "El Chorro",
-      item: "https://www.canyoningmalaga.com/via-ferrata/el-chorro",
+      item: "https://www.tuuradventure.com/via-ferrata/el-chorro",
     },
   ],
 };

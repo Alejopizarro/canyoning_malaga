@@ -4,8 +4,7 @@ import { Faq } from "../../activities/components/faqs";
 // ─── SEO Metadata ───────────────────────────────────────────────────────────
 
 export const rioVerdeMetadata: Metadata = {
-  title:
-    "Río Verde Canyoning Granada | Turquoise Water Jumps - From 75€",
+  title: "Río Verde Canyoning Granada | Turquoise Water Jumps - From 75€",
   description:
     "Experience Río Verde canyoning near Granada & Málaga. Turquoise waters, jumps up to 9m, rappelling & slides in Sierra de Almijara. From 75€. March to November. Book now!",
   keywords: [
@@ -22,18 +21,19 @@ export const rioVerdeMetadata: Metadata = {
     "canyoning costa del sol",
   ],
   alternates: {
-    canonical: "https://www.canyoningmalaga.com/canyoning/rio-verde",
+    canonical: "https://www.tuuradventure.com/canyoning/rio-verde",
   },
   openGraph: {
-    title: "Río Verde Canyoning | Turquoise Water Jumps Near Granada - From 75€",
+    title:
+      "Río Verde Canyoning | Turquoise Water Jumps Near Granada - From 75€",
     description:
       "Andalusia's aquatic jewel. Turquoise waters, jumps up to 9m, rappelling & natural slides in Sierra de Almijara. Perfect for beginners and families.",
-    url: "https://www.canyoningmalaga.com/canyoning/rio-verde",
+    url: "https://www.tuuradventure.com/canyoning/rio-verde",
     siteName: "TUUR Canyoning Malaga",
     type: "website",
     images: [
       {
-        url: "https://www.canyoningmalaga.com/rio-verde-1.webp",
+        url: "https://www.tuuradventure.com/rio-verde-1.webp",
         width: 1200,
         height: 630,
         alt: "Río Verde Canyon - Turquoise Water Canyoning Near Granada",
@@ -46,7 +46,7 @@ export const rioVerdeMetadata: Metadata = {
     title: "Río Verde Canyoning | Turquoise Water Jumps - From 75€",
     description:
       "Turquoise waters, jumps up to 9m & rappelling in Sierra de Almijara. March to November. Book now!",
-    images: ["https://www.canyoningmalaga.com/rio-verde-1.webp"],
+    images: ["https://www.tuuradventure.com/rio-verde-1.webp"],
   },
   robots: {
     index: true,
@@ -87,14 +87,14 @@ export const jsonLdProduct = {
   name: "Río Verde Canyoning Experience",
   description:
     "Dive into Andalusia's aquatic jewel, the Río Verde, famed worldwide for its turquoise waters. Exhilarating river descent with jumps up to 9m, rappelling, and natural slides in Sierra de Almijara.",
-  image: "https://www.canyoningmalaga.com/rio-verde-1.webp",
+  image: "https://www.tuuradventure.com/rio-verde-1.webp",
   brand: {
     "@type": "Organization",
     name: "TUUR Adventure Experts",
   },
   offers: {
     "@type": "Offer",
-    url: "https://www.canyoningmalaga.com/canyoning/rio-verde",
+    url: "https://www.tuuradventure.com/canyoning/rio-verde",
     priceCurrency: "EUR",
     price: "75",
     priceValidUntil: "2026-12-31",
@@ -126,7 +126,7 @@ export const jsonLdTourExperience = {
   provider: {
     "@type": "TouristInformationCenter",
     name: "TUUR Adventure Experts",
-    url: "https://www.canyoningmalaga.com",
+    url: "https://www.tuuradventure.com",
     telephone: "+34699199158",
     address: {
       "@type": "PostalAddress",
@@ -173,8 +173,8 @@ export const jsonLdLocalBusiness = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "TUUR Canyoning Malaga",
-  image: "https://www.canyoningmalaga.com/logo-tuur.webp",
-  url: "https://www.canyoningmalaga.com",
+  image: "https://www.tuuradventure.com/logo-tuur.webp",
+  url: "https://www.tuuradventure.com",
   telephone: "+34699199158",
   email: "tuurcanyoning@gmail.com",
   address: {
@@ -219,19 +219,19 @@ export const jsonLdBreadcrumb = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://www.canyoningmalaga.com",
+      item: "https://www.tuuradventure.com",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Canyoning",
-      item: "https://www.canyoningmalaga.com/canyoning",
+      item: "https://www.tuuradventure.com/canyoning",
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "Río Verde",
-      item: "https://www.canyoningmalaga.com/canyoning/rio-verde",
+      item: "https://www.tuuradventure.com/canyoning/rio-verde",
     },
   ],
 };

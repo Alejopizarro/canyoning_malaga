@@ -22,18 +22,19 @@ export const buitrerasMetadata: Metadata = {
     "alcornocales natural park",
   ],
   alternates: {
-    canonical: "https://www.canyoningmalaga.com/canyoning/buitreras",
+    canonical: "https://www.tuuradventure.com/canyoning/buitreras",
   },
   openGraph: {
-    title: "Buitreras Canyoning | The Cathedral of Andalusia's Ravines - From 69€",
+    title:
+      "Buitreras Canyoning | The Cathedral of Andalusia's Ravines - From 69€",
     description:
       "Conquer the most iconic canyoning descent in Andalusia. 120m walls, German's Bridge & 9m jumps. Near Marbella & Ronda. May-Nov.",
-    url: "https://www.canyoningmalaga.com/canyoning/buitreras",
+    url: "https://www.tuuradventure.com/canyoning/buitreras",
     siteName: "TUUR Canyoning Malaga",
     type: "website",
     images: [
       {
-        url: "https://www.canyoningmalaga.com/buitreras-1.webp",
+        url: "https://www.tuuradventure.com/buitreras-1.webp",
         width: 1200,
         height: 630,
         alt: "Buitreras Canyoning - The Cathedral of Andalusia's Ravines",
@@ -43,10 +44,11 @@ export const buitrerasMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Buitreras Canyoning | The Cathedral of Andalusia's Ravines - From 69€",
+    title:
+      "Buitreras Canyoning | The Cathedral of Andalusia's Ravines - From 69€",
     description:
       "Conquer the most iconic canyoning descent in Andalusia. 120m walls, German's Bridge & 9m jumps. Near Marbella & Ronda. May-Nov.",
-    images: ["https://www.canyoningmalaga.com/buitreras-1.webp"],
+    images: ["https://www.tuuradventure.com/buitreras-1.webp"],
   },
   robots: {
     index: true,
@@ -92,14 +94,14 @@ export const jsonLdProduct = {
   name: "Buitreras Canyoning Adventure",
   description:
     "Conquer the Cathedral of Andalusia's ravines. The most iconic canyoning descent in southern Spain with 120m limestone walls, German's Bridge at 80m, optional 9m jumps, and technical rappels. 6-hour immersive adventure in the Alcornocales Natural Park.",
-  image: "https://www.canyoningmalaga.com/buitreras-1.webp",
+  image: "https://www.tuuradventure.com/buitreras-1.webp",
   brand: {
     "@type": "Organization",
     name: "TUUR Adventure Experts",
   },
   offers: {
     "@type": "Offer",
-    url: "https://www.canyoningmalaga.com/canyoning/buitreras",
+    url: "https://www.tuuradventure.com/canyoning/buitreras",
     priceCurrency: "EUR",
     price: "69",
     priceValidUntil: "2026-12-31",
@@ -131,7 +133,7 @@ export const jsonLdTourExperience = {
   provider: {
     "@type": "TouristInformationCenter",
     name: "TUUR Adventure Experts",
-    url: "https://www.canyoningmalaga.com",
+    url: "https://www.tuuradventure.com",
     telephone: "+34699199158",
     address: {
       "@type": "PostalAddress",
@@ -178,8 +180,8 @@ export const jsonLdLocalBusiness = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "TUUR Canyoning Malaga",
-  image: "https://www.canyoningmalaga.com/logo-tuur.webp",
-  url: "https://www.canyoningmalaga.com",
+  image: "https://www.tuuradventure.com/logo-tuur.webp",
+  url: "https://www.tuuradventure.com",
   telephone: "+34699199158",
   email: "tuurcanyoning@gmail.com",
   address: {
@@ -192,7 +194,7 @@ export const jsonLdLocalBusiness = {
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 36.5500,
+    latitude: 36.55,
     longitude: -5.3833,
   },
   aggregateRating: {
@@ -224,19 +226,19 @@ export const jsonLdBreadcrumb = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://www.canyoningmalaga.com",
+      item: "https://www.tuuradventure.com",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Canyoning",
-      item: "https://www.canyoningmalaga.com/canyoning",
+      item: "https://www.tuuradventure.com/canyoning",
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "Buitreras",
-      item: "https://www.canyoningmalaga.com/canyoning/buitreras",
+      item: "https://www.tuuradventure.com/canyoning/buitreras",
     },
   ],
 };

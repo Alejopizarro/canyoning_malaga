@@ -4,8 +4,7 @@ import { Faq } from "../../activities/components/faqs";
 // ─── SEO Metadata ───────────────────────────────────────────────────────────
 
 export const rondaMetadata: Metadata = {
-  title:
-    "Via Ferrata Ronda | Climb the Tajo Cliffs - From 60€",
+  title: "Via Ferrata Ronda | Climb the Tajo Cliffs - From 60€",
   description:
     "Climb the iconic Tajo de Ronda cliffs under the Puente Nuevo. Beginner & family-friendly via ferrata for all levels, from age 7. 3 hours, all year round. From 60€. Book now!",
   keywords: [
@@ -22,18 +21,18 @@ export const rondaMetadata: Metadata = {
     "via ferrata andalusia",
   ],
   alternates: {
-    canonical: "https://www.canyoningmalaga.com/via-ferrata/ronda",
+    canonical: "https://www.tuuradventure.com/via-ferrata/ronda",
   },
   openGraph: {
     title: "Via Ferrata Ronda | Climb the Iconic Tajo Cliffs - From 60€",
     description:
       "Climb the Tajo de Ronda cliffs under the Puente Nuevo. Beginner & family-friendly via ferrata for all levels. All year round.",
-    url: "https://www.canyoningmalaga.com/via-ferrata/ronda",
+    url: "https://www.tuuradventure.com/via-ferrata/ronda",
     siteName: "TUUR Canyoning Malaga",
     type: "website",
     images: [
       {
-        url: "https://www.canyoningmalaga.com/ronda-vf-1.webp",
+        url: "https://www.tuuradventure.com/ronda-vf-1.webp",
         width: 1200,
         height: 630,
         alt: "Via Ferrata Tajo de Ronda - Climbing the cliffs under the Puente Nuevo",
@@ -46,7 +45,7 @@ export const rondaMetadata: Metadata = {
     title: "Via Ferrata Ronda | Climb the Iconic Tajo Cliffs - From 60€",
     description:
       "Climb the Tajo de Ronda cliffs under the Puente Nuevo. Beginner & family-friendly via ferrata for all levels. All year round.",
-    images: ["https://www.canyoningmalaga.com/ronda-vf-1.webp"],
+    images: ["https://www.tuuradventure.com/ronda-vf-1.webp"],
   },
   robots: {
     index: true,
@@ -91,14 +90,14 @@ export const jsonLdProduct = {
   name: "Via Ferrata Tajo de Ronda Experience",
   description:
     "Climb the iconic Tajo de Ronda cliffs under the legendary Puente Nuevo. Beginner and family-friendly via ferrata with two 80m sections. Views of monuments and the gorge from a unique vertical perspective.",
-  image: "https://www.canyoningmalaga.com/ronda-vf-1.webp",
+  image: "https://www.tuuradventure.com/ronda-vf-1.webp",
   brand: {
     "@type": "Organization",
     name: "TUUR Adventure Experts",
   },
   offers: {
     "@type": "Offer",
-    url: "https://www.canyoningmalaga.com/via-ferrata/ronda",
+    url: "https://www.tuuradventure.com/via-ferrata/ronda",
     priceCurrency: "EUR",
     price: "60",
     priceValidUntil: "2026-12-31",
@@ -130,7 +129,7 @@ export const jsonLdTourExperience = {
   provider: {
     "@type": "TouristInformationCenter",
     name: "TUUR Adventure Experts",
-    url: "https://www.canyoningmalaga.com",
+    url: "https://www.tuuradventure.com",
     telephone: "+34699199158",
     address: {
       "@type": "PostalAddress",
@@ -177,8 +176,8 @@ export const jsonLdLocalBusiness = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "TUUR Canyoning Malaga",
-  image: "https://www.canyoningmalaga.com/logo-tuur.webp",
-  url: "https://www.canyoningmalaga.com",
+  image: "https://www.tuuradventure.com/logo-tuur.webp",
+  url: "https://www.tuuradventure.com",
   telephone: "+34699199158",
   email: "tuurcanyoning@gmail.com",
   address: {
@@ -223,19 +222,19 @@ export const jsonLdBreadcrumb = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://www.canyoningmalaga.com",
+      item: "https://www.tuuradventure.com",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Via Ferrata",
-      item: "https://www.canyoningmalaga.com/via-ferrata",
+      item: "https://www.tuuradventure.com/via-ferrata",
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "Ronda",
-      item: "https://www.canyoningmalaga.com/via-ferrata/ronda",
+      item: "https://www.tuuradventure.com/via-ferrata/ronda",
     },
   ],
 };

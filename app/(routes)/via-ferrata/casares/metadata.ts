@@ -4,8 +4,7 @@ import { Faq } from "../../activities/components/faqs";
 // ─── SEO Metadata ───────────────────────────────────────────────────────────
 
 export const casaresMetadata: Metadata = {
-  title:
-    "Via Ferrata Casares | Views of Gibraltar & Africa - From 45€",
+  title: "Via Ferrata Casares | Views of Gibraltar & Africa - From 45€",
   description:
     "Conquer the Via Ferrata Casares in the Genal Valley, Málaga. Moderate level with monkey bridges & panoramic views of Gibraltar and Africa. All year round. From 45€. Book now!",
   keywords: [
@@ -21,18 +20,18 @@ export const casaresMetadata: Metadata = {
     "ferrata casares monkey bridge",
   ],
   alternates: {
-    canonical: "https://www.canyoningmalaga.com/via-ferrata/casares",
+    canonical: "https://www.tuuradventure.com/via-ferrata/casares",
   },
   openGraph: {
     title: "Via Ferrata Casares | Views of Gibraltar & Africa - From 45€",
     description:
       "Conquer the cliffs of Casares with breathtaking views of Gibraltar and Africa. Moderate via ferrata with monkey bridges. All year round.",
-    url: "https://www.canyoningmalaga.com/via-ferrata/casares",
+    url: "https://www.tuuradventure.com/via-ferrata/casares",
     siteName: "TUUR Canyoning Malaga",
     type: "website",
     images: [
       {
-        url: "https://www.canyoningmalaga.com/casares-1.webp",
+        url: "https://www.tuuradventure.com/casares-1.webp",
         width: 1200,
         height: 630,
         alt: "Via Ferrata Casares - Climbing with views of Gibraltar and Africa",
@@ -45,7 +44,7 @@ export const casaresMetadata: Metadata = {
     title: "Via Ferrata Casares | Views of Gibraltar & Africa - From 45€",
     description:
       "Conquer the cliffs of Casares with views of Gibraltar and Africa. Moderate via ferrata with monkey bridges. All year round.",
-    images: ["https://www.canyoningmalaga.com/casares-1.webp"],
+    images: ["https://www.tuuradventure.com/casares-1.webp"],
   },
   robots: {
     index: true,
@@ -85,14 +84,14 @@ export const jsonLdProduct = {
   name: "Via Ferrata Casares Experience",
   description:
     "Conquer the Via Ferrata Casares in the Genal Valley with breathtaking views of Gibraltar and Africa. Moderate level route with monkey bridges and horizontal traverses. Perfect for adventurous beginners and families.",
-  image: "https://www.canyoningmalaga.com/casares-1.webp",
+  image: "https://www.tuuradventure.com/casares-1.webp",
   brand: {
     "@type": "Organization",
     name: "TUUR Adventure Experts",
   },
   offers: {
     "@type": "Offer",
-    url: "https://www.canyoningmalaga.com/via-ferrata/casares",
+    url: "https://www.tuuradventure.com/via-ferrata/casares",
     priceCurrency: "EUR",
     price: "45",
     priceValidUntil: "2026-12-31",
@@ -124,7 +123,7 @@ export const jsonLdTourExperience = {
   provider: {
     "@type": "TouristInformationCenter",
     name: "TUUR Adventure Experts",
-    url: "https://www.canyoningmalaga.com",
+    url: "https://www.tuuradventure.com",
     telephone: "+34699199158",
     address: {
       "@type": "PostalAddress",
@@ -171,8 +170,8 @@ export const jsonLdLocalBusiness = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "TUUR Canyoning Malaga",
-  image: "https://www.canyoningmalaga.com/logo-tuur.webp",
-  url: "https://www.canyoningmalaga.com",
+  image: "https://www.tuuradventure.com/logo-tuur.webp",
+  url: "https://www.tuuradventure.com",
   telephone: "+34699199158",
   email: "tuurcanyoning@gmail.com",
   address: {
@@ -217,19 +216,19 @@ export const jsonLdBreadcrumb = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://www.canyoningmalaga.com",
+      item: "https://www.tuuradventure.com",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Via Ferrata",
-      item: "https://www.canyoningmalaga.com/via-ferrata",
+      item: "https://www.tuuradventure.com/via-ferrata",
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "Casares",
-      item: "https://www.canyoningmalaga.com/via-ferrata/casares",
+      item: "https://www.tuuradventure.com/via-ferrata/casares",
     },
   ],
 };

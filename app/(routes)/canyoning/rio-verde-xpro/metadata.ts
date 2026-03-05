@@ -22,18 +22,18 @@ export const rioVerdeXproMetadata: Metadata = {
     "rio verde canyoning experience",
   ],
   alternates: {
-    canonical: "https://www.canyoningmalaga.com/canyoning/rio-verde-xpro",
+    canonical: "https://www.tuuradventure.com/canyoning/rio-verde-xpro",
   },
   openGraph: {
     title: "Río Verde X-Pro Integral Canyoning | 7h Full Pitch - From 79€",
     description:
       "The most explosive aquatic challenge in Andalusia. Full Integral route with 18m slide, 15m rappels & turquoise pools. Transfer included. Mar-Nov.",
-    url: "https://www.canyoningmalaga.com/canyoning/rio-verde-xpro",
+    url: "https://www.tuuradventure.com/canyoning/rio-verde-xpro",
     siteName: "TUUR Canyoning Malaga",
     type: "website",
     images: [
       {
-        url: "https://www.canyoningmalaga.com/rio-verde-xpro-1.webp",
+        url: "https://www.tuuradventure.com/rio-verde-xpro-1.webp",
         width: 1200,
         height: 630,
         alt: "Río Verde X-Pro - Full Integral Canyoning Adventure in Andalusia",
@@ -46,7 +46,7 @@ export const rioVerdeXproMetadata: Metadata = {
     title: "Río Verde X-Pro Integral Canyoning | 7h Full Pitch - From 79€",
     description:
       "The most explosive aquatic challenge in Andalusia. Full Integral route with 18m slide, 15m rappels & turquoise pools. Mar-Nov.",
-    images: ["https://www.canyoningmalaga.com/rio-verde-xpro-1.webp"],
+    images: ["https://www.tuuradventure.com/rio-verde-xpro-1.webp"],
   },
   robots: {
     index: true,
@@ -92,14 +92,14 @@ export const jsonLdProduct = {
   name: "Río Verde X-Pro Integral Canyoning",
   description:
     "The most complete and explosive canyoning adventure in Andalusia. Full Integral route covering both sections of Río Verde canyon with an 18m natural slide, 15m rappels, and turquoise pools. 7-hour advanced experience for true adventure seekers.",
-  image: "https://www.canyoningmalaga.com/rio-verde-xpro-1.webp",
+  image: "https://www.tuuradventure.com/rio-verde-xpro-1.webp",
   brand: {
     "@type": "Organization",
     name: "TUUR Adventure Experts",
   },
   offers: {
     "@type": "Offer",
-    url: "https://www.canyoningmalaga.com/canyoning/rio-verde-xpro",
+    url: "https://www.tuuradventure.com/canyoning/rio-verde-xpro",
     priceCurrency: "EUR",
     price: "79",
     priceValidUntil: "2026-12-31",
@@ -131,7 +131,7 @@ export const jsonLdTourExperience = {
   provider: {
     "@type": "TouristInformationCenter",
     name: "TUUR Adventure Experts",
-    url: "https://www.canyoningmalaga.com",
+    url: "https://www.tuuradventure.com",
     telephone: "+34699199158",
     address: {
       "@type": "PostalAddress",
@@ -178,8 +178,8 @@ export const jsonLdLocalBusiness = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "TUUR Canyoning Malaga",
-  image: "https://www.canyoningmalaga.com/logo-tuur.webp",
-  url: "https://www.canyoningmalaga.com",
+  image: "https://www.tuuradventure.com/logo-tuur.webp",
+  url: "https://www.tuuradventure.com",
   telephone: "+34699199158",
   email: "tuurcanyoning@gmail.com",
   address: {
@@ -224,19 +224,19 @@ export const jsonLdBreadcrumb = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://www.canyoningmalaga.com",
+      item: "https://www.tuuradventure.com",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Canyoning",
-      item: "https://www.canyoningmalaga.com/canyoning",
+      item: "https://www.tuuradventure.com/canyoning",
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "Río Verde X-Pro",
-      item: "https://www.canyoningmalaga.com/canyoning/rio-verde-xpro",
+      item: "https://www.tuuradventure.com/canyoning/rio-verde-xpro",
     },
   ],
 };
