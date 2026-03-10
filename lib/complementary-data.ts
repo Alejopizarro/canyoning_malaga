@@ -18,7 +18,7 @@ type ComplementaryData = Omit<
 export const complementaryData: Record<string, ComplementaryData> = {
   // ==================== CANYONING ====================
   guadalmina: {
-    subtitle: "The Best Canyoning Experience Near Marbella",
+    subtitle: "Marbella: Guadalmina River Guided Canyoning Adventure",
     description:
       "Perfect canyoning descent for beginners. Close to Marbella, ideal for families. Available all year round. Fun guaranteed!",
     videoYoutube: "https://www.youtube.com/watch?v=S3E0cKEYCSQ",
@@ -186,8 +186,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
   },
 
   "rio-verde-xpro": {
-    subtitle:
-      "Advanced Canyoning in Rio Verde - Higher Jumps and Technical Rappelling",
+    subtitle: "Private Full Pitch Rio Verde Canyoning with Transfer Included",
     description:
       "Advanced version of Rio Verde. Pure adrenaline with higher jumps and technical rappelling. For experienced adventurers.",
     videoYoutube: "",
@@ -510,7 +509,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
   // ==================== VIA FERRATA ====================
   ronda: {
     subtitle:
-      "Via Ferrata in Ronda (Malaga) - This is the ideal via ferrata for families",
+      "Via Ferrata Ronda: Climb the Iconic Tajo Cliffs near Marbella & Málaga",
     description:
       "Family-friendly via ferrata at Tajo de Ronda. Spectacular views of the New Bridge. Ideal for beginners from 7 years old.",
     videoYoutube: "https://www.youtube.com/watch?v=ofV6ZisZZ00",
@@ -613,7 +612,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
 
   "el-chorro": {
     subtitle:
-      "Via Ferrata el Chorro (Malaga): One of the most complete and aerial Vias Ferratas in Southern Andalusia",
+      "Via Ferrata El Chorro: An Exciting Route Next to Caminito del Rey",
     description:
       "The best via ferrata in Andalusia. Next to Caminito del Rey. 35-meter zipline and +180m elevation gain.",
     videoYoutube: "https://www.youtube.com/watch?v=ofV6ZisZZ00",
@@ -680,7 +679,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
 
   // ==================== HIKING ====================
   "la-concha": {
-    subtitle: "Hiking La Concha - Ascent to Marbella's most iconic peak",
+    subtitle: "Hiking La Concha: Ascent to Marbella's most iconic peak",
     description:
       "Ascent to Marbella's most iconic peak (1,215m). Panoramic views of Costa del Sol, Gibraltar and Africa.",
     days: "All year!",

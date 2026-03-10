@@ -23,6 +23,7 @@ import {
   jsonLdFaq,
   jsonLdBreadcrumb,
 } from "./metadata";
+import Script from "next/script";
 
 export const metadata = rioVerdeMetadata;
 
@@ -132,11 +133,15 @@ export default async function Page() {
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdTourExperience) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLdTourExperience),
+        }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdLocalBusiness) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLdLocalBusiness),
+        }}
       />
       <script
         type="application/ld+json"
@@ -371,15 +376,16 @@ export default async function Page() {
             </AccordionItem>
           </Accordion>
         </div>
-        <div
-          id="bokun-section"
-          className="flex flex-col md:items-center md:text-center"
-        >
-          <h2 className="text-2xl font-semibold mb-4">Book Your Adventure</h2>
-          <p className="text-gray-600 mb-4">
-            Secure your spot on this thrilling canyoning adventure in Río Verde.
-          </p>
-          <ActivityBookingForm activityName={rioVerde.title} />
+        <div id="bokun-section">
+          <Script
+            src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=b5f48f0c-7b7c-486c-830a-f76ae50e1d7b"
+            strategy="lazyOnload"
+          />
+          <div
+            className="bokunWidget"
+            data-src="https://widgets.bokun.io/online-sales/b5f48f0c-7b7c-486c-830a-f76ae50e1d7b/experience-calendar/1168518"
+          ></div>
+          <noscript>Please enable javascript in your browser to book</noscript>
         </div>
       </div>
       <TrustindexWidget />
