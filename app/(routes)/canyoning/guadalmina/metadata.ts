@@ -4,9 +4,9 @@ import { Faq } from "../../activities/components/faqs";
 // ─── SEO Metadata ───────────────────────────────────────────────────────────
 
 export const guadalminaMetadata: Metadata = {
-  title: "Guadalmina Canyoning Marbella | Best Beginner Canyon - From 45€",
+  title: "Guadalmina Canyoning Marbella | Benahavís Canyon - From 45€",
   description:
-    "Experience the best canyoning near Marbella in Guadalmina Canyon, Benahavís. Beginner & family-friendly from 6 y.o. Jumps, rappelling & slides. Every day, all year round. From 45€. Book now!",
+    "Experience the best canyoning near Marbella in Guadalmina Canyon, Benahavís. Beginner & family-friendly from 6 y.o. Jumps, rappelling & slides. From 45€. Book now!",
   keywords: [
     "canyoning marbella",
     "guadalmina canyon",
