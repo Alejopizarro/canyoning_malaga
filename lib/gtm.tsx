@@ -73,7 +73,9 @@ export function GTMPageViewTracker() {
     if (!hasAnalyticsConsent()) return;
     if (typeof window === "undefined" || !window.dataLayer) return;
 
-    const url = pathname + (searchParams?.toString() ? `?${searchParams.toString()}` : "");
+    const url =
+      pathname +
+      (searchParams?.toString() ? `?${searchParams.toString()}` : "");
 
     window.dataLayer.push({
       event: "page_view",
@@ -110,32 +112,41 @@ export function BokunTracker() {
       if (typeof window === "undefined" || !window.dataLayer) return;
 
       const raw = event.data;
-      if (typeof raw !== "string" || !raw.includes("bokun")) return;
+      if (typeof raw !== "string") return;
 
-      // Los mensajes de Bokun tienen formato:
-      // "[iFrameSizer]widgetId:h:w:message:{json}"
+      // Buscar el bloque :message:"..."
       const messageIndex = raw.indexOf(':message:"');
       if (messageIndex === -1) return;
 
       try {
-        const jsonStr = raw.slice(messageIndex + ':message:"'.length, -1);
-        const parsed = JSON.parse(jsonStr);
+        // Extraer todo lo que hay después de :message:"
+        const afterMessage = raw.slice(messageIndex + ':message:"'.length);
 
-        // Checkout iniciado (clic en botón Checkout)
+        // Quitar la comilla final — el JSON está entre comillas escapadas
+        // El formato es :message:"{json escapado}"
+        const jsonStr = afterMessage.slice(0, -1); // quita la " final
+
+        // Desescapar las comillas
+        const unescaped = jsonStr.replace(/\\"/g, '"').replace(/\\\\/g, "\\");
+
+        const parsed = JSON.parse(unescaped);
+
+        console.log("✅ Bokun parsed:", parsed); // debug temporal
+
         if (
           parsed.messageType === "OpenModalRequest" &&
           parsed.options?.openFrom === "checkoutButton"
         ) {
-          window.dataLayer.push({ event: "begin_checkout" });
+          console.log("🛒 begin_checkout disparado"); // debug temporal
+          window.dataLayer.push({
+            event: "begin_checkout",
+            bokun_src: parsed.options?.src,
+          });
         }
-
-        // Compra completada — añadir aquí cuando sepamos el messageType exacto
-        // if (parsed.messageType === "BookingConfirmed") { ... }
-      } catch {
-        // mensaje no es JSON válido, ignorar
+      } catch (e) {
+        console.error("❌ Error parseando Bokun:", e);
       }
     };
-
     window.addEventListener("message", handleMessage);
     return () => window.removeEventListener("message", handleMessage);
   }, [hasAnalyticsConsent]);
