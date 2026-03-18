@@ -99,3 +99,46 @@ export function useGTM() {
 
   return { pushEvent };
 }
+
+// Escucha eventos del widget de Bokun vía postMessage
+export function BokunTracker() {
+  const { hasAnalyticsConsent } = useCookieConsent();
+
+  useEffect(() => {
+    const handleMessage = (event: MessageEvent) => {
+      if (!hasAnalyticsConsent()) return;
+      if (typeof window === "undefined" || !window.dataLayer) return;
+
+      const raw = event.data;
+      if (typeof raw !== "string" || !raw.includes("bokun")) return;
+
+      // Los mensajes de Bokun tienen formato:
+      // "[iFrameSizer]widgetId:h:w:message:{json}"
+      const messageIndex = raw.indexOf(':message:"');
+      if (messageIndex === -1) return;
+
+      try {
+        const jsonStr = raw.slice(messageIndex + ':message:"'.length, -1);
+        const parsed = JSON.parse(jsonStr);
+
+        // Checkout iniciado (clic en botón Checkout)
+        if (
+          parsed.messageType === "OpenModalRequest" &&
+          parsed.options?.openFrom === "checkoutButton"
+        ) {
+          window.dataLayer.push({ event: "begin_checkout" });
+        }
+
+        // Compra completada — añadir aquí cuando sepamos el messageType exacto
+        // if (parsed.messageType === "BookingConfirmed") { ... }
+      } catch {
+        // mensaje no es JSON válido, ignorar
+      }
+    };
+
+    window.addEventListener("message", handleMessage);
+    return () => window.removeEventListener("message", handleMessage);
+  }, [hasAnalyticsConsent]);
+
+  return null;
+}

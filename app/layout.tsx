@@ -8,6 +8,7 @@ import { CookieProvider } from "@/context/cookie-context";
 import GoogleTagManager, {
   GoogleTagManagerNoScript,
   GTMPageViewTracker,
+  BokunTracker,
 } from "@/lib/gtm";
 import { Suspense } from "react";
 import CookieBanner from "@/components/cookie-banner";
@@ -39,6 +40,7 @@ export default function RootLayout({
           <Suspense fallback={null}>
             <GTMPageViewTracker />
           </Suspense>
+          <BokunTracker />
           <Navbar />
           {children}
           <Footer />
