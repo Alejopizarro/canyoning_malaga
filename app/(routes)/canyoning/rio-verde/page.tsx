@@ -13,7 +13,6 @@ import {
 import PrivateTourCTA from "@/components/private-tour";
 import CheckAvailabilityButton from "../../../../components/ui/check-availability-button";
 import TrustindexWidget from "@/components/trustindex-widget";
-import { ActivityBookingForm } from "@/components/activity-booking-form";
 import {
   rioVerdeMetadata,
   rioVerdeFaqs,
