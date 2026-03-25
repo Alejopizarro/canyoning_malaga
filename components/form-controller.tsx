@@ -321,7 +321,7 @@ export function FormController() {
                     I have read and accept the{" "}
                     <Link
                       className="font-medium text-slate-950 text-decoration-line: underline"
-                      href="/quienes-somos/politica-de-privacidad"
+                      href="/privacy-policy"
                     >
                       privacy policy.
                     </Link>
