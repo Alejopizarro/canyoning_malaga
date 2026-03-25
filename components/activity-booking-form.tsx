@@ -25,13 +25,13 @@ const bookingFormSchema = z.object({
   name: z.string().min(2, {
     message: "Name must be at least 2 characters.",
   }),
+  email: z.string().email({ message: "Please enter a valid email address" }),
   phonePrefix: z.string().min(1, {
     message: "Please select a phone prefix",
   }),
   phone: z.string().min(7, {
     message: "Phone number must be at least 7 characters",
   }),
-  email: z.string().email({ message: "Please enter a valid email address" }),
   activityName: z.string(),
   participants: z.string().min(1, {
     message: "Please enter the number of participants",
@@ -60,9 +60,9 @@ export function ActivityBookingForm({
     resolver: zodResolver(bookingFormSchema),
     defaultValues: {
       name: "",
+      email: "",
       phonePrefix: "+34",
       phone: "",
-      email: "",
       activityName: activityName,
       participants: "",
       date: "",

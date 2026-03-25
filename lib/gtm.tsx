@@ -131,8 +131,6 @@ export function BokunTracker() {
 
         const parsed = JSON.parse(unescaped);
 
-        console.log("✅ Bokun parsed:", parsed); // debug temporal
-
         if (
           parsed.messageType === "OpenModalRequest" &&
           parsed.options?.openFrom === "checkoutButton"
