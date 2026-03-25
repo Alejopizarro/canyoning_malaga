@@ -202,7 +202,7 @@ export default async function Page() {
             </h4>
             <p className="text-amber-700 text-sm">
               This activity is available from{" "}
-              <strong>March 1st to November 30th</strong>. The season is
+              <strong>April 1st to October 31th</strong>. The season is
               determined by optimal water levels and safety conditions.
             </p>
           </div>

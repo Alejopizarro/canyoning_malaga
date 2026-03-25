@@ -31,6 +31,7 @@ const bookingFormSchema = z.object({
   phone: z.string().min(7, {
     message: "Phone number must be at least 7 characters",
   }),
+  email: z.string().email({ message: "Please enter a valid email address" }),
   activityName: z.string(),
   participants: z.string().min(1, {
     message: "Please enter the number of participants",
@@ -61,6 +62,7 @@ export function ActivityBookingForm({
       name: "",
       phonePrefix: "+34",
       phone: "",
+      email: "",
       activityName: activityName,
       participants: "",
       date: "",
@@ -133,6 +135,27 @@ export function ActivityBookingForm({
                 </FormLabel>
                 <FormControl>
                   <Input placeholder="Your full name..." {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+
+          {/* Email */}
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel className="text-gray-950">
+                  Email <span className="text-red-500">*</span>
+                </FormLabel>
+                <FormControl>
+                  <Input
+                    type="email"
+                    placeholder="you@example.com"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -283,7 +306,7 @@ export function ActivityBookingForm({
             )}
             {!isLoading && (
               <p className="flex items-center gap-x-2">
-                Book now <MoveRight />
+                Request Availability <MoveRight />
               </p>
             )}
           </Button>

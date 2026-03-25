@@ -80,7 +80,7 @@ export default function Page() {
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-2 gap-8">
             {/* Activity Card 1 */}
             <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
               <div className="relative h-48">
@@ -126,31 +126,6 @@ export default function Page() {
                 </p>
                 <div className="flex items-center text-sm text-gray-500">
                   <span className="mr-4">⏱️ 2h30 - 4h</span>
-                  <span>👥 All year</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Activity Card 3 */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-              <div className="relative h-48">
-                <Image
-                  src="/kayak-banus-2.webp"
-                  alt="Kayak team building"
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-2">
-                  Kayak & Paddle Surf
-                </h3>
-                <p className="text-gray-600 text-sm mb-3">
-                  Water activities on the best beaches of Marbella and Puerto
-                  Banus. Ideal for large groups.
-                </p>
-                <div className="flex items-center text-sm text-gray-500">
-                  <span className="mr-4">⏱️ 2h - 3h</span>
                   <span>👥 All year</span>
                 </div>
               </div>

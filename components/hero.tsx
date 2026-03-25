@@ -3,6 +3,7 @@ import GridHero from "./grid-hero";
 import StarRating from "./ui/stars-rating";
 import { Image } from "@/app/data";
 import { Star } from "lucide-react";
+import TrustIndexInfoBanner from "./ui/trustindex-info-banner";
 
 interface Excursion {
   mainImage: Image;
@@ -52,12 +53,8 @@ const Hero = (props: HeroProps) => {
           <h1 className="text-4xl font-extrabold mb-2 tracking-tight">
             {!excursion.subtitle ? excursion.title : excursion.subtitle}
           </h1>
-          <div className="flex flex-wrap items-center gap-6 text-xl ">
-            <StarRating
-              value={excursion.rating.value}
-              totalReviews={excursion.rating.totalReviews}
-            />
-
+          <div className="flex flex-wrap items-center gap-2 text-xl ">
+            <TrustIndexInfoBanner />
             {excursion.isMostPopular ? (
               <p className="text-sm flex items-center bg-gray-200 px-2 py-1 font-semibold text-gray-700 ">
                 <Star size={12} className="mr-1" />

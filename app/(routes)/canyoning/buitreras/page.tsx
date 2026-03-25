@@ -336,7 +336,7 @@ export default async function Page() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Level</p>
-                    <p className="font-semibold">Intermediate (Level 2.5)</p>
+                    <p className="font-semibold">Advanced (Level 3)</p>
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Minimum Age</p>

@@ -366,9 +366,14 @@ export default async function Page() {
           id="bokun-section"
           className="flex flex-col md:items-center md:text-center"
         >
-          <h2 className="text-2xl font-semibold mb-4">Book Your Adventure</h2>
+          <h2 className="text-2xl font-semibold mb-4">
+            Plan Your Casares Experience
+          </h2>
           <p className="text-gray-600 mb-4">
-            Secure your spot on this thrilling Via Ferrata adventure in Casares.
+            To ensure the best conditions and a personalized experience, this
+            adventure is organized upon request. Please share your details
+            below, and our team will check availability for your preferred
+            dates.
           </p>
           <ActivityBookingForm activityName={casares.title} />
         </div>

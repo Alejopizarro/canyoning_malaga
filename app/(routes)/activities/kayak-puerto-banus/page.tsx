@@ -88,7 +88,7 @@ const DESCRIPTION_DATA = {
 
 export default async function Page() {
   const kayakBanus = await getExcursionByPath(
-    "more-activities",
+    "activities",
     "kayak-puerto-banus",
   );
 
