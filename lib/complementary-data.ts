@@ -459,7 +459,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     duration: 4,
     minimumAge: 14,
     ubication: "Ronda, Málaga",
-    isDisponible: false,
+    isDisponible: true,
   },
 
   trevelez: {
