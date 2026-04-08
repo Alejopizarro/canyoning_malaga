@@ -9,6 +9,8 @@ export const rondaMetadata: Metadata = {
     "Climb the iconic Tajo de Ronda cliffs under the Puente Nuevo. Beginner & family-friendly via ferrata for all levels, from age 7. 3 hours, all year round. From 60€. Book now!",
   keywords: [
     "via ferrata ronda",
+    "vias ferratas ronda",
+    "ronda via ferrata",
     "via ferrata tajo de ronda",
     "via ferrata malaga",
     "climbing ronda",

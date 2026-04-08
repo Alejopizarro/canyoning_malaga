@@ -3,16 +3,19 @@ import Link from "next/link";
 import { getSeasonLabel } from "@/lib/season";
 import { getTop3Excursions } from "@/lib/activities";
 import TrustindexWidget from "./trustindex-widget";
-
-const levelConfig = {
-  easy: "All Levels",
-  moderate: "Moderate",
-  advanced: "Advanced",
-};
+import {
+  ChartNoAxesColumnIncreasing,
+  MapPin,
+  PersonStanding,
+  TimerReset,
+} from "lucide-react";
 
 const TopActivitiesHome = async () => {
   const topActivities = await getTop3Excursions();
-
+  const getLevelText = (level: string) => {
+    if (level === "easy") return "All levels";
+    return level.charAt(0).toUpperCase() + level.slice(1);
+  };
   const sortedActivities = [...topActivities.slice(0, 3)].sort((a, b) => {
     if (a.isMostPopular) return -1;
     if (b.isMostPopular) return 1;
@@ -114,52 +117,21 @@ const TopActivitiesHome = async () => {
                     )}
                   </div>
 
-                  <div className="flex gap-3 pt-3 border-t border-gray-100">
-                    <span className="flex bg-gray-200 px-2 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-500">
-                      <svg
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1"
-                        className="text-gray-500"
-                      >
-                        <path d="M3 3v18h18" />
-                        <path d="M18 9l-5 5-4-4-3 3" />
-                      </svg>
-                      {levelConfig[activity.level]}
+                  <div className="flex items-center gap-2 pt-3 border-t border-gray-100">
+                    {/* Level */}
+                    <span className="flex bg-gray-100 px-2 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-900">
+                      <ChartNoAxesColumnIncreasing size={12} />
+                      {getLevelText(activity.level)}
+                    </span>
+                    {/* Age */}
+
+                    <span className="flex bg-gray-100 px-2 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-900">
+                      <TimerReset size={15} />
+                      {activity.duration} hs
                     </span>
 
-                    <span className="flex bg-gray-200 px-2 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-500">
-                      <svg
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1"
-                        className="text-gray-500"
-                      >
-                        <circle cx="12" cy="12" r="10" />
-                        <path d="M12 6v6l4 2" />
-                      </svg>
-                      {activity.duration} hr
-                    </span>
-
-                    <span className="flex bg-gray-200 px-2 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-500">
-                      <svg
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1"
-                        className="text-gray-500"
-                      >
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
-                        <circle cx="12" cy="10" r="3" />
-                      </svg>
+                    <span className="flex bg-gray-100 px-2 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-900">
+                      <MapPin size={12} />
                       {activity.ubication}
                     </span>
                   </div>

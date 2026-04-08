@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     authors: ["TUUR Adventure Experts"],
     images: [
       {
-        url: "/Marbella-Drone.png",
+        url: "/marbella-drone-1.webp",
         width: 1200,
         height: 630,
         alt: "Best Activities in Marbella - Canyoning, Via Ferrata, Hiking",
@@ -87,7 +87,7 @@ export default function BestActivitiesMarbellaBlogPost() {
           {/* Featured Image */}
           <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] rounded-xl overflow-hidden mb-8">
             <Image
-              src="/Marbella-Drone.png"
+              src="/marbella-drone-1.webp"
               alt="Best Activities in Marbella - Outdoor Adventures on the Costa del Sol"
               fill
               className="object-cover"

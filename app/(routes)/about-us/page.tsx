@@ -55,7 +55,7 @@ export default function Page() {
             </div>
             <div className="relative h-80 lg:h-[450px] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/team-building-bg.webp"
+                src="/who-we-are.webp"
                 alt="TUUR team in action"
                 fill
                 className="object-cover"
@@ -71,7 +71,7 @@ export default function Page() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 relative h-80 lg:h-[400px] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/costa-del-sol.webp"
+                src="/marbella-drone-1.webp"
                 alt="TUUR operations map"
                 fill
                 className="object-cover"

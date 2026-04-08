@@ -28,7 +28,7 @@ export const metadata = kayakPuertoBanusMetadata;
 // Descripción de la excursión con negritas
 const EXCURSION_INTRO = (
   <>
-    Discover the fascination of the <strong>Marbella sunset</strong> from the
+    Discover the fascination of the <strong>Marbella sunrise</strong> from the
     sea. Paddle through crystal-clear waters and witness the glamour of{" "}
     <strong>Puerto Banús</strong> and its luxury yachts with the majestic{" "}
     <strong>La Concha</strong> peak as your backdrop.
@@ -38,7 +38,7 @@ const EXCURSION_INTRO = (
 const ACTIVITY_HIGHLIGHTS = [
   {
     icon: "✅",
-    title: "Exclusive Sunset Views",
+    title: "Exclusive sunrise Views",
     description:
       "Experience a spectacle of warm hues reflecting on the Mediterranean waters.",
   },

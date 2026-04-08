@@ -393,50 +393,58 @@ export const complementaryData: Record<string, ComplementaryData> = {
   // Slug actualizado según Sheet: "tajo-ronda" en vez de "tajo-de-ronda"
   "tajo-ronda": {
     subtitle:
-      "Tajo River Canyon in Ronda: adventures in a thousand-year-old city",
+      "Canyoning in Tajo de Ronda: Epic Urban Adventure under Puente Nuevo",
     description:
       "Cross through the ancient city of Ronda. Privileged views of the New Bridge and historical monuments.",
-    videoYoutube: "",
+    videoYoutube: "https://www.youtube.com/watch?v=5OE4k_Urv3o",
     days: "Mar to Jun & Sep to Nov",
     mainImage: {
-      src: "/empty.webp",
+      src: "/tajo-ronda-1.webp",
       alt: "Tajo de Ronda - Cross through the ancient city of Ronda",
     },
     images: [
       {
-        src: "/Tajo-ronda-2.jpg",
+        src: "/tajo-ronda-2.webp",
         alt: "Tajo de Ronda - Spectacular views of the New Bridge in Ronda canyon",
       },
       {
-        src: "/Tajo-ronda-3.jpg",
+        src: "/tajo-ronda-3.webp",
         alt: "Tajo de Ronda - Rappelling down a waterfall in Ronda canyon",
       },
       {
-        src: "/Tajo-ronda-4.jpg",
+        src: "/tajo-ronda-4.webp",
         alt: "Tajo de Ronda - Jumping into a natural pool in Ronda canyon",
       },
       {
-        src: "/Tajo-ronda-5.jpg",
+        src: "/tajo-ronda-5.webp",
         alt: "Tajo de Ronda - Sliding down a natural water slide in Ronda canyon",
       },
       {
-        src: "/Tajo-ronda-6.jpg",
+        src: "/tajo-ronda-6.webp",
         alt: "Tajo de Ronda - Beautiful landscapes in Ronda canyon",
       },
       {
-        src: "/Tajo-ronda-7.jpg",
+        src: "/tajo-ronda-7.webp",
         alt: "Tajo de Ronda - Adventurers in Ronda canyon",
       },
       {
-        src: "/Tajo-ronda-8.jpg",
+        src: "/tajo-ronda-8.webp",
         alt: "Tajo de Ronda - Crystal clear waters in Ronda canyon",
       },
       {
-        src: "/Tajo-ronda-9.jpg",
+        src: "/tajo-ronda-9.webp",
         alt: "Tajo de Ronda - Nature in Ronda canyon",
       },
       {
-        src: "/Tajo-ronda-10.jpg",
+        src: "/tajo-ronda-10.webp",
+        alt: "Tajo de Ronda - Canyon walls in Ronda canyon",
+      },
+      {
+        src: "/tajo-ronda-11.webp",
+        alt: "Tajo de Ronda - Canyon walls in Ronda canyon",
+      },
+      {
+        src: "/tajo-ronda-12.webp",
         alt: "Tajo de Ronda - Canyon walls in Ronda canyon",
       },
     ],
@@ -446,8 +454,10 @@ export const complementaryData: Record<string, ComplementaryData> = {
     province: "Málaga",
     category: "Canyoning",
     categoryPath: "canyoning",
+    specialPrice:
+      "Private Experience! Available March to June and September to November.",
     duration: 4,
-    minimumAge: 8,
+    minimumAge: 14,
     ubication: "Ronda, Málaga",
     isDisponible: false,
   },

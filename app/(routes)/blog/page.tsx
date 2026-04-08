@@ -32,7 +32,7 @@ const blogPosts: BlogPost[] = [
     slug: "/blog/best-activities-marbella",
     excerpt:
       "Discover the best activities in Marbella: canyoning, via ferrata, hiking, kayaking & more. Your complete guide to outdoor adventures on the Costa del Sol.",
-    image: "/Marbella-Drone.png",
+    image: "/marbella-drone-1.webp",
     category: "Guides",
     date: "March 4, 2026",
     readTime: "15 min read",
@@ -48,15 +48,14 @@ const blogPosts: BlogPost[] = [
     readTime: "8 min read",
   },
   {
-    title: "Essential Equipment for Your First Canyoning Adventure",
-    slug: "/blog/canyoning-equipment",
+    title: "What is the Basic Equipment for Canyoning?",
+    slug: "/blog/what-is-basic-equipment-for-canyoning",
     excerpt:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.",
-    image: "",
+      "Discover the essential equipment for canyoning: wetsuit, helmet, harness, shoes and more. A complete guide to stay safe and comfortable in your canyoning adventures.",
+    image: "/basic-equipment-1.webp",
     category: "Equipment",
-    date: "Coming Soon",
-    readTime: "6 min read",
-    isPlaceholder: true,
+    date: "April 8, 2025",
+    readTime: "10 min read",
   },
 ];
 
