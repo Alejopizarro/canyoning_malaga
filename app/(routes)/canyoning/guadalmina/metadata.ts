@@ -4,7 +4,7 @@ import { Faq } from "../../activities/components/faqs";
 // ─── SEO Metadata ───────────────────────────────────────────────────────────
 
 export const guadalminaMetadata: Metadata = {
-  title: "Benahavís Canyoning: Canyon of the Angosturas Guadalmina Riverwalk",
+  title: "Benahavís Canyoning: Canyon of the Angosturas, Guadalmina",
   description:
     "The best canyoning near Marbella: Guadalmina Canyon of the Angosturas in Benahavís. Beginner & family-friendly from 6 y.o. Jumps, rappelling & slides. Every day from 45€",
   authors: [{ name: "José Moreno" }],
