@@ -35,7 +35,7 @@ export const excursions: Excursion[] = [
   {
     title: "Guadalmina",
     route: "guadalmina",
-    subtitle: "The Best Canyoning Experience Near Marbella",
+    subtitle: "Guadalmina Canyoning Marbella — The Narrowest Canyon in Benahavís",
     description:
       "Perfect canyoning descent for beginners. Close to Marbella, ideal for families. Available all year round.",
     videoYoutube: "",
@@ -297,7 +297,7 @@ export const excursions: Excursion[] = [
   },
   {
     title: "Tajo de Ronda",
-    route: "tajo-de-ronda",
+    route: "tajo-ronda",
     subtitle:
       "Tajo River Canyon in Ronda: adventures in a thousand-year-old city",
     days: "Mar to Jun & Sep to Nov",
@@ -658,7 +658,8 @@ export const excursions: Excursion[] = [
     mainImage: {
       src: "/la-concha-1.webp",
       alt: "Hiking La Concha - Ascent to Marbella's most iconic peak",
-    },images: [
+    },
+    images: [
       {
         src: "/la-concha-2.webp",
         alt: "Hiking La Concha - Panoramic views from la concha peak",
@@ -722,7 +723,7 @@ export const excursions: Excursion[] = [
       {
         src: "/la-concha-17.webp",
         alt: "Hiking La Concha - Serene landscapes near la concha peak",
-      }
+      },
     ],
     isOffer: false,
     isMostPopular: false,

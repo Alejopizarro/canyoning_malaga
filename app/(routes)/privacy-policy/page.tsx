@@ -14,9 +14,7 @@ export default function PrivacyPolicyPage() {
           <h2 className="text-xl font-bold text-gray-900 mb-3">
             1. Data Controller
           </h2>
-          <p>
-            The entity responsible for processing your personal data is:
-          </p>
+          <p>The entity responsible for processing your personal data is:</p>
           <ul className="list-disc ml-6 mt-2 space-y-1">
             <li>
               <strong>Company:</strong> TUUR Adventure Experts
@@ -117,7 +115,9 @@ export default function PrivacyPolicyPage() {
                     Responding to enquiries via our contact form, email, phone,
                     or WhatsApp
                   </td>
-                  <td className="px-4 py-3">Legitimate interest (Art. 6.1.f)</td>
+                  <td className="px-4 py-3">
+                    Legitimate interest (Art. 6.1.f)
+                  </td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3">
@@ -161,8 +161,8 @@ export default function PrivacyPolicyPage() {
           </p>
           <ul className="list-disc ml-6 mt-2 space-y-1">
             <li>
-              <strong>Insurance providers:</strong> to manage civil liability and
-              accident insurance policies
+              <strong>Insurance providers:</strong> to manage civil liability
+              and accident insurance policies
             </li>
             <li>
               <strong>Transport companies:</strong> when transfer services are
@@ -202,9 +202,9 @@ export default function PrivacyPolicyPage() {
           <p>We retain your personal data for the following periods:</p>
           <ul className="list-disc ml-6 mt-2 space-y-1">
             <li>
-              <strong>Booking and contract data:</strong> for the duration of the
-              contractual relationship and up to 5 years after, in accordance
-              with Spanish tax obligations
+              <strong>Booking and contract data:</strong> for the duration of
+              the contractual relationship and up to 5 years after, in
+              accordance with Spanish tax obligations
             </li>
             <li>
               <strong>Contact form enquiries:</strong> up to 12 months from your
@@ -272,15 +272,13 @@ export default function PrivacyPolicyPage() {
 
         {/* 8. Cookies */}
         <section>
-          <h2 className="text-xl font-bold text-gray-900 mb-3">
-            8. Cookies
-          </h2>
+          <h2 className="text-xl font-bold text-gray-900 mb-3">8. Cookies</h2>
           <p>
             Our website uses cookies to improve your browsing experience and
             analyse site traffic. You can manage your cookie preferences at any
             time through your browser settings. For more details, please see our{" "}
             <Link
-              href="/cookies-policy"
+              href="/cookie-policy"
               className="text-blue-600 hover:underline"
             >
               Cookies Policy

@@ -151,29 +151,37 @@ export default async function Page() {
       <div className="mx-4">
         <CheckAvailabilityButton />
       </div>
+
       <div className="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-x-16 px-4 sm:px-16 py-4 sm:py-8">
         <div className="flex flex-col gap-4">
           <ExcursionDescription excursion={excursionDescription} />
-
           {/* Introducción */}
           <div className="flex flex-col gap-4">
             <p className="text-gray-700 leading-relaxed">
-              Discover{" "}
-              <strong>the best canyoning experience near Marbella</strong> in
-              the Guadalmina Canyon, famously known as{" "}
+              Discover <strong>the best canyoning in Marbella</strong> at the
+              Guadalmina Canyon, famously known as{" "}
               <strong>&quot;The Narrowest Canyon.&quot;</strong> This dynamic
               half-day activity is perfect for beginners, friends, and families
               (from 6 y.o. in summer), offering fun and excitement{" "}
               <strong>every day of the year</strong> thanks to its temperate
               waters.
             </p>
+            <p className="text-gray-700 leading-relaxed">
+              <strong>Guadalmina canyoning</strong> takes place in a stunning
+              natural gorge — locally known as the{" "}
+              <strong>Canyon of the Angosturas</strong> — located in{" "}
+              <strong>Benahavís</strong>, just 30 minutes from Marbella, making
+              it the closest and most accessible{" "}
+              <strong>Benahavís canyoning</strong> experience on the Costa del
+              Sol.
+            </p>
           </div>
 
           {/* Highlights */}
           <div className="my-4">
-            <h4 className="font-semibold text-gray-900 mb-4 text-lg">
+            <h3 className="font-semibold text-gray-900 mb-4 text-lg">
               Activity Highlights
-            </h4>
+            </h3>
             <ul className="space-y-3">
               {ACTIVITY_HIGHLIGHTS.map((highlight, index) => (
                 <li key={index} className="flex items-start">
@@ -190,9 +198,9 @@ export default async function Page() {
 
           {/* Safety Box - E-E-A-T */}
           <div className="bg-green-50 border border-green-200 rounded-lg p-4 my-4">
-            <h4 className="font-semibold text-green-800 mb-2">
+            <h3 className="font-semibold text-green-800 mb-2">
               🛡️ Safety is Our Commitment
-            </h4>
+            </h3>
             <p className="text-green-700 text-sm">
               All excursions are guided by{" "}
               <strong>certified professional guides</strong> who prioritize the

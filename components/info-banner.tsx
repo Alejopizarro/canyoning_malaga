@@ -33,7 +33,7 @@ export default function InfoBanner({
   const location = ubication || province;
 
   return (
-    <div className="flex flex-wrap items-center gap-2">
+    <div className="flex my-4 flex-wrap items-center gap-2">
       {/* Level */}
       <span className="flex bg-gray-100 px-4 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-900">
         <ChartNoAxesColumnIncreasing size={12} />

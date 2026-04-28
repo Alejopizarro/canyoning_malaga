@@ -26,7 +26,7 @@ const ExcursionDescription = (props: ExcursionDescriptionProps) => {
         </h2>
         <div className="text-primary flex items-center gap-2">
           <span className="text-xl text-gray-600 mt-1.5">From</span>
-          <p className="text-4xl md:text-5xl font-extrabold">
+          <p className="text-4xl my-4 md:text-5xl font-extrabold">
             {excursion.price}€{excursion.specialPrice ? "*" : ""}
           </p>
         </div>

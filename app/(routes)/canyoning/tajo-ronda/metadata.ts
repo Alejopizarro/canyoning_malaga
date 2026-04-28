@@ -18,14 +18,14 @@ export const tajoRondaMetadata: Metadata = {
     "family canyoning ronda",
   ],
   alternates: {
-    canonical: "https://www.tuuradventure.com/canyoning/tajo-de-ronda",
+    canonical: "https://www.tuuradventure.com/canyoning/tajo-ronda",
   },
   openGraph: {
     title:
       "Canyoning in Tajo de Ronda: Epic Urban Adventure under Puente Nuevo",
     description:
       "Rappel 35 meters under the Puente Nuevo and discover Ronda from 100 meters below its streets. A one-of-a-kind adventure in Andalusia.",
-    url: "https://tuuradventure.com/canyoning/tajo-de-ronda",
+    url: "https://tuuradventure.com/canyoning/tajo-ronda",
     siteName: "TUUR Adventure Experts",
     locale: "en_GB",
     type: "website",
@@ -90,7 +90,7 @@ export const jsonLdTourExperience = {
   name: "Canyoning in Tajo de Ronda – Puente Nuevo",
   description:
     "Navigate the gorge that splits Ronda in two, rappelling under the iconic Puente Nuevo 100 meters below the city streets.",
-  url: "https://tuuradventure.com/canyoning/tajo-de-ronda",
+  url: "https://tuuradventure.com/canyoning/tajo-ronda",
   touristType: "Adventure",
   location: {
     "@type": "Place",
@@ -160,7 +160,7 @@ export const jsonLdBreadcrumb = {
       "@type": "ListItem",
       position: 3,
       name: "Tajo de Ronda",
-      item: "https://tuuradventure.com/canyoning/tajo-de-ronda",
+      item: "https://tuuradventure.com/canyoning/tajo-ronda",
     },
   ],
 };

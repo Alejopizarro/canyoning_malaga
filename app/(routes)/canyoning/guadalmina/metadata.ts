@@ -4,18 +4,20 @@ import { Faq } from "../../activities/components/faqs";
 // ─── SEO Metadata ───────────────────────────────────────────────────────────
 
 export const guadalminaMetadata: Metadata = {
-  title: "Guadalmina Canyoning Marbella | Benahavís Canyon - From 45€",
+  title: "Benahavís Canyoning: Canyon of the Angosturas Guadalmina Riverwalk",
   description:
-    "Experience the best canyoning near Marbella in Guadalmina Canyon, Benahavís. Beginner & family-friendly from 6 y.o. Jumps, rappelling & slides. From 45€. Book now!",
+    "The best canyoning near Marbella: Guadalmina Canyon of the Angosturas in Benahavís. Beginner & family-friendly from 6 y.o. Jumps, rappelling & slides. Every day from 45€",
+  authors: [{ name: "José Moreno" }],
+  publisher: "TUUR Adventure Experts",
   keywords: [
-    "canyoning marbella",
     "guadalmina canyon",
+    "canyon of the angosturas",
     "canyoning benahavis",
     "canyoning near marbella",
     "canyoning malaga",
     "canyoning for beginners",
     "family canyoning marbella",
-    "adventure activities marbella",
+    "canyoning marbella",
     "canyoning costa del sol",
     "barranquismo marbella",
     "the narrowest canyon",
