@@ -21,9 +21,9 @@ const raleway = Raleway({
 });
 
 export const metadata: Metadata = {
-  title: "TUUR Adventure | The Best Experiences in Andalusia",
+  title: "Canyoning & Adventure Tours in Marbella, Málaga & Andalusia",
   description:
-    "Discover the best adventure experiences in Andalusia with TUUR Adventure. Explore canyoning, kayaking, and more in Malaga and beyond.",
+    "Discover the best adventures tours in Marbella, Málaga & Andalusia with TUUR Adventure. Explore canyoning, kayaking, and more.",
 };
 
 export default function RootLayout({
