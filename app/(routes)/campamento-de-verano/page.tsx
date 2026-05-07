@@ -34,11 +34,11 @@ const INFO_DETAILS = [
     icon: "⏰",
     label: "Horario",
     value:
-      "8:30 h a 14:30 h (lunes a jueves) · regreso viernes 15:00 h desde San Pedro",
+      "8:30 h a 14:30 h (lunes a miercoles) · Jueves salida 9:00 h, regreso viernes 15:00 h",
   },
   { icon: "👦", label: "Edad", value: "6 a 14 años" },
   { icon: "👥", label: "Grupos", value: "Grupos reducidos por edades" },
-  { icon: "📍", label: "Salida", value: "San Pedro de Alcántara" },
+  { icon: "📍", label: "Punto de encuentro", value: "San Pedro de Alcántara" },
 ];
 
 const PROGRAMA = [
@@ -52,7 +52,7 @@ const PROGRAMA = [
       "Seguridad y conocimientos técnicos",
       "Tips en la Naturaleza",
     ],
-    time: "Salida 8:30 h",
+    time: "Hora de encuentro 8:30 h",
     isNew: false,
     images: ["/summercamp-day1-f1.webp", "/summercamp-day1-f2.webp"],
   },
@@ -67,7 +67,7 @@ const PROGRAMA = [
       "Kayaks",
       "Dinámicas y juegos",
     ],
-    time: "Salida 8:30 h",
+    time: "Hora de encuentro 8:30 h",
     isNew: false,
     images: ["/summercamp-day2-f1.webp", "/summercamp-day2-f2.webp"],
   },
@@ -82,7 +82,7 @@ const PROGRAMA = [
       "NUEVO: Rápel 22 m en presa",
       "Carrera de Orientación",
     ],
-    time: "Salida 8:30 h",
+    time: "Hora de encuentro 8:30 h",
     isNew: true,
     images: [
       "/summercamp-day3-f1.webp",
@@ -114,7 +114,7 @@ const PROGRAMA = [
   {
     day: "Viernes 3 de julio",
     icon: "🎉",
-    label: "Regreso & Fiesta Final",
+    label: "Fiesta Final & Regreso",
     location: "Campamento · San Pedro",
     activities: [
       "Recogida Campamento",
@@ -130,7 +130,7 @@ const PROGRAMA = [
 
 const NOVEDADES = [
   {
-    icon: "🏊",
+    icon: "🧗🏻",
     title: "Rápel de 22 Metros",
     description:
       "Descendemos por la presa del Lago de las Tortugas, una de las experiencias más emocionantes del campamento.",
@@ -139,7 +139,7 @@ const NOVEDADES = [
     icon: "🧭",
     title: "Nueva Carrera de Orientación",
     description:
-      "Los participantes navegan por el entorno natural usando mapas y brújulas en una competición por equipos.",
+      "Los participantes compiten por equipos en la búsqueda de balizas ocultas, utilizando un mapa y su entorno para orientarse.",
   },
   {
     icon: "⛺",
@@ -338,17 +338,39 @@ export default function Page() {
                       235 €
                     </span>
                     <p className="text-gray-500 mt-1 text-sm">
-                      5 días · 1 noche incluida
+                      Transferencia bancaria. Todo incluido.
                     </p>
                   </div>
                   <div className="space-y-2 mb-6 text-sm text-gray-600 border-t border-b border-gray-100 py-4">
                     <p className="flex items-center gap-2">
                       <span className="text-[#008e8a] font-bold">✓</span>
-                      220 € en efectivo
+                      Instructores Certificados bilingües (Español, Inglés)
                     </p>
                     <p className="flex items-center gap-2">
                       <span className="text-[#008e8a] font-bold">✓</span>
-                      Transferencia bancaria
+                      Equipamiento homologado
+                    </p>
+                    <p className="flex items-center gap-2">
+                      <span className="text-[#008e8a] font-bold">✓</span>
+                      Todo el material necesario para el desarrollo de las
+                      actividades
+                    </p>
+                    <p className="flex items-center gap-2">
+                      <span className="text-[#008e8a] font-bold">✓</span>
+                      Transporte de ida y vuelta al sitio de acampada (Jueves y
+                      Viernes)
+                    </p>
+                    <p className="flex items-center gap-2">
+                      <span className="text-[#008e8a] font-bold">✓</span>
+                      Jueves: Merienda y Cena, Viernes: Desayuno y Almuerzo
+                    </p>
+                    <p className="flex items-center gap-2">
+                      <span className="text-[#008e8a] font-bold">✓</span>
+                      Reportaje fotográfico completo
+                    </p>
+                    <p className="flex items-center gap-2 font-semibold text-gray-950">
+                      <span className="text-[#008e8a] font-bold">✓</span>
+                      ... Y los mejores recuerdos del verano!
                     </p>
                   </div>
                   <a

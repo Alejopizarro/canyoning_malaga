@@ -65,22 +65,22 @@ export const campamentoFaqs: Faq[] = [
   {
     question: "¿Está incluida la comida?",
     answer:
-      "El horario es de 8:30 a 14:30 h de lunes a jueves. Los participantes deben traer su propia merienda y agua. La excursión de los días jueves-viernes incluye la noche de acampada; para esa jornada se comunicarán los detalles de avituallamiento al realizar la reserva.",
+      "La excursión de los días jueves-viernes incluye la noche de acampada y las comidas principales de esos días; para el resto de las jornadas se comunicarán los detalles de avituallamiento al realizar la reserva.",
   },
   {
-    question: "¿Desde dónde sale el autobús?",
+    question: "¿Dónde se realiza el Campamento de Verano?",
     answer:
-      "El punto de salida habitual es San Pedro de Alcántara. Para la excursión de dos días (Jimera de Líbar), el traslado en autobús desde San Pedro está incluido en el precio.",
+      "Este campamento se realiza en múltiples localizaciones. Cada día tiene su propio punto de encuentro. Enviaremos la ubicación exacta antes de cada actividad. Para la excursión de dos días (Jimera de Líbar), el traslado en autobús desde San Pedro está incluido en el precio.",
   },
   {
     question: "¿Qué debo traer cada día?",
     answer:
-      "Ropa cómoda que pueda mojarse, calzado de agua o deportivas viejas, protector solar, gorra o gorro de baño, snack y agua. Para el campamento nocturno necesitarás saco de dormir, esterilla y ropa de abrigo — recibirás una lista detallada al confirmar la reserva.",
+      "Ropa cómoda que pueda mojarse, calzado deportivo listo para ensuciarse, protector solar, gorra, snack y agua. Para el campamento nocturno necesitarás saco de dormir, esterilla y ropa de abrigo — de todas formas, recibirás una lista detallada antes de cada actividad.",
   },
   {
     question: "¿Cómo reservo una plaza?",
     answer:
-      "A través del formulario oficial: https://forms.gle/oYKYxgVZgBL1As2v6. Las plazas son limitadas y se asignan por orden de llegada. El precio es 235 € por transferencia bancaria o 220 € en efectivo. La plaza queda confirmada una vez recibido el pago.",
+      "A través del formulario oficial: https://forms.gle/oYKYxgVZgBL1As2v6. Las plazas son limitadas y se asignan por orden de llegada. El precio es 235 € por transferencia bancaria. La plaza queda confirmada una vez recibido el pago.",
   },
 ];
 
