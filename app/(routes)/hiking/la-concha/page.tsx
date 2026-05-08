@@ -4,6 +4,9 @@ import ExcursionDescription from "@/components/excursion-description";
 import Faqs from "../../activities/components/faqs";
 import { getExcursionByPath } from "@/lib/activities";
 import { notFound } from "next/navigation";
+import OtherActivities from "@/components/other-activities";
+import { complementaryData } from "@/lib/complementary-data";
+import SeoContentTabs from "@/components/seo-content-tabs";
 import {
   Accordion,
   AccordionContent,
@@ -24,6 +27,41 @@ import {
 } from "./metadata";
 
 export const metadata = laConchaMetadata;
+
+const SEO_TABS = [
+  {
+    id: "la-concha-hike",
+    label: "La Concha Hike",
+    h3: "La Concha Hike: Guided Ascent to Marbella's Most Iconic Peak",
+    paragraphs: [
+      "The La Concha hike is the most popular mountain excursion on the Costa del Sol, attracting hikers from Marbella, Estepona, Fuengirola and beyond every single day of the year. The standard route begins at the Juanar Refuge in Ojén and follows a well-marked trail that climbs steadily through pine and chestnut forests before emerging onto the iconic rocky ridge at 1,215 metres. The total distance is approximately 13 kilometres round-trip, with a positive elevation gain of around 900 metres — classified as intermediate difficulty.",
+      "Many visitors attempt the la concha hike independently using GPS tracks or online guides, but a guided ascent with TUUR Adventure adds significant value: professional route-finding, wildlife and ecology commentary, safety briefings for the exposed ridge sections, and a full photo report sent within 24 hours. Our UIMLA-certified mountain guide José Moreno has completed the la concha hike hundreds of times and adjusts the pace and route according to group fitness and conditions.",
+      "The la concha hike is available Monday to Saturday, year-round. The best seasons are spring (March–June) and autumn (September–November) for comfortable temperatures and clear visibility. Summer sessions start early at sunrise to avoid the heat. In winter, the upper sections can be icy — our guides carry crampons and make the go/no-go decision based on live conditions. Whether you're a first-time hiker visiting Marbella or a seasoned trekker looking to tick off Andalusia's most photogenic summit, the la concha hike with TUUR Adventure is the most complete experience available.",
+    ],
+  },
+  {
+    id: "la-concha-marbella",
+    label: "La Concha Marbella",
+    h3: "La Concha Marbella: The Symbol of the Costa del Sol",
+    paragraphs: [
+      "La Concha Marbella is the conical peak that frames the city's skyline, visible from every beach on the Costa del Sol between Estepona and Fuengirola. Its distinctive shell-like silhouette — the name 'La Concha' literally means 'The Shell' in Spanish — has made it the defining symbol of Marbella's geography. At 1,215 metres above sea level, it rises sharply from the coastline across just 12 kilometres of horizontal distance, creating one of the most dramatic mountain-meets-sea landscapes in Spain.",
+      "Reaching the summit of La Concha Marbella rewards you with a 360-degree panorama that encompasses the Costa del Sol from Nerja to Tarifa, the Rock of Gibraltar, the Strait, and on clear days the Rif Mountains of Morocco across the Mediterranean. The summit plateau is large enough for the whole group to rest, eat and take in the views without feeling crowded. Our guides know the exact spots for the best photos of both the coast and the mountains behind.",
+      "From the beach resorts of Marbella, Puerto Banús or San Pedro, La Concha Marbella looks impossibly high and steep. The guided ascent with TUUR Adventure demystifies the mountain: it is genuinely achievable for intermediate-level hikers with average fitness who can commit to a 6.5-hour day. Children from 11 years old participate regularly. The activity includes a pick-up option from Marbella, Puerto Banús and San Pedro, making it completely accessible without a hire car.",
+      "Looking for the best things to do in Marbella beyond the beach? A guided La Concha Marbella ascent is consistently rated as one of the top outdoor experiences on the Costa del Sol — combining physical challenge, spectacular natural scenery, and the unique satisfaction of looking down on the city from its own rooftop.",
+    ],
+  },
+  {
+    id: "la-concha-mountain",
+    label: "La Concha Mountain",
+    h3: "La Concha Mountain: Sierra Blanca's Crown, 1,215m above the Costa del Sol",
+    paragraphs: [
+      "La Concha mountain is the highest peak in the Sierra Blanca range, a compact but dramatic massif that rises directly from the Mediterranean coastline in the municipality of Marbella, province of Málaga. The mountain is formed primarily of crystalline marble and schist dating back approximately 300 million years — part of the Betic Cordillera's Alpujarride complex. Its south-facing slopes descend steeply to the coast, while the northern face drops into the Juanar valley and the municipality of Ojén.",
+      "The summit of La Concha mountain stands at 1,215 metres (3,986 feet) above sea level, making it the dominant high point of the entire Costa del Sol. The mountain lies within the Sierra Blanca y Bermeja Special Protection Zone for Birds (ZEPA) and the Sierra Blanca Biosphere Reserve, protecting its remarkable biodiversity — including Spanish ibex, golden eagles, peregrine falcons, and a rich mosaic of holm oak, Aleppo pine, and Portuguese oak woodland.",
+      "There are two established routes to the summit of La Concha mountain: the Standard Route (Grade 2, 6.5 hours, from Juanar Refuge) and the Direct Route or La Concha Directo (Grade 3, 7 hours, from Nagüeles — involving light scrambling and fixed aids on the technical north face). TUUR Adventure guides both routes. The standard route is open to participants aged 11 and above; the direct route requires participants aged 16+ with good fitness and no vertigo.",
+      "Guided ascents of La Concha mountain with TUUR Adventure depart from the Juanar Refuge car park, with an optional pickup service from Marbella, Puerto Banús and San Pedro de Alcántara. The activity includes 1.5 litres of water per person, a hiking backpack, accident insurance, and a full photo report. Minimum group size is 2 participants; maximum is 10 per guide. Private departures are available for exclusive group experiences throughout the week.",
+    ],
+  },
+];
 
 // Descripción de la excursión
 const EXCURSION_INTRO = `Conquer the legendary peak that guards the Costa del Sol. Stand atop Marbella's most famous landmark, 1,215 meters above the sea, and gaze across the Mediterranean to the shores of Africa and Gibraltar.`;
@@ -346,6 +384,32 @@ export default async function Page() {
       <TrustindexWidget />
       <PrivateTourCTA />
       <Faqs faqs={laConchaFaqs} />
+      <OtherActivities
+        activities={[
+          {
+            title: complementaryData["rio-verde"].subtitle.split(":")[0],
+            description: complementaryData["rio-verde"].description,
+            image: complementaryData["rio-verde"].mainImage,
+            href: "/canyoning/rio-verde",
+            category: complementaryData["rio-verde"].category,
+          },
+          {
+            title: complementaryData["ronda"].subtitle.split(":")[0],
+            description: complementaryData["ronda"].description,
+            image: complementaryData["ronda"].mainImage,
+            href: "/via-ferrata/ronda",
+            category: complementaryData["ronda"].category,
+          },
+          {
+            title: complementaryData["guadalmina"].subtitle.split(":")[0],
+            description: complementaryData["guadalmina"].description,
+            image: complementaryData["guadalmina"].mainImage,
+            href: "/canyoning/guadalmina",
+            category: complementaryData["guadalmina"].category,
+          },
+        ]}
+      />
+      <SeoContentTabs tabs={SEO_TABS} />
     </div>
   );
 }

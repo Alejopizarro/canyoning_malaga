@@ -126,23 +126,29 @@ export default function DayCardSlider({
           )}
         </div>
 
-        <p className="text-sm text-gray-500 flex items-center gap-1.5">
+        <p className="text-sm text-gray-700 font-semibold flex items-center gap-1.5">
           <span>📍</span>
           {location}
         </p>
 
         <ul className="space-y-1">
-          {activities.map((act) => (
-            <li
-              key={act}
-              className="text-sm text-gray-600 flex items-start gap-1.5"
-            >
-              <span className="text-[#008e8a] font-bold mt-0.5 shrink-0">
-                ·
-              </span>
-              {act}
-            </li>
-          ))}
+          {activities.map((act) =>
+            act.startsWith("📍") ? (
+              <li key={act} className="text-sm text-gray-700 font-semibold pt-1">
+                {act}
+              </li>
+            ) : (
+              <li
+                key={act}
+                className="text-sm text-gray-500 flex items-start gap-1.5"
+              >
+                <span className="text-[#008e8a] font-bold mt-0.5 shrink-0">
+                  ·
+                </span>
+                {act}
+              </li>
+            ),
+          )}
         </ul>
 
         <p className="text-xs text-gray-400 mt-auto pt-2 border-t border-gray-100">

@@ -18,7 +18,8 @@ type ComplementaryData = Omit<
 export const complementaryData: Record<string, ComplementaryData> = {
   // ==================== CANYONING ====================
   guadalmina: {
-    subtitle: "Benahavís Canyoning: Guadalmina River Walk Guided Adventure",
+    subtitle:
+      "Benahavís Canyoning: Canyon of the Angosturas in Guadalmina River Walk Guided Adventure",
     description:
       "Perfect canyoning descent for beginners. Close to Marbella, ideal for families. Available all year round. Fun guaranteed!",
     videoYoutube: "https://www.youtube.com/watch?v=S3E0cKEYCSQ",
@@ -366,6 +367,14 @@ export const complementaryData: Record<string, ComplementaryData> = {
       },
       {
         src: "/buitreras-13.webp",
+        alt: "Buitreras canyon - Canyon walls in buitreras canyon",
+      },
+      {
+        src: "/buitreras-14.webp",
+        alt: "Buitreras canyon - Canyon walls in buitreras canyon",
+      },
+      {
+        src: "/buitreras-15.webp",
         alt: "Buitreras canyon - Canyon walls in buitreras canyon",
       },
     ],

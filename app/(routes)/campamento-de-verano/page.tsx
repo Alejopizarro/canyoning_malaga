@@ -95,9 +95,11 @@ const PROGRAMA = [
     day: "Jueves 2 de julio",
     icon: "⛺",
     label: "Excursión 2 Días — Río Guadiaro",
-    location: "Jimera de Líbar (traslado desde S. Pedro incluido)",
+    location: "Cortes de la Frontera (traslado desde S. Pedro incluido)",
     activities: [
       "Descenso del Río Guadiaro (Sendero Acuático)",
+      "Traslado en tren al sitio de acampada",
+      "📍 Jimera de Líbar (traslado en tren incluido)",
       "Montaje Campamento",
       "Taller/Dinámica",
       "Juegos/Dinámica Nocturna",
@@ -117,10 +119,11 @@ const PROGRAMA = [
     label: "Fiesta Final & Regreso",
     location: "Campamento · San Pedro",
     activities: [
-      "Recogida Campamento",
-      "Fiesta con dinámicas en piscina natural (Río)",
-      "Tirolina · Tiro con arco",
+      "Fiesta con dinámicas en piscina",
+      "Tirolina y juegos",
       "Despedida con picnic",
+      "Recogida Campamento",
+      "Regreso a la civilización",
     ],
     time: "Regreso 15:00 h S. Pedro",
     isNew: false,
@@ -154,7 +157,7 @@ const SEGURIDAD = [
     icon: "🪪",
     title: "Guías Certificados",
     description:
-      "Todo el equipo TUUR cuenta con titulación oficial y años de experiencia con grupos juveniles.",
+      "El equipo TUUR cuenta con titulaciones oficialesl en actividades en la naturaleza y manejo de grupos juveniles.",
   },
   {
     icon: "🦺",

@@ -6,7 +6,7 @@ import { Faq } from "../../activities/components/faqs";
 export const rondaMetadata: Metadata = {
   title: "Via Ferrata Ronda | Climb the Tajo Cliffs - From 60€",
   description:
-    "Climb the iconic Tajo de Ronda cliffs under the Puente Nuevo. Beginner & family-friendly via ferrata for all levels, from age 7. 3 hours, all year round. From 60€. Book now!",
+    "Climb the iconic Tajo de Ronda cliffs under the Puente Nuevo. Beginner & family-friendly via ferrata for all levels, from age 7. From 60€. Book now!",
   keywords: [
     "via ferrata ronda",
     "vias ferratas ronda",

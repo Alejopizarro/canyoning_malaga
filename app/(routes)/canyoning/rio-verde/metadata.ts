@@ -4,17 +4,17 @@ import { Faq } from "../../activities/components/faqs";
 // ─── SEO Metadata ───────────────────────────────────────────────────────────
 
 export const rioVerdeMetadata: Metadata = {
-  title: "Río Verde Canyoning Granada | Turquoise Water Jumps - From 75€",
+  title: "Río Verde Canyoning Granada | Turquoise Water Jumps",
   description:
-    "Experience Río Verde canyoning near Granada & Málaga. Turquoise waters, jumps up to 9m, rappelling & slides in Sierra de Almijara. From 75€. March to November. Book now!",
+    "Experience Río Verde canyoning near Granada & Málaga. Turquoise waters, jumps up to 9m, rappelling & slides in Sierra de Almijara. From 75€. Book now!",
   keywords: [
     "rio verde canyoning",
+    "rio verde canyon",
     "canyoning granada",
     "canyoning otivar",
     "turquoise water canyoning",
     "canyoning near malaga",
     "canyoning andalusia",
-    "rio verde canyon",
     "adventure granada",
     "canyoning sierra de almijara",
     "barranquismo rio verde",

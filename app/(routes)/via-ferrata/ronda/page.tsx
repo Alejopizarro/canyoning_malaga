@@ -23,8 +23,45 @@ import {
   jsonLdBreadcrumb,
 } from "./metadata";
 import Script from "next/script";
+import OtherActivities from "@/components/other-activities";
+import { complementaryData } from "@/lib/complementary-data";
+import SeoContentTabs from "@/components/seo-content-tabs";
 
 export const metadata = rondaMetadata;
+
+const SEO_TABS = [
+  {
+    id: "via-ferrata-ronda",
+    label: "Via Ferrata Ronda",
+    h3: "Via Ferrata Ronda: Climb the Legendary Tajo Gorge",
+    paragraphs: [
+      "Via ferrata Ronda is one of the most historically and visually unique via ferrata experiences in all of Spain. The route climbs the limestone walls of the Tajo de Ronda — the dramatic gorge that splits the city of Ronda in two — directly beneath the shadow of the Puente Nuevo, the iconic 18th-century bridge that has come to symbolise Ronda worldwide. At 98 metres above the Guadalevín River, the via ferrata ronda offers views that no tourist lookout can replicate.",
+      "The via ferrata ronda guided by TUUR Adventure consists of two consecutive sections, each approximately 80 metres in height, classified as Level K2 (easy to intermediate). The first section follows the left bank of the Tajo, climbing through natural limestone features with iron rungs, stemples, and fixed cables providing continuous safety. The second section transitions to a different face of the gorge and finishes at street level in the historic Barrio de San Francisco, just minutes from Ronda's old town.",
+      "Via ferrata ronda is suitable for all ages from 7 years old and requires no prior climbing or via ferrata experience. The guided session with TUUR Adventure lasts approximately 2.5 to 3 hours, includes all technical safety equipment (harness, helmet, via ferrata lanyards), and finishes with a briefing on local points of interest in Ronda's historic centre. The activity operates year-round, making it one of the most flexible adventure options in Málaga Province.",
+    ],
+  },
+  {
+    id: "via-ferrata-ronda-spain",
+    label: "Via Ferrata Ronda Spain",
+    h3: "Via Ferrata Ronda Spain: One of Andalusia's Most Iconic Vertical Routes",
+    paragraphs: [
+      "Via ferrata ronda spain is increasingly recognised as one of the country's most distinctive urban adventure experiences. While most via ferrata routes in Spain are found in remote mountain settings, the via ferrata ronda spain is unique in being located within the boundaries of a living, inhabited city — making it possible to combine a genuine vertical climbing adventure with a visit to one of Andalusia's most beautiful historic towns in a single day.",
+      "Ronda sits in the province of Málaga at 723 metres above sea level, approximately 50 minutes inland from Marbella and one hour from Málaga city. The via ferrata ronda spain is therefore an excellent excursion for visitors based anywhere on the Costa del Sol: combine the morning via ferrata with an afternoon exploring the old town, the Puente Nuevo, the Arab baths, and tapas at one of Ronda's traditional bars. TUUR Adventure can accommodate the via ferrata ronda spain as part of a private day-trip itinerary on request.",
+      "From an international perspective, the via ferrata ronda spain attracts visitors from across Europe and beyond who combine it with the broader appeal of the Costa del Sol as a holiday destination. TUUR Adventure guides the via ferrata ronda spain year-round, with private group departures available any day of the week for groups of 2 to 10 participants. All guides are UIMLA-certified mountain professionals with specialist via ferrata qualifications and first-aid certification.",
+    ],
+  },
+  {
+    id: "vias-ferratas-ronda",
+    label: "Vías Ferratas Ronda",
+    h3: "Vías Ferratas Ronda: Two Routes in the Heart of the City",
+    paragraphs: [
+      "The vías ferratas Ronda are a pair of climbing routes fixed to the inner walls of the Tajo de Ronda gorge, installed with the support of the Ayuntamiento de Ronda to offer a regulated and safe adventure experience within the city's protected natural space. The two vías ferratas Ronda share the same gorge but follow different rock faces, offering distinct challenges and perspectives of the gorge and the Puente Nuevo above.",
+      "Technically, the vías ferratas Ronda are graded K2 on the Spanish via ferrata scale — accessible for beginners and families, but genuinely engaging for those with more experience who want to explore the gorge at a faster pace. Each section covers approximately 80 metres of vertical gain, with a total climbing time of 1.5 to 2 hours plus safety briefing, gear-up, and approach walk. The fixed protection — cables, rungs, and stemples — is maintained regularly by the local authority.",
+      "TUUR Adventure guides the vías ferratas Ronda as a private experience for groups of 2 to 10 participants, available every day of the year. The guide meets the group in the historic centre of Ronda, leads the descent to the base of the gorge, and accompanies participants through both sections with continuous safety supervision. All equipment is provided — participants only need comfortable sports clothing and closed footwear. Families with children aged 7 and above are welcome; the vías ferratas Ronda is one of the most family-friendly via ferrata experiences in Málaga Province.",
+      "For visitors wanting to combine multiple outdoor activities in the Ronda area, TUUR Adventure also offers the Tajo de Ronda Canyoning (a separate water-based descent of the same gorge, available March–June and September–November) and day trips to the Río Verde canyon in Granada. Combining the vías ferratas Ronda with a canyoning excursion is possible as a two-day itinerary based in Ronda — the guide can advise on logistics on request.",
+    ],
+  },
+];
 
 // Descripción de la excursión
 const EXCURSION_INTRO = `Discover Ronda from a perspective few tourists ever see. Scale the breathtaking limestone cliffs of the Tajo gorge, directly under the shadow of the legendary Puente Nuevo, in an adventure that blends thousand-year history with vertical thrill.`;
@@ -333,6 +370,32 @@ export default async function Page() {
       <TrustindexWidget />
       <PrivateTourCTA />
       <Faqs faqs={rondaFaqs} />
+      <OtherActivities
+        activities={[
+          {
+            title: complementaryData["guadalmina"].subtitle.split(":")[0],
+            description: complementaryData["guadalmina"].description,
+            image: complementaryData["guadalmina"].mainImage,
+            href: "/canyoning/guadalmina",
+            category: complementaryData["guadalmina"].category,
+          },
+          {
+            title: complementaryData["el-chorro"].subtitle.split(":")[0],
+            description: complementaryData["el-chorro"].description,
+            image: complementaryData["el-chorro"].mainImage,
+            href: "/via-ferrata/el-chorro",
+            category: complementaryData["el-chorro"].category,
+          },
+          {
+            title: complementaryData["la-concha"].subtitle.split(":")[0],
+            description: complementaryData["la-concha"].description,
+            image: complementaryData["la-concha"].mainImage,
+            href: "/hiking/la-concha",
+            category: complementaryData["la-concha"].category,
+          },
+        ]}
+      />
+      <SeoContentTabs tabs={SEO_TABS} />
     </div>
   );
 }

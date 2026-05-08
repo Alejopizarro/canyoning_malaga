@@ -4,15 +4,17 @@ import { Faq } from "../../activities/components/faqs";
 // ─── SEO Metadata ───────────────────────────────────────────────────────────
 
 export const laConchaMetadata: Metadata = {
-  title:
-    "Climb La Concha Marbella | Iconic Peak Hiking - From 80€ Transfer Included",
+  title: "La Concha Marbella Hike: Iconic Peak Guided Tour | From 80€",
   description:
-    "Conquer La Concha, Marbella's most iconic peak at 1,215m. Guided hiking with 360º views of Gibraltar & Africa. Transfer included. 13km, 6.5h. From 80€. Book now!",
+    "Conquer La Concha Marbella Hike, most iconic mountain peak at 1,215m. Guided hiking with 360º views of Gibraltar & Africa. Transfer included. 13km, 6.5h. From 80€. Book now!",
   keywords: [
     "la concha marbella",
     "hiking marbella",
     "la concha hike",
-    "sierra blanca hiking",
+    "marbella hike",
+    "la concha mountain",
+    "mountain marbella",
+    "mountains marbella",
     "trekking marbella",
     "hiking costa del sol",
     "la concha peak",
@@ -25,9 +27,9 @@ export const laConchaMetadata: Metadata = {
     canonical: "https://www.tuuradventure.com/hiking/la-concha",
   },
   openGraph: {
-    title: "Climb La Concha Marbella | Iconic Peak Hiking - From 80€",
+    title: "La Concha Marbella Hike: Iconic Peak Guided Tour | From 80€",
     description:
-      "Conquer Marbella's most iconic peak at 1,215m with 360º views of Gibraltar & Africa. Guided hiking with transfer included. Book now!",
+      "Conquer La Concha Hike, Marbella's most iconic mountain peak at 1,215m. Guided hiking with 360º views of Gibraltar & Africa. Transfer included. 13km, 6.5h. From 80€. Book now!",
     url: "https://www.tuuradventure.com/hiking/la-concha",
     siteName: "TUUR Canyoning Malaga",
     type: "website",
@@ -43,9 +45,9 @@ export const laConchaMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Climb La Concha Marbella | Iconic Peak Hiking - From 80€",
+    title: "La Concha Marbella Hike: Iconic Peak Guided Tour | From 80€",
     description:
-      "Conquer Marbella's most iconic peak at 1,215m. 360º views of Gibraltar & Africa. Guided hiking with transfer included.",
+      "Conquer La Concha Hike, Marbella's most iconic mountain peak at 1,215m. Guided hiking with 360º views of Gibraltar & Africa. Transfer included. 13km, 6.5h. From 80€. Book now!",
     images: ["https://www.tuuradventure.com/la-concha-1.webp"],
   },
   robots: {

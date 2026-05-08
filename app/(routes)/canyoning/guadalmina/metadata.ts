@@ -4,7 +4,7 @@ import { Faq } from "../../activities/components/faqs";
 // ─── SEO Metadata ───────────────────────────────────────────────────────────
 
 export const guadalminaMetadata: Metadata = {
-  title: "Benahavís Canyoning: Canyon of the Angosturas, Guadalmina",
+  title: "Benahavís Canyon of Angosturas | Canyoning Guadalmina River",
   description:
     "The best canyoning near Marbella: Guadalmina Canyon of the Angosturas in Benahavís. Beginner & family-friendly from 6 y.o. Jumps, rappelling & slides. Every day from 45€",
   authors: [{ name: "José Moreno" }],
@@ -14,21 +14,18 @@ export const guadalminaMetadata: Metadata = {
     "canyon of the angosturas",
     "canyoning benahavis",
     "canyoning near marbella",
-    "canyoning malaga",
-    "canyoning for beginners",
+    "benahavis canyon",
+    "guadalmina river",
     "family canyoning marbella",
-    "canyoning marbella",
-    "canyoning costa del sol",
-    "barranquismo marbella",
     "the narrowest canyon",
   ],
   alternates: {
     canonical: "https://www.tuuradventure.com/canyoning/guadalmina",
   },
   openGraph: {
-    title: "Guadalmina Canyoning Marbella | From 45€ - Every Day!",
+    title: "Benahavís Canyon of Angosturas | Canyoning Guadalmina River",
     description:
-      "The best canyoning experience near Marbella. Beginner & family-friendly canyon in Benahavís with jumps, rappelling & slides. All year round.",
+      "The best canyoning near Marbella: Guadalmina Canyon of the Angosturas in Benahavís. Beginner & family-friendly from 6 y.o. Jumps, rappelling & slides. Every day from 45€",
     url: "https://www.tuuradventure.com/canyoning/guadalmina",
     siteName: "TUUR Canyoning Malaga",
     type: "website",
@@ -44,9 +41,9 @@ export const guadalminaMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Guadalmina Canyoning Marbella | From 45€ - Every Day!",
+    title: "Benahavís Canyon of Angosturas | Canyoning Guadalmina River",
     description:
-      "The best canyoning near Marbella. Beginner & family-friendly. Jumps, rappelling & slides. All year round.",
+      "The best canyoning near Marbella: Guadalmina Canyon of the Angosturas in Benahavís. Beginner & family-friendly from 6 y.o. Jumps, rappelling & slides. Every day from 45€",
     images: ["https://www.tuuradventure.com/guadalmina-1.webp"],
   },
   robots: {

@@ -23,8 +23,46 @@ import {
   jsonLdBreadcrumb,
 } from "./metadata";
 import Script from "next/script";
+import OtherActivities from "@/components/other-activities";
+import { complementaryData } from "@/lib/complementary-data";
+import SeoContentTabs from "@/components/seo-content-tabs";
 
 export const metadata = rioVerdeMetadata;
+
+const SEO_TABS = [
+  {
+    id: "rio-verde-spain",
+    label: "Rio Verde Spain",
+    h3: "Río Verde Spain: Canyoning in Andalusia's Most Turquoise Canyon",
+    paragraphs: [
+      "Río Verde Spain is widely regarded as one of the most photogenic canyoning destinations in the entire Iberian Peninsula. Located within the Sierra de Almijara Natural Park, on the border between the provinces of Málaga and Granada, the río verde spain stands out from other Spanish canyons due to its extraordinarily turquoise water — a natural phenomenon created by the high calcium carbonate content of the limestone geology dissolving into the river as it flows downstream. The resulting colour ranges from a vivid jade green to an intense aquamarine depending on the season and light conditions.",
+      "The río verde spain corridor carves a 12-kilometre gorge through the mountains between the villages of Otivar and Almuñécar in Granada Province. The canyoning section guided by TUUR Adventure covers the most spectacular 4.5-hour stretch: two mandatory rappels (6m and 9m), multiple jump points up to 9 metres, natural water slides, and deep swimming pools framed by sheer canyon walls. The canyon is accessible from April 1st to October 31st each year, with peak conditions from May to September.",
+      "For travellers visiting the Costa del Sol, the río verde spain is a realistic day trip: the meeting point in Otivar, Granada is approximately 50 minutes from Málaga city, 40 minutes from Nerja, and 55 minutes from Marbella. TUUR Adventure operates guided descents every Wednesday and Friday throughout the season, with private departures available for groups of up to 8 participants on other days of the week. The price includes wetsuit, helmet, harness, and a full photo report sent within 24 hours.",
+    ],
+  },
+  {
+    id: "rio-verde-canyoning",
+    label: "Rio Verde Canyoning",
+    h3: "Río Verde Canyoning: Jumps, Rappels and Turquoise Pools in Granada",
+    paragraphs: [
+      "Río Verde canyoning is one of the signature adventure activities in Andalusia, combining moderate technical difficulty with exceptional scenery. The río verde canyoning route follows a section of the river that descends through the heart of the Sierra de Almijara, a protected natural area straddling the Málaga–Granada border. Unlike many Spanish canyons, the río verde canyoning experience requires participants to actively swim long stretches of the canyon — making water confidence an important prerequisite for this route.",
+      "The río verde canyoning descent guided by TUUR Adventure takes approximately 4.5 hours and is classified as Level 2 (intermediate). The two mandatory rappels — 6 metres and 9 metres — introduce participants to basic rope technique in a fully assisted, guided environment. Jump points range from 3 to 9 metres and are entirely optional: our guides identify each jump in advance and participants decide individually whether to jump, slide, or take the alternative descent. Minimum age for río verde canyoning is 9 years old.",
+      "What distinguishes the río verde canyoning experience from other Andalusian canyons is the sheer density of natural features packed into a single descent. In under 5 hours you encounter rappels, jumps, slides, swim-throughs, and pools — along with the canyon's signature turquoise colour that makes every photograph exceptional. TUUR Adventure provides all equipment including 5mm wetsuits, neoprene shoes, helmets, and harnesses.",
+      "Río verde canyoning with TUUR Adventure operates April to October, with open group sessions every Wednesday and Friday from June to September. Private group departures are available any day of the week for groups of 2 to 8 participants. The meeting point is the bar-restaurant El Capricho in Otivar, Granada — the guide transports the group by van to the canyon entrance, approximately 45 minutes uphill from the village.",
+    ],
+  },
+  {
+    id: "canyoning-granada",
+    label: "Canyoning Granada",
+    h3: "Canyoning Granada: Discover the Canyons of Sierra de Almijara",
+    paragraphs: [
+      "Canyoning granada has grown rapidly in popularity over the past decade, driven by the exceptional quality of the natural gorges found in the Sierra de Almijara and Sierra Nevada foothills. The undisputed highlight of canyoning granada is the Río Verde, but the province also offers several other technical canyons including the Río Izbor, Río Huechar, and the more extreme descents of the Alpujarras range. For visitors looking for the most spectacular and accessible canyoning granada experience, the Río Verde remains the benchmark.",
+      "TUUR Adventure operates canyoning granada excursions from the village of Otivar, located in the Jete Valley approximately 20 km north of Almuñécar. Despite being in Granada Province, the location is well within reach of visitors based on the Costa del Sol: the drive from Málaga takes under an hour, and from Marbella or Estepona approximately 80 minutes. This makes canyoning granada with TUUR Adventure a genuine full-day excursion from any base on the Andalusian coast.",
+      "The Río Verde canyoning granada route is open to groups from age 9 upward, with no prior canyoning experience required. Participants receive a full technical briefing at the meeting point, are fitted with appropriate equipment, and travel by van to the canyon entrance with the guide. The descent takes 4 to 5 hours depending on group size, after which the guide returns the group to the meeting point. The entire day, including travel to and from the canyon entrance, typically lasts 7 to 8 hours.",
+      "For more advanced canyoners looking for a greater challenge, TUUR Adventure also offers the Río Verde X-Pro, an integral descent of the entire Río Verde canyon taking 7 hours with higher rappels and greater technical demands. Whether you choose the standard or the X-Pro, canyoning granada in the Río Verde is an unforgettable Andalusian adventure that combines mountain scenery, technical challenge, and natural swimming in one of Spain's most beautiful rivers.",
+    ],
+  },
+];
 
 // Descripción de la excursión con negritas
 const EXCURSION_INTRO = (
@@ -390,6 +428,32 @@ export default async function Page() {
       <TrustindexWidget />
       <PrivateTourCTA />
       <Faqs faqs={rioVerdeFaqs} />
+      <OtherActivities
+        activities={[
+          {
+            title: complementaryData["guadalmina"].subtitle.split(":")[0],
+            description: complementaryData["guadalmina"].description,
+            image: complementaryData["guadalmina"].mainImage,
+            href: "/canyoning/guadalmina",
+            category: complementaryData["guadalmina"].category,
+          },
+          {
+            title: complementaryData["ronda"].subtitle.split(":")[0],
+            description: complementaryData["ronda"].description,
+            image: complementaryData["ronda"].mainImage,
+            href: "/via-ferrata/ronda",
+            category: complementaryData["ronda"].category,
+          },
+          {
+            title: complementaryData["la-concha"].subtitle.split(":")[0],
+            description: complementaryData["la-concha"].description,
+            image: complementaryData["la-concha"].mainImage,
+            href: "/hiking/la-concha",
+            category: complementaryData["la-concha"].category,
+          },
+        ]}
+      />
+      <SeoContentTabs tabs={SEO_TABS} />
     </div>
   );
 }

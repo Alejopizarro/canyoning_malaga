@@ -4,6 +4,9 @@ import ExcursionDescription from "@/components/excursion-description";
 import Faqs from "../../activities/components/faqs";
 import { getExcursionByPath } from "@/lib/activities";
 import { notFound } from "next/navigation";
+import OtherActivities from "@/components/other-activities";
+import { complementaryData } from "@/lib/complementary-data";
+import SeoContentTabs from "@/components/seo-content-tabs";
 import {
   Accordion,
   AccordionContent,
@@ -24,6 +27,41 @@ import {
 } from "./metadata";
 
 export const metadata = guadalminaMetadata;
+
+const SEO_TABS = [
+  {
+    id: "river-walk",
+    label: "Guadalmina River Walk",
+    h3: "Guadalmina River Walk: Guided Canyoning vs. Self-Guided Route",
+    paragraphs: [
+      "The Guadalmina River Walk is one of the most iconic outdoor experiences on the Costa del Sol. The route follows the Río Guadalmina as it carves through the Sierra Bermeja mountains in Benahavís, creating a dramatic sequence of narrow gorges, natural pools, and sculpted rock formations. Many visitors attempt the guadalmina river walk independently, but a guided canyoning tour transforms the experience entirely — unlocking sections of the canyon that are difficult to navigate without technical equipment and local expertise.",
+      "With TUUR Adventure, the Guadalmina River Walk becomes a full canyoning adventure: you'll descend with a certified guide, wearing a 5mm wetsuit, helmet and harness, accessing jumps of up to 6 meters, a toboggan slide and a rappel section that self-guided hikers simply cannot reach safely. The guided guadalmina river walk departs every day of the year, morning and afternoon, from a meeting point in San Pedro de Alcántara — just 15 minutes from Puerto Banús and 25 minutes from Estepona.",
+      "Whether you're looking for a mild family-friendly guadalmina river walk with small children or a more adrenaline-packed descent with jumps and rappelling, our guides tailor the experience to your group. This activity is runnable all year round thanks to the canyon's sheltered microclimate and temperate waters — one of the very few canyons in Málaga Province with this characteristic.",
+    ],
+  },
+  {
+    id: "benahavis",
+    label: "Benahavís Canyoning",
+    h3: "Benahavís Canyoning: The Best Canyon Near Marbella",
+    paragraphs: [
+      "Benahavís canyoning takes place in the municipality of Benahavís, a small village nestled in the mountains 20 minutes above Marbella. The star location for benahavís canyoning is the Río Guadalmina canyon — also called Las Angosturas or Canyon of the Angosturas — a Level 1 protected natural area within the Special Conservation Zone (ZEC) of Sierras Bermeja y Real. Its accessible difficulty level and spectacular scenery make it the most popular canyoning destination on the entire Costa del Sol.",
+      "Benahavís canyoning with TUUR Adventure is suitable for all ages: families with children from 6 years old in summer, groups of friends, couples and corporate team-building groups. The canyon is short enough to complete in a 3-hour session without exhausting participants, yet varied enough to offer genuine adventure — swimming through narrow passages, jumping from rock ledges into deep pools, and rappelling down a small waterfall with full safety equipment.",
+      "Unlike other benahavís canyoning operators, TUUR Adventure is a locally-based company registered with the Junta de Andalucía's Active Tourism Registry (AT/MA/00141), led by professional mountain guide José Moreno with over 20 years of experience in Andalusia's canyons. All guides are first-aid certified, and the equipment is inspected and renewed each season.",
+      "Looking for canyoning benahavís for beginners? Our open group sessions are ideal for first-timers. Searching for canyoning near marbella with kids? We take children from 6 years old in summer. Need a private benahavís canyoning tour for a group? We offer exclusive private departures for groups of 2 to 30 participants. From San Pedro, Puerto Banús, Marbella, Nueva Andalucía or Estepona — we are the closest and most convenient canyoning option on the Costa del Sol.",
+    ],
+  },
+  {
+    id: "angosturas",
+    label: "Canyon of the Angosturas",
+    h3: "Canyon of the Angosturas (Cañón de las Angosturas) — Benahavís, Málaga",
+    paragraphs: [
+      "The Canyon of the Angosturas — known in Spanish as el Cañón de las Angosturas or Las Angosturas de Guadalmina — is a protected natural gorge located in the municipality of Benahavís, in the province of Málaga. The canyon is carved by the Río Guadalmina as it descends from the Sierra Bermeja mountains towards the Costa del Sol. Its name, 'Las Angosturas', refers to the extreme narrowness of the gorge at certain points — walls that close in to less than a metre apart, creating a uniquely dramatic canyoning experience.",
+      "Geologically, the Canyon of the Angosturas sits within Georrecurso 621 of the Diputación Provincial de Málaga and is classified as a Special Conservation Zone (ZEC ES6170010 — Sierras Bermeja y Real). The canyon is open to the public year-round, with regulated access hours established by the Ayuntamiento de Benahavís to protect the ecosystem. Professional guided canyoning tours — like those offered by TUUR Adventure — operate under official permits and follow strict environmental guidelines during every descent.",
+      "The canyon of the angosturas is classified as Level 1 canyoning difficulty, making it genuinely accessible for beginners, children and non-swimmers with basic fitness. The route through the angosturas guadalmina typically takes 2 to 3 hours depending on group size and conditions. Along the way, participants encounter natural pools (known locally as 'charcos'), a famous rock toboggan, narrow swim-throughs, and optional jump points ranging from 1 to 6 metres. The canyon ends near the Charco de los Tubos, named after historic disused pipes embedded in the canyon wall.",
+      "For visitors arriving from Marbella, Puerto Banús or Estepona, the Canyon of the Angosturas is the single most accessible natural canyon in the province — located just off the A-7175 road towards Benahavís village, with signposted parking at Parking Ermita. TUUR Adventure picks up participants from San Pedro de Alcántara and provides all necessary equipment: wetsuit, helmet, harness and neoprene shoes. No prior canyoning experience is needed to descend the canyon of the angosturas safely.",
+    ],
+  },
+];
 
 const ACTIVITY_HIGHLIGHTS = [
   {
@@ -368,7 +406,34 @@ export default async function Page() {
       </div>
       <TrustindexWidget />
       <PrivateTourCTA />
+
       <Faqs faqs={guadalminaFaqs} />
+      <OtherActivities
+        activities={[
+          {
+            title: complementaryData["rio-verde"].subtitle.split(":")[0],
+            description: complementaryData["rio-verde"].description,
+            image: complementaryData["rio-verde"].mainImage,
+            href: "/canyoning/rio-verde",
+            category: complementaryData["rio-verde"].category,
+          },
+          {
+            title: complementaryData["ronda"].subtitle.split(":")[0],
+            description: complementaryData["ronda"].description,
+            image: complementaryData["ronda"].mainImage,
+            href: "/via-ferrata/ronda",
+            category: complementaryData["ronda"].category,
+          },
+          {
+            title: complementaryData["la-concha"].subtitle.split(":")[0],
+            description: complementaryData["la-concha"].description,
+            image: complementaryData["la-concha"].mainImage,
+            href: "/hiking/la-concha",
+            category: complementaryData["la-concha"].category,
+          },
+        ]}
+      />
+      <SeoContentTabs tabs={SEO_TABS} />
     </div>
   );
 }
