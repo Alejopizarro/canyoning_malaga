@@ -14,6 +14,7 @@ interface DayCardSliderProps {
   isNew: boolean;
   images: string[];
   className?: string;
+  badgeText?: string;
 }
 
 export default function DayCardSlider({
@@ -26,6 +27,7 @@ export default function DayCardSlider({
   isNew,
   images,
   className = "",
+  badgeText = "{badgeText}",
 }: DayCardSliderProps) {
   const [current, setCurrent] = useState(0);
 
@@ -57,10 +59,10 @@ export default function DayCardSlider({
             </div>
           ))}
 
-          {/* ¡NUEVO! badge */}
+          {/* {badgeText} badge */}
           {isNew && (
             <span className="absolute top-3 left-3 z-10 bg-[#C8A84B] text-white text-xs font-bold px-2.5 py-1 rounded-full shadow">
-              ¡NUEVO!
+              {badgeText}
             </span>
           )}
 
@@ -121,7 +123,7 @@ export default function DayCardSlider({
           {/* Badge for cards without images */}
           {images.length === 0 && isNew && (
             <span className="shrink-0 bg-[#C8A84B] text-white text-xs font-bold px-2 py-0.5 rounded-full">
-              ¡NUEVO!
+              {badgeText}
             </span>
           )}
         </div>

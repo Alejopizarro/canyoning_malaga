@@ -6,7 +6,7 @@ import { Faq } from "../../activities/components/faqs";
 export const laConchaMetadata: Metadata = {
   title: "La Concha Marbella Hike: Iconic Peak Guided Tour | From 80€",
   description:
-    "Conquer La Concha Marbella Hike, most iconic mountain peak at 1,215m. Guided hiking with 360º views of Gibraltar & Africa. Transfer included. 13km, 6.5h. From 80€. Book now!",
+    "Conquer La Concha Marbella Hike, most iconic mountain peak at 1,215m. Guided hiking with 360º views of Gibraltar & Africa. Transfer included. From 80€. Book now!",
   keywords: [
     "la concha marbella",
     "hiking marbella",

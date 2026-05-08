@@ -17,7 +17,7 @@ export default function SeoContentTabs({ tabs }: SeoContentTabsProps) {
   const [activeTabId, setActiveTabId] = useState<string | null>(null);
 
   return (
-    <div className="max-w-[1440px] sm:px-16 py-10 px-4">
+    <div className="max-w-[1440px] mx-auto sm:px-16 py-10 px-4">
       <div className="flex gap-6 border-b border-gray-200 mb-6">
         {tabs.map((tab) => (
           <button

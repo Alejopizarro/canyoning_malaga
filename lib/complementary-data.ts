@@ -710,7 +710,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
 
   // ==================== HIKING ====================
   "la-concha": {
-    subtitle: "Hiking La Concha: Ascent to Marbella's most iconic peak",
+    subtitle: "La Concha Marbella Hike: Ascent to Marbella's most iconic peak",
     description:
       "Ascent to Marbella's most iconic peak (1,215m). Panoramic views of Costa del Sol, Gibraltar and Africa.",
     days: "All year!",
