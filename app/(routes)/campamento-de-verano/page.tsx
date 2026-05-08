@@ -15,6 +15,7 @@ import {
 } from "./metadata";
 import DayCardSlider from "./day-card-slider";
 import GridHero, { GridHeroImage } from "@/components/grid-hero";
+import LanguageSwitcher from "@/components/language-switcher";
 
 export const metadata = campamentoMetadata;
 
@@ -231,10 +232,11 @@ export default function Page() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/10" />
 
         <div className="relative z-10 flex flex-col items-center text-center text-white px-4 max-w-4xl mx-auto">
-          <span className="bg-[#C8A84B] text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
+          <LanguageSwitcher active="es" />
+          <span className="bg-[#C8A84B] text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6 mt-4">
             Plazas Limitadas
           </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+          <h1 className="text-4xl sm:text-6xl max-w-2xl lg:text-6xl font-bold leading-tight mb-4">
             Campamento de Verano TUUR 2026
           </h1>
           <p className="text-lg sm:text-xl text-white/85 mb-8 max-w-2xl">
@@ -256,19 +258,19 @@ export default function Page() {
               Ver Programa Completo
             </a>
           </div>
-        </div>
 
-        <div className="absolute bottom-8 left-0 right-0 z-10 flex justify-center flex-wrap gap-3 px-4">
-          {["5 Días · 1 Noche", "6 a 14 años", "235 € todo incluido"].map(
-            (stat) => (
-              <span
-                key={stat}
-                className="bg-white/20 backdrop-blur-sm text-white border border-white/30 px-5 py-2 rounded-full text-sm font-medium"
-              >
-                {stat}
-              </span>
-            ),
-          )}
+          <div className="mt-8 sm:mt-16 flex justify-center flex-wrap gap-3 px-4">
+            {["5 Días · 1 Noche", "6 a 14 años", "235 € todo incluido"].map(
+              (stat) => (
+                <span
+                  key={stat}
+                  className="bg-white/20 backdrop-blur-sm text-white border border-white/30 px-5 py-2 rounded-full text-sm font-medium"
+                >
+                  {stat}
+                </span>
+              ),
+            )}
+          </div>
         </div>
       </section>
 

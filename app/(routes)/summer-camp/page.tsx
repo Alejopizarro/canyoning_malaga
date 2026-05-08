@@ -15,6 +15,7 @@ import {
 } from "./metadata";
 import DayCardSlider from "../campamento-de-verano/day-card-slider";
 import GridHero, { GridHeroImage } from "@/components/grid-hero";
+import LanguageSwitcher from "@/components/language-switcher";
 
 export const metadata = summerCampMetadata;
 
@@ -231,10 +232,11 @@ export default function Page() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/10" />
 
         <div className="relative z-10 flex flex-col items-center text-center text-white px-4 max-w-4xl mx-auto">
-          <span className="bg-[#C8A84B] text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
+          <LanguageSwitcher active="en" />
+          <span className="bg-[#C8A84B] text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6 mt-4">
             Limited Places
           </span>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4">
+          <h1 className="text-4xl sm:text-6xl max-w-2xl lg:text-6xl font-bold leading-tight mb-4">
             TUUR Summer Camp 2026
           </h1>
           <p className="text-lg sm:text-xl text-white/85 mb-8 max-w-2xl">
@@ -256,19 +258,19 @@ export default function Page() {
               View Full Programme
             </a>
           </div>
-        </div>
 
-        <div className="absolute bottom-8 left-0 right-0 z-10 flex justify-center flex-wrap gap-3 px-4">
-          {["5 Days · 1 Night", "Ages 6 to 14", "€235 all-inclusive"].map(
-            (stat) => (
-              <span
-                key={stat}
-                className="bg-white/20 backdrop-blur-sm text-white border border-white/30 px-5 py-2 rounded-full text-sm font-medium"
-              >
-                {stat}
-              </span>
-            ),
-          )}
+          <div className="mt-8 sm:mt-16 flex justify-center flex-wrap gap-3 px-4">
+            {["5 Days · 1 Night", "Ages 6 to 14", "€235 all-inclusive"].map(
+              (stat) => (
+                <span
+                  key={stat}
+                  className="bg-white/20 backdrop-blur-sm text-white border border-white/30 px-5 py-2 rounded-full text-sm font-medium"
+                >
+                  {stat}
+                </span>
+              ),
+            )}
+          </div>
         </div>
       </section>
 
@@ -280,12 +282,12 @@ export default function Page() {
           </h2>
           <p className="text-gray-600 leading-relaxed text-lg mb-10">
             Those of us lucky enough to spend time in nature with friends during
-            our youth remember those moments with particular fondness. As adults,
-            we come to realise how essential they were for our personal growth,
-            and for instilling values, teamwork, and an open mind towards the
-            natural world. This is one of the projects that motivates our entire
-            team most — especially because of the positive transformation that
-            the young participants experience every year.
+            our youth remember those moments with particular fondness. As
+            adults, we come to realise how essential they were for our personal
+            growth, and for instilling values, teamwork, and an open mind
+            towards the natural world. This is one of the projects that
+            motivates our entire team most — especially because of the positive
+            transformation that the young participants experience every year.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             {VALUE_PILLS.map(({ Icon, text }) => (
