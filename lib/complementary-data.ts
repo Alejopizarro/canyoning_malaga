@@ -255,6 +255,18 @@ export const complementaryData: Record<string, ComplementaryData> = {
         src: "/rio-verde-xpro-15.webp",
         alt: "Rio Verde canyon - Canyon walls in rio verde canyon",
       },
+      {
+        src: "/rio-verde-xpro-16.webp",
+        alt: "Rio Verde canyon - Canyon walls in rio verde canyon",
+      },
+      {
+        src: "/rio-verde-xpro-17.webp",
+        alt: "Rio Verde canyon - Canyon walls in rio verde canyon",
+      },
+      {
+        src: "/rio-verde-xpro-18.webp",
+        alt: "Rio Verde canyon - Canyon walls in rio verde canyon",
+      },
     ],
     isOffer: false,
     rating: { value: 5, reviews: 2 },
