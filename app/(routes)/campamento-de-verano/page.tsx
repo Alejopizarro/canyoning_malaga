@@ -373,6 +373,10 @@ export default function Page() {
                       <span className="text-[#008e8a] font-bold">✓</span>
                       Reportaje fotográfico completo
                     </p>
+                    <p className="flex items-center gap-2">
+                      <span className="text-[#008e8a] font-bold">✓</span>
+                      Alojamiento en el camping y tiendas de campaña
+                    </p>
                     <p className="flex items-center gap-2 font-semibold text-gray-950">
                       <span className="text-[#008e8a] font-bold">✓</span>
                       ... Y los mejores recuerdos del verano!
@@ -414,6 +418,7 @@ export default function Page() {
                     activities={day.activities}
                     time={day.time}
                     isNew={day.isNew}
+                    badgeText="NUEVO!"
                     images={day.images}
                     className={
                       index === PROGRAMA.length - 1 ? "sm:col-span-2" : ""

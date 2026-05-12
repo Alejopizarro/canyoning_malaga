@@ -14,6 +14,7 @@ import { Suspense } from "react";
 import CookieBanner from "@/components/cookie-banner";
 import CookieConsentModal from "@/components/ui/cookie-consent-modal";
 import CookieSettingsButton from "@/components/ui/cookie-settings-button";
+import BannerTop from "@/components/ui/banner-top";
 
 const raleway = Raleway({
   variable: "--font-raleway",
@@ -41,6 +42,7 @@ export default function RootLayout({
             <GTMPageViewTracker />
           </Suspense>
           <BokunTracker />
+          <BannerTop />
           <Navbar />
           {children}
           <Footer />

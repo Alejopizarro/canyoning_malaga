@@ -249,6 +249,19 @@ export default async function Page() {
             </p>
           </div>
 
+          {/* Early Bird / Session Info Box */}
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
+            <h3 className="font-semibold text-blue-800 mb-2">
+              🌅 Pick Your Perfect Session
+            </h3>
+            <p className="text-blue-700 text-sm">
+              Choose our <strong>9 AM Early Bird</strong> session to beat the
+              summer crowds and enjoy the turquoise waters in peace, or join our
+              popular <strong>10 AM and 2 PM</strong> slots for a high-energy
+              adventure.
+            </p>
+          </div>
+
           {/* Accordion con toda la información */}
           <Accordion type="single" collapsible>
             {/* Description */}
