@@ -25,7 +25,10 @@ const Navbar = async () => {
 
   return (
     <>
-      <div className="fixed top-10 left-1/2 -translate-x-1/2 lg:top-10 z-50 w-[calc(100%-2rem)] max-w-5xl">
+      <div
+        className="fixed left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-5xl transition-[top] duration-300"
+        style={{ top: "var(--banner-h, 2.5rem)" }}
+      >
         <div className="absolute inset-0 bg-neutral-600/50 backdrop-blur-md rounded-full border border-white/10 shadow-lg" />
         <nav className="py-2 px-2 flex items-center justify-between rounded-full gap-x-2 lg:gap-x-3 relative">
           <div className="flex items-center lg:space-x-4 flex-1 lg:flex-none flex-shrink-0">

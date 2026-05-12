@@ -447,6 +447,22 @@ export default async function Page() {
         ]}
       />
       <SeoContentTabs tabs={SEO_TABS} />
+
+      {/* Hidden SEO text — visually hidden, fully indexed by crawlers */}
+      <div className="sr-only">
+        <h2>Canyoning Marbella — Guadalmina Canyon Guide</h2>
+        <p>
+          Guadalmina canyoning is the most popular canyoning activity near
+          Marbella, located in Benahavís just 30 minutes from Puerto Banús.
+          Also known as canyoning Benahavís or the Guadalmina river walk, this
+          guided descent is available every day of the year for beginners and
+          families. Keywords searched by visitors include: canyoning near
+          Marbella, canyoning Marbella, Guadalmina canyon, barranquismo
+          Marbella, barranquismo Benahavís, canyoning Costa del Sol, canyon
+          Benahavís, river walk Guadalmina, canyoneering Marbella, canyoning
+          Málaga, canyoning Andalusia, canyoning Spain Marbella.
+        </p>
+      </div>
     </div>
   );
 }

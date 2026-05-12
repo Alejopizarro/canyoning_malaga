@@ -36,16 +36,21 @@ export default function SeoContentTabs({ tabs }: SeoContentTabsProps) {
         ))}
       </div>
 
-      {tabs.map((tab) =>
-        activeTabId === tab.id ? (
-          <div key={tab.id} className="prose prose-sm max-w-none text-gray-600">
-            <h3 className="sr-only">{tab.h3}</h3>
-            {tab.paragraphs.map((p, i) => (
-              <p key={i}>{p}</p>
-            ))}
-          </div>
-        ) : null,
-      )}
+      {tabs.map((tab) => (
+        <div
+          key={tab.id}
+          className={
+            activeTabId === tab.id
+              ? "prose prose-sm max-w-none text-gray-600"
+              : "sr-only"
+          }
+        >
+          <h3 className="sr-only">{tab.h3}</h3>
+          {tab.paragraphs.map((p, i) => (
+            <p key={i}>{p}</p>
+          ))}
+        </div>
+      ))}
     </div>
   );
 }
