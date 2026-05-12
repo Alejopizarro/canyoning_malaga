@@ -4,7 +4,7 @@ import { Faq } from "../activities/components/faqs";
 // ─── SEO Metadata ─────────────────────────────────────────────────────────────
 
 export const summerCampMetadata: Metadata = {
-  title: "Summer Camp for Children in Marbella 2026 — TUUR Adventure",
+  title: "Summer Camp for Children in Marbella, Málaga 2026",
   description:
     "Adventure nature camp for children aged 6 to 14. From 29 June to 3 July in Marbella. Canyoning, kayak, abseiling and camping. €235. Limited places.",
   authors: [{ name: "TUUR Adventure Experts" }],

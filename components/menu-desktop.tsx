@@ -174,6 +174,17 @@ const MenuDesktop = ({
             </div>
           </NavigationMenuContent>
         </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuLink
+            href="/summer-camp"
+            className="text-[0.875rem] font-medium text-white/90 hover:text-white hover:bg-white/10 py-1.5 px-2.5 rounded-full transition-all inline-block whitespace-nowrap"
+          >
+            Summer Camp{" "}
+            <span className="font-semibold text-[var(--primary-light)] text-xs ml-1">
+              NEW !
+            </span>
+          </NavigationMenuLink>
+        </NavigationMenuItem>
 
         <NavigationMenuItem>
           <NavigationMenuLink

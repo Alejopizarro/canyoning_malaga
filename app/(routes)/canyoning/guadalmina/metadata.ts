@@ -6,7 +6,7 @@ import { Faq } from "../../activities/components/faqs";
 export const guadalminaMetadata: Metadata = {
   title: "Benahavís Canyon of Angosturas | Canyoning Guadalmina River",
   description:
-    "The best canyoning near Marbella: Guadalmina Canyon of the Angosturas in Benahavís. Family-friendly from 6 y.o. Jumps, rappelling & slides. Every day from 45€",
+    "The best canyoning near Marbella: Guadalmina Canyon of the Angosturas in Benahavís. From 6 y.o. Jumps, rappelling & slides. Every day from 45€ Book now!",
   authors: [{ name: "José Moreno" }],
   publisher: "TUUR Adventure Experts",
   keywords: [

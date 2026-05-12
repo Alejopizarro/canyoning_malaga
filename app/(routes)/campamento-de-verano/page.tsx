@@ -16,6 +16,7 @@ import {
 import DayCardSlider from "./day-card-slider";
 import GridHero, { GridHeroImage } from "@/components/grid-hero";
 import LanguageSwitcher from "@/components/language-switcher";
+import SetHtmlLang from "@/components/set-html-lang";
 
 export const metadata = campamentoMetadata;
 
@@ -203,6 +204,7 @@ const GALLERY_IMAGES: GridHeroImage[] = [
 export default function Page() {
   return (
     <div>
+      <SetHtmlLang lang="es" />
       {/* JSON-LD Structured Data */}
       <script
         type="application/ld+json"

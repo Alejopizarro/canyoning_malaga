@@ -4,9 +4,9 @@ import { Faq } from "../activities/components/faqs";
 // ─── SEO Metadata ─────────────────────────────────────────────────────────────
 
 export const campamentoMetadata: Metadata = {
-  title: "Campamento de Verano para Niños en Marbella 2026 — TUUR Adventure",
+  title: "Campamento de Verano para Niños en Marbella, Málaga 2026",
   description:
-    "Campamento de aventura en la naturaleza para niños de 6 a 14 años. Del 29 de junio al 3 de julio en Marbella. Barranquismo, kayak, rápel y acampada. 235 €. Plazas limitadas.",
+    "Campamento de aventura en la naturaleza para niños de 6 a 14 años. Del 29 de junio al 3 de julio en Marbella. Barranquismo, kayak, rápel y acampada. 235 €.",
   authors: [{ name: "TUUR Adventure Experts" }],
   publisher: "TUUR Adventure Experts",
   keywords: [

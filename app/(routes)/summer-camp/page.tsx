@@ -371,6 +371,10 @@ export default function Page() {
                       <span className="text-[#008e8a] font-bold">✓</span>
                       Full photo report
                     </p>
+                    <p className="flex items-center gap-2">
+                      <span className="text-[#008e8a] font-bold">✓</span>
+                      Accommodation in the campsite and tents
+                    </p>
                     <p className="flex items-center gap-2 font-semibold text-gray-950">
                       <span className="text-[#008e8a] font-bold">✓</span>
                       ... And the best memories of the summer!

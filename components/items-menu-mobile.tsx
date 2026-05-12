@@ -176,8 +176,17 @@ const ItemsMenuMobile = ({
               </AccordionContent>
             </AccordionItem>
 
-            {/* About Us */}
             <AccordionItem value="item-3" className="border-none">
+              <button
+                className="w-full text-left font-semibold py-3 px-2 hover:bg-gray-50 rounded-lg transition-colors text-gray-900"
+                onClick={() => router.push("/summer-camp")}
+              >
+                Summer Camp
+              </button>
+            </AccordionItem>
+
+            {/* About Us */}
+            <AccordionItem value="item-4" className="border-none">
               <button
                 className="w-full text-left font-semibold py-3 px-2 hover:bg-gray-50 rounded-lg transition-colors text-gray-900"
                 onClick={() => router.push("/about-us")}
@@ -187,7 +196,7 @@ const ItemsMenuMobile = ({
             </AccordionItem>
 
             {/* Blog */}
-            <AccordionItem value="item-4" className="border-none">
+            <AccordionItem value="item-5" className="border-none">
               <button
                 className="w-full text-left font-semibold py-3 px-2 hover:bg-gray-50 rounded-lg transition-colors text-gray-900"
                 onClick={() => router.push("/blog")}
@@ -197,7 +206,7 @@ const ItemsMenuMobile = ({
             </AccordionItem>
 
             {/* Contact */}
-            <AccordionItem value="item-5" className="border-none">
+            <AccordionItem value="item-6" className="border-none">
               <button
                 className="w-full text-left font-semibold py-3 px-2 hover:bg-gray-50 rounded-lg transition-colors text-gray-900"
                 onClick={() => router.push("/contact")}
