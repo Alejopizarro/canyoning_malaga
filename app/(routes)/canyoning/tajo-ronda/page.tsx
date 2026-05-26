@@ -230,18 +230,52 @@ export default async function Page() {
             {/* What's Included */}
             <AccordionItem value="item-2">
               <AccordionTrigger>What&apos;s Included</AccordionTrigger>
-              <AccordionContent className="flex flex-col gap-y-4">
+              <AccordionContent className="flex flex-col gap-y-4 text-gray-600">
                 <div>
-                  <h3 className="text-lg font-semibold mb-3">Includes</h3>
+                  <p className="font-semibold text-gray-800 mb-2">
+                    The price of the activity includes:
+                  </p>
                   <ul className="list-disc pl-6 space-y-2">
-                    {DESCRIPTION_DATA.whatsIncluded.included.map(
-                      (item, index) => (
-                        <li key={index}>{item}</li>
-                      ),
-                    )}
+                    <li>Wetsuit/neoprene</li>
+                    <li>Canyoning harness</li>
+                    <li>Helmet</li>
+                    <li>Rappel equipment</li>
+                    <li>Professional Guide</li>
+                    <li>Accident and civil responsibility insurance</li>
+                    <li>
+                      <strong>Full Photo Report</strong> (A link is sent via
+                      WhatsApp within 24 hours).
+                    </li>
                   </ul>
                 </div>
-              </AccordionContent>
+                <div>
+                  <p className="font-semibold text-gray-800 mb-2">
+                    Optional extras:
+                  </p>
+                  <ul className="list-disc pl-6 space-y-2">
+                    <li>
+                      <strong>Canyoning shoes:</strong> You can use your own
+                      sports shoes* or hire our professional canyoning shoes
+                      after booking for 9€ and enjoy the activity without
+                      worrying about slipping and getting your own shoes wet 🙂
+                    </li>
+                  </ul>
+                </div>
+                <p className="text-sm text-gray-500">
+                  *Water shoes and flip-flops are not permitted for canyoning.
+                  For more information on how to choose the right footwear, take
+                  a look at{" "}
+                  <a
+                    href="https://www.tuuradventure.com/blog/what-is-basic-equipment-for-canyoning#footwear"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline"
+                  >
+                    this article
+                  </a>
+                  .
+                </p>
+              </AccordionContent>{" "}
             </AccordionItem>
 
             {/* What to Bring */}

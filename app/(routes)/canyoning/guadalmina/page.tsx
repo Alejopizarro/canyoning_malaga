@@ -331,7 +331,7 @@ export default async function Page() {
                     <li>
                       <strong>Canyoning shoes:</strong> You can use your own
                       sports shoes* or hire our professional canyoning shoes
-                      after booking for 9€ and enjoy the activity without
+                      after booking for 8€ and enjoy the activity without
                       worrying about slipping and getting your own shoes wet 🙂
                     </li>
                   </ul>
