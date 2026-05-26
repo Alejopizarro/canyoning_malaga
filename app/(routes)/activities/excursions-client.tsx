@@ -83,6 +83,13 @@ const ExcursionsClient = ({ excursions }: ExcursionsClientProps) => {
           (filterMostPopular === "true" && excursion.isMostPopular)),
     );
 
+    // Siempre ordenar: disponibles primero
+    filtered = [...filtered].sort((a, b) => {
+      const aDisp = (a.isDisponible ?? true) ? 1 : 0;
+      const bDisp = (b.isDisponible ?? true) ? 1 : 0;
+      return bDisp - aDisp;
+    });
+
     // Luego ordenar por precio si está activo (el precio ya es un número)
     if (sortByPrice === "asc") {
       filtered = [...filtered].sort((a, b) => a.price - b.price);
