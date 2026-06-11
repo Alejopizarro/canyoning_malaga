@@ -7,6 +7,7 @@ interface ExcursionDescriptionProps {
     price: number;
     days?: string;
     minimumAge?: number;
+    maxAge?: number;
     ubication?: string;
     duration: number;
     province?: string;
@@ -24,9 +25,9 @@ const ExcursionDescription = (props: ExcursionDescriptionProps) => {
           <p className="text-lg text-gray-600">{excursion.category}</p>
           <p className="text-4xl md:text-5xl font-bold">{excursion.title}</p>
         </h2>
-        <div className="text-primary flex items-center gap-2">
+        <div className="text-primary flex items-end gap-2">
           <span className="text-xl text-gray-600 mt-1.5">From</span>
-          <p className="text-4xl my-4 md:text-5xl font-extrabold">
+          <p className="text-4xl md:text-5xl font-extrabold">
             {excursion.price}€{excursion.specialPrice ? "*" : ""}
           </p>
         </div>
@@ -40,6 +41,7 @@ const ExcursionDescription = (props: ExcursionDescriptionProps) => {
         ubication={excursion.ubication}
         duration={excursion.duration}
         minimumAge={excursion.minimumAge}
+        maxAge={excursion.maxAge}
         province={excursion.province}
         level={excursion.level}
       />

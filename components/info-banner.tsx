@@ -10,6 +10,7 @@ import {
 
 interface InfoBannerProps {
   minimumAge?: number;
+  maxAge?: number;
   ubication?: string;
   province?: string;
   level: "easy" | "moderate" | "advanced";
@@ -18,6 +19,7 @@ interface InfoBannerProps {
 
 export default function InfoBanner({
   minimumAge,
+  maxAge,
   ubication,
   province,
   level,
@@ -56,7 +58,7 @@ export default function InfoBanner({
 
       <span className="flex bg-gray-100 px-4 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-900">
         <PersonStanding size={12} />
-        From {minimumAge} y.o.
+        From {minimumAge} y.o.{maxAge ? ` to ${maxAge} y.o.` : ""}
       </span>
     </div>
   );

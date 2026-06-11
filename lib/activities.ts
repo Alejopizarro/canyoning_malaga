@@ -33,6 +33,7 @@ export interface Excursion extends SheetExcursion {
     reviews: number;
   };
   minimumAge: number;
+  maxAge?: number;
   ubication: string;
   duration: number;
   level: "easy" | "moderate" | "advanced";

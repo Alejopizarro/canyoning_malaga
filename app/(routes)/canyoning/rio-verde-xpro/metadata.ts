@@ -5,9 +5,9 @@ import { Faq } from "../../activities/components/faqs";
 
 export const rioVerdeXproMetadata: Metadata = {
   title:
-    "Río Verde X-Pro Integral Canyoning | Full Pitch 7h Adventure - From 79€",
+    "Río Verde X-Pro Integral Canyoning | Full Pitch 7h Adventure - From 89€",
   description:
-    "Conquer the full Integral route of Río Verde canyon. Advanced 7h canyoning with 18m natural slide, 15m rappels & turquoise pools. Transfer included. From age 15. Mar-Nov. From 79€. Book now!",
+    "Conquer the full Integral route of Río Verde canyon. Advanced 7h canyoning with 18m natural slide, 15m rappels & turquoise pools. Transfer included. From age 15. Mar-Nov. From 89€. Book now!",
   keywords: [
     "rio verde xpro canyoning",
     "rio verde integral canyoning",
@@ -25,7 +25,7 @@ export const rioVerdeXproMetadata: Metadata = {
     canonical: "https://www.tuuradventure.com/canyoning/rio-verde-xpro",
   },
   openGraph: {
-    title: "Río Verde X-Pro Integral Canyoning | 7h Full Pitch - From 79€",
+    title: "Río Verde X-Pro Integral Canyoning | 7h Full Pitch - From 89€",
     description:
       "The most explosive aquatic challenge in Andalusia. Full Integral route with 18m slide, 15m rappels & turquoise pools. Transfer included. Mar-Nov.",
     url: "https://www.tuuradventure.com/canyoning/rio-verde-xpro",
@@ -43,7 +43,7 @@ export const rioVerdeXproMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Río Verde X-Pro Integral Canyoning | 7h Full Pitch - From 79€",
+    title: "Río Verde X-Pro Integral Canyoning | 7h Full Pitch - From 89€",
     description:
       "The most explosive aquatic challenge in Andalusia. Full Integral route with 18m slide, 15m rappels & turquoise pools. Mar-Nov.",
     images: ["https://www.tuuradventure.com/rio-verde-xpro-1.webp"],
@@ -101,7 +101,7 @@ export const jsonLdProduct = {
     "@type": "Offer",
     url: "https://www.tuuradventure.com/canyoning/rio-verde-xpro",
     priceCurrency: "EUR",
-    price: "79",
+    price: "89",
     priceValidUntil: "2026-12-31",
     availability: "https://schema.org/InStock",
     validFrom: "2026-01-01",
@@ -124,7 +124,7 @@ export const jsonLdTourExperience = {
   touristType: ["Adventure", "Extreme Sports", "Athletes"],
   offers: {
     "@type": "Offer",
-    price: "79",
+    price: "89",
     priceCurrency: "EUR",
     availability: "https://schema.org/InStock",
   },

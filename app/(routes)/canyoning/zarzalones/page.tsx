@@ -121,6 +121,7 @@ export default async function Page() {
     price: zarzalones.price,
     days: zarzalones.days,
     minimumAge: zarzalones.minimumAge,
+    maxAge: zarzalones.maxAge,
     ubication: zarzalones.ubication,
     duration: zarzalones.duration,
     level: zarzalones.level,
@@ -384,6 +385,10 @@ export default async function Page() {
                   <div>
                     <p className="text-sm text-gray-500">Minimum Age</p>
                     <p className="font-semibold">+9 Years Old</p>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-500">Maximum Age</p>
+                    <p className="font-semibold">{zarzalones.maxAge} Years Old</p>
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Season</p>
