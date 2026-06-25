@@ -16,6 +16,7 @@ import {
 import DayCardSlider from "../campamento-de-verano/day-card-slider";
 import GridHero, { GridHeroImage } from "@/components/grid-hero";
 import LanguageSwitcher from "@/components/language-switcher";
+import BannerTop from "@/components/ui/banner-top";
 
 export const metadata = summerCampMetadata;
 
@@ -218,7 +219,6 @@ export default function Page() {
           __html: JSON.stringify(jsonLdLocalBusiness),
         }}
       />
-
       {/* ── SECTION 1: HERO ──────────────────────────────────────────────── */}
       <section className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden">
         <Image
@@ -231,7 +231,7 @@ export default function Page() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/10" />
 
-        <div className="relative z-10 flex flex-col items-center text-center text-white px-4 max-w-4xl mx-auto">
+        <div className="relative z-10 flex flex-col items-center text-center text-white px-4 max-w-4xl mx-auto py-16 sm:py-24">
           <LanguageSwitcher active="en" />
           <span className="bg-[#C8A84B] text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6 mt-4">
             Limited Places

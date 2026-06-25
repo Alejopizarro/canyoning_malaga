@@ -42,7 +42,7 @@ export default function RootLayout({
             <GTMPageViewTracker />
           </Suspense>
           <BokunTracker />
-          <BannerTop />
+          <BannerTop agotado={true} />
           <Navbar />
           {children}
           <Footer />
