@@ -26,24 +26,44 @@ export const complementaryData: Record<string, ComplementaryData> = {
     days: "Every day!",
     mainImage: {
       src: "/guadalmina-1.webp",
-      alt: "Guadalmina canyon - The Best Canyoning Experience Near Marbella",
+      alt: "Guadalmina canyoning group resting on the rocks before a waterfall abseil",
     },
     images: [
       {
         src: "/guadalmina-2.webp",
-        alt: "Guadalmina canyon - The narrowest canyon, guadalmina",
+        alt: "Abseiling through a narrow water-filled canyon passage in Guadalmina, Benahavís",
       },
       {
         src: "/guadalmina-3.webp",
-        alt: "Guadalmina canyon - Jump into the guadalmina canyon",
+        alt: "Looking up at the towering rock walls of the Guadalmina canyon near Benahavís",
       },
       {
         src: "/guadalmina-4.webp",
-        alt: "Guadalmina canyon - Rapelling down a waterfall in guadalmina canyon",
+        alt: "Guide jumping into a natural pool during a Benahavís canyoning excursion",
       },
       {
         src: "/guadalmina-5.webp",
-        alt: "Guadalmina canyon - Slide down natural water slides in guadalmina canyon",
+        alt: "Swimming through a natural cave section of the Guadalmina canyoning route",
+      },
+      {
+        src: "/guadalmina-6.webp",
+        alt: "Teenager sliding down a natural rock waterslide on the Guadalmina canyoning tour",
+      },
+      {
+        src: "/guadalmina-7.webp",
+        alt: "Kids laughing under a waterfall on a family-friendly Benahavís canyoning trip",
+      },
+      {
+        src: "/guadalmina-8.webp",
+        alt: "Guide and group swimming through the green waters of the Guadalmina canyon",
+      },
+      {
+        src: "/guadalmina-9.webp",
+        alt: "Group scrambling over boulders through the Guadalmina canyon near Benahavís",
+      },
+      {
+        src: "/guadalmina-10.webp",
+        alt: "Group celebrating the end of a Guadalmina canyoning adventure by the river bridge",
       },
     ],
     specialPrice: "Special Open Group Price: Every Day!",
