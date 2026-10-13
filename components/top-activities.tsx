@@ -23,7 +23,7 @@ const SpringActivities: FlipCardData[] = [
     image: "/Guadalmina-1.webp",
     bio: "Enjoy the best spring canyoning experience near Marbella with Guadalmina canyon. Perfect for families and beginners, available all year round.",
     stats: { level: "All levels", duration: "3hs", ubication: "Marbella" },
-    price: { days: "Fridays", cost: "45€" },
+    price: { days: "Fridays", cost: "40€" },
   },
 ];
 

@@ -1,4 +1,9 @@
 import { Metadata } from "next";
+import {
+  jsonLdPostalAddress,
+  siteConfig,
+  socialUrls,
+} from "@/lib/site-config";
 import { Faq } from "../../activities/components/faqs";
 
 // ─── SEO Metadata ───────────────────────────────────────────────────────────
@@ -60,7 +65,7 @@ export const rioVerdeXproFaqs: Faq[] = [
   {
     question: "Do I need previous experience for the X-Pro?",
     answer:
-      "While Level 3 is accessible to fit individuals, we recommend it for those with high physical stamina or prior canyoning experience due to its 7-hour duration.",
+      "While this Advanced route is accessible to fit individuals, we recommend it for those with high physical stamina or prior canyoning experience due to its 7-hour duration.",
   },
   {
     question: "What is the difference between the Popular and X-Pro routes?",
@@ -106,13 +111,6 @@ export const jsonLdProduct = {
     availability: "https://schema.org/InStock",
     validFrom: "2026-01-01",
   },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.8",
-    reviewCount: "2087",
-    bestRating: "5",
-    worstRating: "1",
-  },
 };
 
 export const jsonLdTourExperience = {
@@ -132,15 +130,8 @@ export const jsonLdTourExperience = {
     "@type": "TouristInformationCenter",
     name: "TUUR Adventure Experts",
     url: "https://www.tuuradventure.com",
-    telephone: "+34699199158",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "C. San Javier Nº 16 4-B",
-      addressLocality: "San Pedro de Alcántara",
-      addressRegion: "Málaga",
-      postalCode: "29670",
-      addressCountry: "ES",
-    },
+    telephone: siteConfig.phone,
+    address: jsonLdPostalAddress,
   },
   itinerary: {
     "@type": "ItemList",
@@ -180,25 +171,14 @@ export const jsonLdLocalBusiness = {
   name: "TUUR Canyoning Malaga",
   image: "https://www.tuuradventure.com/logo-tuur.webp",
   url: "https://www.tuuradventure.com",
-  telephone: "+34699199158",
-  email: "tuurcanyoning@gmail.com",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "C. San Javier Nº 16 4-B",
-    addressLocality: "San Pedro de Alcántara",
-    addressRegion: "Málaga",
-    postalCode: "29670",
-    addressCountry: "ES",
-  },
+  telephone: siteConfig.phone,
+  email: siteConfig.email,
+  sameAs: socialUrls,
+  address: jsonLdPostalAddress,
   geo: {
     "@type": "GeoCoordinates",
     latitude: 36.8333,
     longitude: -3.7167,
-  },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.8",
-    reviewCount: "2087",
   },
   priceRange: "€€",
 };

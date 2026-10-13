@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getSeasonLabel } from "@/lib/season";
 import { getTop3Excursions } from "@/lib/activities";
+import { levelLabel } from "@/lib/level";
 import TrustindexWidget from "./trustindex-widget";
 import {
   ChartNoAxesColumnIncreasing,
@@ -12,10 +13,6 @@ import {
 
 const TopActivitiesHome = async () => {
   const topActivities = await getTop3Excursions();
-  const getLevelText = (level: string) => {
-    if (level === "easy") return "All levels";
-    return level.charAt(0).toUpperCase() + level.slice(1);
-  };
   const sortedActivities = [...topActivities.slice(0, 3)].sort((a, b) => {
     if (a.isMostPopular) return -1;
     if (b.isMostPopular) return 1;
@@ -121,7 +118,7 @@ const TopActivitiesHome = async () => {
                     {/* Level */}
                     <span className="flex bg-gray-100 px-2 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-900">
                       <ChartNoAxesColumnIncreasing size={12} />
-                      {getLevelText(activity.level)}
+                      {levelLabel(activity.level)}
                     </span>
                     {/* Age */}
 

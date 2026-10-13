@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import ProfessionalGuides from "@/components/professional-guides";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/about-us",
+  },
+};
 
 export default function Page() {
   return (

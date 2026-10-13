@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { Suspense } from "react";
 import { Separator } from "@/components/ui/separator";
 import { getExcursions } from "@/lib/activities";
@@ -5,6 +6,12 @@ import BannerTeamBuilding from "@/components/banner-team-building";
 import FaqsHome from "@/components/faqs-home";
 import ExcursionsClient from "./excursions-client";
 import { ActivityBookingForm } from "@/components/activity-booking-form";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/activities",
+  },
+};
 
 const ExcursionesPage = async () => {
   const excursions = await getExcursions();

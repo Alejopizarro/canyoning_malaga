@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { excursions } from "@/app/data";
+import { activityPath, excursions } from "@/app/data";
 import {
   Facebook,
   Instagram,
@@ -8,7 +8,22 @@ import {
   Mail,
   Phone,
   MapPin,
+  type LucideIcon,
 } from "lucide-react";
+import {
+  siteConfig,
+  socialLinks,
+  telHref,
+  mailtoHref,
+  addressDisplay,
+  type SocialNetwork,
+} from "@/lib/site-config";
+
+const socialIcons: Record<SocialNetwork, LucideIcon> = {
+  facebook: Facebook,
+  instagram: Instagram,
+  youtube: Youtube,
+};
 
 const Footer = () => {
   const canyoningExcursions = excursions.filter(
@@ -25,7 +40,7 @@ const Footer = () => {
   );
 
   return (
-    <footer className="relative z-20 bg-gradient-to-b from-neutral-900 to-black text-white">
+    <footer className="relative z-20 bg-linear-to-b from-neutral-900 to-black text-white">
       <div className="max-w-[1440px] mx-auto px-4 py-12 lg:py-16">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6 mb-8">
@@ -45,33 +60,21 @@ const Footer = () => {
               Canyoning, Via Ferrata, Hiking and more.
             </p>
             <div className="flex space-x-3">
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-white/10 rounded-full hover:bg-primary transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-4 h-4" />
-              </a>
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-white/10 rounded-full hover:bg-primary transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-4 h-4" />
-              </a>
-              <a
-                href="https://youtube.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 bg-white/10 rounded-full hover:bg-primary transition-colors"
-                aria-label="YouTube"
-              >
-                <Youtube className="w-4 h-4" />
-              </a>
+              {socialLinks.map(({ network, url, label }) => {
+                const Icon = socialIcons[network];
+                return (
+                  <a
+                    key={network}
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-2 bg-white/10 rounded-full hover:bg-primary transition-colors"
+                    aria-label={`${siteConfig.name} on ${label}`}
+                  >
+                    <Icon className="w-4 h-4" />
+                  </a>
+                );
+              })}
             </div>
           </div>
 
@@ -82,9 +85,7 @@ const Footer = () => {
               {canyoningExcursions.map((excursion) => (
                 <li key={excursion.route}>
                   <Link
-                    href={`/${excursion.categoryPath || "canyoning"}/${
-                      excursion.route
-                    }`}
+                    href={activityPath(excursion, "canyoning")}
                     className="text-sm text-gray-400 hover:text-primary transition-colors"
                   >
                     {excursion.title}
@@ -101,9 +102,7 @@ const Footer = () => {
               {viaFerrataExcursions.map((excursion) => (
                 <li key={excursion.route}>
                   <Link
-                    href={`/${excursion.categoryPath || "via-ferrata"}/${
-                      excursion.route
-                    }`}
+                    href={activityPath(excursion, "via-ferrata")}
                     className="text-sm text-gray-400 hover:text-primary transition-colors"
                   >
                     {excursion.title}
@@ -120,9 +119,7 @@ const Footer = () => {
               {hikingExcursions.map((excursion) => (
                 <li key={excursion.route}>
                   <Link
-                    href={`/${excursion.categoryPath || "hiking"}/${
-                      excursion.route
-                    }`}
+                    href={activityPath(excursion, "hiking")}
                     className="text-sm text-gray-400 hover:text-primary transition-colors"
                   >
                     {excursion.title}
@@ -138,9 +135,7 @@ const Footer = () => {
               {moreActivitiesExcursions.slice(0, 4).map((excursion) => (
                 <li key={excursion.route}>
                   <Link
-                    href={`/${excursion.categoryPath || "activities"}/${
-                      excursion.route
-                    }`}
+                    href={activityPath(excursion, "activities")}
                     className="text-sm text-gray-400 hover:text-primary transition-colors"
                   >
                     {excursion.title}
@@ -199,28 +194,26 @@ const Footer = () => {
             <h3 className="text-lg font-bold mb-4 text-primary">Contact</h3>
             <ul className="space-y-3">
               <li className="flex items-start space-x-2">
-                <Phone className="w-4 h-4 mt-0.5 flex-shrink-0 text-primary" />
+                <Phone className="w-4 h-4 mt-0.5 shrink-0 text-primary" />
                 <a
-                  href="tel:+34699199158"
+                  href={telHref}
                   className="text-sm text-gray-400 hover:text-primary transition-colors"
                 >
-                  +34 699 19 91 58
+                  {siteConfig.phoneDisplay}
                 </a>
               </li>
               <li className="flex items-start space-x-2">
-                <Mail className="w-4 h-4 mt-0.5 flex-shrink-0 text-primary" />
+                <Mail className="w-4 h-4 mt-0.5 shrink-0 text-primary" />
                 <a
-                  href="mailto:info@tuurcanyoning.com"
+                  href={mailtoHref}
                   className="text-sm text-gray-400 hover:text-primary transition-colors"
                 >
-                  tuurcanyoning@gmail.com
+                  {siteConfig.email}
                 </a>
               </li>
               <li className="flex items-start space-x-2">
-                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-primary" />
-                <span className="text-sm text-gray-400">
-                  C. San Javier Nº 16 4-B, San Pedro de Alcántara, Málaga
-                </span>
+                <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-primary" />
+                <span className="text-sm text-gray-400">{addressDisplay}</span>
               </li>
             </ul>
           </div>

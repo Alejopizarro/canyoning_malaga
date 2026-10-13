@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { getExcursions } from "@/lib/activities";
 import HeroParallaxSection from "./(routes)/hero/components/home-parallax";
 
@@ -10,6 +11,12 @@ import ProfessionalGuides from "@/components/professional-guides";
 import BannerContact from "@/components/banner-contact";
 import FaqsHome from "@/components/faqs-home";
 import AdventureGallery from "@/components/adventure-gallery";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/",
+  },
+};
 
 export default async function Home() {
   const excursions = await getExcursions();

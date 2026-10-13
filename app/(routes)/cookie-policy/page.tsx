@@ -1,11 +1,15 @@
 import CookieSettingsButton from "@/components/ui/cookie-settings-button";
 import { Metadata } from "next";
 import Link from "next/link";
+import { siteConfig, mailtoHref } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Cookie Policy",
   description:
     "Cookie Policy for TUUR Adventure Experts. Learn about how we use cookies and how you can manage your preferences.",
+  alternates: {
+    canonical: "/cookie-policy",
+  },
 };
 
 export default function CookiePolicyPage() {
@@ -482,10 +486,10 @@ export default function CookiePolicyPage() {
               <p className="text-gray-700">
                 <strong>Email:</strong>{" "}
                 <a
-                  href="mailto:info@tuuradventure.com"
+                  href={mailtoHref}
                   className="text-green-600 hover:text-green-700"
                 >
-                  info@tuuradventure.com
+                  {siteConfig.email}
                 </a>
               </p>
               <p className="text-gray-700">

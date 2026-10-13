@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { CheckCircle } from "lucide-react";
+import { whatsappUrl as WHATSAPP_URL } from "@/lib/site-config";
 
 type Lang = "en" | "es";
 
@@ -19,8 +20,6 @@ const CONTENT: Record<Lang, { heading: string; subtext: string; cta: string }> =
       cta: "Escríbenos por WhatsApp",
     },
   };
-
-const WHATSAPP_URL = "https://wa.me/34699199158";
 
 export default function Page() {
   const [lang, setLang] = useState<Lang>("en");

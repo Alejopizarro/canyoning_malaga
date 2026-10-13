@@ -3,6 +3,7 @@ import Hero from "@/components/hero";
 import ExcursionDescription from "@/components/excursion-description";
 import Faqs from "../../activities/components/faqs";
 import { getExcursionByPath } from "@/lib/activities";
+import { levelLabel } from "@/lib/level";
 import { notFound } from "next/navigation";
 import {
   Accordion,
@@ -46,7 +47,7 @@ const SEO_TABS = [
     h3: "Río Verde Canyoning: Jumps, Rappels and Turquoise Pools in Granada",
     paragraphs: [
       "Río Verde canyoning is one of the signature adventure activities in Andalusia, combining moderate technical difficulty with exceptional scenery. The río verde canyoning route follows a section of the river that descends through the heart of the Sierra de Almijara, a protected natural area straddling the Málaga–Granada border. Unlike many Spanish canyons, the río verde canyoning experience requires participants to actively swim long stretches of the canyon — making water confidence an important prerequisite for this route.",
-      "The río verde canyoning descent guided by TUUR Adventure takes approximately 4.5 hours and is classified as Level 2 (intermediate). The two mandatory rappels — 6 metres and 9 metres — introduce participants to basic rope technique in a fully assisted, guided environment. Jump points range from 3 to 9 metres and are entirely optional: our guides identify each jump in advance and participants decide individually whether to jump, slide, or take the alternative descent. Minimum age for río verde canyoning is 9 years old.",
+      "The río verde canyoning descent guided by TUUR Adventure takes approximately 4.5 hours and is classified as Moderate. The two mandatory rappels — 6 metres and 9 metres — introduce participants to basic rope technique in a fully assisted, guided environment. Jump points range from 3 to 9 metres and are entirely optional: our guides identify each jump in advance and participants decide individually whether to jump, slide, or take the alternative descent. Minimum age for río verde canyoning is 9 years old.",
       "What distinguishes the río verde canyoning experience from other Andalusian canyons is the sheer density of natural features packed into a single descent. In under 5 hours you encounter rappels, jumps, slides, swim-throughs, and pools — along with the canyon's signature turquoise colour that makes every photograph exceptional. TUUR Adventure provides all equipment including 5mm wetsuits, neoprene shoes, helmets, and harnesses.",
       "Río verde canyoning with TUUR Adventure operates April to October, with open group sessions every Wednesday and Friday from June to September. Private group departures are available any day of the week for groups of 2 to 8 participants. The meeting point is the bar-restaurant El Capricho in Otivar, Granada — the guide transports the group by van to the canyon entrance, approximately 45 minutes uphill from the village.",
     ],
@@ -86,7 +87,7 @@ const ACTIVITY_HIGHLIGHTS = [
     icon: "✅",
     title: "Sport Canyoning",
     description:
-      "Ideal intermediate route featuring two mandatory rappels of 6m and 9m.",
+      "Ideal moderate route featuring two mandatory rappels of 6m and 9m.",
   },
   {
     icon: "✅",
@@ -425,7 +426,7 @@ export default async function Page() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Level</p>
-                    <p className="font-semibold">Medium (Level 2)</p>
+                    <p className="font-semibold">{levelLabel(rioVerde.level)}</p>
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Minimum Age</p>

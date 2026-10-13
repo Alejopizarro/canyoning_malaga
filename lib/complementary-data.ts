@@ -413,7 +413,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     ],
     isOffer: false,
     rating: { value: 4.8, reviews: 5 },
-    level: "advanced",
+    level: "moderate",
     province: "Cádiz",
     category: "Canyoning",
     categoryPath: "canyoning",
@@ -601,7 +601,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
       },
       {
         src: "/VF-Ronda-10.webp",
-        alt: "Via Ferrata Ronda - Challenging sections in via ferrata ronda",
+        alt: "Via Ferrata Ronda - Vertical sections in via ferrata ronda",
       },
       {
         src: "/VF-Ronda-11.webp",
@@ -629,13 +629,13 @@ export const complementaryData: Record<string, ComplementaryData> = {
     subtitle:
       "Via Ferrata in Casares with Stunning Views of Africa and Gibraltar",
     description:
-      "Intermediate level with views of Africa and Gibraltar. Two monkey bridges and aerial traverses. 35 min from Marbella.",
+      "Moderate level with views of Africa and Gibraltar. Two monkey bridges and aerial traverses. 35 min from Marbella.",
     videoYoutube: "https://www.youtube.com/watch?v=ofV6ZisZZ00",
-    specialPrice: "Minimum 3 people. Available on Mon & Fri.",
+    specialPrice: "Minimum 2 people. Available on Fri & Sat.",
     days: "Mon | Fri",
     mainImage: {
       src: "/casares-1.webp",
-      alt: "Via Ferrata Casares - Intermediate level with views of Africa",
+      alt: "Via Ferrata Casares - Moderate level with views of Africa",
     },
     images: [
       {
@@ -820,7 +820,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
     videoYoutube: "https://www.youtube.com/watch?v=lFEBPOm6354",
     isOffer: false,
     rating: { value: 0, reviews: 0 },
-    level: "advanced",
+    level: "moderate",
     specialPrice: "Minimum 2 people. Available Mon to Sat.",
     province: "Málaga",
     category: "Hiking",

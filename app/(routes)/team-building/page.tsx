@@ -1,5 +1,12 @@
+import type { Metadata } from "next";
 import { FormController } from "@/components/form-controller";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/team-building",
+  },
+};
 
 export default function Page() {
   return (

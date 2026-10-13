@@ -3,6 +3,7 @@ import Hero from "@/components/hero";
 import ExcursionDescription from "@/components/excursion-description";
 import Faqs from "../../activities/components/faqs";
 import { getExcursionByPath } from "@/lib/activities";
+import { levelLabel } from "@/lib/level";
 import { notFound } from "next/navigation";
 import {
   Accordion,
@@ -50,7 +51,7 @@ const ACTIVITY_HIGHLIGHTS = [
   },
   {
     icon: "✅",
-    title: "Intermediate Challenge",
+    title: "Moderate Challenge",
     description:
       "Ideal for those looking for a longer trip (4h) than Guadalmina, yet manageable for families (+9 y.o.).",
   },
@@ -380,7 +381,7 @@ export default async function Page() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Level</p>
-                    <p className="font-semibold">Intermediate (Level 2)</p>
+                    <p className="font-semibold">{levelLabel(zarzalones.level)}</p>
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Minimum Age</p>

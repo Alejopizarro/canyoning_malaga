@@ -1,4 +1,9 @@
 import { Metadata } from "next";
+import {
+  jsonLdPostalAddress,
+  siteConfig,
+  socialUrls,
+} from "@/lib/site-config";
 import { Faq } from "../../activities/components/faqs";
 
 // ─── SEO Metadata ───────────────────────────────────────────────────────────
@@ -58,7 +63,7 @@ export const casaresFaqs: Faq[] = [
   {
     question: "Is the Casares Via Ferrata suitable for beginners?",
     answer:
-      "Yes, it is recommended for beginners in this sport, and those with some experience in other related physical activities. Minimum age is 11 or 12 years old, or 155cm height.",
+      "Yes, no previous via ferrata experience is needed, but it is recommended for active people in good physical shape with some sports background. Minimum age is 11 or 12 years old, or 155cm height.",
   },
   {
     question: "Can this route be combined with others?",
@@ -83,7 +88,7 @@ export const jsonLdProduct = {
   "@type": "Product",
   name: "Via Ferrata Casares Experience",
   description:
-    "Conquer the Via Ferrata Casares in the Genal Valley with breathtaking views of Gibraltar and Africa. Moderate level route with monkey bridges and horizontal traverses. Perfect for adventurous beginners and families.",
+    "Conquer the Via Ferrata Casares in the Genal Valley with breathtaking views of Gibraltar and Africa. Moderate level route with monkey bridges and horizontal traverses. Perfect for active beginners and families.",
   image: "https://www.tuuradventure.com/casares-1.webp",
   brand: {
     "@type": "Organization",
@@ -98,13 +103,6 @@ export const jsonLdProduct = {
     availability: "https://schema.org/InStock",
     validFrom: "2026-01-01",
   },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.8",
-    reviewCount: "2087",
-    bestRating: "5",
-    worstRating: "1",
-  },
 };
 
 export const jsonLdTourExperience = {
@@ -113,7 +111,7 @@ export const jsonLdTourExperience = {
   name: "Via Ferrata Casares - Conquer the Cliffs with Views of Gibraltar & Africa",
   description:
     "Experience the thrill of climbing in the picturesque white village of Casares. This spectacular via ferrata offers breathtaking views of the Rock of Gibraltar and the African coast. Moderate level, 2.5 hours, all year round.",
-  touristType: ["Adventure", "Family", "Intermediate"],
+  touristType: ["Adventure", "Family", "Moderate"],
   offers: {
     "@type": "Offer",
     price: "45",
@@ -124,15 +122,8 @@ export const jsonLdTourExperience = {
     "@type": "TouristInformationCenter",
     name: "TUUR Adventure Experts",
     url: "https://www.tuuradventure.com",
-    telephone: "+34699199158",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "C. San Javier Nº 16 4-B",
-      addressLocality: "San Pedro de Alcántara",
-      addressRegion: "Málaga",
-      postalCode: "29670",
-      addressCountry: "ES",
-    },
+    telephone: siteConfig.phone,
+    address: jsonLdPostalAddress,
   },
   itinerary: {
     "@type": "ItemList",
@@ -172,25 +163,14 @@ export const jsonLdLocalBusiness = {
   name: "TUUR Canyoning Malaga",
   image: "https://www.tuuradventure.com/logo-tuur.webp",
   url: "https://www.tuuradventure.com",
-  telephone: "+34699199158",
-  email: "tuurcanyoning@gmail.com",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "C. San Javier Nº 16 4-B",
-    addressLocality: "San Pedro de Alcántara",
-    addressRegion: "Málaga",
-    postalCode: "29670",
-    addressCountry: "ES",
-  },
+  telephone: siteConfig.phone,
+  email: siteConfig.email,
+  sameAs: socialUrls,
+  address: jsonLdPostalAddress,
   geo: {
     "@type": "GeoCoordinates",
     latitude: 36.4441,
     longitude: -5.2727,
-  },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.8",
-    reviewCount: "2087",
   },
   priceRange: "€€",
 };

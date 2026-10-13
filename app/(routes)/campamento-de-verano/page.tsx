@@ -17,11 +17,11 @@ import DayCardSlider from "./day-card-slider";
 import GridHero, { GridHeroImage } from "@/components/grid-hero";
 import LanguageSwitcher from "@/components/language-switcher";
 import SetHtmlLang from "@/components/set-html-lang";
+import { whatsappUrl as WHATSAPP_URL } from "@/lib/site-config";
 
 export const metadata = campamentoMetadata;
 
 const BOOKING_URL = "https://forms.gle/oYKYxgVZgBL1As2v6";
-const WHATSAPP_URL = "https://wa.me/34699199158";
 
 const VALUE_PILLS = [
   { Icon: Mountain, text: "Aventura real en la naturaleza" },

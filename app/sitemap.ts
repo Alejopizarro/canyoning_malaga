@@ -1,165 +1,56 @@
+import { existsSync } from "node:fs";
+import path from "node:path";
 import { MetadataRoute } from "next";
+import { activityPath, excursions } from "@/app/data";
+import { blogPosts } from "@/lib/blog";
+import { siteConfig } from "@/lib/site-config";
+
+// Built once at build time: the page-existence check below reads the source tree.
+export const dynamic = "force-static";
+
+// Indexable pages that are not activities or blog posts.
+// Not listed on purpose: /hero, /team-building-test, /confirmation and
+// /blog/adventure-packing-guides (all noindex).
+const STATIC_PATHS = [
+  "/",
+  "/activities",
+  "/team-building",
+  "/summer-camp",
+  "/campamento-de-verano",
+  "/about-us",
+  "/contact",
+  "/faqs",
+  "/blog",
+  "/privacy-policy",
+  "/terms-and-conditions",
+  "/cookie-policy",
+];
+
+// Activity pages that exist but are not listed in `excursions`.
+const EXTRA_ACTIVITY_PATHS = ["/canyoning/zarzalones"];
+
+// `excursions` also lists activities that have no page yet (they would 404).
+const hasPage = (urlPath: string) =>
+  existsSync(path.join(process.cwd(), "app", "(routes)", urlPath, "page.tsx"));
+
+const absolute = (urlPath: string) =>
+  urlPath === "/" ? siteConfig.url : `${siteConfig.url}${urlPath}`;
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://www.tuuradventure.com";
+  const activityPaths = [
+    ...excursions.filter((exc) => exc.categoryPath).map((exc) => activityPath(exc)),
+    ...EXTRA_ACTIVITY_PATHS,
+  ].filter(hasPage);
 
   return [
-    // Activities - Highest priority
-    {
-      url: `${baseUrl}/canyoning/guadalmina`,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/summer-camp`,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/campamento-de-verano`,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/canyoning/rio-verde`,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/canyoning/zarzalones`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/via-ferrata/casares`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/hiking/la-concha`,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/via-ferrata/ronda`,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/via-ferrata/el-chorro`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/canyoning/buitreras`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/canyoning/rio-verde-xpro`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/activities/kayak-puerto-banus`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-
-    // Main pages - High priority
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: "daily",
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/activities`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/team-building`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-
-    // Informational pages - Medium priority
-    {
-      url: `${baseUrl}/about-us`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/faqs`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/blog`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/blog/what-is-canyoneering`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/blog/best-activities-marbella`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1.0,
-    },
-    {
-      url: `${baseUrl}/blog/what-is-basic-equipment-for-canyoning`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1.0,
-    },
-
-    // Legal pages - Low priority
-    {
-      url: `${baseUrl}/privacy-policy`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.2,
-    },
-    {
-      url: `${baseUrl}/terms-and-conditions`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.2,
-    },
-    {
-      url: `${baseUrl}/cookie-policy`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.2,
-    },
+    ...STATIC_PATHS.map((urlPath) => ({ url: absolute(urlPath) })),
+    ...[...new Set(activityPaths)].map((urlPath) => ({ url: absolute(urlPath) })),
+    ...blogPosts
+      .filter((post) => !post.isPlaceholder)
+      .map((post) => ({
+        url: absolute(post.slug),
+        // Publication date: the only real date we have for articles.
+        lastModified: new Date(post.date),
+      })),
   ];
 }

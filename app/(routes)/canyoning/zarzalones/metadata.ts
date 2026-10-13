@@ -1,4 +1,9 @@
 import { Metadata } from "next";
+import {
+  jsonLdPostalAddress,
+  siteConfig,
+  socialUrls,
+} from "@/lib/site-config";
 import { Faq } from "../../activities/components/faqs";
 
 // ─── SEO Metadata ───────────────────────────────────────────────────────────
@@ -7,7 +12,7 @@ export const zarzalonesMetadata: Metadata = {
   title:
     "Zarzalones Canyoning Málaga | 21m Waterfall Rappel Near Marbella - From 69€",
   description:
-    "Conquer the 21m waterfall rappel at Zarzalones canyon in Sierra de las Nieves, Málaga. Intermediate canyoning for families (+9 y.o.). Crystalline waters, all year round. From 69€. Book now!",
+    "Conquer the 21m waterfall rappel at Zarzalones canyon in Sierra de las Nieves, Málaga. Moderate canyoning for families (+9 y.o.). Crystalline waters, all year round. From 69€. Book now!",
   keywords: [
     "zarzalones canyoning",
     "canyoning malaga",
@@ -15,7 +20,7 @@ export const zarzalonesMetadata: Metadata = {
     "21 meter rappel canyoning",
     "canyoning sierra de las nieves",
     "canyoning near marbella",
-    "intermediate canyoning malaga",
+    "moderate canyoning malaga",
     "barranquismo zarzalones",
     "adventure activities malaga",
     "canyoning andalusia",
@@ -28,7 +33,7 @@ export const zarzalonesMetadata: Metadata = {
     title:
       "Zarzalones Canyoning | 21m Waterfall Rappel Near Marbella - From 69€",
     description:
-      "Conquer the spectacular 21m waterfall rappel in Sierra de las Nieves. Intermediate canyoning with crystalline waters. All year round.",
+      "Conquer the spectacular 21m waterfall rappel in Sierra de las Nieves. Moderate canyoning with crystalline waters. All year round.",
     url: "https://www.tuuradventure.com/canyoning/zarzalones",
     siteName: "TUUR Canyoning Malaga",
     type: "website",
@@ -46,7 +51,7 @@ export const zarzalonesMetadata: Metadata = {
     card: "summary_large_image",
     title: "Zarzalones Canyoning | 21m Waterfall Rappel - From 69€",
     description:
-      "Conquer the 21m waterfall at Zarzalones, Sierra de las Nieves. Intermediate canyoning, all year round.",
+      "Conquer the 21m waterfall at Zarzalones, Sierra de las Nieves. Moderate canyoning, all year round.",
     images: ["https://www.tuuradventure.com/zarzalones-1.webp"],
   },
   robots: {
@@ -66,7 +71,7 @@ export const zarzalonesFaqs: Faq[] = [
   {
     question: "Is previous experience or specific fitness required?",
     answer:
-      "It is Level 2 (intermediate). It is ideal for those seeking a step-up from beginner canyons but still accessible to those without prior technical experience, although basic physical fitness is required.",
+      "It is Moderate. It is ideal for those seeking a step-up from beginner canyons but still accessible to those without prior technical experience, although basic physical fitness is required.",
   },
   {
     question: "What's the biggest difference from Guadalmina?",
@@ -82,7 +87,7 @@ export const jsonLdProduct = {
   "@type": "Product",
   name: "Zarzalones Canyoning Experience",
   description:
-    "Experience one of the best ravines in Málaga with a thrilling 21-meter rappel in Sierra de las Nieves Natural Park. Intermediate canyoning with crystalline waters at the source of the Río Grande.",
+    "Experience one of the best ravines in Málaga with a thrilling 21-meter rappel in Sierra de las Nieves Natural Park. Moderate canyoning with crystalline waters at the source of the Río Grande.",
   image: "https://www.tuuradventure.com/zarzalones-1.webp",
   brand: {
     "@type": "Organization",
@@ -104,7 +109,7 @@ export const jsonLdTourExperience = {
   "@type": "TouristTrip",
   name: "Zarzalones Canyoning - The 21m Waterfall",
   description:
-    "Conquer the 21m waterfall rappel at Zarzalones canyon in Sierra de las Nieves. Intermediate canyoning adventure featuring crystalline waters at the source of the Río Grande, suitable for families from 9 years old.",
+    "Conquer the 21m waterfall rappel at Zarzalones canyon in Sierra de las Nieves. Moderate canyoning adventure featuring crystalline waters at the source of the Río Grande, suitable for families from 9 years old.",
   touristType: ["Adventure", "Family", "Sport"],
   offers: {
     "@type": "Offer",
@@ -116,15 +121,8 @@ export const jsonLdTourExperience = {
     "@type": "TouristInformationCenter",
     name: "TUUR Adventure Experts",
     url: "https://www.tuuradventure.com",
-    telephone: "+34699199158",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "C. San Javier Nº 16 4-B",
-      addressLocality: "San Pedro de Alcántara",
-      addressRegion: "Málaga",
-      postalCode: "29670",
-      addressCountry: "ES",
-    },
+    telephone: siteConfig.phone,
+    address: jsonLdPostalAddress,
   },
   itinerary: {
     "@type": "ItemList",
@@ -164,16 +162,10 @@ export const jsonLdLocalBusiness = {
   name: "TUUR Canyoning Malaga",
   image: "https://www.tuuradventure.com/logo-tuur.webp",
   url: "https://www.tuuradventure.com",
-  telephone: "+34699199158",
-  email: "tuurcanyoning@gmail.com",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "C. San Javier Nº 16 4-B",
-    addressLocality: "San Pedro de Alcántara",
-    addressRegion: "Málaga",
-    postalCode: "29670",
-    addressCountry: "ES",
-  },
+  telephone: siteConfig.phone,
+  email: siteConfig.email,
+  sameAs: socialUrls,
+  address: jsonLdPostalAddress,
   geo: {
     "@type": "GeoCoordinates",
     latitude: 36.7283,

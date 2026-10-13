@@ -1,12 +1,17 @@
 import { Metadata } from "next";
+import {
+  jsonLdPostalAddress,
+  siteConfig,
+  socialUrls,
+} from "@/lib/site-config";
 import { Faq } from "../../activities/components/faqs";
 
 // ─── SEO Metadata ───────────────────────────────────────────────────────────
 
 export const guadalminaMetadata: Metadata = {
-  title: "Benahavís Canyon of Angosturas | Canyoning Guadalmina River",
+  title: "Guadalmina Canyoning | Benahavís Canyoning near Marbella",
   description:
-    "The best canyoning near Marbella: Guadalmina Canyon of the Angosturas in Benahavís. From 6 y.o. Jumps, rappelling & slides. Every day from 45€ Book now!",
+    "Guadalmina canyoning through the Angosturas gorge: jumps, rappels & natural slides. The best Benahavís canyoning near Marbella, from 6 y.o. Every day from 40€.",
   authors: [{ name: "José Moreno" }],
   publisher: "TUUR Adventure Experts",
   keywords: [
@@ -23,9 +28,9 @@ export const guadalminaMetadata: Metadata = {
     canonical: "https://www.tuuradventure.com/canyoning/guadalmina",
   },
   openGraph: {
-    title: "Benahavís Canyon of Angosturas | Canyoning Guadalmina River",
+    title: "Guadalmina Canyoning in Benahavís | Every Day from 40€",
     description:
-      "The best canyoning near Marbella: Guadalmina Canyon of the Angosturas in Benahavís. Beginner & family-friendly from 6 y.o. Jumps, rappelling & slides. Every day from 45€",
+      "Guadalmina canyoning in the Angosturas, the narrowest gorge in Benahavís. Family-friendly Benahavís canyoning near Marbella from 6 y.o. Jumps, rappels & slides from 40€.",
     url: "https://www.tuuradventure.com/canyoning/guadalmina",
     siteName: "TUUR Canyoning Malaga",
     type: "website",
@@ -41,9 +46,9 @@ export const guadalminaMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Benahavís Canyon of Angosturas | Canyoning Guadalmina River",
+    title: "Guadalmina Canyoning in Benahavís | Every Day from 40€",
     description:
-      "The best canyoning near Marbella: Guadalmina Canyon of the Angosturas in Benahavís. Beginner & family-friendly from 6 y.o. Jumps, rappelling & slides. Every day from 45€",
+      "Guadalmina canyoning in the Angosturas, the narrowest gorge in Benahavís. Family-friendly Benahavís canyoning near Marbella from 6 y.o. Jumps, rappels & slides from 40€.",
     images: ["https://www.tuuradventure.com/guadalmina-1.webp"],
   },
   robots: {
@@ -94,17 +99,10 @@ export const jsonLdProduct = {
     "@type": "Offer",
     url: "https://www.tuuradventure.com/canyoning/guadalmina",
     priceCurrency: "EUR",
-    price: "45",
+    price: "40",
     priceValidUntil: "2026-12-31",
     availability: "https://schema.org/InStock",
     validFrom: "2026-01-01",
-  },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.8",
-    reviewCount: "2087",
-    bestRating: "5",
-    worstRating: "1",
   },
 };
 
@@ -117,7 +115,7 @@ export const jsonLdTourExperience = {
   touristType: ["Adventure", "Family", "Beginners"],
   offers: {
     "@type": "Offer",
-    price: "45",
+    price: "40",
     priceCurrency: "EUR",
     availability: "https://schema.org/InStock",
   },
@@ -125,15 +123,8 @@ export const jsonLdTourExperience = {
     "@type": "TouristInformationCenter",
     name: "TUUR Adventure Experts",
     url: "https://www.tuuradventure.com",
-    telephone: "+34699199158",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "C. San Javier Nº 16 4-B",
-      addressLocality: "San Pedro de Alcántara",
-      addressRegion: "Málaga",
-      postalCode: "29670",
-      addressCountry: "ES",
-    },
+    telephone: siteConfig.phone,
+    address: jsonLdPostalAddress,
   },
   itinerary: {
     "@type": "ItemList",
@@ -173,25 +164,14 @@ export const jsonLdLocalBusiness = {
   name: "TUUR Canyoning Malaga",
   image: "https://www.tuuradventure.com/logo-tuur.webp",
   url: "https://www.tuuradventure.com",
-  telephone: "+34699199158",
-  email: "tuurcanyoning@gmail.com",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "C. San Javier Nº 16 4-B",
-    addressLocality: "San Pedro de Alcántara",
-    addressRegion: "Málaga",
-    postalCode: "29670",
-    addressCountry: "ES",
-  },
+  telephone: siteConfig.phone,
+  email: siteConfig.email,
+  sameAs: socialUrls,
+  address: jsonLdPostalAddress,
   geo: {
     "@type": "GeoCoordinates",
     latitude: 36.6175,
     longitude: -5.0283,
-  },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.8",
-    reviewCount: "2087",
   },
   priceRange: "€€",
 };

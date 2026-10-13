@@ -1,4 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import { siteConfig, telHref, mailtoHref } from "@/lib/site-config";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/privacy-policy",
+  },
+};
 
 export default function PrivacyPolicyPage() {
   return (
@@ -26,19 +34,19 @@ export default function PrivacyPolicyPage() {
             <li>
               <strong>Email:</strong>{" "}
               <a
-                href="mailto:tuurcanyoning@gmail.com"
+                href={mailtoHref}
                 className="text-blue-600 hover:underline"
               >
-                tuurcanyoning@gmail.com
+                {siteConfig.email}
               </a>
             </li>
             <li>
               <strong>Phone:</strong>{" "}
               <a
-                href="tel:+34699199158"
+                href={telHref}
                 className="text-blue-600 hover:underline"
               >
-                +34 699 199 158
+                {siteConfig.phoneDisplay}
               </a>
             </li>
             <li>
@@ -256,10 +264,10 @@ export default function PrivacyPolicyPage() {
           <p className="mt-3">
             To exercise any of these rights, please contact us at{" "}
             <a
-              href="mailto:tuurcanyoning@gmail.com"
+              href={mailtoHref}
               className="text-blue-600 hover:underline"
             >
-              tuurcanyoning@gmail.com
+              {siteConfig.email}
             </a>
             . We will respond within 30 days.
           </p>
@@ -339,19 +347,19 @@ export default function PrivacyPolicyPage() {
             <li>
               <strong>Email:</strong>{" "}
               <a
-                href="mailto:tuurcanyoning@gmail.com"
+                href={mailtoHref}
                 className="text-blue-600 hover:underline"
               >
-                tuurcanyoning@gmail.com
+                {siteConfig.email}
               </a>
             </li>
             <li>
               <strong>Phone:</strong>{" "}
               <a
-                href="tel:+34699199158"
+                href={telHref}
                 className="text-blue-600 hover:underline"
               >
-                +34 699 199 158
+                {siteConfig.phoneDisplay}
               </a>
             </li>
             <li>

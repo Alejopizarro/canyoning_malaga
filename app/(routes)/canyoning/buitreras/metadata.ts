@@ -1,4 +1,9 @@
 import { Metadata } from "next";
+import {
+  jsonLdPostalAddress,
+  siteConfig,
+  socialUrls,
+} from "@/lib/site-config";
 import { Faq } from "../../activities/components/faqs";
 
 // ─── SEO Metadata ───────────────────────────────────────────────────────────
@@ -62,7 +67,7 @@ export const buitrerasFaqs: Faq[] = [
   {
     question: "Do I need to be an expert?",
     answer:
-      "While it is a Level 2.5 canyon, it is suitable for beginners with a good physical condition and an athletic spirit.",
+      "While it is a Moderate canyon, it is suitable for beginners with a good physical condition and an athletic spirit.",
   },
   {
     question: "Is it suitable for children?",
@@ -108,13 +113,6 @@ export const jsonLdProduct = {
     availability: "https://schema.org/InStock",
     validFrom: "2026-01-01",
   },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.8",
-    reviewCount: "2087",
-    bestRating: "5",
-    worstRating: "1",
-  },
 };
 
 export const jsonLdTourExperience = {
@@ -134,15 +132,8 @@ export const jsonLdTourExperience = {
     "@type": "TouristInformationCenter",
     name: "TUUR Adventure Experts",
     url: "https://www.tuuradventure.com",
-    telephone: "+34699199158",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "C. San Javier Nº 16 4-B",
-      addressLocality: "San Pedro de Alcántara",
-      addressRegion: "Málaga",
-      postalCode: "29670",
-      addressCountry: "ES",
-    },
+    telephone: siteConfig.phone,
+    address: jsonLdPostalAddress,
   },
   itinerary: {
     "@type": "ItemList",
@@ -182,25 +173,14 @@ export const jsonLdLocalBusiness = {
   name: "TUUR Canyoning Malaga",
   image: "https://www.tuuradventure.com/logo-tuur.webp",
   url: "https://www.tuuradventure.com",
-  telephone: "+34699199158",
-  email: "tuurcanyoning@gmail.com",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "C. San Javier Nº 16 4-B",
-    addressLocality: "San Pedro de Alcántara",
-    addressRegion: "Málaga",
-    postalCode: "29670",
-    addressCountry: "ES",
-  },
+  telephone: siteConfig.phone,
+  email: siteConfig.email,
+  sameAs: socialUrls,
+  address: jsonLdPostalAddress,
   geo: {
     "@type": "GeoCoordinates",
     latitude: 36.55,
     longitude: -5.3833,
-  },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.8",
-    reviewCount: "2087",
   },
   priceRange: "€€",
 };

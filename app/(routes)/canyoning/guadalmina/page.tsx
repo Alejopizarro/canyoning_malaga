@@ -3,6 +3,7 @@ import Hero from "@/components/hero";
 import ExcursionDescription from "@/components/excursion-description";
 import Faqs from "../../activities/components/faqs";
 import { getExcursionByPath } from "@/lib/activities";
+import { levelLabel } from "@/lib/level";
 import { notFound } from "next/navigation";
 import OtherActivities from "@/components/other-activities";
 import { complementaryData } from "@/lib/complementary-data";
@@ -57,7 +58,7 @@ const SEO_TABS = [
     paragraphs: [
       "The Canyon of the Angosturas — known in Spanish as el Cañón de las Angosturas or Las Angosturas de Guadalmina — is a protected natural gorge located in the municipality of Benahavís, in the province of Málaga. The canyon is carved by the Río Guadalmina as it descends from the Sierra Bermeja mountains towards the Costa del Sol. Its name, 'Las Angosturas', refers to the extreme narrowness of the gorge at certain points — walls that close in to less than a metre apart, creating a uniquely dramatic canyoning experience.",
       "Geologically, the Canyon of the Angosturas sits within Georrecurso 621 of the Diputación Provincial de Málaga and is classified as a Special Conservation Zone (ZEC ES6170010 — Sierras Bermeja y Real). The canyon is open to the public year-round, with regulated access hours established by the Ayuntamiento de Benahavís to protect the ecosystem. Professional guided canyoning tours — like those offered by TUUR Adventure — operate under official permits and follow strict environmental guidelines during every descent.",
-      "The canyon of the angosturas is classified as Level 1 canyoning difficulty, making it genuinely accessible for beginners, children and non-swimmers with basic fitness. The route through the angosturas guadalmina typically takes 2 to 3 hours depending on group size and conditions. Along the way, participants encounter natural pools (known locally as 'charcos'), a famous rock toboggan, narrow swim-throughs, and optional jump points ranging from 1 to 6 metres. The canyon ends near the Charco de los Tubos, named after historic disused pipes embedded in the canyon wall.",
+      "The canyon of the angosturas is suitable for all levels, making it genuinely accessible for beginners, children and non-swimmers with basic fitness. The route through the angosturas guadalmina typically takes 2 to 3 hours depending on group size and conditions. Along the way, participants encounter natural pools (known locally as 'charcos'), a famous rock toboggan, narrow swim-throughs, and optional jump points ranging from 1 to 6 metres. The canyon ends near the Charco de los Tubos, named after historic disused pipes embedded in the canyon wall.",
       "For visitors arriving from Marbella, Puerto Banús or Estepona, the Canyon of the Angosturas is the single most accessible natural canyon in the province — located just off the A-7175 road towards Benahavís village, with signposted parking at Parking Ermita. TUUR Adventure picks up participants from San Pedro de Alcántara and provides all necessary equipment: wetsuit, helmet, harness and neoprene shoes. No prior canyoning experience is needed to descend the canyon of the angosturas safely.",
     ],
   },
@@ -426,7 +427,7 @@ export default async function Page() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Level</p>
-                    <p className="font-semibold">All Levels (Level 1)</p>
+                    <p className="font-semibold">{levelLabel(guadalmina.level)}</p>
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Minimum Age</p>

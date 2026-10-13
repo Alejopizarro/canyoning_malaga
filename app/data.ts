@@ -24,7 +24,7 @@ export interface Excursion {
   minimumAge?: number;
   ubication?: string;
   duration: number; // in hours
-  level: "easy" | "moderate" | "advanced";
+  // Difficulty level lives only in lib/complementary-data.ts (single source).
   province: string;
   category: string;
   categoryPath?: string;
@@ -39,7 +39,7 @@ export const excursions: Excursion[] = [
     description:
       "Perfect canyoning descent for beginners. Close to Marbella, ideal for families. Available all year round.",
     videoYoutube: "",
-    price: 45,
+    price: 40,
     days: "Every day!",
     mainImage: {
       src: "/guadalmina-1.webp",
@@ -69,7 +69,6 @@ export const excursions: Excursion[] = [
       value: 4.8,
       reviews: 2087,
     },
-    level: "easy",
     ubication: "Marbella",
     duration: 3,
     minimumAge: 6,
@@ -132,7 +131,6 @@ export const excursions: Excursion[] = [
       value: 4,
       reviews: 5,
     },
-    level: "moderate",
     province: "Granada",
     duration: 4.5,
     ubication: "Otivar",
@@ -178,7 +176,6 @@ export const excursions: Excursion[] = [
       value: 5,
       reviews: 2,
     },
-    level: "advanced",
     province: "Granada",
     duration: 7,
     minimumAge: 15,
@@ -221,7 +218,6 @@ export const excursions: Excursion[] = [
       value: 4.7,
       reviews: 20,
     },
-    level: "easy",
     province: "Málaga",
     category: "Canyoning",
     categoryPath: "canyoning",
@@ -287,7 +283,6 @@ export const excursions: Excursion[] = [
       value: 4.8,
       reviews: 5,
     },
-    level: "moderate",
     province: "Cádiz",
     category: "Canyoning",
     categoryPath: "canyoning",
@@ -353,7 +348,6 @@ export const excursions: Excursion[] = [
       value: 4.6,
       reviews: 20,
     },
-    level: "moderate",
     province: "Málaga",
     category: "Canyoning",
     categoryPath: "canyoning",
@@ -403,7 +397,6 @@ export const excursions: Excursion[] = [
       value: 4.4,
       reviews: 5,
     },
-    level: "advanced",
     province: "Granada",
     category: "Canyoning",
     categoryPath: "canyoning",
@@ -457,7 +450,6 @@ export const excursions: Excursion[] = [
       value: 0,
       reviews: 0,
     },
-    level: "moderate",
     province: "Sevilla",
     category: "Canyoning",
     categoryPath: "canyoning",
@@ -525,7 +517,6 @@ export const excursions: Excursion[] = [
       value: 0,
       reviews: 0,
     },
-    level: "easy",
     province: "Málaga",
     category: "Via Ferrata",
     categoryPath: "via-ferrata",
@@ -540,12 +531,12 @@ export const excursions: Excursion[] = [
       "Via Ferrata in Casares with Stunning Views of Africa and Gibraltar",
     days: "Mon | Fri",
     description:
-      "Intermediate level with views of Africa and Gibraltar. Two monkey bridges and aerial traverses. 35 min from Marbella.",
+      "Moderate level with views of Africa and Gibraltar. Two monkey bridges and aerial traverses. 35 min from Marbella.",
     videoYoutube: "",
     price: 45,
     mainImage: {
       src: "/casares-1.webp",
-      alt: "Via Ferrata Casares - Intermediate level with views of Africa",
+      alt: "Via Ferrata Casares - Moderate level with views of Africa",
     },
     images: [
       {
@@ -579,7 +570,6 @@ export const excursions: Excursion[] = [
       value: 5,
       reviews: 2473,
     },
-    level: "moderate",
     province: "Málaga",
     category: "Via Ferrata",
     categoryPath: "via-ferrata",
@@ -637,7 +627,6 @@ export const excursions: Excursion[] = [
       value: 0,
       reviews: 0,
     },
-    level: "advanced",
     province: "Málaga",
     category: "Via Ferrata",
     categoryPath: "via-ferrata",
@@ -731,7 +720,6 @@ export const excursions: Excursion[] = [
       value: 0,
       reviews: 0,
     },
-    level: "advanced",
     province: "Málaga",
     category: "Hiking",
     categoryPath: "hiking",
@@ -760,7 +748,6 @@ export const excursions: Excursion[] = [
       value: 0,
       reviews: 0,
     },
-    level: "easy",
     province: "Málaga",
     category: "Hiking",
     categoryPath: "hiking",
@@ -788,7 +775,6 @@ export const excursions: Excursion[] = [
       value: 0,
       reviews: 0,
     },
-    level: "easy",
     province: "Málaga",
     category: "Hiking",
     categoryPath: "hiking",
@@ -823,7 +809,6 @@ export const excursions: Excursion[] = [
       value: 0,
       reviews: 0,
     },
-    level: "easy",
     province: "Málaga",
     category: "More Activities",
     categoryPath: "activities",
@@ -851,7 +836,6 @@ export const excursions: Excursion[] = [
       value: 0,
       reviews: 0,
     },
-    level: "easy",
     province: "Cádiz",
     category: "More Activities",
     categoryPath: "activities",
@@ -879,7 +863,6 @@ export const excursions: Excursion[] = [
       value: 0,
       reviews: 0,
     },
-    level: "moderate",
     province: "Málaga",
     category: "More Activities",
     categoryPath: "activities",
@@ -907,7 +890,6 @@ export const excursions: Excursion[] = [
       value: 0,
       reviews: 0,
     },
-    level: "moderate",
     province: "Málaga",
     category: "More Activities",
     categoryPath: "activities",
@@ -935,7 +917,6 @@ export const excursions: Excursion[] = [
       value: 0,
       reviews: 0,
     },
-    level: "moderate",
     province: "Málaga",
     category: "More Activities",
     categoryPath: "activities",
@@ -963,7 +944,6 @@ export const excursions: Excursion[] = [
       value: 0,
       reviews: 0,
     },
-    level: "easy",
     province: "Málaga",
     category: "More Activities",
     categoryPath: "activities",
@@ -991,7 +971,6 @@ export const excursions: Excursion[] = [
       value: 0,
       reviews: 0,
     },
-    level: "moderate",
     province: "Málaga",
     category: "More Activities",
     categoryPath: "activities",
@@ -1002,12 +981,14 @@ export const excursions: Excursion[] = [
 ];
 
 // Utility functions to filter excursions
+/** Public URL path of an activity page, e.g. "/canyoning/guadalmina". */
+export const activityPath = (
+  excursion: Pick<Excursion, "categoryPath" | "route">,
+  fallbackCategoryPath?: string,
+) => `/${excursion.categoryPath || fallbackCategoryPath}/${excursion.route}`;
+
 export const getExcursionsByCategory = (category: Excursion["category"]) => {
   return excursions.filter((excursion) => excursion.category === category);
-};
-
-export const getExcursionsByLevel = (level: Excursion["level"]) => {
-  return excursions.filter((excursion) => excursion.level === level);
 };
 
 export const getExcursionsByProvince = (province: string) => {

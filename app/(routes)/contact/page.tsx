@@ -1,5 +1,18 @@
+import type { Metadata } from "next";
 import { FormController } from "@/components/form-controller";
 import Image from "next/image";
+import {
+  siteConfig,
+  telHref,
+  mailtoHref,
+  whatsappUrl,
+} from "@/lib/site-config";
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: "/contact",
+  },
+};
 
 export default function Page() {
   return (
@@ -42,7 +55,7 @@ export default function Page() {
           <div className="grid md:grid-cols-3 gap-6">
             {/* Phone Card */}
             <a
-              href="tel:+34699199158"
+              href={telHref}
               className="bg-gray-50 rounded-xl p-6 text-center hover:shadow-lg transition-shadow group"
             >
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-200 transition-colors">
@@ -61,13 +74,15 @@ export default function Page() {
                 </svg>
               </div>
               <h3 className="font-bold text-gray-900 mb-2">Phone</h3>
-              <p className="text-blue-600 font-medium">+34 699 199 158</p>
+              <p className="text-blue-600 font-medium">
+                {siteConfig.phoneDisplay}
+              </p>
               <p className="text-gray-500 text-sm mt-1">Call us now!</p>
             </a>
 
             {/* WhatsApp Card */}
             <a
-              href="https://wa.me/34699199158"
+              href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gray-50 rounded-xl p-6 text-center hover:shadow-lg transition-shadow group"
@@ -82,13 +97,15 @@ export default function Page() {
                 </svg>
               </div>
               <h3 className="font-bold text-gray-900 mb-2">WhatsApp</h3>
-              <p className="text-green-600 font-medium">+34 699 199 158</p>
+              <p className="text-green-600 font-medium">
+                {siteConfig.phoneDisplay}
+              </p>
               <p className="text-gray-500 text-sm mt-1">Quick response</p>
             </a>
 
             {/* Email Card */}
             <a
-              href="mailto:tuurcanyoning@gmail.com"
+              href={mailtoHref}
               className="bg-gray-50 rounded-xl p-6 text-center hover:shadow-lg transition-shadow group"
             >
               <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-200 transition-colors">
@@ -108,7 +125,7 @@ export default function Page() {
               </div>
               <h3 className="font-bold text-gray-900 mb-2">Email</h3>
               <p className="text-purple-600 font-medium text-sm">
-                tuurcanyoning@gmail.com
+                {siteConfig.email}
               </p>
               <p className="text-gray-500 text-sm mt-1">Write us anytime</p>
             </a>
@@ -118,48 +135,57 @@ export default function Page() {
           <div className="mt-12 text-center">
             <h3 className="font-bold text-gray-900 mb-4">Follow Us</h3>
             <div className="flex justify-center gap-4">
-              <a
-                href="https://www.facebook.com/TUUR.Canyoning/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors"
-              >
-                <svg
-                  className="w-6 h-6"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
+              {siteConfig.social.facebook && (
+                <a
+                  href={siteConfig.social.facebook}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${siteConfig.name} on Facebook`}
+                  className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white hover:bg-blue-700 transition-colors"
                 >
-                  <path d="M18.77,7.46H14.5v-1.9c0-.9.6-1.1,1-1.1h3V.5L14.17.5C10.24.5,9.25,3.11,9.25,5.07V7.46H6.1v4h3.15V22h5.25V11.46h3.54l.42-4Z" />
-                </svg>
-              </a>
-              <a
-                href="https://www.instagram.com/tuur_canyoning/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 rounded-full flex items-center justify-center text-white hover:opacity-90 transition-opacity"
-              >
-                <svg
-                  className="w-6 h-6"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
+                  <svg
+                    className="w-6 h-6"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M18.77,7.46H14.5v-1.9c0-.9.6-1.1,1-1.1h3V.5L14.17.5C10.24.5,9.25,3.11,9.25,5.07V7.46H6.1v4h3.15V22h5.25V11.46h3.54l.42-4Z" />
+                  </svg>
+                </a>
+              )}
+              {siteConfig.social.instagram && (
+                <a
+                  href={siteConfig.social.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${siteConfig.name} on Instagram`}
+                  className="w-12 h-12 bg-linear-to-br from-purple-600 via-pink-500 to-orange-400 rounded-full flex items-center justify-center text-white hover:opacity-90 transition-opacity"
                 >
-                  <path d="M12,2.16c3.2,0,3.58,0,4.85.07,3.25.15,4.77,1.69,4.92,4.92.06,1.27.07,1.65.07,4.85s0,3.58-.07,4.85c-.15,3.23-1.66,4.77-4.92,4.92-1.27.06-1.65.07-4.85.07s-3.58,0-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s0-3.58.07-4.85C2.38,3.92,3.9,2.38,7.15,2.23,8.42,2.18,8.8,2.16,12,2.16ZM12,0C8.74,0,8.33,0,7.05.07c-4.35.2-6.78,2.62-7,7C0,8.33,0,8.74,0,12s0,3.67.07,4.95c.2,4.36,2.62,6.78,7,7C8.33,24,8.74,24,12,24s3.67,0,4.95-.07c4.35-.2,6.78-2.62,7-7C24,15.67,24,15.26,24,12s0-3.67-.07-4.95c-.2-4.35-2.62-6.78-7-7C15.67,0,15.26,0,12,0Zm0,5.84A6.16,6.16,0,1,0,18.16,12,6.16,6.16,0,0,0,12,5.84ZM12,16a4,4,0,1,1,4-4A4,4,0,0,1,12,16ZM18.41,4.15a1.44,1.44,0,1,0,1.44,1.44A1.44,1.44,0,0,0,18.41,4.15Z" />
-                </svg>
-              </a>
-              <a
-                href="https://www.youtube.com/channel/UCl-FTFo-LNoHlD71bec_1_Q"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center text-white hover:bg-red-700 transition-colors"
-              >
-                <svg
-                  className="w-6 h-6"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
+                  <svg
+                    className="w-6 h-6"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M12,2.16c3.2,0,3.58,0,4.85.07,3.25.15,4.77,1.69,4.92,4.92.06,1.27.07,1.65.07,4.85s0,3.58-.07,4.85c-.15,3.23-1.66,4.77-4.92,4.92-1.27.06-1.65.07-4.85.07s-3.58,0-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92-.06-1.27-.07-1.65-.07-4.85s0-3.58.07-4.85C2.38,3.92,3.9,2.38,7.15,2.23,8.42,2.18,8.8,2.16,12,2.16ZM12,0C8.74,0,8.33,0,7.05.07c-4.35.2-6.78,2.62-7,7C0,8.33,0,8.74,0,12s0,3.67.07,4.95c.2,4.36,2.62,6.78,7,7C8.33,24,8.74,24,12,24s3.67,0,4.95-.07c4.35-.2,6.78-2.62,7-7C24,15.67,24,15.26,24,12s0-3.67-.07-4.95c-.2-4.35-2.62-6.78-7-7C15.67,0,15.26,0,12,0Zm0,5.84A6.16,6.16,0,1,0,18.16,12,6.16,6.16,0,0,0,12,5.84ZM12,16a4,4,0,1,1,4-4A4,4,0,0,1,12,16ZM18.41,4.15a1.44,1.44,0,1,0,1.44,1.44A1.44,1.44,0,0,0,18.41,4.15Z" />
+                  </svg>
+                </a>
+              )}
+              {siteConfig.social.youtube && (
+                <a
+                  href={siteConfig.social.youtube}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${siteConfig.name} on YouTube`}
+                  className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center text-white hover:bg-red-700 transition-colors"
                 >
-                  <path d="M23.5,6.19a3.02,3.02,0,0,0-2.12-2.14C19.54,3.5,12,3.5,12,3.5s-7.54,0-9.38.55A3.02,3.02,0,0,0,.5,6.19,31.64,31.64,0,0,0,0,12a31.64,31.64,0,0,0,.5,5.81,3.02,3.02,0,0,0,2.12,2.14c1.84.55,9.38.55,9.38.55s7.54,0,9.38-.55a3.02,3.02,0,0,0,2.12-2.14A31.64,31.64,0,0,0,24,12,31.64,31.64,0,0,0,23.5,6.19ZM9.55,15.57V8.43L15.82,12Z" />
-                </svg>
-              </a>
+                  <svg
+                    className="w-6 h-6"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M23.5,6.19a3.02,3.02,0,0,0-2.12-2.14C19.54,3.5,12,3.5,12,3.5s-7.54,0-9.38.55A3.02,3.02,0,0,0,.5,6.19,31.64,31.64,0,0,0,0,12a31.64,31.64,0,0,0,.5,5.81,3.02,3.02,0,0,0,2.12,2.14c1.84.55,9.38.55,9.38.55s7.54,0,9.38-.55a3.02,3.02,0,0,0,2.12-2.14A31.64,31.64,0,0,0,24,12,31.64,31.64,0,0,0,23.5,6.19ZM9.55,15.57V8.43L15.82,12Z" />
+                  </svg>
+                </a>
+              )}
             </div>
           </div>
         </div>

@@ -7,6 +7,7 @@ import {
   TimerReset,
   PersonStanding,
 } from "lucide-react";
+import { levelLabel } from "@/lib/level";
 
 interface InfoBannerProps {
   minimumAge?: number;
@@ -25,12 +26,6 @@ export default function InfoBanner({
   level,
   duration,
 }: InfoBannerProps) {
-  // Determinar el texto del nivel
-  const getLevelText = (level: string) => {
-    if (level === "easy") return "All levels";
-    return level.charAt(0).toUpperCase() + level.slice(1);
-  };
-
   // Determinar la ubicación (prioridad a ubication, sino province)
   const location = ubication || province;
 
@@ -39,7 +34,7 @@ export default function InfoBanner({
       {/* Level */}
       <span className="flex bg-gray-100 px-4 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-900">
         <ChartNoAxesColumnIncreasing size={12} />
-        {getLevelText(level)}
+        {levelLabel(level)}
       </span>
       {/* Age */}
 

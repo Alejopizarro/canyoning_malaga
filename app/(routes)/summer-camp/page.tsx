@@ -17,11 +17,11 @@ import DayCardSlider from "../campamento-de-verano/day-card-slider";
 import GridHero, { GridHeroImage } from "@/components/grid-hero";
 import LanguageSwitcher from "@/components/language-switcher";
 import BannerTop from "@/components/ui/banner-top";
+import { whatsappUrl as WHATSAPP_URL } from "@/lib/site-config";
 
 export const metadata = summerCampMetadata;
 
 const BOOKING_URL = "https://forms.gle/oYKYxgVZgBL1As2v6";
-const WHATSAPP_URL = "https://wa.me/34699199158";
 
 const VALUE_PILLS = [
   { Icon: Mountain, text: "Real adventure in nature" },

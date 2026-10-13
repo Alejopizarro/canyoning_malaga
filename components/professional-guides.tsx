@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Carousel from "./ui/carousel";
 import { useState } from "react";
+import { mailtoHref } from "@/lib/site-config";
 
 interface Guide {
   name: string;
@@ -206,7 +207,7 @@ export default function ProfessionalGuides() {
             Explore exciting career opportunities with us.
           </p>
           <a
-            href="mailto:tuurcanyoning@gmail.com"
+            href={mailtoHref}
             className="inline-flex items-center px-5 py-2.5 border-2 border-gray-900 text-gray-900 font-medium rounded-full hover:bg-gray-900 hover:text-white transition-colors"
           >
             Send Us Your CV

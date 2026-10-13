@@ -1,10 +1,8 @@
 import WhatsappIcon from "@/public/whatsapp";
 import Link from "next/link";
+import { whatsappUrl } from "@/lib/site-config";
 
 export default function WhatsAppFloat() {
-  const phoneNumber = "34699199158";
-  const whatsappUrl = `https://wa.me/${phoneNumber}`;
-
   return (
     <Link
       href={whatsappUrl}

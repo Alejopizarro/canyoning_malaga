@@ -15,6 +15,7 @@ import CookieBanner from "@/components/cookie-banner";
 import CookieConsentModal from "@/components/ui/cookie-consent-modal";
 import CookieSettingsButton from "@/components/ui/cookie-settings-button";
 import BannerTop from "@/components/ui/banner-top";
+import { siteConfig } from "@/lib/site-config";
 
 const raleway = Raleway({
   variable: "--font-raleway",
@@ -22,6 +23,7 @@ const raleway = Raleway({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: "Canyoning & More Adventures in Marbella, Málaga & Andalusia",
   description:
     "Discover the best adventures tours in Marbella, Málaga & Andalusia with TUUR Adventure. Explore canyoning, kayaking, and more.",

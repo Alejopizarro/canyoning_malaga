@@ -152,6 +152,29 @@ export default function FAQsPage() {
     setOpenIndex(null);
   };
 
+  // Answers are always rendered (hidden when closed) so they are in the HTML.
+  const renderFaq = (faq: FAQItem) => {
+    const globalIndex = faqs.indexOf(faq);
+    return (
+      <div key={globalIndex} className="border border-gray-200 rounded-lg">
+        <button
+          onClick={() => toggleFAQ(globalIndex)}
+          className="w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition-colors"
+        >
+          <span className="font-medium text-gray-900">
+            {faq.question}
+          </span>
+          <span className="ml-4 text-2xl text-gray-500">
+            {openIndex === globalIndex ? "−" : "+"}
+          </span>
+        </button>
+        <div className="px-6 pb-4" hidden={openIndex !== globalIndex}>
+          <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="max-w-4xl mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold text-center mb-8">
@@ -172,34 +195,19 @@ export default function FAQsPage() {
       {/* FAQ list */}
       <div className="space-y-4">
         {paginatedFaqs.length > 0 ? (
-          paginatedFaqs.map((faq) => {
-            const globalIndex = faqs.indexOf(faq);
-            return (
-              <div key={globalIndex} className="border border-gray-200 rounded-lg">
-                <button
-                  onClick={() => toggleFAQ(globalIndex)}
-                  className="w-full text-left px-6 py-4 flex justify-between items-center hover:bg-gray-50 transition-colors"
-                >
-                  <span className="font-medium text-gray-900">
-                    {faq.question}
-                  </span>
-                  <span className="ml-4 text-2xl text-gray-500">
-                    {openIndex === globalIndex ? "−" : "+"}
-                  </span>
-                </button>
-                {openIndex === globalIndex && (
-                  <div className="px-6 pb-4">
-                    <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
-                  </div>
-                )}
-              </div>
-            );
-          })
+          paginatedFaqs.map(renderFaq)
         ) : (
           <p className="text-center text-gray-500 py-8">
             No FAQs found matching &quot;{searchQuery}&quot;. Try a different search term.
           </p>
         )}
+      </div>
+
+      {/* FAQs on other pages: in the HTML for search engines, not shown */}
+      <div hidden>
+        {filteredFaqs
+          .filter((faq) => !paginatedFaqs.includes(faq))
+          .map(renderFaq)}
       </div>
 
       {/* Pagination */}

@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "Terms & Conditions",
   description:
     "General Terms & Conditions for TUUR Adventure Experts S.L. Read our policies on bookings, cancellations, safety, and more.",
+  alternates: {
+    canonical: "/terms-and-conditions",
+  },
 };
 
 export default function TermsAndConditionsPage() {

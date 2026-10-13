@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: "What is the basic equipment for canyoning? (2026) | TUUR Adventure",
   description:
     "Discover the essential canyoning equipment: wetsuit, helmet, harness and footwear. Everything you need to enjoy canyoning safely and comfortably.",
+  alternates: {
+    canonical: "/blog/what-is-basic-equipment-for-canyoning",
+  },
 };
 
 export default function BasicEquipmentCanyoningPage() {

@@ -1,4 +1,9 @@
 import type { Metadata } from "next";
+import {
+  jsonLdPostalAddress,
+  siteConfig,
+  socialUrls,
+} from "@/lib/site-config";
 
 // ─────────────────────────────────────────
 // Metadata
@@ -25,7 +30,7 @@ export const tajoRondaMetadata: Metadata = {
       "Canyoning in Tajo de Ronda: Epic Urban Adventure under Puente Nuevo",
     description:
       "Rappel 35 meters under the Puente Nuevo and discover Ronda from 100 meters below its streets. A one-of-a-kind adventure in Andalusia.",
-    url: "https://tuuradventure.com/canyoning/tajo-ronda",
+    url: "https://www.tuuradventure.com/canyoning/tajo-ronda",
     siteName: "TUUR Adventure Experts",
     locale: "en_GB",
     type: "website",
@@ -39,7 +44,7 @@ export const tajoRondaFaqs = [
   {
     question: "Is previous experience required for canyoning in Tajo de Ronda?",
     answer:
-      "While this canyon is rated as Level 2.5 (Moderate), you don't need to be an expert. It is suitable for active beginners and families with children over 14 years old. Our certified professional guides provide a technical masterclass before the descent, ensuring you feel secure during the spectacular 35-meter rappel under the Puente Nuevo.",
+      "While this canyon is rated as Moderate, you don't need to be an expert. It is suitable for active beginners and families with children over 14 years old. Our certified professional guides provide a technical masterclass before the descent, ensuring you feel secure during the spectacular 35-meter rappel under the Puente Nuevo.",
   },
   {
     question: "When is the best time of year to visit the Ronda Canyon?",
@@ -66,7 +71,7 @@ export const jsonLdProduct = {
   "@context": "https://schema.org/",
   "@type": "Product",
   name: "Tajo de Ronda Canyoning Tour",
-  image: "https://tuuradventure.com/tajo-ronda.jpg",
+  image: "https://www.tuuradventure.com/tajo-ronda.jpg",
   description:
     "Epic urban canyoning in Ronda. Rappel 35m under Puente Nuevo. Unique perspectives of historic Andalusia.",
   brand: {
@@ -90,7 +95,7 @@ export const jsonLdTourExperience = {
   name: "Canyoning in Tajo de Ronda – Puente Nuevo",
   description:
     "Navigate the gorge that splits Ronda in two, rappelling under the iconic Puente Nuevo 100 meters below the city streets.",
-  url: "https://tuuradventure.com/canyoning/tajo-ronda",
+  url: "https://www.tuuradventure.com/canyoning/tajo-ronda",
   touristType: "Adventure",
   location: {
     "@type": "Place",
@@ -111,14 +116,11 @@ export const jsonLdLocalBusiness = {
   "@context": "https://schema.org/",
   "@type": "LocalBusiness",
   name: "TUUR Adventure Experts",
-  url: "https://tuuradventure.com",
-  telephone: "+34 000 000 000",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Marbella",
-    addressRegion: "Málaga",
-    addressCountry: "ES",
-  },
+  url: siteConfig.url,
+  telephone: siteConfig.phone,
+  email: siteConfig.email,
+  sameAs: socialUrls,
+  address: jsonLdPostalAddress,
 };
 
 // ─────────────────────────────────────────
@@ -148,19 +150,19 @@ export const jsonLdBreadcrumb = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://tuuradventure.com",
+      item: "https://www.tuuradventure.com",
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Canyoning",
-      item: "https://tuuradventure.com/canyoning",
+      item: "https://www.tuuradventure.com/canyoning",
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "Tajo de Ronda",
-      item: "https://tuuradventure.com/canyoning/tajo-ronda",
+      item: "https://www.tuuradventure.com/canyoning/tajo-ronda",
     },
   ],
 };

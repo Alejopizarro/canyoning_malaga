@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
+import { complementaryData } from "@/lib/complementary-data";
+import { levelLabel } from "@/lib/level";
 
 export const metadata: Metadata = {
   title: "What is Canyoning, Canyoneering or Kloofing? | Complete Guide",
@@ -24,6 +26,9 @@ export const metadata: Metadata = {
     type: "article",
     publishedTime: "2025-01-15",
     authors: ["TUUR Adventure"],
+  },
+  alternates: {
+    canonical: "/blog/what-is-canyoneering",
   },
 };
 
@@ -65,32 +70,37 @@ const techniques = [
 
 const difficultyLevels = [
   {
-    level: "Beginner",
+    level: levelLabel("easy"),
     color: "bg-green-500",
     description:
       "Perfect for first-timers and families. Short rappels (under 10m), optional small jumps, and easy terrain. No prior experience needed.",
-    examples: ["Guadalmina Canyon", "Zarzalones Canyon"],
+    examples: ["Guadalmina Canyon"],
   },
   {
-    level: "Intermediate",
+    level: levelLabel("moderate"),
     color: "bg-yellow-500",
     description:
       "For those with some experience or good physical condition. Longer rappels, higher jumps, and more technical sections.",
-    examples: ["Río Verde Canyon", "Lentegí Canyon"],
+    examples: [
+      "Río Verde Canyon",
+      "Zarzalones Canyon",
+      "Buitreras Canyon",
+      "Lentegí Canyon",
+    ],
   },
   {
-    level: "Advanced",
+    level: levelLabel("advanced"),
     color: "bg-red-500",
     description:
       "Challenging routes requiring experience and excellent fitness. Long rappels (30m+), exposed sections, and full-day adventures.",
-    examples: ["Buitreras Canyon", "Zarzalones Integral"],
+    examples: ["Río Verde X-Pro", "Zarzalones Integral"],
   },
 ];
 
 const featuredCanyons = [
   {
     name: "Guadalmina Canyon",
-    level: "Beginner",
+    level: complementaryData["guadalmina"].level,
     duration: "3 hours",
     location: "Benahavís, Marbella",
     description:
@@ -100,7 +110,7 @@ const featuredCanyons = [
   },
   {
     name: "Zarzalones Canyon",
-    level: "Beginner-Intermediate",
+    level: complementaryData["zarzalones"].level,
     duration: "4 hours",
     location: "Tolox, Málaga",
     description:
@@ -110,7 +120,7 @@ const featuredCanyons = [
   },
   {
     name: "Río Verde Canyon",
-    level: "Intermediate",
+    level: complementaryData["rio-verde"].level,
     duration: "4-5 hours",
     location: "Otívar, Granada",
     description:
@@ -120,7 +130,7 @@ const featuredCanyons = [
   },
   {
     name: "Buitreras Canyon",
-    level: "Advanced",
+    level: complementaryData["buitreras"].level,
     duration: "6 hours",
     location: "El Colmenar, Málaga",
     description:
@@ -335,16 +345,16 @@ export default function WhatIsCanyoningPage() {
                   <div className="absolute top-4 left-4">
                     <span
                       className={`px-3 py-1 rounded-full text-xs font-medium text-white ${
-                        canyon.level === "Beginner"
+                        canyon.level === "easy"
                           ? "bg-green-500"
-                          : canyon.level === "Intermediate"
+                          : canyon.level === "moderate"
                           ? "bg-yellow-500"
-                          : canyon.level === "Advanced"
+                          : canyon.level === "advanced"
                           ? "bg-red-500"
                           : "bg-blue-500"
                       }`}
                     >
-                      {canyon.level}
+                      {levelLabel(canyon.level)}
                     </span>
                   </div>
                 </div>

@@ -4,6 +4,7 @@ import ReviewsCarousel from "@/components/ui/reviews-carousel";
 import ExcursionDescription from "@/components/excursion-description";
 import Faqs from "../../activities/components/faqs";
 import { getExcursionByPath } from "@/lib/activities";
+import { levelLabel } from "@/lib/level";
 import { notFound } from "next/navigation";
 import {
   Accordion,
@@ -189,7 +190,7 @@ export default async function Page() {
               ⚠️ Advanced Level Route
             </h4>
             <p className="text-red-700 text-sm">
-              This is a <strong>Level 3 (Advanced)</strong> route with 7 hours
+              This is an <strong>Advanced</strong> route with 7 hours
               of continuous activity. Recommended for athletes and participants
               with high physical fitness or prior canyoning experience.
             </p>
@@ -380,7 +381,7 @@ export default async function Page() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Level</p>
-                    <p className="font-semibold">Advanced (Level 3)</p>
+                    <p className="font-semibold">{levelLabel(rioVerdeXpro.level)}</p>
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Minimum Age</p>

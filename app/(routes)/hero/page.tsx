@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import TopActivitiesHome from "@/components/top-activities-home";
 import HeroParallaxSection from "./components/home-parallax";
 import TransitionLayer from "./components/transition-layer";
@@ -11,6 +12,13 @@ import ProfessionalGuides from "@/components/professional-guides";
 import BannerContact from "@/components/banner-contact";
 import FaqsHome from "@/components/faqs-home";
 import AdventureGallery from "@/components/adventure-gallery";
+
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
 
 export default async function Home() {
   const excursions = await getExcursions();

@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
+import { siteConfig } from "@/lib/site-config";
 import {
   Form,
   FormControl,
@@ -318,7 +319,7 @@ export function ActivityBookingForm({
           <p>You can contact us at the following number</p>
           <p className="flex items-center gap-x-2 text-xl text-slate-600 font-semibold">
             <PhoneCall />
-            699 19 91 58
+            {siteConfig.phoneDisplay}
           </p>
         </div>
       )}
@@ -337,7 +338,7 @@ export function ActivityBookingForm({
           </div>
           <p className="flex items-center gap-x-2 text-xl text-slate-600 font-semibold">
             <PhoneCall />
-            699 19 91 58
+            {siteConfig.phoneDisplay}
           </p>
         </div>
       )}

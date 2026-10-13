@@ -3,6 +3,7 @@ import Hero from "@/components/hero";
 import ExcursionDescription from "@/components/excursion-description";
 import Faqs from "../../activities/components/faqs";
 import { getExcursionByPath } from "@/lib/activities";
+import { levelLabel } from "@/lib/level";
 import { notFound } from "next/navigation";
 import {
   Accordion,
@@ -23,6 +24,7 @@ import {
   jsonLdFaq,
   jsonLdBreadcrumb,
 } from "./metadata";
+import Script from "next/script";
 
 export const metadata = casaresMetadata;
 
@@ -32,7 +34,7 @@ const EXCURSION_INTRO = (
     Experience the thrill of climbing in the picturesque white village of{" "}
     <strong>Casares</strong>. This spectacular via ferrata offers breathtaking{" "}
     <strong>views of the Rock of Gibraltar and the African coast</strong>,
-    making it the perfect ascent for adventurous beginners and families seeking
+    making it a great step up for active beginners and families seeking
     vertical challenges.
   </>
 );
@@ -343,7 +345,7 @@ export default async function Page() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Level</p>
-                    <p className="font-semibold">Moderate (Level 2)</p>
+                    <p className="font-semibold">{levelLabel(casares.level)}</p>
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Minimum Age</p>
@@ -364,9 +366,19 @@ export default async function Page() {
         </div>
         <div
           id="bokun-section"
-          className="flex flex-col md:items-center md:text-center"
+          // className="flex flex-col md:items-center md:text-center"
         >
-          <h2 className="text-2xl font-semibold mb-4">
+          <Script
+            src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=b5f48f0c-7b7c-486c-830a-f76ae50e1d7b"
+            strategy="lazyOnload"
+          />
+          <div
+            className="bokunWidget"
+            data-src="https://widgets.bokun.io/online-sales/b5f48f0c-7b7c-486c-830a-f76ae50e1d7b/experience-calendar/1319545"
+          />
+          <noscript>Please ena ble javascript in your browser to book</noscript>
+
+          {/* <h2 className="text-2xl font-semibold mb-4">
             Plan Your Casares Experience
           </h2>
           <p className="text-gray-600 mb-4">
@@ -375,7 +387,7 @@ export default async function Page() {
             below, and our team will check availability for your preferred
             dates.
           </p>
-          <ActivityBookingForm activityName={casares.title} />
+          <ActivityBookingForm activityName={casares.title} /> */}
         </div>
       </div>
       <TrustindexWidget />

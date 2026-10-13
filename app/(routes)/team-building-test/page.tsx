@@ -1,6 +1,14 @@
+import type { Metadata } from "next";
 import { FormController } from "@/components/form-controller";
 import Image from "next/image";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  robots: {
+    index: false,
+    follow: true,
+  },
+};
 
 // ─── Stats ────────────────────────────────────────────────────────────────────
 const STATS = [
