@@ -394,7 +394,6 @@ export default async function Page() {
           <noscript>Please enable javascript in your browser to book</noscript>
         </div>
       </div>
-      "
       <TrustindexWidget />
       <PrivateTourCTA />
       <Faqs faqs={buitrerasFaqs} />

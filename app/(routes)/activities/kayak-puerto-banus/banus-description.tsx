@@ -41,7 +41,7 @@ const KayakBanusDescription = () => {
             <li className="flex items-start">
               <span className="text-cyan-600 font-bold mr-2">•</span>
               <span className="text-gray-700">
-                <strong>Difficulty:</strong> Level 1/4 (Easy - All levels)
+                <strong>Difficulty:</strong> All levels
               </span>
             </li>
             <li className="flex items-start">

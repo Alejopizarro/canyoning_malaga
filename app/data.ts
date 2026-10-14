@@ -187,7 +187,7 @@ export const excursions: Excursion[] = [
     subtitle: "Sima del Diablo in Málaga: a canyon for all ages",
     days: "All year",
     description:
-      "Technical canyon near the Smurf Village. Higher rappels than Guadalmina. Ideal for intermediate level.",
+      "Technical canyon near the Smurf Village. Higher rappels than Guadalmina. Ideal for all levels.",
     videoYoutube: "",
     price: 59,
     mainImage: {
@@ -529,7 +529,7 @@ export const excursions: Excursion[] = [
     route: "casares",
     subtitle:
       "Via Ferrata in Casares with Stunning Views of Africa and Gibraltar",
-    days: "Mon | Fri",
+    days: "Fri | Sat",
     description:
       "Moderate level with views of Africa and Gibraltar. Two monkey bridges and aerial traverses. 35 min from Marbella.",
     videoYoutube: "",

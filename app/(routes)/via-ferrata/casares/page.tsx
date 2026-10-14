@@ -14,7 +14,6 @@ import {
 import PrivateTourCTA from "@/components/private-tour";
 import CheckAvailabilityButton from "../../../../components/ui/check-availability-button";
 import TrustindexWidget from "@/components/trustindex-widget";
-import { ActivityBookingForm } from "@/components/activity-booking-form";
 import {
   casaresMetadata,
   casaresFaqs,
@@ -364,10 +363,7 @@ export default async function Page() {
             </AccordionItem>
           </Accordion>
         </div>
-        <div
-          id="bokun-section"
-          // className="flex flex-col md:items-center md:text-center"
-        >
+        <div id="bokun-section">
           <Script
             src="https://widgets.bokun.io/assets/javascripts/apps/build/BokunWidgetsLoader.js?bookingChannelUUID=b5f48f0c-7b7c-486c-830a-f76ae50e1d7b"
             strategy="lazyOnload"
@@ -376,18 +372,7 @@ export default async function Page() {
             className="bokunWidget"
             data-src="https://widgets.bokun.io/online-sales/b5f48f0c-7b7c-486c-830a-f76ae50e1d7b/experience-calendar/1319545"
           />
-          <noscript>Please ena ble javascript in your browser to book</noscript>
-
-          {/* <h2 className="text-2xl font-semibold mb-4">
-            Plan Your Casares Experience
-          </h2>
-          <p className="text-gray-600 mb-4">
-            To ensure the best conditions and a personalized experience, this
-            adventure is organized upon request. Please share your details
-            below, and our team will check availability for your preferred
-            dates.
-          </p>
-          <ActivityBookingForm activityName={casares.title} /> */}
+          <noscript>Please enable javascript in your browser to book</noscript>
         </div>
       </div>
       <TrustindexWidget />

@@ -211,7 +211,7 @@ export default async function Page() {
               <AccordionTrigger>Description</AccordionTrigger>
               <AccordionContent className="flex flex-col text-gray-600 gap-y-4">
                 <h3 className="text-lg font-semibold text-gray-950 my-2">
-                  The Intermediate Canyoning Gem of Málaga Province
+                  The Moderate Canyoning Gem of Málaga Province
                 </h3>
                 <p>
                   The Zarzalones inferior canyon is ranked among the best
@@ -413,7 +413,7 @@ export default async function Page() {
             className="bokunWidget"
             data-src="https://widgets.bokun.io/online-sales/b5f48f0c-7b7c-486c-830a-f76ae50e1d7b/experience-calendar/1108107"
           />
-          <noscript>Please ena ble javascript in your browser to book</noscript>
+          <noscript>Please enable javascript in your browser to book</noscript>
         </div>
       </div>
       <TrustindexWidget />

@@ -15,7 +15,7 @@ const SpringActivities: FlipCardData[] = [
     image: "/casares-1.webp",
     bio: "Explore the thrilling Via Ferrata routes in Casares this spring. Enjoy breathtaking views and an adrenaline-pumping experience suitable for all levels.",
     stats: { level: "Moderate", duration: "2.5hs", ubication: "Casares" },
-    price: { days: "Every day", cost: "45€" },
+    price: { days: "Fri | Sat", cost: "45€" },
   },
   {
     name: "Guadalmina",

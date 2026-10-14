@@ -306,7 +306,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
   "sima-del-diablo": {
     subtitle: "Sima del Diablo in Málaga: a canyon for all ages",
     description:
-      "Technical canyon near the Smurf Village. Higher rappels than Guadalmina. Ideal for intermediate level.",
+      "Technical canyon near the Smurf Village. Higher rappels than Guadalmina. Ideal for all levels.",
     videoYoutube: "",
     days: "All year",
     mainImage: {
@@ -632,7 +632,7 @@ export const complementaryData: Record<string, ComplementaryData> = {
       "Moderate level with views of Africa and Gibraltar. Two monkey bridges and aerial traverses. 35 min from Marbella.",
     videoYoutube: "https://www.youtube.com/watch?v=ofV6ZisZZ00",
     specialPrice: "Minimum 2 people. Available on Fri & Sat.",
-    days: "Mon | Fri",
+    days: "Fri | Sat",
     mainImage: {
       src: "/casares-1.webp",
       alt: "Via Ferrata Casares - Moderate level with views of Africa",
