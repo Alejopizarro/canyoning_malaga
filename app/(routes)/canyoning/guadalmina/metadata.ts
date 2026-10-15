@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { activityBreadcrumbJsonLd } from "@/lib/seo";
 import {
   jsonLdPostalAddress,
   siteConfig,
@@ -9,9 +10,8 @@ import { Faq } from "../../activities/components/faqs";
 // ─── SEO Metadata ───────────────────────────────────────────────────────────
 
 export const guadalminaMetadata: Metadata = {
-  title: "Guadalmina Canyoning | Benahavís Canyoning near Marbella",
-  description:
-    "Guadalmina canyoning through the Angosturas gorge: jumps, rappels & natural slides. The best Benahavís canyoning near Marbella, from 6 y.o. Every day from 40€.",
+  title: "Guadalmina Canyoning in Benahavís – From €40 | Near Marbella",
+  description: "Guadalmina canyoning in the Angosturas gorge, Benahavís: jumps, slides and rappels. 3 hours, all levels, from age 6. Every day from €40. Book online.",
   authors: [{ name: "José Moreno" }],
   publisher: "TUUR Adventure Experts",
   keywords: [
@@ -28,9 +28,8 @@ export const guadalminaMetadata: Metadata = {
     canonical: "https://www.tuuradventure.com/canyoning/guadalmina",
   },
   openGraph: {
-    title: "Guadalmina Canyoning in Benahavís | Every Day from 40€",
-    description:
-      "Guadalmina canyoning in the Angosturas, the narrowest gorge in Benahavís. Family-friendly Benahavís canyoning near Marbella from 6 y.o. Jumps, rappels & slides from 40€.",
+    title: "Guadalmina Canyoning in Benahavís – From €40 | Near Marbella",
+    description: "Guadalmina canyoning in the Angosturas gorge, Benahavís: jumps, slides and rappels. 3 hours, all levels, from age 6. Every day from €40. Book online.",
     url: "https://www.tuuradventure.com/canyoning/guadalmina",
     siteName: "TUUR Canyoning Malaga",
     type: "website",
@@ -46,9 +45,8 @@ export const guadalminaMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Guadalmina Canyoning in Benahavís | Every Day from 40€",
-    description:
-      "Guadalmina canyoning in the Angosturas, the narrowest gorge in Benahavís. Family-friendly Benahavís canyoning near Marbella from 6 y.o. Jumps, rappels & slides from 40€.",
+    title: "Guadalmina Canyoning in Benahavís – From €40 | Near Marbella",
+    description: "Guadalmina canyoning in the Angosturas gorge, Benahavís: jumps, slides and rappels. 3 hours, all levels, from age 6. Every day from €40. Book online.",
     images: ["https://www.tuuradventure.com/guadalmina-1.webp"],
   },
   robots: {
@@ -189,27 +187,8 @@ export const jsonLdFaq = {
   })),
 };
 
-export const jsonLdBreadcrumb = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.tuuradventure.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Canyoning",
-      item: "https://www.tuuradventure.com/canyoning",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Guadalmina",
-      item: "https://www.tuuradventure.com/canyoning/guadalmina",
-    },
-  ],
-};
+export const jsonLdBreadcrumb = activityBreadcrumbJsonLd({
+  name: "Guadalmina",
+  path: "/canyoning/guadalmina",
+  category: { name: "Canyoning", categoryPath: "canyoning" },
+});

@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { activityBreadcrumbJsonLd } from "@/lib/seo";
 import {
   jsonLdPostalAddress,
   siteConfig,
@@ -9,9 +10,8 @@ import { Faq } from "../../activities/components/faqs";
 // ─── SEO Metadata ───────────────────────────────────────────────────────────
 
 export const casaresMetadata: Metadata = {
-  title: "Via Ferrata Casares | Views of Gibraltar & Africa - From 45€",
-  description:
-    "Conquer the Via Ferrata Casares in the Genal Valley, Málaga. Moderate level with monkey bridges & panoramic views of Gibraltar and Africa. All year round. From 45€. Book now!",
+  title: "Via Ferrata Casares – Views of Gibraltar & Africa From €45",
+  description: "Via ferrata in Casares with views of Gibraltar and Africa: two monkey bridges & aerial traverses. 2.5 hours, from age 11. Fri & Sat from €45. Book online.",
   keywords: [
     "via ferrata casares",
     "via ferrata malaga",
@@ -28,9 +28,8 @@ export const casaresMetadata: Metadata = {
     canonical: "https://www.tuuradventure.com/via-ferrata/casares",
   },
   openGraph: {
-    title: "Via Ferrata Casares | Views of Gibraltar & Africa - From 45€",
-    description:
-      "Conquer the cliffs of Casares with breathtaking views of Gibraltar and Africa. Moderate via ferrata with monkey bridges. All year round.",
+    title: "Via Ferrata Casares – Views of Gibraltar & Africa From €45",
+    description: "Via ferrata in Casares with views of Gibraltar and Africa: two monkey bridges & aerial traverses. 2.5 hours, from age 11. Fri & Sat from €45. Book online.",
     url: "https://www.tuuradventure.com/via-ferrata/casares",
     siteName: "TUUR Canyoning Malaga",
     type: "website",
@@ -46,9 +45,8 @@ export const casaresMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Via Ferrata Casares | Views of Gibraltar & Africa - From 45€",
-    description:
-      "Conquer the cliffs of Casares with views of Gibraltar and Africa. Moderate via ferrata with monkey bridges. All year round.",
+    title: "Via Ferrata Casares – Views of Gibraltar & Africa From €45",
+    description: "Via ferrata in Casares with views of Gibraltar and Africa: two monkey bridges & aerial traverses. 2.5 hours, from age 11. Fri & Sat from €45. Book online.",
     images: ["https://www.tuuradventure.com/casares-1.webp"],
   },
   robots: {
@@ -188,27 +186,8 @@ export const jsonLdFaq = {
   })),
 };
 
-export const jsonLdBreadcrumb = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.tuuradventure.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Via Ferrata",
-      item: "https://www.tuuradventure.com/via-ferrata",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Casares",
-      item: "https://www.tuuradventure.com/via-ferrata/casares",
-    },
-  ],
-};
+export const jsonLdBreadcrumb = activityBreadcrumbJsonLd({
+  name: "Casares",
+  path: "/via-ferrata/casares",
+  category: { name: "Via Ferrata", categoryPath: "via-ferrata" },
+});

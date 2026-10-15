@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { activityBreadcrumbJsonLd } from "@/lib/seo";
 import {
   jsonLdPostalAddress,
   siteConfig,
@@ -9,9 +10,8 @@ import { Faq } from "../../activities/components/faqs";
 // ─── SEO Metadata ───────────────────────────────────────────────────────────
 
 export const elChorroMetadata: Metadata = {
-  title: "Via Ferrata El Chorro | Next to Caminito del Rey - From 69€",
-  description:
-    "Conquer Andalusia's most complete via ferrata next to Caminito del Rey. Advanced route with 30m zip line, rappel & Tibetan bridges. 4.5h, from age 14. Sept-June. From 69€. Book now!",
+  title: "Via Ferrata El Chorro near Caminito del Rey – From €55",
+  description: "Advanced via ferrata in El Chorro, next to Caminito del Rey: a 30m+ zip line, a 12m rappel and Tibetan bridges. From age 14, from €55. Book online.",
   keywords: [
     "via ferrata el chorro",
     "via ferrata caminito del rey",
@@ -29,9 +29,8 @@ export const elChorroMetadata: Metadata = {
     canonical: "https://www.tuuradventure.com/via-ferrata/el-chorro",
   },
   openGraph: {
-    title: "Via Ferrata El Chorro | Next to Caminito del Rey - From 69€",
-    description:
-      "Andalusia's most complete via ferrata next to Caminito del Rey. Zip line, rappel & Tibetan bridges. Advanced route, Sept-June.",
+    title: "Via Ferrata El Chorro near Caminito del Rey – From €55",
+    description: "Advanced via ferrata in El Chorro, next to Caminito del Rey: a 30m+ zip line, a 12m rappel and Tibetan bridges. From age 14, from €55. Book online.",
     url: "https://www.tuuradventure.com/via-ferrata/el-chorro",
     siteName: "TUUR Canyoning Malaga",
     type: "website",
@@ -47,9 +46,8 @@ export const elChorroMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Via Ferrata El Chorro | Next to Caminito del Rey - From 69€",
-    description:
-      "Andalusia's most complete via ferrata next to Caminito del Rey. Zip line, rappel & Tibetan bridges. Advanced route, Sept-June.",
+    title: "Via Ferrata El Chorro near Caminito del Rey – From €55",
+    description: "Advanced via ferrata in El Chorro, next to Caminito del Rey: a 30m+ zip line, a 12m rappel and Tibetan bridges. From age 14, from €55. Book online.",
     images: ["https://www.tuuradventure.com/el-chorro-1.webp"],
   },
   robots: {
@@ -104,7 +102,7 @@ export const jsonLdProduct = {
     "@type": "Offer",
     url: "https://www.tuuradventure.com/via-ferrata/el-chorro",
     priceCurrency: "EUR",
-    price: "69",
+    price: "55",
     priceValidUntil: "2026-12-31",
     availability: "https://schema.org/InStock",
     validFrom: "2026-01-01",
@@ -120,7 +118,7 @@ export const jsonLdTourExperience = {
   touristType: ["Adventure", "Extreme Sports", "Climbing"],
   offers: {
     "@type": "Offer",
-    price: "69",
+    price: "55",
     priceCurrency: "EUR",
     availability: "https://schema.org/InStock",
   },
@@ -189,27 +187,8 @@ export const jsonLdFaq = {
   })),
 };
 
-export const jsonLdBreadcrumb = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.tuuradventure.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Via Ferrata",
-      item: "https://www.tuuradventure.com/via-ferrata",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "El Chorro",
-      item: "https://www.tuuradventure.com/via-ferrata/el-chorro",
-    },
-  ],
-};
+export const jsonLdBreadcrumb = activityBreadcrumbJsonLd({
+  name: "El Chorro",
+  path: "/via-ferrata/el-chorro",
+  category: { name: "Via Ferrata", categoryPath: "via-ferrata" },
+});

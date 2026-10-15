@@ -522,7 +522,7 @@ export default function BestActivitiesMarbellaBlogPost() {
                   href="/via-ferrata/ronda"
                   className="text-green-600 hover:text-green-700 text-sm font-medium"
                 >
-                  Learn more →
+                  Book Via Ferrata Ronda →
                 </Link>
               </div>
 
@@ -542,7 +542,7 @@ export default function BestActivitiesMarbellaBlogPost() {
                   href="/via-ferrata/casares"
                   className="text-amber-600 hover:text-amber-700 text-sm font-medium"
                 >
-                  Learn more →
+                  Book Via Ferrata Casares →
                 </Link>
               </div>
 
@@ -562,7 +562,7 @@ export default function BestActivitiesMarbellaBlogPost() {
                   href="/via-ferrata/el-chorro"
                   className="text-red-600 hover:text-red-700 text-sm font-medium"
                 >
-                  Learn more →
+                  Book Via Ferrata El Chorro →
                 </Link>
               </div>
             </div>

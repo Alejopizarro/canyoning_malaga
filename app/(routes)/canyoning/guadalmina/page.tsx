@@ -2,11 +2,11 @@ import Bokun from "@/components/bokun";
 import Hero from "@/components/hero";
 import ExcursionDescription from "@/components/excursion-description";
 import Faqs from "../../activities/components/faqs";
+import { relatedActivities } from "@/lib/related-activities";
 import { getExcursionByPath } from "@/lib/activities";
 import { levelLabel } from "@/lib/level";
 import { notFound } from "next/navigation";
 import OtherActivities from "@/components/other-activities";
-import { complementaryData } from "@/lib/complementary-data";
 import SeoContentTabs from "@/components/seo-content-tabs";
 import {
   Accordion,
@@ -457,29 +457,7 @@ export default async function Page() {
 
       <Faqs faqs={guadalminaFaqs} />
       <OtherActivities
-        activities={[
-          {
-            title: complementaryData["rio-verde"].subtitle.split(":")[0],
-            description: complementaryData["rio-verde"].description,
-            image: complementaryData["rio-verde"].mainImage,
-            href: "/canyoning/rio-verde",
-            category: complementaryData["rio-verde"].category,
-          },
-          {
-            title: complementaryData["ronda"].subtitle.split(":")[0],
-            description: complementaryData["ronda"].description,
-            image: complementaryData["ronda"].mainImage,
-            href: "/via-ferrata/ronda",
-            category: complementaryData["ronda"].category,
-          },
-          {
-            title: complementaryData["la-concha"].subtitle.split(":")[0],
-            description: complementaryData["la-concha"].description,
-            image: complementaryData["la-concha"].mainImage,
-            href: "/hiking/la-concha",
-            category: complementaryData["la-concha"].category,
-          },
-        ]}
+        activities={relatedActivities(["rio-verde", "zarzalones", "buitreras"])}
       />
       <SeoContentTabs tabs={SEO_TABS} />
 

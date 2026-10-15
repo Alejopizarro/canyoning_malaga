@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { activityBreadcrumbJsonLd } from "@/lib/seo";
 import {
   jsonLdPostalAddress,
   siteConfig,
@@ -9,10 +10,8 @@ import { Faq } from "../components/faqs";
 // ─── SEO Metadata ───────────────────────────────────────────────────────────
 
 export const kayakPuertoBanusMetadata: Metadata = {
-  title:
-    "Kayak Puerto Banús Marbella | Sunrise Tour & Marina Experience - From 40€",
-  description:
-    "Guided kayak tour from Puerto Banús, Marbella. Sunrise & morning tours along luxury marina, Duque & Rodeito beaches. Family-friendly from age 2. All year. From 40€. Book now!",
+  title: "Kayak Puerto Banús Sunrise Tour in Marbella – From €45",
+  description: "Guided sunrise kayak tour from Puerto Banús, Marbella, past the marina to Rodeito and Duque beaches. 2 hours, all levels. Tue, Thu & Sat. Book online.",
   keywords: [
     "kayak puerto banus",
     "kayak marbella",
@@ -30,9 +29,8 @@ export const kayakPuertoBanusMetadata: Metadata = {
     canonical: "https://www.tuuradventure.com/activities/kayak-puerto-banus",
   },
   openGraph: {
-    title: "Kayak Puerto Banús Marbella | Sunrise Tour & Marina - From 40€",
-    description:
-      "Guided kayak tour from Puerto Banús. Sunrise & morning tours along the luxury marina and Marbella beaches. Family-friendly from age 2. All year.",
+    title: "Kayak Puerto Banús Sunrise Tour in Marbella – From €45",
+    description: "Guided sunrise kayak tour from Puerto Banús, Marbella, past the marina to Rodeito and Duque beaches. 2 hours, all levels. Tue, Thu & Sat. Book online.",
     url: "https://www.tuuradventure.com/activities/kayak-puerto-banus",
     siteName: "TUUR Canyoning Malaga",
     type: "website",
@@ -48,9 +46,8 @@ export const kayakPuertoBanusMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kayak Puerto Banús Marbella | Sunrise Tour & Marina - From 40€",
-    description:
-      "Guided kayak tour from Puerto Banús. Sunrise & morning tours along the luxury marina. Family-friendly from age 2. All year.",
+    title: "Kayak Puerto Banús Sunrise Tour in Marbella – From €45",
+    description: "Guided sunrise kayak tour from Puerto Banús, Marbella, past the marina to Rodeito and Duque beaches. 2 hours, all levels. Tue, Thu & Sat. Book online.",
     images: ["https://www.tuuradventure.com/kayak-banus-1.webp"],
   },
   robots: {
@@ -100,7 +97,7 @@ export const jsonLdProduct = {
     "@type": "Offer",
     url: "https://www.tuuradventure.com/activities/kayak-puerto-banus",
     priceCurrency: "EUR",
-    price: "40",
+    price: "45",
     priceValidUntil: "2026-12-31",
     availability: "https://schema.org/InStock",
     validFrom: "2026-01-01",
@@ -116,7 +113,7 @@ export const jsonLdTourExperience = {
   touristType: ["Family", "Couples", "Beginners", "Nature"],
   offers: {
     "@type": "Offer",
-    price: "40",
+    price: "45",
     priceCurrency: "EUR",
     availability: "https://schema.org/InStock",
   },
@@ -190,27 +187,7 @@ export const jsonLdFaq = {
   })),
 };
 
-export const jsonLdBreadcrumb = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.tuuradventure.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Activities",
-      item: "https://www.tuuradventure.com/activities",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Kayak Puerto Banús",
-      item: "https://www.tuuradventure.com/activities/kayak-puerto-banus",
-    },
-  ],
-};
+export const jsonLdBreadcrumb = activityBreadcrumbJsonLd({
+  name: "Kayak Puerto Banús",
+  path: "/activities/kayak-puerto-banus",
+});

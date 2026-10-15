@@ -1,6 +1,7 @@
 import Hero from "@/components/hero";
 import ExcursionDescription from "@/components/excursion-description";
 import Faqs from "../../activities/components/faqs";
+import { relatedActivities } from "@/lib/related-activities";
 import { getExcursionByPath } from "@/lib/activities";
 import { levelLabel } from "@/lib/level";
 import { notFound } from "next/navigation";
@@ -25,7 +26,6 @@ import {
 } from "./metadata";
 import Script from "next/script";
 import OtherActivities from "@/components/other-activities";
-import { complementaryData } from "@/lib/complementary-data";
 import SeoContentTabs from "@/components/seo-content-tabs";
 
 export const metadata = rondaMetadata;
@@ -372,29 +372,7 @@ export default async function Page() {
       <PrivateTourCTA />
       <Faqs faqs={rondaFaqs} />
       <OtherActivities
-        activities={[
-          {
-            title: complementaryData["guadalmina"].subtitle.split(":")[0],
-            description: complementaryData["guadalmina"].description,
-            image: complementaryData["guadalmina"].mainImage,
-            href: "/canyoning/guadalmina",
-            category: complementaryData["guadalmina"].category,
-          },
-          {
-            title: complementaryData["el-chorro"].subtitle.split(":")[0],
-            description: complementaryData["el-chorro"].description,
-            image: complementaryData["el-chorro"].mainImage,
-            href: "/via-ferrata/el-chorro",
-            category: complementaryData["el-chorro"].category,
-          },
-          {
-            title: complementaryData["la-concha"].subtitle.split(":")[0],
-            description: complementaryData["la-concha"].description,
-            image: complementaryData["la-concha"].mainImage,
-            href: "/hiking/la-concha",
-            category: complementaryData["la-concha"].category,
-          },
-        ]}
+        activities={relatedActivities(["el-chorro", "casares", "tajo-ronda"])}
       />
       <SeoContentTabs tabs={SEO_TABS} />
     </div>

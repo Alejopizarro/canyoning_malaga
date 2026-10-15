@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { activityBreadcrumbJsonLd } from "@/lib/seo";
 import {
   jsonLdPostalAddress,
   siteConfig,
@@ -9,9 +10,8 @@ import { Faq } from "../../activities/components/faqs";
 // ─── SEO Metadata ───────────────────────────────────────────────────────────
 
 export const rondaMetadata: Metadata = {
-  title: "Via Ferrata Ronda | Climb the Tajo Cliffs - From 60€",
-  description:
-    "Climb the iconic Tajo de Ronda cliffs under the Puente Nuevo. Beginner & family-friendly via ferrata for all levels, from age 7. From 60€. Book now!",
+  title: "Via Ferrata Ronda – Climb the Tajo Gorge | All Levels, €60",
+  description: "Via ferrata Ronda up the Tajo gorge below the Puente Nuevo: iron rungs, cables and huge views. All levels, from age 7, all year. From €60. Book online.",
   keywords: [
     "via ferrata ronda",
     "vias ferratas ronda",
@@ -31,9 +31,8 @@ export const rondaMetadata: Metadata = {
     canonical: "https://www.tuuradventure.com/via-ferrata/ronda",
   },
   openGraph: {
-    title: "Via Ferrata Ronda | Climb the Iconic Tajo Cliffs - From 60€",
-    description:
-      "Climb the Tajo de Ronda cliffs under the Puente Nuevo. Beginner & family-friendly via ferrata for all levels. All year round.",
+    title: "Via Ferrata Ronda – Climb the Tajo Gorge | All Levels, €60",
+    description: "Via ferrata Ronda up the Tajo gorge below the Puente Nuevo: iron rungs, cables and huge views. All levels, from age 7, all year. From €60. Book online.",
     url: "https://www.tuuradventure.com/via-ferrata/ronda",
     siteName: "TUUR Canyoning Malaga",
     type: "website",
@@ -49,9 +48,8 @@ export const rondaMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Via Ferrata Ronda | Climb the Iconic Tajo Cliffs - From 60€",
-    description:
-      "Climb the Tajo de Ronda cliffs under the Puente Nuevo. Beginner & family-friendly via ferrata for all levels. All year round.",
+    title: "Via Ferrata Ronda – Climb the Tajo Gorge | All Levels, €60",
+    description: "Via ferrata Ronda up the Tajo gorge below the Puente Nuevo: iron rungs, cables and huge views. All levels, from age 7, all year. From €60. Book online.",
     images: ["https://www.tuuradventure.com/ronda-vf-1.webp"],
   },
   robots: {
@@ -196,27 +194,8 @@ export const jsonLdFaq = {
   })),
 };
 
-export const jsonLdBreadcrumb = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.tuuradventure.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Via Ferrata",
-      item: "https://www.tuuradventure.com/via-ferrata",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Ronda",
-      item: "https://www.tuuradventure.com/via-ferrata/ronda",
-    },
-  ],
-};
+export const jsonLdBreadcrumb = activityBreadcrumbJsonLd({
+  name: "Ronda",
+  path: "/via-ferrata/ronda",
+  category: { name: "Via Ferrata", categoryPath: "via-ferrata" },
+});

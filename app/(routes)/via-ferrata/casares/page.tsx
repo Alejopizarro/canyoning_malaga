@@ -2,6 +2,8 @@ import Bokun from "@/components/bokun";
 import Hero from "@/components/hero";
 import ExcursionDescription from "@/components/excursion-description";
 import Faqs from "../../activities/components/faqs";
+import { relatedActivities } from "@/lib/related-activities";
+import OtherActivities from "@/components/other-activities";
 import { getExcursionByPath } from "@/lib/activities";
 import { levelLabel } from "@/lib/level";
 import { notFound } from "next/navigation";
@@ -378,6 +380,7 @@ export default async function Page() {
       <TrustindexWidget />
       <PrivateTourCTA />
       <Faqs faqs={casaresFaqs} />
+      <OtherActivities activities={relatedActivities(["ronda", "el-chorro", "guadalmina"])} />
     </div>
   );
 }

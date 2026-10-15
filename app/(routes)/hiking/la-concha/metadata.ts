@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { activityBreadcrumbJsonLd } from "@/lib/seo";
 import {
   jsonLdPostalAddress,
   siteConfig,
@@ -9,9 +10,8 @@ import { Faq } from "../../activities/components/faqs";
 // ─── SEO Metadata ───────────────────────────────────────────────────────────
 
 export const laConchaMetadata: Metadata = {
-  title: "La Concha Marbella Hike: Iconic Peak Guided Tour | From 80€",
-  description:
-    "Conquer La Concha Marbella Hike, most iconic mountain peak at 1,215m. Guided hiking with 360º views of Gibraltar & Africa. Transfer included. From 80€. Book now!",
+  title: "La Concha Hike Marbella – Guided Summit Tour From €80",
+  description: "Guided La Concha hike above Marbella to the 1,215m summit, with 360º views of Gibraltar and Africa. 6.5 hours, from age 11, transfer included. Book online.",
   keywords: [
     "la concha marbella",
     "hiking marbella",
@@ -32,9 +32,8 @@ export const laConchaMetadata: Metadata = {
     canonical: "https://www.tuuradventure.com/hiking/la-concha",
   },
   openGraph: {
-    title: "La Concha Marbella Hike: Iconic Peak Guided Tour | From 80€",
-    description:
-      "Conquer La Concha Hike, Marbella's most iconic mountain peak at 1,215m. Guided hiking with 360º views of Gibraltar & Africa. Transfer included. 13km, 6.5h. From 80€. Book now!",
+    title: "La Concha Hike Marbella – Guided Summit Tour From €80",
+    description: "Guided La Concha hike above Marbella to the 1,215m summit, with 360º views of Gibraltar and Africa. 6.5 hours, from age 11, transfer included. Book online.",
     url: "https://www.tuuradventure.com/hiking/la-concha",
     siteName: "TUUR Canyoning Malaga",
     type: "website",
@@ -50,9 +49,8 @@ export const laConchaMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "La Concha Marbella Hike: Iconic Peak Guided Tour | From 80€",
-    description:
-      "Conquer La Concha Hike, Marbella's most iconic mountain peak at 1,215m. Guided hiking with 360º views of Gibraltar & Africa. Transfer included. 13km, 6.5h. From 80€. Book now!",
+    title: "La Concha Hike Marbella – Guided Summit Tour From €80",
+    description: "Guided La Concha hike above Marbella to the 1,215m summit, with 360º views of Gibraltar and Africa. 6.5 hours, from age 11, transfer included. Book online.",
     images: ["https://www.tuuradventure.com/la-concha-1.webp"],
   },
   robots: {
@@ -198,27 +196,8 @@ export const jsonLdFaq = {
   })),
 };
 
-export const jsonLdBreadcrumb = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.tuuradventure.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Hiking",
-      item: "https://www.tuuradventure.com/hiking",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "La Concha",
-      item: "https://www.tuuradventure.com/hiking/la-concha",
-    },
-  ],
-};
+export const jsonLdBreadcrumb = activityBreadcrumbJsonLd({
+  name: "La Concha",
+  path: "/hiking/la-concha",
+  category: { name: "Hiking", categoryPath: "hiking" },
+});

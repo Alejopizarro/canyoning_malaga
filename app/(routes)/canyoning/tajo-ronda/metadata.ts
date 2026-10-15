@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { activityBreadcrumbJsonLd } from "@/lib/seo";
 import {
   jsonLdPostalAddress,
   siteConfig,
@@ -9,10 +10,8 @@ import {
 // Metadata
 // ─────────────────────────────────────────
 export const tajoRondaMetadata: Metadata = {
-  title:
-    "Canyoning in Tajo de Ronda: Epic Urban Adventure under Puente Nuevo | TUUR Adventure",
-  description:
-    "Epic urban canyoning in Ronda. Rappel 35m under Puente Nuevo. Unique perspectives of historic Andalusia. Available March–June & September–November.",
+  title: "Tajo de Ronda Canyoning under the Puente Nuevo – From €69",
+  description: "Urban canyoning in Ronda's Tajo gorge: a 35m rappel under the Puente Nuevo, 100m below the city. 4 hours, from age 14. Spring and autumn. Book online.",
   keywords: [
     "canyoning ronda",
     "tajo de ronda canyoning",
@@ -26,14 +25,24 @@ export const tajoRondaMetadata: Metadata = {
     canonical: "https://www.tuuradventure.com/canyoning/tajo-ronda",
   },
   openGraph: {
-    title:
-      "Canyoning in Tajo de Ronda: Epic Urban Adventure under Puente Nuevo",
-    description:
-      "Rappel 35 meters under the Puente Nuevo and discover Ronda from 100 meters below its streets. A one-of-a-kind adventure in Andalusia.",
+    title: "Tajo de Ronda Canyoning under the Puente Nuevo – From €69",
+    description: "Urban canyoning in Ronda's Tajo gorge: a 35m rappel under the Puente Nuevo, 100m below the city. 4 hours, from age 14. Spring and autumn. Book online.",
     url: "https://www.tuuradventure.com/canyoning/tajo-ronda",
     siteName: "TUUR Adventure Experts",
     locale: "en_GB",
     type: "website",
+    images: [
+      {
+        url: "https://www.tuuradventure.com/tajo-ronda-1.webp",
+        alt: "Tajo de Ronda - Cross through the ancient city of Ronda",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tajo de Ronda Canyoning under the Puente Nuevo – From €69",
+    description: "Urban canyoning in Ronda's Tajo gorge: a 35m rappel under the Puente Nuevo, 100m below the city. 4 hours, from age 14. Spring and autumn. Book online.",
+    images: ["https://www.tuuradventure.com/tajo-ronda-1.webp"],
   },
 };
 
@@ -71,7 +80,7 @@ export const jsonLdProduct = {
   "@context": "https://schema.org/",
   "@type": "Product",
   name: "Tajo de Ronda Canyoning Tour",
-  image: "https://www.tuuradventure.com/tajo-ronda.jpg",
+  image: "https://www.tuuradventure.com/tajo-ronda-1.webp",
   description:
     "Epic urban canyoning in Ronda. Rappel 35m under Puente Nuevo. Unique perspectives of historic Andalusia.",
   brand: {
@@ -81,7 +90,7 @@ export const jsonLdProduct = {
   offers: {
     "@type": "Offer",
     priceCurrency: "EUR",
-    price: "69.00",
+    price: "69",
     availability: "https://schema.org/InStock",
   },
 };
@@ -91,13 +100,26 @@ export const jsonLdProduct = {
 // ─────────────────────────────────────────
 export const jsonLdTourExperience = {
   "@context": "https://schema.org/",
-  "@type": "TouristAttraction",
+  "@type": "TouristTrip",
   name: "Canyoning in Tajo de Ronda – Puente Nuevo",
   description:
     "Navigate the gorge that splits Ronda in two, rappelling under the iconic Puente Nuevo 100 meters below the city streets.",
   url: "https://www.tuuradventure.com/canyoning/tajo-ronda",
   touristType: "Adventure",
-  location: {
+  offers: {
+    "@type": "Offer",
+    price: "69",
+    priceCurrency: "EUR",
+    availability: "https://schema.org/InStock",
+  },
+  provider: {
+    "@type": "TouristInformationCenter",
+    name: "TUUR Adventure Experts",
+    url: siteConfig.url,
+    telephone: siteConfig.phone,
+    address: jsonLdPostalAddress,
+  },
+  itinerary: {
     "@type": "Place",
     name: "Mirador La Hoya Del Tajo",
     address: {
@@ -142,27 +164,8 @@ export const jsonLdFaq = {
 // ─────────────────────────────────────────
 // JSON-LD – Breadcrumb
 // ─────────────────────────────────────────
-export const jsonLdBreadcrumb = {
-  "@context": "https://schema.org/",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.tuuradventure.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Canyoning",
-      item: "https://www.tuuradventure.com/canyoning",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Tajo de Ronda",
-      item: "https://www.tuuradventure.com/canyoning/tajo-ronda",
-    },
-  ],
-};
+export const jsonLdBreadcrumb = activityBreadcrumbJsonLd({
+  name: "Tajo de Ronda",
+  path: "/canyoning/tajo-ronda",
+  category: { name: "Canyoning", categoryPath: "canyoning" },
+});

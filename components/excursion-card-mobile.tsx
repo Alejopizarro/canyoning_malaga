@@ -51,13 +51,11 @@ const ExcursionCardMobile = (props: ExcursionCardMobileProps) => {
         </div>
 
         {isAvailable ? (
-          <Link
-            className="font-light text-primary-dark hover:underline"
-            href={`/${excursion.categoryPath}/${excursion.route}`}
-          >
+          // The whole card is already a link (see below); a nested <a> is invalid HTML.
+          <span className="font-light text-primary-dark hover:underline">
             More information{" "}
             <ArrowRight size={20} className="inline-flex ml-0.5" />
-          </Link>
+          </span>
         ) : (
           <button
             type="button"

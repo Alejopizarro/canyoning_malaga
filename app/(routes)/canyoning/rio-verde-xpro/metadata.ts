@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { activityBreadcrumbJsonLd } from "@/lib/seo";
 import {
   jsonLdPostalAddress,
   siteConfig,
@@ -9,10 +10,8 @@ import { Faq } from "../../activities/components/faqs";
 // ─── SEO Metadata ───────────────────────────────────────────────────────────
 
 export const rioVerdeXproMetadata: Metadata = {
-  title:
-    "Río Verde X-Pro Integral Canyoning | Full Pitch 7h Adventure - From 89€",
-  description:
-    "Conquer the full Integral route of Río Verde canyon. Advanced 7h canyoning with 18m natural slide, 15m rappels & turquoise pools. Transfer included. From age 15. Mar-Nov. From 89€. Book now!",
+  title: "Río Verde Integral Canyoning X-Pro – 7h Private, From €89",
+  description: "The full Río Verde integral descent in Otívar, Granada: an 18m natural slide, 15m rappels and turquoise pools. 7 hours, transfer included. Book online.",
   keywords: [
     "rio verde xpro canyoning",
     "rio verde integral canyoning",
@@ -30,9 +29,8 @@ export const rioVerdeXproMetadata: Metadata = {
     canonical: "https://www.tuuradventure.com/canyoning/rio-verde-xpro",
   },
   openGraph: {
-    title: "Río Verde X-Pro Integral Canyoning | 7h Full Pitch - From 89€",
-    description:
-      "The most explosive aquatic challenge in Andalusia. Full Integral route with 18m slide, 15m rappels & turquoise pools. Transfer included. Mar-Nov.",
+    title: "Río Verde Integral Canyoning X-Pro – 7h Private, From €89",
+    description: "The full Río Verde integral descent in Otívar, Granada: an 18m natural slide, 15m rappels and turquoise pools. 7 hours, transfer included. Book online.",
     url: "https://www.tuuradventure.com/canyoning/rio-verde-xpro",
     siteName: "TUUR Canyoning Malaga",
     type: "website",
@@ -48,9 +46,8 @@ export const rioVerdeXproMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Río Verde X-Pro Integral Canyoning | 7h Full Pitch - From 89€",
-    description:
-      "The most explosive aquatic challenge in Andalusia. Full Integral route with 18m slide, 15m rappels & turquoise pools. Mar-Nov.",
+    title: "Río Verde Integral Canyoning X-Pro – 7h Private, From €89",
+    description: "The full Río Verde integral descent in Otívar, Granada: an 18m natural slide, 15m rappels and turquoise pools. 7 hours, transfer included. Book online.",
     images: ["https://www.tuuradventure.com/rio-verde-xpro-1.webp"],
   },
   robots: {
@@ -196,27 +193,8 @@ export const jsonLdFaq = {
   })),
 };
 
-export const jsonLdBreadcrumb = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.tuuradventure.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Canyoning",
-      item: "https://www.tuuradventure.com/canyoning",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Río Verde X-Pro",
-      item: "https://www.tuuradventure.com/canyoning/rio-verde-xpro",
-    },
-  ],
-};
+export const jsonLdBreadcrumb = activityBreadcrumbJsonLd({
+  name: "Río Verde X-Pro",
+  path: "/canyoning/rio-verde-xpro",
+  category: { name: "Canyoning", categoryPath: "canyoning" },
+});

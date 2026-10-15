@@ -74,7 +74,7 @@ const difficultyLevels = [
     color: "bg-green-500",
     description:
       "Perfect for first-timers and families. Short rappels (under 10m), optional small jumps, and easy terrain. No prior experience needed.",
-    examples: ["Guadalmina Canyon"],
+    examples: [{ name: "Guadalmina Canyon", href: "/canyoning/guadalmina" }],
   },
   {
     level: levelLabel("moderate"),
@@ -82,10 +82,10 @@ const difficultyLevels = [
     description:
       "For those with some experience or good physical condition. Longer rappels, higher jumps, and more technical sections.",
     examples: [
-      "Río Verde Canyon",
-      "Zarzalones Canyon",
-      "Buitreras Canyon",
-      "Lentegí Canyon",
+      { name: "Río Verde Canyon", href: "/canyoning/rio-verde" },
+      { name: "Zarzalones Canyon", href: "/canyoning/zarzalones" },
+      { name: "Buitreras Canyon", href: "/canyoning/buitreras" },
+      { name: "Lentegí Canyon" },
     ],
   },
   {
@@ -93,7 +93,10 @@ const difficultyLevels = [
     color: "bg-red-500",
     description:
       "Challenging routes requiring experience and excellent fitness. Long rappels (30m+), exposed sections, and full-day adventures.",
-    examples: ["Río Verde X-Pro", "Zarzalones Integral"],
+    examples: [
+      { name: "Río Verde X-Pro", href: "/canyoning/rio-verde-xpro" },
+      { name: "Zarzalones Integral" },
+    ],
   },
 ];
 
@@ -311,7 +314,22 @@ export default function WhatIsCanyoningPage() {
                 </div>
                 <p className="text-gray-600 mb-3">{level.description}</p>
                 <p className="text-sm text-gray-500">
-                  <strong>Examples:</strong> {level.examples.join(", ")}
+                  <strong>Examples:</strong>{" "}
+                  {level.examples.map((example, index) => (
+                    <span key={example.name}>
+                      {index > 0 && ", "}
+                      {example.href ? (
+                        <Link
+                          href={example.href}
+                          className="underline underline-offset-2 hover:text-teal-600"
+                        >
+                          {example.name}
+                        </Link>
+                      ) : (
+                        example.name
+                      )}
+                    </span>
+                  ))}
                 </p>
               </div>
             ))}

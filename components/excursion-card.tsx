@@ -80,13 +80,11 @@ const ExcursionCard = (props: ExcursionCardProps) => {
         )}
 
         {isAvailable ? (
-          <Link
-            className="font-light text-primary-dark self-baseline hover:underline mt-auto"
-            href={`/${excursion.categoryPath}/${excursion.route}`}
-          >
+          // The whole card is already a link (see below); a nested <a> is invalid HTML.
+          <span className="font-light text-primary-dark self-baseline hover:underline mt-auto">
             More information{" "}
             <ArrowRight size={20} className="inline-flex ml-0.5" />
-          </Link>
+          </span>
         ) : (
           <button
             type="button"

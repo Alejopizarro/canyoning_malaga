@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { activityBreadcrumbJsonLd } from "@/lib/seo";
 import {
   jsonLdPostalAddress,
   siteConfig,
@@ -9,10 +10,8 @@ import { Faq } from "../../activities/components/faqs";
 // ─── SEO Metadata ───────────────────────────────────────────────────────────
 
 export const zarzalonesMetadata: Metadata = {
-  title:
-    "Zarzalones Canyoning Málaga | 21m Waterfall Rappel Near Marbella - From 69€",
-  description:
-    "Conquer the 21m waterfall rappel at Zarzalones canyon in Sierra de las Nieves, Málaga. Moderate canyoning for families (+9 y.o.). Crystalline waters, all year round. From 69€. Book now!",
+  title: "Zarzalones Canyoning in Sierra de las Nieves – From €69",
+  description: "Zarzalones canyoning in Yunquera, Sierra de las Nieves: a 21m waterfall rappel, crystal-clear pools and optional jumps. 4 hours, from age 9. Book online.",
   keywords: [
     "zarzalones canyoning",
     "canyoning malaga",
@@ -30,10 +29,8 @@ export const zarzalonesMetadata: Metadata = {
     canonical: "https://www.tuuradventure.com/canyoning/zarzalones",
   },
   openGraph: {
-    title:
-      "Zarzalones Canyoning | 21m Waterfall Rappel Near Marbella - From 69€",
-    description:
-      "Conquer the spectacular 21m waterfall rappel in Sierra de las Nieves. Moderate canyoning with crystalline waters. All year round.",
+    title: "Zarzalones Canyoning in Sierra de las Nieves – From €69",
+    description: "Zarzalones canyoning in Yunquera, Sierra de las Nieves: a 21m waterfall rappel, crystal-clear pools and optional jumps. 4 hours, from age 9. Book online.",
     url: "https://www.tuuradventure.com/canyoning/zarzalones",
     siteName: "TUUR Canyoning Malaga",
     type: "website",
@@ -49,9 +46,8 @@ export const zarzalonesMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Zarzalones Canyoning | 21m Waterfall Rappel - From 69€",
-    description:
-      "Conquer the 21m waterfall at Zarzalones, Sierra de las Nieves. Moderate canyoning, all year round.",
+    title: "Zarzalones Canyoning in Sierra de las Nieves – From €69",
+    description: "Zarzalones canyoning in Yunquera, Sierra de las Nieves: a 21m waterfall rappel, crystal-clear pools and optional jumps. 4 hours, from age 9. Book online.",
     images: ["https://www.tuuradventure.com/zarzalones-1.webp"],
   },
   robots: {
@@ -187,27 +183,8 @@ export const jsonLdFaq = {
   })),
 };
 
-export const jsonLdBreadcrumb = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.tuuradventure.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Canyoning",
-      item: "https://www.tuuradventure.com/canyoning",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Zarzalones",
-      item: "https://www.tuuradventure.com/canyoning/zarzalones",
-    },
-  ],
-};
+export const jsonLdBreadcrumb = activityBreadcrumbJsonLd({
+  name: "Zarzalones",
+  path: "/canyoning/zarzalones",
+  category: { name: "Canyoning", categoryPath: "canyoning" },
+});

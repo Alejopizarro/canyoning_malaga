@@ -606,7 +606,29 @@ export default function BasicEquipmentCanyoningPage() {
             We hope that this article will help you to choose the right
             equipment when you start your own way in this beautiful sport, or
             when you hire a guide / tour company, so that you can choose the
-            best service.
+            best service. On our guided tours the wetsuit, harness, helmet and
+            rappel equipment are included, for example in{" "}
+            <Link
+              href="/canyoning/guadalmina"
+              className="underline underline-offset-2 hover:text-orange-500 transition-colors"
+            >
+              Guadalmina canyoning in Benahavís
+            </Link>
+            ,{" "}
+            <Link
+              href="/canyoning/rio-verde"
+              className="underline underline-offset-2 hover:text-orange-500 transition-colors"
+            >
+              Río Verde canyoning in Granada
+            </Link>{" "}
+            and{" "}
+            <Link
+              href="/canyoning/zarzalones"
+              className="underline underline-offset-2 hover:text-orange-500 transition-colors"
+            >
+              Zarzalones canyoning in Sierra de las Nieves
+            </Link>
+            .
           </p>
 
           <p className="text-base text-gray-600">See you in another blog!</p>

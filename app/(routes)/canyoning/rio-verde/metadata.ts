@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { activityBreadcrumbJsonLd } from "@/lib/seo";
 import {
   jsonLdPostalAddress,
   siteConfig,
@@ -9,9 +10,8 @@ import { Faq } from "../../activities/components/faqs";
 // ─── SEO Metadata ───────────────────────────────────────────────────────────
 
 export const rioVerdeMetadata: Metadata = {
-  title: "Río Verde Canyoning Granada | Turquoise Water Jumps",
-  description:
-    "Experience Río Verde canyoning near Granada & Málaga. Turquoise waters, jumps up to 9m, rappelling & slides in Sierra de Almijara. From 75€. Book now!",
+  title: "Río Verde Canyoning in Granada – From €75 | Turquoise Pools",
+  description: "Río Verde canyoning in Otívar, Granada: turquoise pools, optional jumps, slides and two rappels. 4.5 hours, from age 9, April to October. Book online.",
   keywords: [
     "rio verde canyoning",
     "rio verde canyon",
@@ -29,10 +29,8 @@ export const rioVerdeMetadata: Metadata = {
     canonical: "https://www.tuuradventure.com/canyoning/rio-verde",
   },
   openGraph: {
-    title:
-      "Río Verde Canyoning | Turquoise Water Jumps Near Granada - From 75€",
-    description:
-      "Andalusia's aquatic jewel. Turquoise waters, jumps up to 9m, rappelling & natural slides in Sierra de Almijara. Perfect for beginners and families.",
+    title: "Río Verde Canyoning in Granada – From €75 | Turquoise Pools",
+    description: "Río Verde canyoning in Otívar, Granada: turquoise pools, optional jumps, slides and two rappels. 4.5 hours, from age 9, April to October. Book online.",
     url: "https://www.tuuradventure.com/canyoning/rio-verde",
     siteName: "TUUR Canyoning Malaga",
     type: "website",
@@ -48,9 +46,8 @@ export const rioVerdeMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Río Verde Canyoning | Turquoise Water Jumps - From 75€",
-    description:
-      "Turquoise waters, jumps up to 9m & rappelling in Sierra de Almijara. March to November. Book now!",
+    title: "Río Verde Canyoning in Granada – From €75 | Turquoise Pools",
+    description: "Río Verde canyoning in Otívar, Granada: turquoise pools, optional jumps, slides and two rappels. 4.5 hours, from age 9, April to October. Book online.",
     images: ["https://www.tuuradventure.com/rio-verde-1.webp"],
   },
   robots: {
@@ -191,27 +188,8 @@ export const jsonLdFaq = {
   })),
 };
 
-export const jsonLdBreadcrumb = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.tuuradventure.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Canyoning",
-      item: "https://www.tuuradventure.com/canyoning",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Río Verde",
-      item: "https://www.tuuradventure.com/canyoning/rio-verde",
-    },
-  ],
-};
+export const jsonLdBreadcrumb = activityBreadcrumbJsonLd({
+  name: "Río Verde",
+  path: "/canyoning/rio-verde",
+  category: { name: "Canyoning", categoryPath: "canyoning" },
+});

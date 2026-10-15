@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { activityBreadcrumbJsonLd } from "@/lib/seo";
 import {
   jsonLdPostalAddress,
   siteConfig,
@@ -9,10 +10,8 @@ import { Faq } from "../../activities/components/faqs";
 // ─── SEO Metadata ───────────────────────────────────────────────────────────
 
 export const buitrerasMetadata: Metadata = {
-  title:
-    "Buitreras Canyoning | The Cathedral of Andalusia's Ravines - From 69€",
-  description:
-    "Conquer Buitreras, the most iconic canyoning descent in Andalusia. 120m limestone walls, German's Bridge, 9m jumps. 6h, from age 13. May-Nov. Near Marbella & Ronda. From 69€. Book now!",
+  title: "Buitreras Canyoning near Ronda – 6h Adventure From €69",
+  description: "Buitreras canyoning near Ronda: 120m limestone walls and the German's Bridge. 6 hours, from age 13, mid-June to November. From €69. Book online.",
   keywords: [
     "buitreras canyoning",
     "canyoning andalusia",
@@ -30,10 +29,8 @@ export const buitrerasMetadata: Metadata = {
     canonical: "https://www.tuuradventure.com/canyoning/buitreras",
   },
   openGraph: {
-    title:
-      "Buitreras Canyoning | The Cathedral of Andalusia's Ravines - From 69€",
-    description:
-      "Conquer the most iconic canyoning descent in Andalusia. 120m walls, German's Bridge & 9m jumps. Near Marbella & Ronda. May-Nov.",
+    title: "Buitreras Canyoning near Ronda – 6h Adventure From €69",
+    description: "Buitreras canyoning near Ronda: 120m limestone walls and the German's Bridge. 6 hours, from age 13, mid-June to November. From €69. Book online.",
     url: "https://www.tuuradventure.com/canyoning/buitreras",
     siteName: "TUUR Canyoning Malaga",
     type: "website",
@@ -49,10 +46,8 @@ export const buitrerasMetadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Buitreras Canyoning | The Cathedral of Andalusia's Ravines - From 69€",
-    description:
-      "Conquer the most iconic canyoning descent in Andalusia. 120m walls, German's Bridge & 9m jumps. Near Marbella & Ronda. May-Nov.",
+    title: "Buitreras Canyoning near Ronda – 6h Adventure From €69",
+    description: "Buitreras canyoning near Ronda: 120m limestone walls and the German's Bridge. 6 hours, from age 13, mid-June to November. From €69. Book online.",
     images: ["https://www.tuuradventure.com/buitreras-1.webp"],
   },
   robots: {
@@ -198,27 +193,8 @@ export const jsonLdFaq = {
   })),
 };
 
-export const jsonLdBreadcrumb = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Home",
-      item: "https://www.tuuradventure.com",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Canyoning",
-      item: "https://www.tuuradventure.com/canyoning",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Buitreras",
-      item: "https://www.tuuradventure.com/canyoning/buitreras",
-    },
-  ],
-};
+export const jsonLdBreadcrumb = activityBreadcrumbJsonLd({
+  name: "Buitreras",
+  path: "/canyoning/buitreras",
+  category: { name: "Canyoning", categoryPath: "canyoning" },
+});
