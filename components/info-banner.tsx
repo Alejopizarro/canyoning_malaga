@@ -40,7 +40,7 @@ export default function InfoBanner({
 
       <span className="flex bg-gray-100 px-4 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-900">
         <TimerReset size={15} />
-        {duration} hours
+        ~{duration} hours
       </span>
 
       {/* Location */}
@@ -53,7 +53,7 @@ export default function InfoBanner({
 
       <span className="flex bg-gray-100 px-4 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-900">
         <PersonStanding size={12} />
-        From {minimumAge} y.o.{maxAge ? ` to ${maxAge} y.o.` : ""}
+        From {minimumAge}{maxAge ? ` to ${maxAge}` : ""} y.o.
       </span>
     </div>
   );

@@ -124,7 +124,7 @@ const TopActivitiesHome = async () => {
 
                     <span className="flex bg-gray-100 px-2 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-900">
                       <TimerReset size={15} />
-                      {activity.duration} hs
+                      ~{activity.duration} hs
                     </span>
 
                     <span className="flex bg-gray-100 px-2 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-900">

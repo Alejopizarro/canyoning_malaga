@@ -67,7 +67,7 @@ const ExcursionCard = (props: ExcursionCardProps) => {
             </span>
             <span className="flex bg-gray-100 px-2 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-900">
               <TimerReset size={12} />
-              {excursion.duration} hs
+              ~{excursion.duration} hs
             </span>
           </div>
         )}

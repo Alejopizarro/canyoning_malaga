@@ -7,7 +7,7 @@ import { getExcursionByPath } from "@/lib/activities";
 import { levelLabel } from "@/lib/level";
 import { notFound } from "next/navigation";
 import OtherActivities from "@/components/other-activities";
-import SeoContentTabs from "@/components/seo-content-tabs";
+import SeoContentTabs, { type SeoTab } from "@/components/seo-content-tabs";
 import {
   Accordion,
   AccordionContent,
@@ -25,42 +25,165 @@ import {
   jsonLdLocalBusiness,
   jsonLdFaq,
   jsonLdBreadcrumb,
+  guadalminaAgeRange,
 } from "./metadata";
 
 export const metadata = guadalminaMetadata;
 
-const SEO_TABS = [
+const SEO_TABS: SeoTab[] = [
   {
     id: "river-walk",
     label: "Guadalmina River Walk",
-    h3: "Guadalmina River Walk: Guided Canyoning vs. Self-Guided Route",
+    h3: "Guadalmina River Walk: Why You Should Go With a Guide",
     paragraphs: [
-      "The Guadalmina River Walk is one of the most iconic outdoor experiences on the Costa del Sol. The route follows the Río Guadalmina as it carves through the Sierra Bermeja mountains in Benahavís, creating a dramatic sequence of narrow gorges, natural pools, and sculpted rock formations. Many visitors attempt the guadalmina river walk independently, but a guided canyoning tour transforms the experience entirely — unlocking sections of the canyon that are difficult to navigate without technical equipment and local expertise.",
-      "With TUUR Adventure, the Guadalmina River Walk becomes a full canyoning adventure: you'll descend with a certified guide, wearing a 5mm wetsuit, helmet and harness, accessing jumps of up to 6 meters, a toboggan slide and a rappel section that self-guided hikers simply cannot reach safely. The guided guadalmina river walk departs every day of the year, morning and afternoon, from a meeting point in San Pedro de Alcántara — just 15 minutes from Puerto Banús and 25 minutes from Estepona.",
-      "Whether you're looking for a mild family-friendly guadalmina river walk with small children or a more adrenaline-packed descent with jumps and rappelling, our guides tailor the experience to your group. This activity is runnable all year round thanks to the canyon's sheltered microclimate and temperate waters — one of the very few canyons in Málaga Province with this characteristic.",
+      "Many visitors search for the Guadalmina River Walk expecting an easy riverside stroll. The stretch through Las Angosturas in Benahavís is actually a canyon: a narrow gorge with slippery rock, deep pools and a 5-metre dam near the end. It can look easy from the entrance, but it is not a walk to do on your own.",
+      "These are the main risks we see in the river every season:",
     ],
+    content: (
+      <>
+        <ul className="list-disc pl-6">
+          <li>
+            <strong>Slippery rock.</strong> Wet, polished stone makes falls
+            common. We recommend professional canyoning shoes or trainers with
+            good grip. Flip-flops and thin water shoes are not suitable.
+          </li>
+          <li>
+            <strong>Rockfall.</strong> Stones can fall from the walls, which is
+            why every participant should wear a helmet.
+          </li>
+          <li>
+            <strong>Cold.</strong> Even in summer, long stretches in shaded
+            water can lead to hypothermia, especially in children. A wetsuit
+            keeps you warm and also helps you float.
+          </li>
+          <li>
+            <strong>Deep pools and long swims.</strong> Some sections can only
+            be crossed by swimming.
+          </li>
+          <li>
+            <strong>The final dam.</strong> The 5-metre dam near the end is
+            very hard to get down without rappel equipment. The natural slide to
+            the left of the wall is steep and ends in a bend where people hit
+            the rock, and several people have been injured there.
+          </li>
+        </ul>
+        <p>
+          On a guided tour with TUUR Adventure, a certified canyoning guide
+          leads a maximum of 12 people, provides all the technical equipment and
+          takes you down the dam on a rope. Jumps and slides are always
+          optional, and the guide decides on the spot what is safe for each
+          group.
+        </p>
+        <p>
+          A guided visit also protects the river. The Guadalmina is part of the
+          Natura 2000 network, and our groups follow a leave-no-trace policy: no
+          eating or drinking in the canyon (snacks stay in the car), and our
+          guides pick up any litter they find along the way.
+        </p>
+      </>
+    ),
   },
   {
     id: "benahavis",
     label: "Benahavís Canyoning",
-    h3: "Benahavís Canyoning: The Best Canyon Near Marbella",
+    h3: "Benahavís Canyoning near Marbella: Meeting Point, Times and What's Included",
     paragraphs: [
-      "Benahavís canyoning takes place in the municipality of Benahavís, a small village nestled in the mountains 20 minutes above Marbella. The star location for benahavís canyoning is the Río Guadalmina canyon — also called Las Angosturas or Canyon of the Angosturas — a Level 1 protected natural area within the Special Conservation Zone (ZEC) of Sierras Bermeja y Real. Its accessible difficulty level and spectacular scenery make it the most popular canyoning destination on the entire Costa del Sol.",
-      "Benahavís canyoning with TUUR Adventure is suitable for all ages: families with children from 6 years old in summer, groups of friends, couples and corporate team-building groups. The canyon is short enough to complete in a 3-hour session without exhausting participants, yet varied enough to offer genuine adventure — swimming through narrow passages, jumping from rock ledges into deep pools, and rappelling down a 5 meters high wall with full safety equipment.",
-      "Unlike other benahavís canyoning operators, TUUR Adventure is a locally-based company registered with the Junta de Andalucía's Active Tourism Registry (AT/MA/00141), led by professional mountain guide José Moreno with over 20 years of experience in Andalusia's canyons. All guides are first-aid certified, and the equipment is inspected and renewed each season.",
-      "Looking for canyoning benahavís for beginners? Our open group sessions are ideal for first-timers. Searching for canyoning near marbella with kids? We take children from 6 years old in summer. Need a private benahavís canyoning tour for a group? We offer exclusive private departures for groups of 2 to 150 participants. From San Pedro, Puerto Banús, Marbella, Nueva Andalucía or Estepona — we are the closest and most convenient canyoning option on the Costa del Sol.",
+      "TUUR Adventure runs guided canyoning on the Río Guadalmina in the mountain village of Benahavís, 20 to 30 minutes' drive from Marbella depending on traffic. Our office is in San Pedro de Alcántara, but the activity starts in Benahavís.",
     ],
+    content: (
+      <>
+        <ul className="list-disc pl-6">
+          <li>
+            <strong>Meeting point:</strong> Parque Torre Leonera, Benahavís.
+            There is free parking right next to the park, with toilets and
+            drinking fountains at the meeting point. Please arrive 15 minutes
+            before the start. Transport is not included. On some dates we can
+            arrange it from San Pedro or Marbella on request, but this is not
+            guaranteed.
+          </li>
+          <li>
+            <strong>Start times:</strong> we change our times through the year
+            to suit the temperature and daylight. The 10:00 open-group session
+            runs all year. In summer we recommend the 9:00 start, and a 14:00
+            afternoon session runs in the warmer months. Check the booking
+            calendar for the times available on your date.
+          </li>
+          <li>
+            <strong>Duration:</strong> about 3 hours in total, with 2 to 2.5
+            hours inside the canyon. This is an estimate: it depends on river
+            conditions, the group&apos;s pace and how busy the canyon is.
+          </li>
+          <li>
+            <strong>Included:</strong> wetsuit, harness, helmet, rappel
+            equipment, life jackets for children and anyone less confident in
+            the water, a certified guide, insurance and photos sent by WhatsApp.
+            On cold days we provide a 5 mm long-sleeve wetsuit jacket and, while
+            stocks last, neoprene socks. The only optional extra is professional
+            canyoning shoes (Bestard Aqua Pro or Five Ten Trailcross XT), which
+            you can hire for €8.
+          </li>
+          <li>
+            <strong>Who can join:</strong> no experience is needed, but you must
+            be able to swim at a basic level. The minimum age is 6 in summer.
+            From December to March it is 12, and participants must weigh over
+            45 kg.
+          </li>
+          <li>
+            <strong>Groups and languages:</strong> open groups have a maximum of
+            12 people per guide. Private groups can be from 2 to 150 people,
+            including companies, team-building events and schools. All our
+            guides speak Spanish and English. French and German are sometimes
+            available but cannot be guaranteed.
+          </li>
+        </ul>
+        <p>
+          TUUR Adventure is registered as an active tourism company with the
+          Junta de Andalucía (AT/MA/00141). Our guides hold canyoning
+          certification and we are members of the Asociación Española de Guías
+          de Montaña. The company was founded by José Moreno González, who has
+          more than 20 years of experience in mountaineering and guiding.
+        </p>
+      </>
+    ),
   },
   {
     id: "angosturas",
     label: "Canyon of the Angosturas",
-    h3: "Canyon of the Angosturas (Cañón de las Angosturas) — Benahavís, Málaga",
+    h3: "Canyon of the Angosturas (Cañón de las Angosturas), Benahavís, Málaga",
     paragraphs: [
-      "The Canyon of the Angosturas — known in Spanish as el Cañón de las Angosturas or Las Angosturas de Guadalmina — is a protected natural gorge located in the municipality of Benahavís, in the province of Málaga. The canyon is carved by the Río Guadalmina as it descends from the Sierra Bermeja mountains towards the Costa del Sol. Its name, 'Las Angosturas', refers to the extreme narrowness of the gorge at certain points — walls that close in to less than a metre apart, creating a uniquely dramatic canyoning experience.",
-      "Geologically, the Canyon of the Angosturas sits within Georrecurso 621 of the Diputación Provincial de Málaga and is classified as a Special Conservation Zone (ZEC ES6170010 — Sierras Bermeja y Real). The canyon is open to the public year-round, with regulated access hours established by the Ayuntamiento de Benahavís to protect the ecosystem. Professional guided canyoning tours — like those offered by TUUR Adventure — operate under official permits and follow strict environmental guidelines during every descent.",
-      "The canyon of the angosturas is suitable for all levels, making it genuinely accessible for beginners, children and non-swimmers with basic fitness. The route through the angosturas guadalmina typically takes 2 to 3 hours depending on group size and conditions. Along the way, participants encounter natural pools (known locally as 'charcos'), a famous rock toboggan, narrow swim-throughs, and optional jump points ranging from 1 to 6 metres. The canyon ends near the Charco de los Tubos, named after historic disused pipes embedded in the canyon wall.",
-      "For visitors arriving from Marbella, Puerto Banús or Estepona, the Canyon of the Angosturas is the single most accessible natural canyon in the province — located just off the A-7175 road towards Benahavís village, with signposted parking at Parking Ermita. TUUR Adventure picks up participants from San Pedro de Alcántara and provides all necessary equipment: wetsuit, helmet, harness and neoprene shoes. No prior canyoning experience is needed to descend the canyon of the angosturas safely.",
+      "Las Angosturas de Guadalmina (\"the narrows\") is the gorge the Río Guadalmina has carved through the mountains next to Benahavís, in Málaga province. The river rises in the Sierra Bermeja and reaches the sea at San Pedro de Alcántara. On the way it squeezes between high rock walls and forms a chain of natural pools, known locally as 'pozas' or 'charcos'.",
+      "The canyon is a protected natural area within the EU's Natura 2000 network. This stretch lies within two Special Areas of Conservation (ZEC): Río Guadalmina (ES6170021) and Sierras Bermeja y Real (ES6170010). That is why we keep our groups small and follow strict leave-no-trace rules inside the gorge.",
+      "The route: you follow the river downstream, swimming through narrow passages, sliding down a natural rock toboggan and jumping into deep pools from 1 to 6 metres. Every jump is optional. When conditions allow and the guide judges the group ready, sporty groups can also try higher jumps of up to 9 metres. Near the end comes the 5-metre rappel down the dam, and the route finishes at the Charco de los Tubos, named after the old water pipes in the rock wall.",
+      "Las Angosturas is a beginner-level canyon, suitable for families and first-timers who can swim at a basic level. We run it all year. In summer it is a great way to cool off. In winter we use thicker wetsuits and raise the minimum age. On high-water days only our most experienced guides lead the descent. If river or weather conditions are unsafe, we offer a new date, an alternative route or a refund.",
+      "All technical equipment is provided and no previous experience is needed. To explore the Angosturas safely, book a guided tour from our meeting point at Parque Torre Leonera, Benahavís.",
     ],
+  },
+];
+
+const RIVER_CODE = [
+  {
+    title: "Cover up instead of using sunscreen.",
+    text: "Sunscreen washes off in the water and harms river life. We'll give you the right wetsuit for the day: full-length suits for kids and long-sleeve jackets on cooler days. On hot summer days your arms and shoulders stay uncovered, so if you burn easily, bring a long-sleeve rash guard or quick-dry top to wear underneath. The same goes for make-up and insect repellent.",
+  },
+  {
+    title: "Leave jewellery, watches and phones behind.",
+    text: "Every season we recover rings, smartwatches and phones from the bottom of the river. Leave them at home, in your car or in the free storage in our vans. Don't worry about pictures: your guide takes them for you. Glasses are only allowed with a strap.",
+  },
+  {
+    title: "Food and drinks stay in the car.",
+    text: "Enjoy them after the activity. There are drinking fountains at the meeting point and on the way back, and your guide carries water for emergencies.",
+  },
+  {
+    title: "Use the toilet before we start.",
+    text: "There are toilets right next to the meeting point. The river is not a toilet.",
+  },
+  {
+    title: "Step where your guide steps.",
+    text: "Stay off the plants on the riverbanks, don't move stones, and watch the wildlife without touching it.",
+  },
+  {
+    title: "Leave only footprints.",
+    text: "Everything we bring in goes back out with us. If you spot litter, hand it to your guide.",
   },
 ];
 
@@ -69,7 +192,7 @@ const ACTIVITY_HIGHLIGHTS = [
     icon: "✅",
     title: "Beginner & Family Friendly",
     description:
-      "Ideal for all levels, including children (from 6 y.o. in summer, 12 y.o. in winter).",
+      `Ideal for all levels (from ${guadalminaAgeRange} y.o.).`,
   },
   {
     icon: "✅",
@@ -81,7 +204,7 @@ const ACTIVITY_HIGHLIGHTS = [
     icon: "✅",
     title: "Full Adrenaline Options",
     description:
-      "Practice rappelling (max. 4 meters) and enjoy a fun toboggan slide (2 meters) in a mountainous, idyllic setting.",
+      "Practice rappelling (up to 5 meters) and enjoy a fun toboggan slide (2 meters) in a mountainous, idyllic setting.",
   },
   {
     icon: "✅",
@@ -119,7 +242,7 @@ const DESCRIPTION_DATA = {
     "Meet your guide at the parking area 15 minutes before the start of the activity.",
     "Gear up: Put on the canyoning gear (wetsuit, harness, helmet, and optional professional shoes).",
     "Walk to the canyon entrance (approx. 5 minutes). Attend the safety briefing and start the activity.",
-    "Canyoning time! Walk, swim, slide, jump (optional), and abseil, enjoying the unique gorge for about 2.5 hours.",
+    "Canyoning time! Walk, swim, slide, jump (optional), and abseil, enjoying the unique gorge for about 2 to 2.5 hours.",
     "Return to the meeting point (~15 min), take off the gear, and thank your guide!",
   ],
 };
@@ -152,6 +275,7 @@ export default async function Page() {
     price: guadalmina.price,
     days: guadalmina.days,
     minimumAge: guadalmina.minimumAge,
+    maxAge: guadalmina.maxAge,
     ubication: guadalmina.ubication,
     duration: guadalmina.duration,
     level: guadalmina.level,
@@ -201,7 +325,7 @@ export default async function Page() {
               Guadalmina Canyon, famously known as{" "}
               <strong>&quot;The Narrowest Canyon.&quot;</strong> This dynamic
               half-day activity is perfect for beginners, friends, and families
-              (from 6 y.o. in summer), offering fun and excitement{" "}
+              (from {guadalminaAgeRange} y.o.), offering fun and excitement{" "}
               <strong>every day of the year</strong> thanks to its temperate
               waters.
             </p>
@@ -256,10 +380,12 @@ export default async function Page() {
               🌅 Pick Your Perfect Session
             </h3>
             <p className="text-blue-700 text-sm">
-              Choose our <strong>9 AM Early Bird</strong> session to beat the
-              summer crowds and enjoy the turquoise waters in peace, or join our
-              popular <strong>10 AM and 2 PM</strong> slots for a high-energy
-              adventure.
+              Our <strong>10 AM</strong> session runs all year round. Through
+              the seasons we add extra start times to suit the temperature and
+              daylight: <strong>9 AM Early Bird</strong> sessions to beat the
+              summer heat and crowds, and <strong>2 PM</strong> afternoon
+              sessions on warmer days. Check the booking calendar to see the
+              times available on your date.
             </p>
           </div>
 
@@ -278,7 +404,7 @@ export default async function Page() {
                   our most requested activity due to its accessibility and high
                   fun factor. This route provides the ideal canyoning trip for
                   groups, bachelor parties, and families looking for a half-day
-                  adventure (3 hours).
+                  adventure (~3 hours).
                 </p>
                 <p>
                   In this beautiful natural environment, you will learn the
@@ -366,6 +492,26 @@ export default async function Page() {
               </AccordionContent>
             </AccordionItem>
 
+            {/* Our River Code */}
+            <AccordionItem value="river-code">
+              <AccordionTrigger>Our River Code</AccordionTrigger>
+              <AccordionContent className="flex flex-col gap-y-4">
+                <p>
+                  The Guadalmina is a protected river, part of the European
+                  Natura 2000 network, and home to otters, terrapins, native
+                  fish and kingfishers. Thousands of people enjoy it every
+                  summer, so we look after it together.
+                </p>
+                <ul className="list-disc pl-6 space-y-2">
+                  {RIVER_CODE.map((rule, index) => (
+                    <li key={index}>
+                      <strong>{rule.title}</strong> {rule.text}
+                    </li>
+                  ))}
+                </ul>
+              </AccordionContent>
+            </AccordionItem>
+
             {/* Meeting Point */}
             <AccordionItem value="item-4">
               <AccordionTrigger>Meeting Point</AccordionTrigger>
@@ -415,7 +561,7 @@ export default async function Page() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Rappel</p>
-                    <p className="font-semibold">Up to 4 meters</p>
+                    <p className="font-semibold">Up to 5 meters</p>
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Toboggan</p>
@@ -423,15 +569,15 @@ export default async function Page() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Duration</p>
-                    <p className="font-semibold">3:00 Hours</p>
+                    <p className="font-semibold">~3:00 Hours</p>
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Level</p>
                     <p className="font-semibold">{levelLabel(guadalmina.level)}</p>
                   </div>
                   <div>
-                    <p className="text-sm text-gray-500">Minimum Age</p>
-                    <p className="font-semibold">From 6 Years Old</p>
+                    <p className="text-sm text-gray-500">Age range</p>
+                    <p className="font-semibold">{guadalminaAgeRange}</p>
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Season</p>

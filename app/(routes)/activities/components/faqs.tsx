@@ -10,6 +10,44 @@ export interface Faq {
   answer: string;
 }
 
+// Answers may use blank lines for paragraphs, "- " lines for lists and
+// **text** for bold. Plain single-paragraph answers render as before.
+const answerBlocks = (answer: string) =>
+  answer.split(/\n\s*\n/).map((block) => {
+    const lines = block.split("\n").map((line) => line.trim());
+    const isList = lines.every((line) => line.startsWith("- "));
+    return { isList, lines: isList ? lines.map((l) => l.slice(2)) : lines };
+  });
+
+const renderInline = (text: string) =>
+  text
+    .split(/(\*\*[^*]+\*\*)/)
+    .map((part, i) =>
+      part.startsWith("**") && part.endsWith("**") ? (
+        <strong key={i}>{part.slice(2, -2)}</strong>
+      ) : (
+        part
+      ),
+    );
+
+const boldToHtml = (text: string) =>
+  text.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+
+// Simple HTML version of an answer for the FAQPage JSON-LD.
+export const faqAnswerToHtml = (answer: string) => {
+  const blocks = answerBlocks(answer);
+  if (blocks.length === 1 && !blocks[0].isList) {
+    return boldToHtml(blocks[0].lines.join(" "));
+  }
+  return blocks
+    .map(({ isList, lines }) =>
+      isList
+        ? `<ul>${lines.map((l) => `<li>${boldToHtml(l)}</li>`).join("")}</ul>`
+        : `<p>${boldToHtml(lines.join(" "))}</p>`,
+    )
+    .join("");
+};
+
 interface FaqsProps {
   faqs?: Faq[];
 }
@@ -37,8 +75,18 @@ const Faqs = (props: FaqsProps) => {
             <AccordionTrigger>
               <p>{faq.question}</p>
             </AccordionTrigger>
-            <AccordionContent>
-              <p>{faq.answer}</p>
+            <AccordionContent className="flex flex-col gap-y-3">
+              {answerBlocks(faq.answer).map(({ isList, lines }, i) =>
+                isList ? (
+                  <ul key={i} className="list-disc pl-6 space-y-2">
+                    {lines.map((line, j) => (
+                      <li key={j}>{renderInline(line)}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p key={i}>{renderInline(lines.join(" "))}</p>
+                ),
+              )}
             </AccordionContent>
           </AccordionItem>
         ))}

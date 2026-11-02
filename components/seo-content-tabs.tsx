@@ -1,12 +1,14 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 
 export type SeoTab = {
   id: string;
   label: string;
   h3: string;
-  paragraphs: string[];
+  paragraphs?: string[];
+  // Rich content (lists, bold) rendered after the paragraphs
+  content?: ReactNode;
 };
 
 type SeoContentTabsProps = {
@@ -46,9 +48,10 @@ export default function SeoContentTabs({ tabs }: SeoContentTabsProps) {
           }
         >
           <h3 className="sr-only">{tab.h3}</h3>
-          {tab.paragraphs.map((p, i) => (
+          {tab.paragraphs?.map((p, i) => (
             <p key={i}>{p}</p>
           ))}
+          {tab.content}
         </div>
       ))}
     </div>

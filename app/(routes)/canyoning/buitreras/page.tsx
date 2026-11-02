@@ -369,7 +369,7 @@ export default async function Page() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Duration</p>
-                    <p className="font-semibold">6:00 Hours</p>
+                    <p className="font-semibold">~6:00 Hours</p>
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Level</p>
