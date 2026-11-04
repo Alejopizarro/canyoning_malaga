@@ -10,6 +10,7 @@ import BannerCertified from "@/components/banner-certified";
 import ProfessionalGuides from "@/components/professional-guides";
 import BannerContact from "@/components/banner-contact";
 import FaqsHome from "@/components/faqs-home";
+import LatestBlogPosts from "@/components/latest-blog-posts";
 import AdventureGallery from "@/components/adventure-gallery";
 
 export const metadata: Metadata = {
@@ -30,6 +31,7 @@ export default async function Home() {
       <BannerCertified />
       <ProfessionalGuides />
       <BannerContact />
+      <LatestBlogPosts />
       <FaqsHome />
       <AdventureGallery excursions={excursions} />
     </main>

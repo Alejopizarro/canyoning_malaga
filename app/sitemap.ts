@@ -36,6 +36,15 @@ const hasPage = (urlPath: string) =>
 const absolute = (urlPath: string) =>
   urlPath === "/" ? siteConfig.url : `${siteConfig.url}${urlPath}`;
 
+// "November 4, 2026" parses as local midnight, which in Spain is the previous
+// day in UTC. Keep the calendar day the article was published.
+const toUtcDate = (date: string) => {
+  const local = new Date(date);
+  return new Date(
+    Date.UTC(local.getFullYear(), local.getMonth(), local.getDate()),
+  );
+};
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const activityPaths = [
     ...excursions.filter((exc) => exc.categoryPath).map((exc) => activityPath(exc)),
@@ -50,7 +59,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       .map((post) => ({
         url: absolute(post.slug),
         // Publication date: the only real date we have for articles.
-        lastModified: new Date(post.date),
+        lastModified: toUtcDate(post.date),
       })),
   ];
 }

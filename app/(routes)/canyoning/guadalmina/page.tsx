@@ -17,6 +17,7 @@ import {
 import PrivateTourCTA from "@/components/private-tour";
 import CheckAvailabilityButton from "../../../../components/ui/check-availability-button";
 import TrustindexWidget from "@/components/trustindex-widget";
+import RainPolicyBanner from "@/components/rain-policy-banner";
 import {
   guadalminaMetadata,
   guadalminaFaqs,
@@ -358,6 +359,8 @@ export default async function Page() {
               ))}
             </ul>
           </div>
+
+          <RainPolicyBanner />
 
           {/* Safety Box - E-E-A-T */}
           <div className="bg-green-50 border border-green-200 rounded-lg p-4 my-4">

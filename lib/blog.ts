@@ -14,6 +14,16 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    title: "Can You Go Canyoning in the Rain? Winter Guide to Málaga",
+    slug: "/blog/can-you-go-canyoning-in-the-rain",
+    excerpt:
+      "Yes, but it depends on the canyon. How rain changes a canyon, how guides read the river, what to wear in winter and what happens if the weather turns.",
+    image: "/canyoning-in-the-rain-guadalmina.webp",
+    category: "Guides",
+    date: "November 4, 2026",
+    readTime: "11 min read",
+  },
+  {
     title: "The Best Activities in Marbella & Surroundings | 2026 Guide",
     slug: "/blog/best-activities-marbella",
     excerpt:
