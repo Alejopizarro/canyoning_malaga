@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Script from "next/script";
 import Hero from "@/components/hero";
 import ExcursionDescription from "@/components/excursion-description";
@@ -273,6 +274,17 @@ export default async function Page() {
                   Whether you choose the panoramic standard route or the
                   vertical direct challenge, the reward is the same: the best
                   views in Andalusia.
+                </p>
+                <p>
+                  Back down in the city? Find{" "}
+                  <Link
+                    href="/blog/best-activities-marbella"
+                    title="Things to do in Marbella: best activities and experiences"
+                    className="font-medium text-primary underline underline-offset-2"
+                  >
+                    more things to do near Marbella
+                  </Link>, from the old
+                  town to canyoning and the white villages.
                 </p>
               </AccordionContent>
             </AccordionItem>

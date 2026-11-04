@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Bokun from "@/components/bokun";
 import Hero from "@/components/hero";
 import ExcursionDescription from "@/components/excursion-description";
@@ -408,6 +409,18 @@ export default async function Page() {
                   fun factor. This route provides the ideal canyoning trip for
                   groups, bachelor parties, and families looking for a half-day
                   adventure (~3 hours).
+                </p>
+                <p>
+                  Spending a few days on the coast? Our guide to{" "}
+                  <Link
+                    href="/blog/best-activities-marbella"
+                    title="Things to do in Marbella: best activities and experiences"
+                    className="font-medium text-primary underline underline-offset-2"
+                  >
+                    things to do in Marbella
+                  </Link>{" "}
+                  covers the old town, La Concha, the white villages and more
+                  to combine with your canyoning day.
                 </p>
                 <p>
                   In this beautiful natural environment, you will learn the

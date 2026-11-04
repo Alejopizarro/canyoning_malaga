@@ -16,6 +16,7 @@ const LINK_TITLES = {
   casares: "Via Ferrata Casares",
   "la-concha": "La Concha Hike in Marbella",
   "kayak-puerto-banus": "Kayak Tour in Puerto Banús",
+  "e-bike-marbella": "E-Bike Tour from Marbella to Istán",
 } as const;
 
 export type RelatedSlug = keyof typeof LINK_TITLES;

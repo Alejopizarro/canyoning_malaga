@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Script from "next/script";
 import Hero from "@/components/hero";
 import ExcursionDescription from "@/components/excursion-description";
@@ -241,6 +242,18 @@ export default async function Page() {
                   seaside villas line the shore. This tour is the perfect mix of
                   nature, sport, and sightseeing along one of Spain&apos;s most
                   exclusive coastlines.
+                </p>
+                <p>
+                  After your paddle, our guide to{" "}
+                  <Link
+                    href="/blog/best-activities-marbella"
+                    title="Things to do in Marbella: best activities and experiences"
+                    className="font-medium text-primary underline underline-offset-2"
+                  >
+                    things to do in Marbella
+                  </Link>{" "}
+                  has more ideas for the rest of your day, from the old town to
+                  La Concha and the white villages.
                 </p>
               </AccordionContent>
             </AccordionItem>

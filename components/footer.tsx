@@ -132,7 +132,8 @@ const Footer = () => {
               More Activities
             </h3>
             <ul className="space-y-2">
-              {moreActivitiesExcursions.slice(0, 4).map((excursion) => (
+              {/* Jet Ski, Gymkhana and Caving have no page yet, so stop before them. */}
+              {moreActivitiesExcursions.slice(0, 3).map((excursion) => (
                 <li key={excursion.route}>
                   <Link
                     href={activityPath(excursion, "activities")}

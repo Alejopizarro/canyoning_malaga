@@ -24,11 +24,11 @@ export const blogPosts: BlogPost[] = [
     readTime: "11 min read",
   },
   {
-    title: "The Best Activities in Marbella & Surroundings | 2026 Guide",
+    title: "Things to Do in Marbella: Best Activities & Experiences (2026)",
     slug: "/blog/best-activities-marbella",
     excerpt:
-      "Discover the best activities in Marbella: canyoning, via ferrata, hiking, kayaking & more. Your complete guide to outdoor adventures on the Costa del Sol.",
-    image: "/marbella-drone-1.webp",
+      "Things to do in Marbella: canyoning in Benahavís, La Concha hike, sunrise kayak in Puerto Banús, the old town, white villages & more. Tips from local guides.",
+    image: "/marbella-drone-hero.webp",
     category: "Guides",
     date: "March 4, 2026",
     readTime: "15 min read",

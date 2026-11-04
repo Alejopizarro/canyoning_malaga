@@ -1,6 +1,10 @@
 // lib/complementary-data.ts
 
 import { Excursion } from "./activities";
+import {
+  eBikeMarbellaImages,
+  eBikeMarbellaMainImage,
+} from "./e-bike-marbella-images";
 
 type ComplementaryData = Omit<
   Excursion,
@@ -960,17 +964,17 @@ export const complementaryData: Record<string, ComplementaryData> = {
     isDisponible: false,
   },
 
+  // Row 11 of the "info-canyoning" Sheet.
   "e-bike-marbella": {
-    subtitle: "E-Bike Marbella - Explore Sierra Blanca on Electric Wheels",
+    subtitle:
+      "E-Bike Adventure from Marbella to Istán: White Villages & Sierra Blanca Tour",
     description:
-      "Electric bike route through Sierra Blanca to Istán. Incredible coastal views. Tapas included in the village.",
+      "Ride high-end e-bikes from Marbella through Sierra Blanca to Istán, the white village of water. Coastal views and a tapa stop.",
     videoYoutube: "",
     days: "All year!",
-    mainImage: {
-      src: "/empty.webp",
-      alt: "E-Bike Marbella - Electric bike route through Sierra Blanca",
-    },
-    images: [],
+    specialPrice: "Special Open Group Price. Limited capacity.",
+    mainImage: eBikeMarbellaMainImage,
+    images: eBikeMarbellaImages,
     isOffer: false,
     rating: { value: 0, reviews: 0 },
     level: "moderate",
@@ -979,33 +983,9 @@ export const complementaryData: Record<string, ComplementaryData> = {
     subcategory: "E-Bike",
     categoryPath: "activities",
     duration: 4,
-    minimumAge: 12,
-    ubication: "Marbella, Málaga",
+    minimumAge: 14,
+    ubication: "Marbella / Istán",
     isDisponible: true,
-  },
-
-  "buggy-tour-marbella": {
-    subtitle: "Buggy Tour Marbella - Off-Road Adventure with Coastal Views",
-    description:
-      "Buggy tour with panoramic coastal views. Adrenaline and spectacular landscapes. Off-road experience.",
-    videoYoutube: "",
-    days: "All year!",
-    mainImage: {
-      src: "/la-concha-13.webp",
-      alt: "Buggy Tour Marbella - Buggy tour with panoramic coastal views",
-    },
-    images: [],
-    isOffer: false,
-    rating: { value: 0, reviews: 0 },
-    level: "moderate",
-    province: "Málaga",
-    category: "More Activities",
-    subcategory: "Buggy",
-    categoryPath: "activities",
-    duration: 3,
-    minimumAge: 18,
-    ubication: "Marbella, Málaga",
-    isDisponible: false,
   },
 
   "jet-ski-marbella": {

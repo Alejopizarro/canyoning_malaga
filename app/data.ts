@@ -1,3 +1,8 @@
+import {
+  eBikeMarbellaImages,
+  eBikeMarbellaMainImage,
+} from "@/lib/e-bike-marbella-images";
+
 export interface Rating {
   value: number;
   reviews: number;
@@ -643,7 +648,7 @@ export const excursions: Excursion[] = [
     description:
       "Ascent to Marbella's most iconic peak (1,215m). Panoramic views of Costa del Sol, Gibraltar and Africa.",
     videoYoutube: "",
-    price: 49,
+    price: 80,
     mainImage: {
       src: "/la-concha-1.webp",
       alt: "Hiking La Concha - Ascent to Marbella's most iconic peak",
@@ -791,7 +796,7 @@ export const excursions: Excursion[] = [
     description:
       "Sunrise kayak tour from Puerto Banús. Enjoy Marbella's coast with calm waters and beautiful views.",
     videoYoutube: "",
-    price: 40,
+    price: 45,
     days: "Tue | Thu | Sat",
     mainImage: {
       src: "/kayak-banus-1.png",
@@ -850,13 +855,10 @@ export const excursions: Excursion[] = [
     description:
       "Electric bike route through Sierra Blanca to Istán. Incredible coastal views. Tapas included in the village.",
     videoYoutube: "",
-    price: 55,
+    price: 79,
     days: "All year!",
-    mainImage: {
-      src: "/images/excursions/e-bike-marbella/main.jpg",
-      alt: "E-Bike Marbella - Electric bike route through Sierra Blanca",
-    },
-    images: [],
+    mainImage: eBikeMarbellaMainImage,
+    images: eBikeMarbellaImages,
     isOffer: false,
     isMostPopular: false,
     rating: {
@@ -867,34 +869,7 @@ export const excursions: Excursion[] = [
     category: "More Activities",
     categoryPath: "activities",
     duration: 4,
-    minimumAge: 12,
-    ubication: "Marbella",
-  },
-  {
-    title: "Buggy Tour Marbella",
-    route: "buggy-tour-marbella",
-    subtitle: "Buggy Tour Marbella - Off-Road Adventure with Coastal Views",
-    description:
-      "Buggy tour with panoramic coastal views. Adrenaline and spectacular landscapes. Off-road experience.",
-    videoYoutube: "",
-    price: 120,
-    days: "All year!",
-    mainImage: {
-      src: "/images/excursions/buggy-tour-marbella/main.jpg",
-      alt: "Buggy Tour Marbella - Buggy tour with panoramic coastal views",
-    },
-    images: [],
-    isOffer: false,
-    isMostPopular: false,
-    rating: {
-      value: 0,
-      reviews: 0,
-    },
-    province: "Málaga",
-    category: "More Activities",
-    categoryPath: "activities",
-    duration: 3,
-    minimumAge: 18,
+    minimumAge: 14,
     ubication: "Marbella",
   },
   {

@@ -1,0 +1,45 @@
+// Photos for E-Bike Marbella, shared by app/data.ts and lib/complementary-data.ts.
+// No imports on purpose: app/data.ts is also loaded by client components.
+
+export const eBikeMarbellaMainImage = {
+  src: "/e-bike-marbella-1.webp",
+  alt: "Cyclist on an electric mountain bike above terraced hillsides near Istán, Marbella",
+};
+
+export const eBikeMarbellaImages = [
+  { src: "/e-bike-marbella-2.webp", alt: "Group of riders on e-bikes along a dirt track in Sierra Blanca" },
+  { src: "/e-bike-marbella-3.webp", alt: "E-bike group posing with their bikes on a mountain road near Marbella" },
+  { src: "/e-bike-marbella-4.webp", alt: "View of the white village of Istán surrounded by green hills" },
+  { src: "/e-bike-marbella-5.webp", alt: "E-bikes parked at a viewpoint over the reservoir and mountains near Istán" },
+  { src: "/e-bike-marbella-6.webp", alt: "Reservoir winding between forested mountains seen from the e-bike route to Istán" },
+  { src: "/e-bike-marbella-7.webp", alt: "Smiling e-bike group with helmets in a pine meadow in Sierra Blanca" },
+  { src: "/e-bike-marbella-8.webp", alt: "Riders climbing a gravel mountain track on electric bikes" },
+  { src: "/e-bike-marbella-9.webp", alt: "Cyclist riding an e-bike past flowering oleanders" },
+  { src: "/e-bike-marbella-10.webp", alt: "E-bike riders along a seaside promenade on the Costa del Sol" },
+  { src: "/e-bike-marbella-11.webp", alt: "E-bike group stopping in the shade of a large tree" },
+  { src: "/e-bike-marbella-12.webp", alt: "Large group with their electric bikes under eucalyptus trees" },
+  { src: "/e-bike-marbella-13.webp", alt: "Rider leading the group on a gravel track through pine forest" },
+  { src: "/e-bike-marbella-14.webp", alt: "Cyclist on an e-bike riding a dirt track with mountains behind" },
+  { src: "/e-bike-marbella-15.webp", alt: "Rider heading towards the mountains on a wide dirt road" },
+  { src: "/e-bike-marbella-16.webp", alt: "E-bike rider on a mountain track with views of Sierra Blanca" },
+  { src: "/e-bike-marbella-17.webp", alt: "Riders following a wide forest track on electric bikes" },
+  { src: "/e-bike-marbella-18.webp", alt: "Cyclist on a sunny gravel road lined with pine trees" },
+  { src: "/e-bike-marbella-19.webp", alt: "Rider climbing a paved mountain road on an e-bike" },
+  { src: "/e-bike-marbella-20.webp", alt: "Cyclist riding along a mountain road with valley views" },
+  { src: "/e-bike-marbella-21.webp", alt: "Happy rider waving at the camera during the e-bike tour" },
+  { src: "/e-bike-marbella-22.webp", alt: "E-bike riders on a coastal path next to the sea" },
+  { src: "/e-bike-marbella-23.webp", alt: "Riders on a sandy path lined with palm trees near the coast" },
+  { src: "/e-bike-marbella-24.webp", alt: "Riders coming down a paved lane between trees on electric bikes" },
+  { src: "/e-bike-marbella-25.webp", alt: "Riders on a rocky trail among Mediterranean scrub" },
+  { src: "/e-bike-marbella-26.webp", alt: "Cyclist riding an e-bike through a shallow stream" },
+  { src: "/e-bike-marbella-27.webp", alt: "Rider following an old irrigation channel on the route to Istán" },
+  { src: "/e-bike-marbella-28.webp", alt: "E-bike riders on a village road lined with flower pots" },
+  { src: "/e-bike-marbella-29.webp", alt: "Clear river pools between rocks along the route" },
+  { src: "/e-bike-marbella-30.webp", alt: "E-bike group celebrating with arms raised on a forest track" },
+  { src: "/e-bike-marbella-31.webp", alt: "Group raising their e-bikes in the forest" },
+  { src: "/e-bike-marbella-32.webp", alt: "Group lifting their bikes during a stop in the woods" },
+  { src: "/e-bike-marbella-33.webp", alt: "Riders on a gravel track below the mountains" },
+  { src: "/e-bike-marbella-34.webp", alt: "Two cyclists riding under old trees on a country path" },
+  { src: "/e-bike-marbella-35.webp", alt: "Rider on a shaded pine track in Sierra Blanca" },
+  { src: "/e-bike-marbella-36.webp", alt: "Riders on a wide seaside path with views of the coast" },
+];

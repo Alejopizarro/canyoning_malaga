@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Bokun from "@/components/bokun";
 import Hero from "@/components/hero";
 import ExcursionDescription from "@/components/excursion-description";
@@ -229,6 +230,17 @@ export default async function Page() {
                 <p>
                   End your adventure by enjoying typical tapas in the beautiful
                   Casares village square.
+                </p>
+                <p>
+                  Staying on the Costa del Sol? See{" "}
+                  <Link
+                    href="/blog/best-activities-marbella"
+                    title="Things to do in Marbella: best activities and experiences"
+                    className="font-medium text-primary underline underline-offset-2"
+                  >
+                    more things to do near Marbella
+                  </Link>, just 35
+                  minutes away.
                 </p>
               </AccordionContent>
             </AccordionItem>

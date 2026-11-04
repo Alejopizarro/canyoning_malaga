@@ -1,58 +1,125 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { siteConfig } from "@/lib/site-config";
+
+const title = "Things to Do in Marbella: Best Activities & Experiences (2026)";
+const description =
+  "Things to do in Marbella: canyoning in Benahavís, La Concha hike, sunrise kayak in Puerto Banús, the old town, white villages & more. Tips from local guides.";
+const path = "/blog/best-activities-marbella";
+const ogImage = {
+  url: "/marbella-drone-og.webp",
+  width: 1200,
+  height: 630,
+  alt: "Aerial view of Marbella and La Concha mountain on the Costa del Sol",
+};
 
 export const metadata: Metadata = {
-  title: "The Best Activities in Marbella & Surroundings | 2026 Guide",
-  description:
-    "Discover the best activities in Marbella: canyoning, via ferrata, hiking La Concha, kayaking & more. Complete guide to outdoor adventures near Marbella.",
-  keywords: [
-    "activities marbella",
-    "things to do in marbella",
-    "marbella activities",
-    "outdoor activities marbella",
-    "adventures marbella",
-    "canyoning marbella",
-    "via ferrata marbella",
-    "hiking marbella",
-    "kayak marbella",
-    "what to do in marbella",
-    "marbella experiences",
-    "costa del sol activities",
-    "marbella adventure tours",
-    "family activities marbella",
-  ],
+  title,
+  description,
   openGraph: {
-    title: "The Best Activities in Marbella & Surroundings | 2026 Guide",
-    description:
-      "Discover the best activities in Marbella: canyoning, via ferrata, hiking, kayaking & more. Your complete guide to outdoor adventures on the Costa del Sol.",
+    title,
+    description,
     type: "article",
     publishedTime: "2026-03-04T00:00:00.000Z",
-    modifiedTime: "2026-03-04T00:00:00.000Z",
+    modifiedTime: "2026-11-04T00:00:00.000Z",
     authors: ["TUUR Adventure Experts"],
-    images: [
-      {
-        url: "/marbella-drone-1.webp",
-        width: 1200,
-        height: 630,
-        alt: "Best Activities in Marbella - Canyoning, Via Ferrata, Hiking",
-      },
-    ],
+    images: [ogImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: "The Best Activities in Marbella & Surroundings | 2026 Guide",
-    description:
-      "Discover the best activities in Marbella: canyoning, via ferrata, hiking, kayaking & more.",
+    title,
+    description,
+    images: [ogImage.url],
   },
   alternates: {
-    canonical: "/blog/best-activities-marbella",
+    canonical: path,
   },
 };
+
+// ─── JSON-LD Structured Data ────────────────────────────────────────────────
+
+// Declared on the home page; referenced here instead of repeating it.
+const businessId = `${siteConfig.url}/#business`;
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      headline: title,
+      description,
+      image: `${siteConfig.url}${ogImage.url}`,
+      datePublished: "2026-03-04",
+      dateModified: "2026-11-04",
+      author: { "@type": "Organization", "@id": businessId },
+      publisher: { "@id": businessId },
+      mainEntityOfPage: `${siteConfig.url}${path}`,
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { name: "Home", item: siteConfig.url },
+        { name: "Blog", item: `${siteConfig.url}/blog` },
+        { name: "Things to Do in Marbella", item: `${siteConfig.url}${path}` },
+      ].map((crumb, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        ...crumb,
+      })),
+    },
+  ],
+};
+
+// TUUR activities closest to Marbella. Prices match app/data.ts.
+const quickPicks = [
+  {
+    name: "Guadalmina Canyoning",
+    href: "/canyoning/guadalmina",
+    location: "Benahavís",
+    distance: "~20 min from Marbella",
+    price: 40,
+  },
+  {
+    name: "Hiking La Concha",
+    href: "/hiking/la-concha",
+    location: "Marbella",
+    distance: "In Marbella",
+    price: 80,
+  },
+  {
+    name: "Kayak Puerto Banús",
+    href: "/activities/kayak-puerto-banus",
+    location: "Puerto Banús, Marbella",
+    distance: "In Marbella",
+    price: 45,
+  },
+  {
+    name: "Via Ferrata Casares",
+    href: "/via-ferrata/casares",
+    location: "Casares",
+    distance: "~35 min from Marbella",
+    price: 45,
+  },
+  {
+    name: "E-Bike Marbella",
+    href: "/activities/e-bike-marbella",
+    location: "Sierra Blanca to Istán",
+    distance: "Starts in Marbella",
+    price: 79,
+  },
+];
+
+// Images sit in the max-w-6xl article column (1152px minus lg:px-8 padding).
+const contentImageSizes = "(min-width: 1152px) 1088px, 100vw";
 
 export default function BestActivitiesMarbellaBlogPost() {
   return (
     <article className="pt-26 pb-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Article Header */}
         <header className="mb-10">
@@ -66,13 +133,13 @@ export default function BestActivitiesMarbellaBlogPost() {
               Blog
             </Link>
             <span className="mx-2">/</span>
-            <span className="text-gray-700">Activities in Marbella</span>
+            <span className="text-gray-700">Things to Do in Marbella</span>
           </nav>
 
           {/* Title */}
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            The Best Activities And Experiences To Do In Marbella And Its
-            Surroundings
+            Things to Do in Marbella: The Best Activities and Experiences Near
+            the City
           </h1>
 
           {/* Meta info */}
@@ -87,9 +154,10 @@ export default function BestActivitiesMarbellaBlogPost() {
           {/* Featured Image */}
           <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px] rounded-xl overflow-hidden mb-8">
             <Image
-              src="/marbella-drone-1.webp"
-              alt="Best Activities in Marbella - Outdoor Adventures on the Costa del Sol"
+              src="/marbella-drone-hero.webp"
+              alt="Aerial view of Marbella and La Concha mountain, things to do on the Costa del Sol"
               fill
+              sizes="100vw"
               className="object-cover"
               priority
             />
@@ -114,6 +182,38 @@ export default function BestActivitiesMarbellaBlogPost() {
             to try <strong>the best activities and experiences</strong> that
             Marbella and its surroundings have to offer.
           </p>
+
+          {/* Quick Picks */}
+          <div className="not-prose border border-gray-200 rounded-xl p-6 mb-10">
+            <h2 className="text-lg font-semibold text-gray-900 mb-1">
+              ⚡ Quick picks: our activities near Marbella
+            </h2>
+            <p className="text-sm text-gray-500 mb-4">
+              Short on time? These are the guided activities we run closest to
+              the city.
+            </p>
+            <ul className="grid sm:grid-cols-2 gap-4">
+              {quickPicks.map((pick) => (
+                <li key={pick.href}>
+                  <Link
+                    href={pick.href}
+                    title={`${pick.name} – from ${pick.price} €`}
+                    className="group flex h-full flex-col bg-gray-50 rounded-lg p-4 hover:bg-green-50 transition-colors"
+                  >
+                    <span className="font-semibold text-gray-900 group-hover:text-green-700">
+                      {pick.name}
+                    </span>
+                    <span className="text-sm text-gray-600">
+                      📍 {pick.location} · {pick.distance}
+                    </span>
+                    <span className="mt-2 text-sm font-semibold text-green-600">
+                      From {pick.price} € →
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           {/* Table of Contents */}
           <div className="bg-gray-50 rounded-xl p-6 mb-10">
@@ -143,7 +243,7 @@ export default function BestActivitiesMarbellaBlogPost() {
                 href="#flamenco"
                 className="block text-green-600 hover:text-green-700"
               >
-                4. Book a Night at a Flamenco Tablao
+                4. Book a Night at a Flamenco Tablao in Marbella
               </a>
               <a
                 href="#via-ferrata"
@@ -155,7 +255,7 @@ export default function BestActivitiesMarbellaBlogPost() {
                 href="#la-concha"
                 className="block text-green-600 hover:text-green-700"
               >
-                6. La Concha Mountain (Sierra Blanca)
+                6. Hike La Concha, Marbella&apos;s Mountain
               </a>
               <a
                 href="#white-villages"
@@ -167,7 +267,7 @@ export default function BestActivitiesMarbellaBlogPost() {
                 href="#sea-sports"
                 className="block text-green-600 hover:text-green-700"
               >
-                8. Marbella Sea Sports
+                8. Sea Sports in Marbella
               </a>
               <a
                 href="#fairs"
@@ -227,6 +327,7 @@ export default function BestActivitiesMarbellaBlogPost() {
                 src="/casco-antiguo-marbella.jpg"
                 alt="Casco Antiguo Marbella where to have tapas and eat churros"
                 fill
+                sizes={contentImageSizes}
                 className="object-cover"
               />
             </div>
@@ -334,9 +435,10 @@ export default function BestActivitiesMarbellaBlogPost() {
             </h2>
             <div className="relative w-full h-[300px] md:h-[400px] rounded-xl overflow-hidden mb-8">
               <Image
-                src="/guadalmina-1.webp"
+                src="/guadalmina-canyoning-marbella.webp"
                 alt="Guadalmina Canyon"
                 fill
+                sizes={contentImageSizes}
                 className="object-cover"
               />
             </div>
@@ -433,13 +535,14 @@ export default function BestActivitiesMarbellaBlogPost() {
           {/* Section 4: Flamenco */}
           <section id="flamenco" className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              Book a Night at a Flamenco Tablao
+              Book a Night at a Flamenco Tablao in Marbella
             </h2>
             <div className="relative w-full h-[300px] md:h-[400px] rounded-xl overflow-hidden mb-8">
               <Image
                 src="/tango.webp"
                 alt="Flamenco Tablao in Marbella"
                 fill
+                sizes={contentImageSizes}
                 className="object-cover"
               />
             </div>
@@ -486,9 +589,10 @@ export default function BestActivitiesMarbellaBlogPost() {
             </h2>
             <div className="relative w-full h-[300px] md:h-[400px] rounded-xl overflow-hidden mb-8">
               <Image
-                src="/via-ferrata-marbella.webp"
+                src="/via-ferrata-near-marbella.webp"
                 alt="Via Ferrata near Marbella"
                 fill
+                sizes={contentImageSizes}
                 className="object-cover"
               />
             </div>
@@ -571,13 +675,14 @@ export default function BestActivitiesMarbellaBlogPost() {
           {/* Section 6: La Concha */}
           <section id="la-concha" className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              La Concha Mountain (Sierra Blanca)
+              Hike La Concha, Marbella&apos;s Mountain (Sierra Blanca)
             </h2>
             <div className="relative w-full h-[300px] md:h-[400px] rounded-xl overflow-hidden mb-8">
               <Image
                 src="/la-concha-mountain.webp"
                 alt="La Concha Mountain, Sierra Blanca, Marbella"
                 fill
+                sizes={contentImageSizes}
                 className="object-cover"
               />
             </div>
@@ -642,9 +747,10 @@ export default function BestActivitiesMarbellaBlogPost() {
 
             <div className="relative w-full h-[300px] md:h-[400px] rounded-xl overflow-hidden mb-8">
               <Image
-                src="/pueblos-blancos.jpg"
+                src="/pueblos-blancos-marbella.webp"
                 alt="Pueblos Blancos near Marbella"
                 fill
+                sizes={contentImageSizes}
                 className="object-cover"
               />
             </div>
@@ -734,14 +840,15 @@ export default function BestActivitiesMarbellaBlogPost() {
           {/* Section 8: Sea Sports */}
           <section id="sea-sports" className="mb-12">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              Marbella Sea Sports
+              Sea Sports in Marbella
             </h2>
 
             <div className="relative w-full h-[300px] md:h-[400px] rounded-xl overflow-hidden mb-8">
               <Image
-                src="/marbella-sea-sports.jpg"
-                alt="Marbella Sea Sports"
+                src="/marbella-sea-sports.webp"
+                alt="Sea sports in Marbella"
                 fill
+                sizes={contentImageSizes}
                 className="object-cover"
               />
             </div>
@@ -794,6 +901,7 @@ export default function BestActivitiesMarbellaBlogPost() {
                 src="/cable-ski-marbella.jpg"
                 alt="Cable Ski in San Pedro de Alcántara, Marbella"
                 fill
+                sizes={contentImageSizes}
                 className="object-cover"
               />
             </div>
@@ -812,9 +920,10 @@ export default function BestActivitiesMarbellaBlogPost() {
             </h2>
             <div className="relative w-full h-[300px] md:h-[400px] rounded-xl overflow-hidden mb-8">
               <Image
-                src="/marbella-fair.jpg"
+                src="/marbella-fair.webp"
                 alt="Marbella Fair"
                 fill
+                sizes={contentImageSizes}
                 className="object-cover"
               />
             </div>
@@ -833,28 +942,45 @@ export default function BestActivitiesMarbellaBlogPost() {
 
             <div className="bg-gray-50 rounded-lg p-6">
               <h4 className="font-semibold text-gray-900 mb-4">
-                📅 2026 Fair Calendar
+                📅 When are the fairs? (approximate calendar)
               </h4>
               <ul className="space-y-2 text-gray-700">
                 <li>
-                  <strong>Marbella Fair:</strong> June 5 - 11
+                  <strong>Marbella Fair:</strong> early to mid June
                 </li>
                 <li>
-                  <strong>Estepona Fair:</strong> July 1 - 6
+                  <strong>Estepona Fair:</strong> early July
                 </li>
                 <li>
-                  <strong>Benahavís Fair:</strong> Around August 15
+                  <strong>Benahavís Fair:</strong> mid-August
                 </li>
                 <li>
-                  <strong>Malaga Fair:</strong> August 16 - 23
+                  <strong>Malaga Fair:</strong> mid to late August
                 </li>
                 <li>
-                  <strong>San Pedro de Alcántara Fair:</strong> Around October
-                  19
+                  <strong>San Pedro de Alcántara Fair:</strong> mid to late
+                  October
                 </li>
               </ul>
+              <p className="text-gray-500 text-sm italic mt-4">
+                Exact dates are confirmed by each town council every year, so
+                check them before you plan your trip.
+              </p>
             </div>
           </section>
+
+          {/* Author - E-E-A-T */}
+          {/* TODO: add the name and photo of a real guide. */}
+          <aside className="not-prose flex items-start gap-4 bg-gray-50 rounded-xl p-6 mb-12">
+            <div className="w-12 h-12 shrink-0 bg-green-100 rounded-full flex items-center justify-center">
+              <span className="text-green-700 font-bold">TA</span>
+            </div>
+            <p className="text-gray-700 text-sm leading-relaxed">
+              <strong>Written by the TUUR Adventure guides</strong> — certified
+              canyoning and mountain guides based in San Pedro de Alcántara,
+              Marbella, registered as Active Tourism company RTA AT/MA00141.
+            </p>
+          </aside>
 
           {/* Conclusion */}
           <section className="mb-12">
@@ -890,7 +1016,7 @@ export default function BestActivitiesMarbellaBlogPost() {
           </section>
 
           {/* Final CTA */}
-          <div className="bg-gradient-to-r from-green-600 to-green-700 text-white rounded-xl p-8 text-center">
+          <div className="bg-linear-to-r from-green-600 to-green-700 text-white rounded-xl p-8 text-center">
             <h3 className="text-2xl font-bold mb-4">
               Ready to explore Marbella?
             </h3>
@@ -926,7 +1052,9 @@ export default function BestActivitiesMarbellaBlogPost() {
           <p className="text-sm text-gray-500">
             <strong>TUUR Adventure Experts © 2026</strong>
           </p>
-          <p className="text-sm text-gray-500 mt-2">Last updated: March 2026</p>
+          <p className="text-sm text-gray-500 mt-2">
+            Last updated: November 2026
+          </p>
         </footer>
       </div>
     </article>
