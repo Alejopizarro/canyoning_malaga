@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: "Canyoning & More Adventures in Marbella, Málaga & Andalusia",
   description:
-    "Discover the best adventures tours in Marbella, Málaga & Andalusia with TUUR Adventure. Explore canyoning, kayaking, and more.",
+    "Discover the best adventure tours in Marbella, Málaga & Andalusia with TUUR Adventure. Explore canyoning, kayaking, and more.",
 };
 
 export default function RootLayout({

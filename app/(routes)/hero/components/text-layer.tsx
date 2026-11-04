@@ -202,12 +202,12 @@ export default function TextLayer() {
         ref={text1Ref}
         className="absolute top-5/12 left-1/2 w-full max-w-[1280px] 2xl:max-w-[1680px] -translate-x-1/2 -translate-y-1/2 text-center z-11"
       >
-        <h1
+        <p
           className="font-extrabold leading-none text-white drop-shadow-2xl"
           style={{ fontSize: "clamp(4rem, 7vw, 10rem)" }}
         >
           Your Next Adventure
-        </h1>
+        </p>
       </div>
 
       {/* ═══════════════════════════════════════════════════ */}

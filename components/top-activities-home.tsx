@@ -30,11 +30,32 @@ const TopActivitiesHome = async () => {
           <span className="block text-md md:text-xl mb-2">
             {getSeasonLabel()}
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold leading-tight">
-            Top Outdoor Activities Of
+          <h1 className="text-3xl md:text-5xl font-bold leading-tight">
+            Top Outdoor Activities
             <br />
-            The Season
-          </h2>
+            Near Marbella
+          </h1>
+          <p className="text-gray-600 leading-relaxed max-w-6xl mx-auto mt-4">
+            Based in San Pedro de Alcántara, Marbella,{" "}
+            <strong className="text-gray-900">TUUR Adventure</strong> runs{" "}
+            <strong className="text-gray-900">guided outdoor activities</strong>{" "}
+            across the Costa del Sol. Abseil and jump through the{" "}
+            <Link
+              href="/canyoning/guadalmina"
+              title="Guadalmina canyoning in Benahavís, near Marbella"
+              className="font-semibold text-primary underline underline-offset-2 hover:text-gray-900 transition-colors"
+            >
+              Guadalmina canyon in Benahavís
+            </Link>
+            , just 20 minutes from Marbella, hike to the summit of La Concha,
+            the mountain behind the city, or paddle along the coast at sunrise
+            from Puerto Banús. Our{" "}
+            <strong className="text-gray-900">certified local guides</strong>{" "}
+            keep <strong className="text-gray-900">groups small</strong> and
+            adapt every tour to your level, so families, first-timers and
+            adrenaline seekers all get the most out of the mountains and rivers
+            around Marbella.
+          </p>
         </div>
 
         {/* Cards Grid */}
@@ -123,8 +144,7 @@ const TopActivitiesHome = async () => {
                     {/* Age */}
 
                     <span className="flex bg-gray-100 px-2 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-900">
-                      <TimerReset size={15} />
-                      ~{activity.duration} hs
+                      <TimerReset size={15} />~{activity.duration} hs
                     </span>
 
                     <span className="flex bg-gray-100 px-2 py-1 rounded-lg items-center gap-1 text-xs font-semibold text-gray-900">
