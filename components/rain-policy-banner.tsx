@@ -4,9 +4,10 @@ const RAIN_ARTICLE = "/blog/can-you-go-canyoning-in-the-rain";
 
 // Yellow info box for activity pages, styled like the Safety and Session boxes.
 // Links to the rain guide and to the weather policy section inside it.
+// No outer margin: the activity page's flex column gap spaces the boxes.
 export default function RainPolicyBanner() {
   return (
-    <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 my-4">
+    <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
       <h3 className="font-semibold text-yellow-800 mb-2">
         🌧️ Rain or Shine, We Go Out
       </h3>
