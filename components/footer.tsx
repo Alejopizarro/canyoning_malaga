@@ -25,17 +25,35 @@ const socialIcons: Record<SocialNetwork, LucideIcon> = {
   youtube: Youtube,
 };
 
+// Activities in app/data.ts that have no page yet (they would 404).
+// Remove a route from here once its page is created.
+const ROUTES_WITHOUT_PAGE = [
+  "sima-del-diablo",
+  "trevelez",
+  "calzadillas",
+  "hiking-istan",
+  "hiking-juanar",
+  "kayak-guadiaro",
+  "jet-ski-marbella",
+  "gymkhana-marbella",
+  "caving-experience",
+];
+
+const publishedExcursions = excursions.filter(
+  (exc) => !ROUTES_WITHOUT_PAGE.includes(exc.route),
+);
+
 const Footer = () => {
-  const canyoningExcursions = excursions.filter(
+  const canyoningExcursions = publishedExcursions.filter(
     (exc) => exc.category === "Canyoning",
   );
-  const viaFerrataExcursions = excursions.filter(
+  const viaFerrataExcursions = publishedExcursions.filter(
     (exc) => exc.category === "Via Ferrata",
   );
-  const hikingExcursions = excursions.filter(
+  const hikingExcursions = publishedExcursions.filter(
     (exc) => exc.category === "Hiking",
   );
-  const moreActivitiesExcursions = excursions.filter(
+  const moreActivitiesExcursions = publishedExcursions.filter(
     (exc) => exc.category === "More Activities",
   );
 
@@ -132,8 +150,7 @@ const Footer = () => {
               More Activities
             </h3>
             <ul className="space-y-2">
-              {/* Jet Ski, Gymkhana and Caving have no page yet, so stop before them. */}
-              {moreActivitiesExcursions.slice(0, 3).map((excursion) => (
+              {moreActivitiesExcursions.map((excursion) => (
                 <li key={excursion.route}>
                   <Link
                     href={activityPath(excursion, "activities")}

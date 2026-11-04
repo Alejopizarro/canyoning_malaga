@@ -8,6 +8,8 @@ export interface BlogPost {
   image: string;
   category: string;
   date: string;
+  /** Last real content update, same format as `date`. Used by the sitemap. */
+  updated?: string;
   readTime: string;
   isPlaceholder?: boolean;
 }
@@ -31,6 +33,7 @@ export const blogPosts: BlogPost[] = [
     image: "/marbella-drone-hero.webp",
     category: "Guides",
     date: "March 4, 2026",
+    updated: "November 4, 2026",
     readTime: "15 min read",
   },
   {

@@ -416,10 +416,10 @@ export default function CanyoningInTheRainPage() {
           <h2 className="text-3xl font-bold text-gray-900 mb-6">
             Why rain changes everything in a canyon
           </h2>
-          <div className="prose prose-lg max-w-none text-gray-600 mb-8">
+          <div className="space-y-5 leading-relaxed text-gray-600 [&_strong]:text-gray-900 mb-8">
             <p>
-              A canyon is a narrow channel, and everything that falls on the
-              hills around it ends up flowing through it. That is why many
+              A canyon is a narrow channel, and <strong>everything that falls on the
+              hills around it ends up flowing through it</strong>. That is why many
               canyons are simply off-limits during rainy spells: the flow can
               grow quickly and become dangerous. Canyon floods are often
               triggered by storms miles away, and the{" "}
@@ -449,9 +449,9 @@ export default function CanyoningInTheRainPage() {
               </div>
             ))}
           </div>
-          <div className="prose prose-lg max-w-none text-gray-600">
+          <div className="space-y-5 leading-relaxed text-gray-600 [&_strong]:text-gray-900">
             <p>
-              No single factor gives the answer. A canyon with a small basin can
+              <strong>No single factor gives the answer.</strong> A canyon with a small basin can
               still be fed by a large river, a dam can absorb one storm and
               overflow with the next, and dry ground behaves very differently
               from soaked ground. Guides weigh all of this together, and the
@@ -472,8 +472,8 @@ export default function CanyoningInTheRainPage() {
                 unstable
               </a>
               , and not going the day after heavy rain unless you know exactly
-              how that canyon responds. It is sound advice, and it is also why
-              local knowledge matters so much: a guide who knows a canyon well
+              how that canyon responds. It is sound advice, and it is also why{" "}
+              <strong>local knowledge matters so much</strong>: a guide who knows a canyon well
               knows how it reacts after rain.
             </p>
           </div>
@@ -484,9 +484,9 @@ export default function CanyoningInTheRainPage() {
           <h2 className="text-3xl font-bold text-gray-900 mb-6">
             How guides read the river
           </h2>
-          <div className="prose prose-lg max-w-none text-gray-600 mb-8">
+          <div className="space-y-5 leading-relaxed text-gray-600 [&_strong]:text-gray-900 mb-8">
             <p>
-              Every canyon has its own warning signs, and a good guide knows
+              <strong>Every canyon has its own warning signs</strong>, and a good guide knows
               them by heart. The examples below come from{" "}
               <Link href="/canyoning/guadalmina" className={externalLink}>
                 <strong>Guadalmina</strong>
@@ -495,8 +495,8 @@ export default function CanyoningInTheRainPage() {
               canyon in another region would have its own.
             </p>
             <p>
-              But the decision does not start at the river. It starts days
-              earlier, with a study of the whole picture:
+              But the decision does not start at the river. <strong>It starts days
+              earlier</strong>, with a study of the whole picture:
             </p>
           </div>
           <div className="space-y-4 mb-8">
@@ -517,17 +517,17 @@ export default function CanyoningInTheRainPage() {
               </div>
             ))}
           </div>
-          <div className="prose prose-lg max-w-none text-gray-600 mb-8">
+          <div className="space-y-5 leading-relaxed text-gray-600 [&_strong]:text-gray-900 mb-8">
             <p>
-              On the day, right before the descent, guides check a fixed
-              reference point; if the water covers that reference, the level is
+              On the day, right before the descent, <strong>guides check a fixed
+              reference point</strong>; if the water covers that reference, the level is
               too high. They also look at how much foam the water makes, whether
               it carries branches and leaves, and whether whirlpools form in the
               pools.
             </p>
             <p>
-              Some canyons go one step further and mark the start with a level
-              gauge, a scale that shows how high the water is. From that height
+              Some canyons go one step further and mark the start with a <strong>level
+              gauge</strong>, a scale that shows how high the water is. From that height
               the flow can be calculated, and with experience it is easy to tell
               whether the river is suitable for beginners, for an intermediate
               level, or only for people with a high technical and physical
@@ -566,7 +566,7 @@ export default function CanyoningInTheRainPage() {
             </figure>
           </div>
 
-          <div className="prose prose-lg max-w-none text-gray-600">
+          <div className="space-y-5 leading-relaxed text-gray-600 [&_strong]:text-gray-900">
             <p>
               <strong>Guadalmina has one more thing to check:</strong> a dam
               just upstream of the canyoning section. It is an overflow dam: it
@@ -589,7 +589,7 @@ export default function CanyoningInTheRainPage() {
             <p>
               It is hard to say how much rain it takes to fill it, because that
               depends on how full it already was. The last time it overflowed,
-              it took around four days of constant rain. When that happens, the
+              it took <strong>around four days of constant rain</strong>. When that happens, the
               flow rises and the descent is off the table.
             </p>
             <p>
@@ -612,7 +612,7 @@ export default function CanyoningInTheRainPage() {
           <h2 className="text-3xl font-bold text-gray-900 mb-6">
             What a bit of rain adds
           </h2>
-          <div className="prose prose-lg max-w-none text-gray-600 mb-8">
+          <div className="space-y-5 leading-relaxed text-gray-600 [&_strong]:text-gray-900 mb-8">
             <p>
               With more water in the river, canyons like Guadalmina change
               character.{" "}
@@ -649,7 +649,7 @@ export default function CanyoningInTheRainPage() {
           <h2 className="text-3xl font-bold text-gray-900 mb-6">
             Who it suits best
           </h2>
-          <div className="prose prose-lg max-w-none text-gray-600 mb-8">
+          <div className="space-y-5 leading-relaxed text-gray-600 [&_strong]:text-gray-900 mb-8">
             <p>
               More water also means more force. For example, in winter, the
               Guadalmina Canyon{" "}
@@ -696,7 +696,7 @@ export default function CanyoningInTheRainPage() {
           <h2 className="text-3xl font-bold text-gray-900 mb-6">
             Experience matters more than equipment
           </h2>
-          <div className="prose prose-lg max-w-none text-gray-600">
+          <div className="space-y-5 leading-relaxed text-gray-600 [&_strong]:text-gray-900">
             <p>
               Not every operator has the experience or the know-how to work in
               these conditions. Reading a canyon after rain is a specialist
@@ -742,18 +742,18 @@ export default function CanyoningInTheRainPage() {
               technician titles (TECO, TAFAD, TSEAS) and credentials accredited
               by AEGM or UIMLA. The international ICAN canyoning certification
               covers the same knowledge, and its holders can be perfectly
-              capable guides, but in Spain it is not valid on its own without
+              capable guides, but <strong>in Spain it is not valid on its own</strong> without
               one of the qualifications above.
             </p>
           </div>
-          <div className="prose prose-lg max-w-none text-gray-600">
+          <div className="space-y-5 leading-relaxed text-gray-600 [&_strong]:text-gray-900">
             <p>
-              In our own team, on days with a lot of flow only the most
-              experienced guides go out, even in a canyon as friendly as
+              In our own team, on days with a lot of flow <strong>only the most
+              experienced guides go out</strong>, even in a canyon as friendly as
               Guadalmina.
             </p>
             <p>
-              Local knowledge adds one more layer. A guide who has seen the same
+              <strong>Local knowledge adds one more layer.</strong> A guide who has seen the same
               river in every season for many years knows how the whole basin
               responds to rain, and that is something no forecast app can tell
               you.
@@ -768,7 +768,7 @@ export default function CanyoningInTheRainPage() {
           </h2>
           <p className="text-lg text-gray-600 mb-8">
             Any serious operator should be able to explain what happens when
-            conditions change. Here, the certified guides have the final say:
+            conditions change. Here, <strong>the certified guides have the final say</strong>:
             they can modify or suspend any activity if the weather puts the
             group at risk, and they keep you informed about the conditions
             before the start. If heavy rain or adverse weather forces a change,
@@ -792,14 +792,14 @@ export default function CanyoningInTheRainPage() {
           <h2 className="text-3xl font-bold text-gray-900 mb-6">
             Plan B: canyons that come alive with the rain
           </h2>
-          <div className="prose prose-lg max-w-none text-gray-600 mb-8">
+          <div className="space-y-5 leading-relaxed text-gray-600 [&_strong]:text-gray-900 mb-8">
             <p>
-              When even Guadalmina is not safe, the day does not have to end
-              there. This is the alternative route from the steps above, and it
+              When even Guadalmina is not safe, <strong>the day does not have to end
+              there</strong>. This is the alternative route from the steps above, and it
               is where local knowledge pays off the most.
             </p>
             <p>
-              Some canyons are dry for most of the year. When the rain arrives
+              <strong>Some canyons are dry for most of the year.</strong> When the rain arrives
               they fill with waterfalls and run with a force you never see in
               summer, which makes them spectacular. In the right conditions they
               can also be safe: our guides know how each of them behaves, when
@@ -814,8 +814,8 @@ export default function CanyoningInTheRainPage() {
               excitement.
             </p>
             <p>
-              So if the forecast looks bad and Guadalmina is off the table, ask
-              us what is possible that day. If no route is safe, the refund
+              So if the forecast looks bad and Guadalmina is off the table, <strong>ask
+              us what is possible that day</strong>. If no route is safe, the refund
               still applies.
             </p>
           </div>
@@ -856,12 +856,12 @@ export default function CanyoningInTheRainPage() {
           <h2 className="text-3xl font-bold text-gray-900 mb-6">
             How cold is the water in winter?
           </h2>
-          <div className="prose prose-lg max-w-none text-gray-600 mb-8">
+          <div className="space-y-5 leading-relaxed text-gray-600 [&_strong]:text-gray-900 mb-8">
             <p>
               As we said at the start, this guide is about the south of Spain,
               and water temperature is a good example of why that matters. In
               the Pyrenees and other high mountain ranges, canyons are fed by
-              snowmelt and the water stays cold even in summer. The{" "}
+              snowmelt and <strong>the water stays cold even in summer</strong>. The{" "}
               <a
                 href="https://awaventura.com/barrancos/barranco-furco-broto/"
                 target="_blank"
@@ -910,8 +910,8 @@ export default function CanyoningInTheRainPage() {
               , our main canyon, is a different case again.
             </p>
             <p>
-              Guadalmina has no snowmelt or high mountains upstream, so its
-              water stays mild all year. Our guides&apos; rough figures are
+              Guadalmina has no snowmelt or high mountains upstream, so <strong>its
+              water stays mild all year</strong>. Our guides&apos; rough figures are
               around 24 °C in summer and 18 °C in winter.
             </p>
           </div>
@@ -936,9 +936,9 @@ export default function CanyoningInTheRainPage() {
           <h2 className="text-3xl font-bold text-gray-900 mb-6">
             What to wear in winter
           </h2>
-          <div className="prose prose-lg max-w-none text-gray-600">
+          <div className="space-y-5 leading-relaxed text-gray-600 [&_strong]:text-gray-900">
             <p>
-              Water pulls heat from your body much faster than air does, which
+              <strong>Water pulls heat from your body much faster than air does</strong>, which
               is why{" "}
               <a
                 href="https://www.nps.gov/zion/planyourvisit/canyoneeringsafety.htm"
@@ -952,19 +952,19 @@ export default function CanyoningInTheRainPage() {
               neoprene vest. From September or October, when the weather
               conditions change, we add a long-sleeve jacket over it, mandatory
               on cold days and throughout winter, and neoprene socks to wear
-              inside your shoes. Our neoprene is 5 mm thick, so vest and jacket
+              inside your shoes. <strong>Our neoprene is 5 mm thick</strong>, so vest and jacket
               together give around 10 mm over the torso, with double insulation
               where your vital organs are. The neoprene also cushions bumps and
               scratches and adds buoyancy, which helps when the water is
               livelier.
             </p>
             <p>
-              The wetsuit, harness, helmet and descending equipment are all
-              included. For your feet, bring hiking boots (ideally with a grippy
+              <strong>The wetsuit, harness, helmet and descending equipment are all
+              included.</strong> For your feet, bring hiking boots (ideally with a grippy
               sole) or rent our professional canyoning shoes, which offer
               optimal protection and a non-slip sole on wet ground. Open
-              footwear such as flip-flops is never allowed. Beach or pool water
-              shoes (aqua shoes) are not suitable either: they are extremely
+              footwear such as flip-flops is never allowed. <strong>Beach or pool water
+              shoes (aqua shoes) are not suitable</strong> either: they are extremely
               slippery on wet rock, and too flexible to protect your feet when
               walking on rocks or from possible impacts. You only need to bring
               a towel and a full change of warm, dry clothes for afterwards. For
@@ -1005,14 +1005,14 @@ export default function CanyoningInTheRainPage() {
           <h2 className="text-3xl font-bold text-gray-900 mb-6">
             Planning a visit?
           </h2>
-          <div className="prose prose-lg max-w-none text-gray-600 mb-8">
+          <div className="space-y-5 leading-relaxed text-gray-600 [&_strong]:text-gray-900 mb-8">
             <p>
               If you would like to see Guadalmina in winter, you will find
               details and availability on our{" "}
               <Link href="/canyoning/guadalmina" className={externalLink}>
                 Guadalmina canyoning page
               </Link>
-              . Not sure about the forecast? Write to us before you book and we
+              . Not sure about the forecast? <strong>Write to us before you book</strong> and we
               will tell you how the canyon looks that day.
             </p>
             <p>
