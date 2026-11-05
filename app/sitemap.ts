@@ -10,7 +10,7 @@ import { siteConfig } from "@/lib/site-config";
 export const dynamic = "force-static";
 
 // Indexable pages that are not activities or blog posts.
-// Not listed on purpose: /hero, /team-building-test, /confirmation and
+// Not listed on purpose: /hero, /confirmation and
 // /blog/adventure-packing-guides (all noindex), and the legal pages
 // (/privacy-policy, /terms-and-conditions, /cookie-policy), which stay
 // indexable but are not worth promoting in the sitemap.
